@@ -55,7 +55,7 @@ Une session de serveur HTTP a pu rester active après le travail de Codex ; vér
 
 ## Travail local
 
-Tous les fichiers sont locaux et sans commit. Aucun déploiement, aucune publication, aucune écriture externe. Fichiers temporaires de recherche (textes extraits des PDF Turing, Breuer, Lloyd, OCR Du Bois-Reymond) dans le scratchpad de session, hors du dossier.
+État historique avant la V1 : tous les fichiers étaient locaux et sans commit. Le dépôt Git et l’atlas ont ensuite été créés ; voir le jalon V1 ci-dessous. Aucun déploiement, aucune publication, aucune écriture externe. Fichiers temporaires de recherche (textes extraits des PDF Turing, Breuer, Lloyd, OCR Du Bois-Reymond) dans le scratchpad de session, hors du dossier.
 
 ## Limites
 
@@ -65,6 +65,40 @@ Neutrino : modèle pédagogique, pas de données de détecteur ; pas d’effets 
 
 Fiche 41 : Chaitin 1974 et Popper 1950 non lus (accès fermé) ; deux prépublications citées (S042, S045) ; le débat Lucas-Penrose n’est pas traité ; l’ordre de grandeur du contenu informationnel d’un cerveau n’est pas sourcé ; les « nouvelles réponses » sont des synthèses et une conjecture, pas des résultats démontrés.
 
-## Prochaine action
+## Prochaine action historique (avant l’atlas V1)
 
 Éviter désormais les écritures concurrentes dans le même dossier (un outil à la fois, ou branches/worktrees dès qu’un dépôt Git existe). Recueillir la lecture de Teo sur questions/41.md et sur le laboratoire antimatière. Puis, au choix : (a) lecture directe de Chaitin 1974 et Popper 1950 pour lever les réserves ; (b) fiche 23 (théorie du tout) en s’appuyant sur le « théorème des conséquences » ; (c) fiche 10 (flèche du temps), identifiée comme partiellement answerable ; (d) retour à l’ordre du sommaire (fiche 01).
+
+
+## 2026-09-12 — Codex : atlas V1
+
+À la suite de l’autorisation « GO DÉVELOPPE ÇA PLEASE », construction du socle proposé : accueil, atlas des 42 questions, lecteur appliqué à la question 41 et intégration des deux laboratoires. Trois parcours guidés et carnet local ajoutés pour relier les contenus.
+
+### Architecture et périmètre
+
+- Racine `index.html`, `atlas/style.css`, `atlas/app.js`, `atlas/core.js` ; navigation par fragments pour fonctionner sur un serveur statique ou directement depuis le fichier.
+- Les 42 Markdown et le dossier original 41 restent inchangés. `content/atlas.json` contient les domaines, liens et parcours ; `content/41-essentiel.md` apporte une courte lecture éditoriale avec réserves de portée.
+- `npm run build` produit `atlas/data.js` via Marked 18.0.12 (dépendance de construction seulement). Le navigateur n’utilise aucune ressource distante. `npm run dev` reconstruit les sources modifiées et sert en local ; rafraîchir la page après édition.
+- Atlas : recherche par mots, filtres domaine/statut, état vide et liens individuels. Lecteur : essentiel / dossier complet / 57 références, sommaire, précédent/suivant, notes.
+- Carnet dans `localStorage` sous `the42laws:v1` : favoris, lectures manuelles, notes, dernière question, laboratoires ouverts. Export JSON ; pas d’import ni de synchronisation. Statut scientifique et lecture personnelle distincts. Une erreur de stockage est affichée et la note courante reste exportable.
+- Navigation de retour à l’atlas ajoutée aux deux laboratoires, sans changement de leurs moteurs physiques.
+- Premier instantané Git de l’existant : 53642f3. Aucun déploiement ni écriture externe.
+
+### Validation V1
+
+- `npm run build` : 42 questions, une synthèse provisoire, deux laboratoires.
+- `npm test` : 17 tests réussis (11 physiques existants, 6 atlas/rendu/états/liens).
+- Chromium : les 42 lecteurs, les trois modes de la question 41, les 57 lignes de sources, recherche sans accents, combinaison de filtres, état vide, réinitialisation, trois parcours, méthode, registre, carnet et route inconnue vérifiés. Aucune erreur JavaScript remontée.
+- Note et favori conservés après rechargement. Note avec balisage traitée comme texte. Export JSON téléchargé par interaction et contenu relu avec assertions. Refus de stockage simulé : message visible, application utilisable.
+- Dix vues contrôlées à 320, 390, 768 et 1440 px : aucun débordement horizontal de page. Tableaux scientifiques défilables dans leur conteneur. Menu mobile : clavier, boucle de focus, Échap, navigation masquée rendue inerte.
+- Liens de retour des deux laboratoires, calcul du neutrino à l’ouverture et absence de débordement à 320 px vérifiés. Ouverture directe de l’atlas en `file://` vérifiée.
+- Serveur de développement essayé sur le port 4243 : accueil et données HTTP 200, `.git` et `node_modules` refusés (403). Le serveur initial sur 4242 reste l’adresse de prévisualisation.
+- Captures locales non versionnées : `artifacts/atlas-home.png`, `artifacts/atlas-mobile.png`, `artifacts/atlas-reader.png`. Scripts de contrôle navigateur et export de test dans `artifacts/` (ignoré par Git).
+
+### Réserves et suite
+
+La fiche 41 demeure provisoire. Sa lecture courte précise les hypothèses des limites démontrées et ne reprend pas les extrapolations comme des théorèmes universels. Vérification ciblée de portée avec Stanford Encyclopedia of Philosophy, « Gödel’s Incompleteness Theorems » ; aucun réexamen exhaustif des 57 sources. Le tri historique « seule question answerable » ne constitue pas une conclusion scientifique. Les propositions propres du dossier original sont conservées pour discussion.
+
+Les 41 autres dossiers sont explicitement à explorer ; aucun nouveau contenu de réponse n’a été fabriqué. Les parcours temps et connaissance incluent donc des étapes sans synthèse. L’export constitue une copie du carnet, pas un système de restauration intégré.
+
+Prochaine étape suggérée après retour de Teo : rédiger un nouveau dossier sourcé ou développer le prochain laboratoire (photon / double fente), en utilisant l’architecture commune. Les pistes antérieures ne sont pas des autorisations de travail supplémentaires.

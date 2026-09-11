@@ -1,0 +1,20 @@
+{
+  "domains": [
+    {"id":"existence","roman":"I","name":"Existence","subtitle":"Pourquoi y a-t-il une réalité ?","description":"Interroger le fait même qu’il existe quelque chose.","color":"#dfc291","range":[1,5],"symbol":"∅"},
+    {"id":"realite","roman":"II","name":"Réalité","subtitle":"De quoi le monde est-il fait ?","description":"Matière, information, espace, temps et mathématiques.","color":"#a8c9cb","range":[6,14],"symbol":"∞"},
+    {"id":"physique","roman":"III","name":"Physique","subtitle":"Quelles sont les règles ultimes ?","description":"Explorer les particules, les interactions et leurs modèles.","color":"#c4f58b","range":[15,23],"symbol":"ν"},
+    {"id":"univers","roman":"IV","name":"Univers","subtitle":"D’où vient tout cela ?","description":"Suivre les questions que soulève l’histoire du cosmos.","color":"#bda9ee","range":[24,31],"symbol":"✳"},
+    {"id":"vie","roman":"V","name":"Vie","subtitle":"Comment la matière devient-elle vivante ?","description":"Des conditions du vivant à la recherche d’autres vies.","color":"#8bc9a0","range":[32,35],"symbol":"⌁"},
+    {"id":"conscience","roman":"VI","name":"Conscience","subtitle":"Pourquoi y a-t-il une expérience intérieure ?","description":"Examiner l’expérience subjective, le moi et l’intelligence.","color":"#e8a29b","range":[36,39],"symbol":"◎"},
+    {"id":"sens","roman":"VII","name":"Liberté, connaissance & sens","subtitle":"Que pouvons-nous savoir, choisir et valoriser ?","description":"Mettre nos connaissances et nos convictions à l’épreuve.","color":"#dfcb95","range":[40,42],"symbol":"?"}
+  ],
+  "labs": [
+    {"id":"neutrino","number":"01","title":"Neutrino","subtitle":"L’invisible nous traverse.","description":"Trois saveurs, une identité quantique. Faites varier l’énergie et la distance pour explorer les oscillations.","url":"neutrino/index.html","color":"#c4f58b","symbol":"ν","questions":[15,17,18,19,31]},
+    {"id":"antimatiere","number":"02","title":"Antimatière","subtitle":"L’autre moitié du réel.","description":"Comparez les antiparticules, provoquez une annihilation et observez ce qu’un excès de matière laisse derrière lui.","url":"antimatiere/index.html","color":"#c0a5fa","symbol":"±","questions":[15,16,25,31]}
+  ],
+  "paths": [
+    {"id":"matiere","title":"Comprendre la matière","eyebrow":"LE PARCOURS POUR COMMENCER","description":"Des constituants du monde au mystère de l’antimatière. Deux expériences pour donner corps aux questions.","color":"#c4f58b","symbol":"ν","steps":[{"type":"question","id":15},{"type":"lab","id":"neutrino"},{"type":"lab","id":"antimatiere"},{"type":"question","id":31}]},
+    {"id":"temps","title":"Explorer le temps","eyebrow":"UN FIL À DÉROULER","description":"Le sens du temps, l’Univers primordial et la question d’un commencement. Quatre dossiers encore à construire.","color":"#bda9ee","symbol":"◷","steps":[{"type":"question","id":10},{"type":"question","id":25},{"type":"question","id":26},{"type":"question","id":30}]},
+    {"id":"connaitre","title":"Jusqu’où peut-on connaître ?","eyebrow":"PRENDRE DU RECUL","description":"Partir de la première synthèse, puis examiner ce qu’elle change dans nos questions sur la mesure, les lois et le sens.","color":"#dfcb95","symbol":"∞","steps":[{"type":"question","id":41},{"type":"question","id":19},{"type":"question","id":23},{"type":"question","id":42}]}
+  ]
+}

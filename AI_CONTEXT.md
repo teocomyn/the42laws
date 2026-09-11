@@ -8,11 +8,14 @@ Carnet de recherche en français à partir des 42 questions fournies par Teo, r�
 
 ## Classification et architecture
 
-Projet de contenu et de recherche local. Fichiers Markdown ; deux pages interactives autonomes (neutrino/, antimatiere/) sans dépendance ni ressource distante ; aucune application serveur, aucune infrastructure, aucune publication. Le dossier n’est pas un dépôt Git.
+Projet de contenu et de recherche local avec atlas statique à la racine et deux laboratoires autonomes. Les Markdown restent la source de vérité. Construction par scripts/build-atlas.mjs (Marked 18.0.12, dépendance de développement), données générées dans atlas/data.js. Aucun service distant ni publication. Serveur local facultatif : npm run dev. Dépôt Git initialisé le 2026-09-12, premier instantané 53642f3.
 
 ## Structure
 
-- README.md : entrée du projet et déroulement proposé.
+- index.html, atlas/ : accueil, recherche des 42 questions, lecteur, parcours et carnet local.
+- content/ : métadonnées pédagogiques et résumé prudent de la fiche 41.
+- scripts/ : construction et serveur local ; package.json : build/dev/test.
+- README.md : entrée du projet et instructions de lancement.
 - QUESTIONS.md : sommaire des 42 questions avec statuts.
 - METHODE.md : cadre de recherche.
 - questions/01.md à questions/42.md : fiches individuelles.
@@ -27,10 +30,11 @@ Conserver les 42 questions et leur numérotation. Distinguer résultats empiriqu
 ## Décisions
 
 - 2026-09-11 : cadre documentaire et ordre de traitement proposés par l’assistant (commencer par 01).
-- 2026-09-12 : à la demande de Teo, la première synthèse porte sur la question 41, choisie parce qu’elle est la seule dont la réponse repose sur des théorèmes ; l’ordre « 01 d’abord » n’est plus la règle. Tri de travail retenu : 41 answerable ; 10, 19, 26, 29, 32 partiellement answerable ; les autres ouvertes.
+- 2026-09-12 : à la demande de Teo, la première synthèse porte sur la question 41, choisie initialement pour ses liens avec des théorèmes de limitation ; l’ordre « 01 d’abord » n’est plus la règle. Tri de travail retenu : 41 answerable ; 10, 19, 26, 29, 32 partiellement answerable ; les autres ouvertes.
 - 2026-09-12 : deux outils ont écrit simultanément dans le dossier (Codex : antimatière ; Claude : fiche 41). Les identifiants de sources ont été renumérotés et la section de reprise antimatière reconstruite. Règle rappelée : un seul outil à la fois sur le même arbre.
+- 2026-09-12 : V1 de l’atlas autorisée par Teo et développée. La classification précédente « answerable » est une orientation de travail, pas une preuve que seule la question 41 admet des résultats démontrés. Dossier original conservé ; lecture courte avec réserves et sources séparées.
 - Les contributions originales (synthèses, dérivations, conjectures) sont admises si elles sont signalées comme telles dans la fiche.
 
 ## Jalon actuel
 
-Fiche 41 en « Synthèse provisoire » (57 sources). Les 41 autres fiches restent « À explorer ». Laboratoires neutrino et antimatière livrés et testés, acceptation visuelle par Teo non recueillie.
+Fiche 41 en « Synthèse provisoire » (57 sources). Les 41 autres fiches restent « À explorer ». Laboratoires intégrés à la V1 de l’atlas. Carnet enregistré dans localStorage (the42laws:v1), sans synchronisation. Les statuts de lecture et de recherche sont distincts. Voir AI_HANDOFF.md pour les validations de la V1.
