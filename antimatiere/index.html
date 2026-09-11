@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100e12"><meta name="description" content="Un laboratoire interactif pour comprendre l’antimatière : antiparticules, annihilation et asymétrie de l’Univers.">
+  <title>Antimatière — The42laws</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+  <script src="physics.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#laboratoire">Aller au laboratoire</a>
+<header class="header">
+  <a class="brand" href="#portrait"><span class="brand-mark">42<span>°</span></span><span>THE42LAWS<small>UN ATLAS DE L’INVISIBLE</small></span></a>
+  <nav aria-label="Navigation principale"><a href="#miroir">Comprendre</a><a href="#laboratoire">Expérimenter ↗</a><a href="../neutrino/index.html">Neutrino <span>ν</span></a></nav>
+  <span class="edition">CARNET DE RECHERCHE <b>002</b></span>
+</header>
+<main>
+  <section class="intro wrap" id="portrait">
+    <div class="eyebrow"><i class="dot"></i> PHYSIQUE FONDAMENTALE <span>/</span> MATIÈRE & SYMÉTRIES</div>
+    <div class="title-row"><h1>ANTIMATIÈRE<span>±</span></h1><span class="chapter">EXPLORATION<br><b>02 — L’AUTRE MATIÈRE</b></span></div>
+    <div class="intro-line"><h2>L’autre moitié du réel.</h2><p>Un double presque parfait.<br>Une différence qui pourrait expliquer notre existence.</p></div>
+  </section>
+
+  <section class="hero wrap" aria-label="Portrait de la matière et de l’antimatière">
+    <div class="hero-top"><span><i class="dot"></i> DEUX PARTICULES. UN MÊME UNIVERS.</span><span>e⁻ <b>↔</b> e⁺</span></div>
+    <canvas id="portrait-canvas" role="img" aria-label="Portrait artistique d’un électron orange et d’un positon violet, de part et d’autre d’un axe de symétrie. Couleurs et dimensions symboliques."></canvas>
+    <div class="hero-label matter"><span>MATIÈRE</span><strong>Électron <i>e⁻</i></strong></div>
+    <div class="hero-label antimatter"><span>ANTIMATIÈRE</span><strong>Positon <i>e⁺</i></strong></div>
+    <div class="hero-bottom"><span>UNE ÉVOCATION VISUELLE<br><small>Couleurs, tailles et mouvements symboliques.</small></span><button id="portrait-pause" class="icon-button" aria-pressed="false" aria-label="Mettre le portrait en pause">Ⅱ</button></div>
+    <div class="mirror-caption">MÊME MASSE <span>·</span> CHARGES OPPOSÉES</div>
+  </section>
+  <section class="stats wrap" aria-label="Trois repères">
+    <article><span class="eyebrow">01 / L’IDENTITÉ</span><h3>Même <em>masse.</em></h3><p>Une antiparticule n’a pas une masse négative.<br>Le positon est aussi massif que l’électron. <a href="#ref-cern">[1]</a></p></article>
+    <article><span class="eyebrow">02 / LA RENCONTRE</span><h3>511 <span>keV</span></h3><p>Par photon dans une annihilation e⁻/e⁺<br>au repos, dans le canal à deux photons. <a href="#ref-esa">[2]</a></p></article>
+    <article><span class="eyebrow">03 / L’ÉNIGME</span><h3>Pourquoi <em>nous ?</em></h3><p>La matière domine l’Univers observable.<br>L’origine de ce déséquilibre reste ouverte. <a href="#ref-cp">[3]</a></p></article>
+  </section>
+
+  <section class="section wrap" id="miroir">
+    <div class="section-heading"><div><span class="eyebrow">01 — LE JEU DES MIROIRS</span><h2>Presque identiques.<br><em>Jamais interchangeables.</em></h2></div><p>Changez de particule pour découvrir son double. Une charge nulle n’empêche pas l’existence d’une antiparticule distincte.</p></div>
+    <div class="compare-tabs" role="group" aria-label="Choisir une paire"><button data-pair="electron" class="selected" aria-pressed="true">01 <span>Électron</span></button><button data-pair="proton" aria-pressed="false">02 <span>Proton</span></button><button data-pair="neutron" aria-pressed="false">03 <span>Neutron</span></button></div>
+    <div class="comparison" aria-live="polite" aria-atomic="true">
+      <article class="particle-card matter"><div><span class="eyebrow">MATIÈRE</span><span class="mini-dot"></span></div><div class="particle-title"><h3 id="particle-name">Électron</h3><span id="particle-symbol">e⁻</span></div><dl><div><dt>Charge électrique</dt><dd id="particle-charge">−1 e</dd></div><div><dt>Nature</dt><dd id="particle-type">Lepton élémentaire</dd></div><div><dt>Structure connue</dt><dd id="particle-structure">Aucune structure interne détectée</dd></div></dl></article>
+      <div class="mirror-divider" aria-hidden="true"><span>↔</span></div>
+      <article class="particle-card antimatter"><div><span class="eyebrow">ANTIMATIÈRE</span><span class="mini-dot"></span></div><div class="particle-title"><h3 id="antiparticle-name">Positon</h3><span id="antiparticle-symbol">e⁺</span></div><dl><div><dt>Charge électrique</dt><dd id="antiparticle-charge">+1 e</dd></div><div><dt>Nature</dt><dd id="antiparticle-type">Antilepton élémentaire</dd></div><div><dt>Structure connue</dt><dd id="antiparticle-structure">Aucune structure interne détectée</dd></div></dl></article>
+      <p class="comparison-note" id="pair-note">Le positon, aussi appelé positron, a la même masse et le même spin que l’électron. Sa charge électrique est opposée.</p>
+    </div>
+  </section>
+
+  <section class="section wrap" id="laboratoire">
+    <div class="section-heading"><div><span class="eyebrow">02 — LE LABORATOIRE</span><h2>Une rencontre.<br><em>La lumière demeure.</em></h2></div><p>Faites se rencontrer un électron et un positon. Dans le canal étudié ici, leur énergie est transférée à deux photons gamma.</p></div>
+    <div class="lab">
+      <aside class="controls"><span class="eyebrow">ANNIHILATION e⁻ + e⁺ → γ + γ</span><h3>Réglez la rencontre.</h3><div class="range-control"><label for="kinetic">Énergie cinétique <output id="kinetic-value" for="kinetic">0,00 MeV</output></label><p>Pour chacune des deux particules.</p><input id="kinetic" type="range" min="0" max="2" value="0" step="0.05"><div class="range-ends"><span>Au repos</span><span>2 MeV / particule</span></div></div>
+      <div class="presets" aria-label="Préréglages d’énergie"><button data-energy="0" class="selected" aria-pressed="true">Au repos</button><button data-energy="0.5" aria-pressed="false">+ 0,5 MeV</button><button data-energy="2" aria-pressed="false">+ 2 MeV</button></div>
+      <div class="equation"><span>ÉNERGIE TOTALE INITIALE</span><strong>E = 2(m<sub>e</sub>c² + K)</strong><small>K : énergie cinétique par particule</small></div>
+      <button id="launch" class="primary">Lancer l’annihilation <span>↗</span></button><div class="secondary-actions"><button id="collision-pause" disabled aria-pressed="false">Ⅱ Pause</button><button id="reset">↺ Réinitialiser</button></div><p class="control-note">Référentiel du centre de masse.<br>Deux particules d’énergies égales, de quantités de mouvement opposées.</p></aside>
+      <div class="experiment"><div class="experiment-top"><span class="eyebrow">CHAMBRE D’OBSERVATION</span><span id="state-label" class="state">PRÊT</span></div><div class="collision-scene"><canvas id="collision-canvas" role="img" aria-label="Schéma d’annihilation électron-positon en deux photons opposés. Le bilan énergétique est disponible sous le schéma."></canvas></div><div class="stage-labels" aria-hidden="true"><span id="stage-0" class="active">01 · Rencontre</span><span id="stage-1">02 · Annihilation</span><span id="stage-2">03 · Photons</span></div><p id="collision-status" class="status" role="status">Prêt : lancez la rencontre pour suivre le transfert d’énergie.</p>
+      <div class="energy-results" aria-live="polite" aria-atomic="true"><div><span>ÉNERGIE TOTALE</span><strong id="total-energy">1,022 <small>MeV</small></strong></div><div><span>PAR PHOTON</span><strong id="photon-energy">511 <small>keV</small></strong></div><div><span>LONGUEUR D’ONDE</span><strong id="wavelength">2,426 <small>pm</small></strong></div></div><p class="result-note">Bilan théorique pour le réglage choisi · vitesses, distances et durées du dessin non physiques.</p></div>
+    </div>
+    <details class="model"><summary>Comprendre le calcul et ses limites <span>+</span></summary><div><p>On sélectionne le canal e⁻ + e⁺ → 2γ dans le référentiel du centre de masse. L’énergie et la quantité de mouvement sont conservées. Chaque photon emporte E<sub>γ</sub> = m<sub>e</sub>c² + K et les deux partent en sens opposés. Leur longueur d’onde vaut λ = hc / E<sub>γ</sub>. Les valeurs sont calculées, puis arrondies pour l’affichage. <a href="#ref-nist">Constantes CODATA 2022 [4]</a>.</p><p>À K = 0, on représente la limite d’une paire au repos au point de rencontre : l’approche dessinée est une convention visuelle. Le modèle ne calcule ni probabilité d’annihilation, ni durée de vie, ni distribution angulaire. D’autres canaux existent ; une annihilation proton–antiproton ne se résume pas à ces deux photons.</p><p><strong>100 % du bilan initial, pas 200 %.</strong> L’énergie de repos des deux particules est déjà incluse dans 2m<sub>e</sub>c². Les photons sont des particules physiques qui transportent cette énergie ; rien n’est effacé du bilan.</p></div></details>
+  </section>
+
+  <section class="section wrap" id="asymetrie">
+    <div class="section-heading"><div><span class="eyebrow">03 — LE DÉSÉQUILIBRE</span><h2>Un petit excès.<br><em>Tout ce qui reste.</em></h2></div><p>Un modèle de comptage pour comprendre l’idée. Retirez les paires : l’excès initial subsiste. D’où vient cet excès dans l’Univers ? C’est précisément l’énigme.</p></div>
+    <div class="balance"><div class="balance-controls"><span class="eyebrow">UN UNIVERS MINIATURE</span><h3>Changez les proportions.</h3><p>24 paires au départ, auxquelles vous ajoutez de la matière ou de l’antimatière.</p><label for="excess">Déséquilibre initial <output id="excess-value" for="excess">+1 matière</output></label><input id="excess" type="range" min="-5" max="5" step="1" value="1"><div class="range-ends"><span>+5 antimatière</span><span>Égalité</span><span>+5 matière</span></div><button id="remove-pairs" class="primary">Retirer les 24 paires <span>↗</span></button><p class="control-note">L’excès est volontairement amplifié. Ce dessin n’est ni à l’échelle cosmologique, ni une simulation de la baryogenèse.</p></div><div class="balance-view"><div class="dot-legend"><span class="matter">● Matière <b id="matter-count">25</b></span><span class="antimatter">◇ Antimatière <b id="antimatter-count">24</b></span></div><div id="particle-grid" class="particle-grid" aria-hidden="true"></div><p id="balance-status" role="status">25 particules de matière, 24 d’antimatière. Une particule de matière en excès.</p><div class="balance-bottom"><span>EXCÈS CONSERVÉ</span><strong id="net-excess">+1</strong><span id="pair-summary">24 paires disponibles</span></div></div></div>
+    <p class="below-note">Le comptage explique la survie d’un excès ; il n’explique pas sa création. La violation de CP connue ne suffit pas à rendre compte de l’asymétrie cosmique. <a href="#ref-cp">[3]</a></p>
+  </section>
+
+  <section class="section wrap discoveries" id="decouvertes"><div class="section-heading"><div><span class="eyebrow">04 — LES PREUVES, PAS À PAS</span><h2>De l’équation<br><em>à l’expérience.</em></h2></div><p>L’antimatière n’est pas seulement une idée mathématique. On la produit, on la piège et on compare ses propriétés à celles de la matière.</p></div><div class="timeline"><article><span class="year">1928</span><i></i><h3>Une équation ouvre la voie.</h3><p>Dirac réunit mécanique quantique et relativité dans une description de l’électron. <a href="#ref-cern">[1]</a></p></article><article><span class="year">1932</span><i></i><h3>Le double est observé.</h3><p>Anderson identifie le positon dans le rayonnement cosmique. <a href="#ref-cern">[1]</a></p></article><article><span class="year">1964</span><i></i><h3>La symétrie se fissure.</h3><p>La violation de CP est découverte dans les désintégrations de kaons. <a href="#ref-history">[5]</a></p></article><article><span class="year">2025</span><i></i><h3>Une nouvelle pièce.</h3><p>LHCb observe une violation de CP dans des désintégrations du baryon Λ<sub>b</sub>. <a href="#ref-cp">[3]</a></p></article></div></section>
+
+  <section class="section wrap questions-section"><div><span class="eyebrow">05 — AU-DELÀ DES RACCOURCIS</span><h2>Étrange, oui.<br><em>Magique, non.</em></h2><p class="section-copy">Les images aident à comprendre. Les nuances permettent de ne pas leur faire dire plus que ce que les expériences établissent.</p><a href="../neutrino/index.html" class="next-exploration"><span>POURSUIVRE L’ENQUÊTE</span><strong>Le neutrino <i>ν ↗</i></strong><small>Une piste vers l’asymétrie matière–antimatière.</small></a></div>
+    <div class="questions"><details open><summary>L’antimatière a-t-elle disparu ? <span>−</span></summary><p>Elle est rare à grande échelle, mais existe dans certains processus naturels et dans nos laboratoires. La raie gamma à 511 keV issue de l’annihilation de positons est observée dans la Voie lactée. Cela ne démontre pas l’existence d’antigalaxies. <a href="#ref-esa">[2]</a></p></details><details><summary>Peut-on fabriquer un antiatome ? <span>+</span></summary><p>Oui. Un antiproton lié à un positon forme de l’antihydrogène, un atome globalement neutre. ALPHA en produit et en piège au CERN. Ce n’est pas un système solaire miniature : sa structure est quantique. <a href="#ref-alpha">[6]</a></p></details><details><summary>L’antimatière tombe-t-elle vers le haut ? <span>+</span></summary><p>En 2023, ALPHA a observé que l’antihydrogène est attiré vers la Terre. Le résultat est compatible avec la gravitation attractive attendue, dans la précision de l’expérience ; il ne prouve pas une égalité infiniment précise avec la matière. <a href="#ref-alpha">[6]</a></p></details><details><summary>Le neutrino serait-il son propre double ? <span>+</span></summary><p>C’est l’hypothèse de Majorana. La désintégration double bêta sans neutrino est une voie pour la tester. Un résultat positif ne fournirait pas, à lui seul, l’explication complète de l’asymétrie cosmique. <a href="#ref-majorana">[7]</a></p></details><details><summary>Le fond cosmologique est-il un flash d’annihilation ? <span>+</span></summary><p>Le fond diffus cosmologique que nous observons a été libéré lorsque l’Univers est devenu transparent, environ 380 000 ans après le Big Bang. Ce n’est pas une image directe d’une annihilation initiale. <a href="#ref-cmb">[8]</a></p></details></div>
+  </section>
+  <section class="sources wrap" id="sources"><div><span class="eyebrow">POUR ALLER PLUS LOIN</span><h2>Une exploration, des références.</h2><p>Inspirée de ton texte, reformulée et vérifiée.<br>Sources consultées les 11–12 septembre 2026.</p><a class="notes-link" href="NOTES_SCIENTIFIQUES.md">Notes scientifiques du projet ↗</a></div><ol>
+    <li id="ref-cern"><a href="https://home.cern/fr/science/physics/antimatter/" target="_blank" rel="noopener noreferrer">CERN <span>L’antimatière</span> ↗</a></li>
+    <li id="ref-esa"><a href="https://www.esa.int/Science_Exploration/Space_Science/Integral/Integral_discovers_the_galaxy_s_antimatter_cloud_is_lopsided" target="_blank" rel="noopener noreferrer">ESA · Integral <span>Annihilation galactique</span> ↗</a></li>
+    <li id="ref-cp"><a href="https://home.cern/fr/new-piece-matter-antimatter-puzzle/" target="_blank" rel="noopener noreferrer">CERN · LHCb <span>Violation de CP, 2025</span> ↗</a></li>
+    <li id="ref-nist"><a href="https://physics.nist.gov/cuu/pdf/wall_2022.pdf" target="_blank" rel="noopener noreferrer">NIST · CODATA <span>Constantes 2022 · PDF</span> ↗</a></li>
+    <li id="ref-history"><a href="https://home.cern/cern-result-provides-definite-answer-to-one-of-natures-most-subtle-secrets/" target="_blank" rel="noopener noreferrer">CERN <span>Histoire de la violation de CP</span> ↗</a></li>
+    <li id="ref-alpha"><a href="https://home.cern/fr/lexperience-alpha-au-cern-observe-linfluence-de-la-gravite-sur-lantimatiere/" target="_blank" rel="noopener noreferrer">CERN · ALPHA <span>Antihydrogène et gravité</span> ↗</a></li>
+    <li id="ref-majorana"><a href="https://neutrinos.fnal.gov/mysteries/majorana-or-dirac/" target="_blank" rel="noopener noreferrer">Fermilab <span>Majorana ou Dirac ?</span> ↗</a></li>
+    <li id="ref-cmb"><a href="https://science.nasa.gov/universe/overview/" target="_blank" rel="noopener noreferrer">NASA <span>Univers primordial</span> ↗</a></li>
+  </ol></section>
+</main>
+<footer class="wrap"><a class="brand" href="#portrait">THE42LAWS <span>↗</span></a><span>OBSERVER. QUESTIONNER. COMPRENDRE.</span><a href="../neutrino/index.html">Exploration précédente : Neutrino ←</a></footer>
+<noscript><p class="noscript">Activez JavaScript pour utiliser les trois expériences. Les textes et les sources restent accessibles.</p></noscript>
+</body></html>
