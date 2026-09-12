@@ -57,3 +57,7 @@ Chaque laboratoire propose un guide : prédiction, manipulation, relevés A/B, e
 ## 2026-09-12 — Lot 3
 
 Onze synthèses provisoires : ajout des dossiers 1 (existence), 32 (vie) et 36 (conscience), avec sources S320–S325 et exercices de réflexion. Six laboratoires : relativite/ compare les durées propres d’un aller-retour idéal à vitesse constante sur deux segments, sans gravitation et avec demi-tour instantané. Sources S326–S327. Le parcours temps inclut cette expérience ; nouveau parcours « Exister, vivre, ressentir » pour les trois synthèses, sans implication démontrée entre elles. Quatre parcours, 31 fiches à explorer. L’import du carnet accepte désormais relativite et conserve la version 1. Axeptio est suspendu selon la demande de Teo.
+
+## Identité — favicon
+
+2026-09-12 : favicon commun « 42 » blanc sur verre irisé, créé selon la référence de Teo avec image_gen. Master atlas/logo-42.png ; déclinaisons favicon-42-{16,32,48,180,512}.png et favicon.ico. Fond charbon opaque. Toutes les pages, y compris les laboratoires, partagent ces icônes ; aucun changement du logotype dans l’interface.

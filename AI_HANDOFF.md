@@ -217,3 +217,11 @@ Validation locale : 44 tests réussis, dont exemples 3-4-5, invariance des inter
 Prévisualisation temporaire : PORT=4248 npm run dev. Publication distante et actualisation du serveur principal 4242 à contrôler après intégration. Aucun changement DNS, Analytics ou Axeptio dans ce lot.
 
 Validation distante du lot 3 : commit 6a87e7c poussé sur origin/main, GitHub Actions 34690927248 réussi, déploiement Vercel dpl_63HKJR4xgBXnLtrToacCHF97VUqE READY en production. Les trois nouvelles pages et /relativite/ sont accessibles en HTTPS, indexables, avec canoniques correctes et présents au sitemap. Le HTML contient les textes et sources des dossiers. publication.json confirme 11 synthèses et 6 laboratoires. Test navigateur en production : 10 ans terrestres / 6 ans voyageur à 0,80 c, aucune erreur console. Serveur local principal redémarré sur 4242 avec cette version. Le lot 3 est livré ; prochains chantiers possibles : lot 4, carnet enrichi et quiz pédagogiques, seulement à la prochaine demande.
+
+## 2026-09-12 — Favicon 42 irisé
+
+Demande : créer un logo 42 pour le favicon, inspiré de la référence de verre dépoli fournie par Teo. Direction retenue : chiffres blancs épais, verre bleu/menthe/lilas, fond charbon assorti au site. Visuel original créé avec l’outil intégré image_gen ; seconde passe pour remplacer le damier généré par un fond uni (aucune transparence revendiquée). Source de référence personnelle non copiée dans le dépôt. Master public atlas/logo-42.png, déclinaisons PNG 16/32/48/180/512 px et favicon.ico contenant 16/32/48. Six études SVG de structure et leur comparaison sont conservées localement dans artifacts/logo-42, hors publication.
+
+Intégration : accueil, six laboratoires, 42 dossiers générés, index des dossiers et page 404 utilisent le favicon commun ; apple-touch-icon 180 px pour les raccourcis mobiles. Nouvelles adresses PNG pour renouveler le cache. Anciennes icônes SVG conservées mais non référencées. Les logos dans le contenu de l’interface restent inchangés. Le build copie favicon.ico et le serveur local sert correctement PNG/ICO.
+
+Contrôles locaux : icône ICO multi-tailles valide, PNG aux dimensions déclarées, aperçu en 16 et 32 px ; construction publique et 1284 liens/ressources contrôlés dans 147 fichiers. Vérifier après publication les réponses HTTPS et les nouvelles balises sur le domaine.
