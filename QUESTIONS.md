@@ -48,9 +48,9 @@ Les fiches sont initialisées. Leur statut décrit notre travail, pas la possibi
 ## V. VIE — Comment la matière est-elle devenue vivante ?
 
 - [32. Qu’est-ce que la vie, fondamentalement ?](questions/32.md) — Synthèse provisoire
-- [33. Comment la vie est-elle apparue à partir de matière non vivante ?](questions/33.md) — À explorer
-- [34. La vie est-elle rare ou presque inévitable lorsque les bonnes conditions existent ?](questions/34.md) — À explorer
-- [35. Sommes-nous seuls dans l’Univers ?](questions/35.md) — À explorer
+- [33. Comment la vie est-elle apparue à partir de matière non vivante ?](questions/33.md) — Synthèse provisoire
+- [34. La vie est-elle rare ou presque inévitable lorsque les bonnes conditions existent ?](questions/34.md) — Synthèse provisoire
+- [35. Sommes-nous seuls dans l’Univers ?](questions/35.md) — Synthèse provisoire
 
 ## VI. CONSCIENCE — Pourquoi y a-t-il quelqu’un « à l’intérieur » ?
 

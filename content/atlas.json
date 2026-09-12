@@ -330,6 +330,32 @@
           "id": 36
         }
       ]
+    },
+    {
+      "id": "origines-vie",
+      "title": "De la chimie à la vie",
+      "eyebrow": "COMPRENDRE NOS ORIGINES",
+      "description": "Définir le vivant, explorer la chimie prébiotique, distinguer possibilité et probabilité, puis apprendre à lire les indices d’une vie ailleurs.",
+      "color": "#8ac9b5",
+      "symbol": "◌",
+      "steps": [
+        {
+          "type": "question",
+          "id": 32
+        },
+        {
+          "type": "question",
+          "id": 33
+        },
+        {
+          "type": "question",
+          "id": 34
+        },
+        {
+          "type": "question",
+          "id": 35
+        }
+      ]
     }
   ]
 }

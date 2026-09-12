@@ -9,3 +9,7 @@ Se maintenir ne signifie pas être isolé : le vivant échange avec son environn
 Une définition aide à savoir ce que l’on cherche. Elle ne reconstitue pas, à elle seule, le passage historique de la chimie à la première vie terrestre. Les questions 32 et 33 se répondent, mais elles sont distinctes.
 
 **À essayer :** construisez votre propre grille de critères et cherchez un contre-exemple à chacun. Une propriété isolée suffit-elle vraiment ?
+
+## De la structure à une histoire transmissible
+
+Une structure qui s’assemble, un système qui se maintient et une lignée qui évolue ne décrivent pas la même propriété. Le dossier complet les compare. Les nouvelles synthèses [33](../questions/33.md), [34](../questions/34.md) et [35](../questions/35.md) prolongent la lecture : origine, fréquence possible et recherche d’autres vies.

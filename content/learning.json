@@ -174,5 +174,53 @@
       "interpretation": "Le problème de l’expérience peut recevoir plusieurs formulations philosophiques.",
       "conjecture": "Aucune explication complète et consensuelle n’est présentée ici."
     }
+  },
+  "33": {
+    "level": "Intermédiaire",
+    "minutes": 12,
+    "prerequisites": "Dossier 32 conseillé ; distinguer observation, modèle et hypothèse.",
+    "goal": "Distinguer synthèse de constituants, protocellules, hérédité et reconstitution historique.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Des constituants organiques sont mesurés dans des échantillons de Bennu.",
+      "resultat": "Des dispositifs réalisent des fonctions partielles dans leurs conditions expérimentales.",
+      "modele": "Les protocellules et réacteurs hydrothermaux sont des modèles limités.",
+      "interpretation": "Le couplage de fonctions aide à organiser les scénarios.",
+      "conjecture": "Le chemin historique complet vers la première vie reste à établir."
+    }
+  },
+  "34": {
+    "level": "Découverte",
+    "minutes": 7,
+    "prerequisites": "Dossier 32 conseillé ; distinguer observation, modèle et hypothèse.",
+    "goal": "Distinguer fréquence inconnue, biais de sélection et calcul dans un modèle fictif.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "La Terre fournit un cas de vie connu depuis lequel nous observons.",
+      "resultat": "1 − (1 − p)ᴺ suppose des essais indépendants de même probabilité.",
+      "modele": "Les analyses bayésiennes dépendent de leurs hypothèses et des traces retenues.",
+      "interpretation": "Une origine rapide peut informer sans donner une fréquence universelle.",
+      "conjecture": "La vie fréquente ou inévitable n’est pas établie ici."
+    }
+  },
+  "35": {
+    "level": "Découverte",
+    "minutes": 7,
+    "prerequisites": "Dossier 32 conseillé ; distinguer observation, modèle et hypothèse.",
+    "goal": "Séparer habitabilité, ingrédient, biosignature et confirmation d’une autre vie.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "La NASA déclare ne pas avoir trouvé de preuve crédible de vie extraterrestre, consultation du 12 septembre 2026.",
+      "resultat": "Aucun résultat de détection nouvelle n’est revendiqué par ce dossier.",
+      "modele": "L’interprétation d’un signal demande des modèles biologiques et non biologiques.",
+      "interpretation": "Un faisceau d’indices doit être évalué dans son contexte.",
+      "conjecture": "La présence et la distribution d’autres vies restent inconnues."
+    }
   }
 }

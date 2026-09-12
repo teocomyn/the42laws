@@ -8,12 +8,12 @@ Carnet de recherche en français à partir des 42 questions fournies par Teo, r�
 
 ## Classification et architecture
 
-Projet de contenu et de recherche local avec atlas statique à la racine et six laboratoires intégrés, dont Navier-Stokes et Relativité. Les Markdown restent la source de vérité. Construction par scripts/build-atlas.mjs (Marked 18.0.12, dépendance de développement), données générées dans atlas/data.js. Dépôt source GitHub : https://github.com/teocomyn/the42laws (public, branche main ; envoi autorisé par Teo le 2026-09-12). Projet Vercel the42laws dans t4c2s-projects, relié à main. Première tentative échouée (dossier public absent) ; correction versionnée dans vercel.json : npm run build:public puis check:public, sortie build/public, Node 22.x. Aucun service applicatif distant. Serveur local facultatif : npm run dev. Dépôt Git initialisé le 2026-09-12, premier instantané 53642f3.
+Projet de contenu et de recherche local avec atlas statique à la racine et sept laboratoires intégrés, dont Navier-Stokes et Relativité. Les Markdown restent la source de vérité. Construction par scripts/build-atlas.mjs (Marked 18.0.12, dépendance de développement), données générées dans atlas/data.js. Dépôt source GitHub : https://github.com/teocomyn/the42laws (public, branche main ; envoi autorisé par Teo le 2026-09-12). Projet Vercel the42laws dans t4c2s-projects, relié à main. Première tentative échouée (dossier public absent) ; correction versionnée dans vercel.json : npm run build:public puis check:public, sortie build/public, Node 22.x. Aucun service applicatif distant. Serveur local facultatif : npm run dev. Dépôt Git initialisé le 2026-09-12, premier instantané 53642f3.
 
 ## Structure
 
 - index.html, atlas/ : accueil, recherche des 42 questions, lecteur, parcours et carnet local.
-- content/ : résumés prudents des onze synthèses, métadonnées, particules, glossaire et liens éditoriaux.
+- content/ : résumés prudents des quatorze synthèses, métadonnées, particules, glossaire et liens éditoriaux.
 - photon/, temps/ : nouveaux modèles de la V2 ; tests/v2.test.cjs.
 - PUBLICATION.md, scripts/build-public.mjs : site autonome dans build/public, sans publication.
 - Branche de finalisation isolée : codex/atlas-v2 ; copie intégrée au dossier principal après comparaison des fichiers.
@@ -42,7 +42,7 @@ Conserver les 42 questions et leur numérotation. Distinguer résultats empiriqu
 
 ## Jalon actuel
 
-Onze synthèses provisoires, six laboratoires et quatre parcours (voir le jalon Lot 3 ci-dessous). Carnet enregistré dans localStorage (the42laws:v1), sans synchronisation. Les statuts de lecture et de recherche sont distincts ; import avec aperçu et fusion non destructive par défaut, export JSON. Site publié sur Vercel avec déploiement automatique de main. Domaine principal : https://the42laws.fr ; www redirige en 308 vers le domaine principal. DNS chez Hostinger. La construction définit SITE_URL=https://the42laws.fr. Voir AI_HANDOFF.md pour distinguer les validations locales et distantes de chaque livraison.
+Quatorze synthèses provisoires, sept laboratoires et cinq parcours (voir les jalons ci-dessous). Carnet enregistré dans localStorage (the42laws:v1), sans synchronisation. Les statuts de lecture et de recherche sont distincts ; import avec aperçu et fusion non destructive par défaut, export JSON. Site publié sur Vercel avec déploiement automatique de main. Domaine principal : https://the42laws.fr ; www redirige en 308 vers le domaine principal. DNS chez Hostinger. La construction définit SITE_URL=https://the42laws.fr. Voir AI_HANDOFF.md pour distinguer les validations locales et distantes de chaque livraison.
 
 
 ## 2026-09-12 — Lots 1 et 2
@@ -87,3 +87,8 @@ L’accueil utilise maintenant une scène de trou noir React/WebGL chargée à l
 ## 2026-09-12 — IA et mathématiques dans la base de contenu
 
 Enrichissement à partir de la transcription fournie par Teo : dix idées et un exercice dans le dossier 41, prolongements dans 23/36, vues courtes actualisées, huit termes de glossaire, quatre liens entre questions et sources S330–S335. La recherche indexe désormais aussi les alias du glossaire, dont Lean. Aucun service de base de données ajouté : Markdown et JSON restent les sources de vérité. Onze synthèses ; 14/39 restent à explorer. Note Navier actualisée par le communiqué Clay du 11 septembre et la réponse OpenAI du 10 septembre, sans audit de preuve revendiqué.
+
+
+## 2026-09-12 — Origine et recherche de la vie
+
+Les quatre questions du domaine Vie disposent de synthèses provisoires : 32 enrichie, 33/34/35 nouvelles. Parcours « De la chimie à la vie » (origines-vie), résumés courts, repères pédagogiques, 14 nouveaux termes de glossaire et cinq connexions transversales. Neuf références S336–S344, avec niveau réel de consultation. Les expériences, scénarios, probabilités fictives et observations astronomiques sont distingués ; aucune reconstitution complète de l’origine ni fréquence universelle affirmée. Total actuel : 14 synthèses, 28 fiches à explorer, sept laboratoires, cinq parcours. Base toujours Markdown/JSON, sans service distant ajouté. Axeptio reste suspendu.

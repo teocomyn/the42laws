@@ -55,7 +55,7 @@ Marked est une dépendance de construction uniquement. La prévisualisation loca
 
 La fiche 41 est une **synthèse provisoire**, accompagnée de 57 références dont les niveaux de consultation diffèrent. Sa vue courte précise la portée des résultats et sépare limites démontrées sous hypothèses, extrapolations et conjectures. Le dossier original est conservé ; il n’a pas été intégralement validé par un tiers.
 
-La fiche 23 (théorie du tout) est également en **synthèse provisoire** (66 références, réponse en quatre sens). Une [note datée](notes/navier-stokes-2026.md) suit l’annonce d’OpenAI du 8 septembre 2026 sur Navier-Stokes, accompagnée d’un [laboratoire interactif](navier-stokes/index.html) (fluide 2D à manipuler, schéma de l’explosion, énoncés du prix Clay ; intégré à l’atlas avec un guide de dissipation). Les fiches 10 (temps) et 15 (constituants) disposent également d’une première synthèse pédagogique sourcée ; 31 fiches restent « À explorer ». Les laboratoires sont des outils pédagogiques sourcés ; ils ne résolvent pas les questions fondamentales du programme. Les prochains développements peuvent approfondir les dossiers ou ajouter des expériences dans ce cadre commun.
+La fiche 23 (théorie du tout) est également en **synthèse provisoire** (66 références, réponse en quatre sens). Une [note datée](notes/navier-stokes-2026.md) suit l’annonce d’OpenAI du 8 septembre 2026 sur Navier-Stokes, accompagnée d’un [laboratoire interactif](navier-stokes/index.html) (fluide 2D à manipuler, schéma de l’explosion, énoncés du prix Clay ; intégré à l’atlas avec un guide de dissipation). Les fiches 10 (temps) et 15 (constituants) disposent également d’une première synthèse pédagogique sourcée ; 28 fiches restent « À explorer ». Les laboratoires sont des outils pédagogiques sourcés ; ils ne résolvent pas les questions fondamentales du programme. Les prochains développements peuvent approfondir les dossiers ou ajouter des expériences dans ce cadre commun.
 
 
 ## Version publiable
@@ -71,7 +71,7 @@ Les six laboratoires sont intégrés à l’atlas. Chacun propose une expérienc
 
 ## Lots 1 et 2
 
-Les adresses `/dossiers/1/` à `/dossiers/42/` servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les onze synthèses et leurs sources sont rendues dans le HTML public. Les 31 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les quatre parcours obligatoires ne contiennent plus de fiche vide.
+Les adresses `/dossiers/1/` à `/dossiers/42/` servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les quatorze synthèses et leurs sources sont rendues dans le HTML public. Les 28 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les cinq parcours guidés ne contiennent plus de fiche vide.
 
 Le workflow `.github/workflows/quality.yml` construit le site, teste les modèles et la navigation, vérifie les liens locaux et détecte les données générées non synchronisées. Il ne garantit pas la disponibilité future des sources externes ni une validation scientifique indépendante.
 
@@ -83,3 +83,7 @@ Premières synthèses sur l’existence (1), la vie (32) et la conscience (36), 
 ### Laboratoire Trou noir
 
 Le septième laboratoire, `/trou-noir/`, utilise un composant React/TypeScript et Tailwind compilé en assets statiques. Voir [REACT_COMPONENTS.md](REACT_COMPONENTS.md) pour la structure shadcn, le composant réutilisable et le fonctionnement du build. `npm ci` installe les dépendances ; `npm run dev` compile l’expérience avant de servir le site. `npm run typecheck` contrôle les nouveaux composants. Les autres laboratoires restent en JavaScript.
+
+## Origine et recherche de la vie — 2026-09-12
+
+Nouvelles synthèses [33](questions/33.md), [34](questions/34.md), [35](questions/35.md) et approfondissement de [32](questions/32.md). Parcours « De la chimie à la vie », quatorze nouvelles définitions et neuf références S336–S344. Le site compte désormais 14 synthèses provisoires, 7 laboratoires et 5 parcours. Les expériences documentées ne constituent pas une création de vie autonome ni une reconstruction historique complète.
