@@ -23,3 +23,16 @@ test('unmount before readiness cannot allocate a GPU context or update an unmoun
  const h=harness(),r=h.create();r.dispose();await r.ready;
  assert.equal(h.contexts,0);assert.equal(h.errors.length,0);assert.equal(h.disconnected,2);
 });
+
+test('homepage rendering caps the drawing buffer while the laboratory retains its resolution',async()=>{
+ for(const [quality,expected] of [['hero',[540,360]],[undefined,[900,600]]]){
+  const gl=new Proxy({}, {get:(_,key)=>['VERTEX_SHADER','FRAGMENT_SHADER','ARRAY_BUFFER','STATIC_DRAW','FLOAT','TRIANGLES'].includes(key)?1:()=>true});
+  const canvas={width:0,height:0,getContext:()=>gl,getBoundingClientRect:()=>({width:1200,height:800}),addEventListener(){},removeEventListener(){}};
+  class Observer{observe(){}disconnect(){}}
+  const media={matches:false,addEventListener(){},removeEventListener(){}};
+  const sandbox={module:{exports:{}},ResizeObserver:Observer,IntersectionObserver:Observer,devicePixelRatio:3,matchMedia:()=>media,document:{hidden:false,addEventListener(){},removeEventListener(){}},cancelAnimationFrame(){},requestAnimationFrame(){throw Error('Initial renderer must stay paused');}};
+  vm.runInNewContext(bundled.outputFiles[0].text,sandbox);
+  const renderer=sandbox.module.exports.createRenderer({canvas,quality});await renderer.ready;
+  assert.deepEqual([canvas.width,canvas.height],expected);renderer.dispose();
+ }
+});

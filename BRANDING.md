@@ -43,3 +43,7 @@ Vérification visuelle aux formats 320, 390, 768 et 1440 pixels. Les six laborat
 ## Footer — signature éditoriale
 
 Footer commun à l’atlas, aux dossiers et aux sept laboratoires : lueur cobalt au bord supérieur, invitation « Le monde reste à explorer. », trois colonnes Explorer / Comprendre / Poursuivre et grande signature The42laws en sérif. Mobile : deux colonnes puis Poursuivre sur la largeur. Les continuations de laboratoire et la note scientifique Navier sont préservées. Source unique React compilée en HTML : components/ui/footer-section.tsx ; styles atlas/brand.css ; détails dans REACT_COMPONENTS.md.
+
+## Hero Horizon
+
+L’accueil s’ouvre sur un trou noir illustratif en bleu glacé, avec grande accroche sérif « Le réel dépasse notre imagination. », boutons de navigation et lien vers le laboratoire. Fond noir bleuté, masques de contraste, scène sous les boutons sur mobile. Animation facultative et repli fixe. Le reste de la palette cobalt/verre et le footer éditorial sont conservés. Composant React réutilisable : optimized-black-hole.tsx ; documentation technique dans REACT_COMPONENTS.md.

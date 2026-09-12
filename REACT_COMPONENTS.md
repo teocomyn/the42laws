@@ -1,6 +1,6 @@
 # Composants React — intégration
 
-Le site existant est un atlas statique en JavaScript. Le laboratoire `/trou-noir/` est une île React autonome, compilée avant publication. La page des parcours charge également une île React à la demande ; les autres pages de l’atlas ne chargent pas React.
+Le site existant est un atlas statique en JavaScript. Le laboratoire `/trou-noir/` est une île React autonome, compilée avant publication. L’accueil et la page des parcours chargent également une île React à la demande ; les autres pages de l’atlas ne chargent pas React.
 
 ## Structure
 
@@ -77,3 +77,13 @@ Le canvas décoratif est masqué aux technologies d’assistance ; bouton pause 
 `components/footer-static.tsx` rend le composant avec React DOM Server. `scripts/build-footer.mjs`, appelé par le pipeline React existant, remplace le footer des huit entrées HTML ; les 42 dossiers publics et leur index héritent du shell. Ces blocs HTML sont générés : modifier le TSX puis exécuter `npm run build`. Le rendu est versionné et reste utilisable sans JavaScript. La page 404 conserve sa composition compacte.
 
 Les styles sont dans `atlas/brand.css`, avec sélecteurs préfixés pour résister aux anciens styles des laboratoires. L’apparition utilise CSS et IntersectionObserver dans `atlas/footer.js`, en remplacement de Motion ; aucune nouvelle dépendance ni bundle React côté visiteur pour ce footer. La réduction des mouvements est respectée. Le retour en haut conserve la route de l’atlas et replace le focus au début du document. Aucune image de stock ni lien social fictif ; les icônes Lucide existantes sont rendues en SVG dans le HTML.
+
+## Hero Horizon — optimized-black-hole
+
+`components/ui/optimized-black-hole.tsx` reprend le cycle de vie fourni (référence canvas, promesse ready, apparition progressive, annulation et nettoyage), avec gestion des erreurs, repli fixe et réduction des mouvements. Exports `Example` et défaut. Props : `playing` (false par défaut), `onReadyChange` pour l’état de disponibilité. Démo source : `components/ui/optimized-black-hole-demo.tsx`. Le parent donne une hauteur et charge `atlas/brand.css`.
+
+Le moteur `optimized-black-hole-utils/renderer` n’était pas fourni. Il adapte notre moteur existant avec une palette glacée, un angle de 12°, un zoom visuel de 1,28 et une exposition de 1,35. Budget accueil : maximum 640 × 360, DPR limité à 1, cadence visée de 18 images/s. Le laboratoire conserve son budget 900 × 600 / 24 images/s. Il ne s’agit pas d’une garantie de performance sur tous les appareils. Le shader conserve sa portée illustrative.
+
+`components/hero-entry.tsx` ajoute lecture/pause et masque le contrôle lorsque le rendu est indisponible ou que le mouvement réduit est demandé. L’îlot est monté uniquement sur l’accueil, puis démonté en quittant la route (même garde de génération que Gateway). Arrêt hors écran/onglet caché et libération des ressources GPU. `atlas/hero-scene.js` est généré par le pipeline existant. Aucune nouvelle dépendance ni image de stock ; le poster est l’illustration originale du laboratoire déjà présente dans le dépôt.
+
+La composition `horizon-hero` est dans `atlas/app.js`, avec styles dans `atlas/brand.css`. L’accroche et les liens sont indépendants du canvas ; le poster reste disponible si le module ne charge pas. Sur mobile, la scène est placée sous les deux entrées. Le footer et le carnet sont préservés.

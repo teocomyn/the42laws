@@ -1,9 +1,10 @@
 import { vertex, fragment } from './shaders';
 import { defaults, normalizeSettings, type Settings } from './model';
 export type Renderer = { ready: Promise<void>; setOptions: (options: Partial<Settings>) => void; dispose: () => void };
-export function createRenderer({canvas,onError}:{canvas:HTMLCanvasElement;onError?:(message:string)=>void}):Renderer {
+export function createRenderer({canvas,onError,quality}:{canvas:HTMLCanvasElement;onError?:(message:string)=>void;quality?:'hero'}):Renderer {
  let gl: WebGLRenderingContext | null=null, program:WebGLProgram|null=null, buffer:WebGLBuffer|null=null;
  let settings={...defaults}, frame=0, disposed=false, lost=false, visible=true, phase=0, last=0;
+ const budget=quality==='hero'?{width:640,height:360,dpr:1,fps:18}:{width:900,height:600,dpr:1.5,fps:24};
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const shaders:WebGLShader[]=[];
  const uniforms:Record<string,WebGLUniformLocation|null>={};
@@ -23,7 +24,7 @@ export function createRenderer({canvas,onError}:{canvas:HTMLCanvasElement;onErro
  function draw(){
   if(!gl||!program||disposed||lost)return;
   const rect=canvas.getBoundingClientRect();if(rect.width<1||rect.height<1)return;
-  const scale=Math.min(devicePixelRatio||1,1.5,900/rect.width,600/rect.height);
+  const scale=Math.min(devicePixelRatio||1,budget.dpr,budget.width/rect.width,budget.height/rect.height);
   const w=Math.max(1,Math.round(rect.width*scale)),h=Math.max(1,Math.round(rect.height*scale));
   if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}
   gl.viewport(0,0,w,h);gl.useProgram(program);
@@ -33,7 +34,7 @@ export function createRenderer({canvas,onError}:{canvas:HTMLCanvasElement;onErro
   gl.drawArrays(gl.TRIANGLES,0,6);
  }
  function tick(now:number){frame=0;if(disposed||lost)return;
-  if(settings.playing&&visible&&!document.hidden){if(last===0)last=now;if(now-last>=1000/24){phase+=Math.min((now-last)/1000,.1);last=now;draw();}frame=requestAnimationFrame(tick);}
+  if(settings.playing&&visible&&!document.hidden){if(last===0)last=now;if(now-last>=1000/budget.fps){phase+=Math.min((now-last)/1000,.1);last=now;draw();}frame=requestAnimationFrame(tick);}
  }
  function sync(){cancelAnimationFrame(frame);frame=0;last=0;draw();if(settings.playing&&visible&&!document.hidden&&!lost&&!disposed)frame=requestAnimationFrame(tick);}
  function free(){if(gl){shaders.splice(0).forEach(s=>gl!.deleteShader(s));if(buffer)gl.deleteBuffer(buffer);if(program)gl.deleteProgram(program);}program=null;buffer=null;}

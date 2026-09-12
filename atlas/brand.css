@@ -366,3 +366,42 @@ body{background:var(--bg);color:var(--text)}
 @media(prefers-reduced-motion:reduce){.t42-footer *{transition:none!important}.t42-footer-cta:hover svg{transform:none}}
 @keyframes t42-footer-enter{from{opacity:.45;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:no-preference){.t42-footer-revealed{animation:t42-footer-enter .7s ease both}}
+
+/* Horizon: the homepage black-hole hero. The artwork is decorative, the text stays HTML. */
+.horizon-hero{position:relative;isolation:isolate;overflow:hidden;min-height:660px;border:1px solid #343d52;border-radius:24px;background:#020309;color:#edf1fb;display:flex;flex-direction:column;padding:28px 34px 22px}
+.horizon-top,.horizon-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.horizon-top .eyebrow{margin:0;font-size:8px;color:#aebedc}
+.horizon-edition{font:7px ui-monospace,monospace;letter-spacing:.1em;color:#8f9fbd}
+.horizon-copy{position:relative;z-index:2;margin:102px 0 80px;max-width:650px;pointer-events:none}
+.horizon-copy a{pointer-events:auto}
+.horizon-overline{display:flex;gap:9px;align-items:center;font:8px ui-monospace,monospace;letter-spacing:.13em;color:#b2c5ed;margin-bottom:24px}
+.horizon-overline i{width:4px;height:4px;border-radius:50%;background:#bad2ff;box-shadow:0 0 10px #729deb}
+.horizon-copy h1{font:clamp(46px,4.8vw,74px)/1.03 var(--brand-serif);letter-spacing:-.062em;margin:0 0 28px;text-shadow:0 3px 35px #000}
+.horizon-copy h1 em{font-weight:400;color:#bdcfee;letter-spacing:-.055em}
+.horizon-copy>p{color:#b1bbd0;font-size:13px;line-height:1.9;max-width:390px;margin:0}
+.horizon-copy .actions{margin-top:30px;gap:14px}
+.horizon-copy .button{font-size:11px;padding:13px 17px;gap:17px;border-color:#596a8b;background:#0a101ecc;color:#dae4f8}
+.horizon-copy .button.primary{background:#dce7ff;color:#152443;border-color:#dce7ff;box-shadow:0 0 28px #759cdb1c}
+.horizon-copy .button.primary:hover{background:#fff}
+.horizon-visual,.horizon-scene .optimized-hole{position:absolute;top:0;bottom:0;left:30%;right:-18%;z-index:0}
+.horizon-poster{display:block;width:100%;height:100%;object-fit:contain;opacity:.7}
+.optimized-hole,.optimized-hole-canvas{display:block;width:100%;height:100%}
+.optimized-hole{position:relative;overflow:hidden;background:#020309}
+.optimized-hole-canvas{position:relative;z-index:1;transition:opacity .8s ease}
+.optimized-hole-poster{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+.horizon-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,#020309 0%,#020309ef 25%,#0203099c 49%,#02030900 75%),linear-gradient(0deg,#020309 0%,transparent 23%,transparent 80%,#02030999 100%)}
+.horizon-bottom{margin-top:auto;padding-top:18px;border-top:1px solid #758bac33}
+.horizon-bottom>span{font:7px/1.7 ui-monospace,monospace;letter-spacing:.09em;color:#97a9c8}
+.horizon-bottom>a{display:flex;align-items:center;gap:13px;color:#aebedf;margin-right:92px;font:7px/1.6 ui-monospace,monospace;letter-spacing:.1em}
+.horizon-bottom>a small{display:block;color:#e0e9fa;font:11px/1.7 -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0;margin-top:4px}
+.horizon-orbit{font:32px/1 Georgia,serif;color:#b5cbef}
+.horizon-motion{position:absolute;right:20px;bottom:22px;z-index:3;display:flex;align-items:center;gap:7px;min-height:36px;padding:8px 11px;font-size:9px;color:#c2d1ed;background:#0d1525bd;border:1px solid #47556f;border-radius:8px}
+.horizon-scene{display:contents;pointer-events:none}.horizon-motion{pointer-events:auto}
+@media(min-width:1600px){.horizon-hero{min-height:740px}.horizon-copy{margin-top:128px}}
+@media(max-width:1100px){.horizon-hero{padding:26px;min-height:640px}.horizon-copy h1{font-size:52px}.horizon-copy{max-width:540px}.horizon-visual,.horizon-scene .optimized-hole{left:20%;right:-30%}.horizon-edition{display:none}.horizon-bottom>span{max-width:140px}}
+@media(max-width:800px){.horizon-copy h1{font-size:clamp(45px,7vw,58px)}.horizon-visual,.horizon-scene .optimized-hole{left:24%;right:-22%}}
+@media(max-width:600px){.horizon-hero{padding:22px 20px 18px;min-height:740px;border-radius:20px}.horizon-copy{margin:54px 0 230px;max-width:none}.horizon-copy h1{font-size:clamp(36px,9.7vw,55px);line-height:1.07;margin-bottom:20px}.horizon-overline{font-size:6px;letter-spacing:.1em;margin-bottom:21px}.horizon-top .eyebrow{font-size:7px}.horizon-copy>p{font-size:11px;line-height:1.8;max-width:290px}.horizon-copy .actions{margin-top:23px;gap:9px;align-items:flex-start}.horizon-copy .button{font-size:10px;padding:11px 12px;gap:10px}.horizon-visual,.horizon-scene .optimized-hole{left:-10%;right:-10%;top:340px;bottom:35px}.horizon-shade{background:linear-gradient(180deg,#020309 0%,#020309 40%,#020309b0 50%,transparent 63%,transparent 83%,#020309 96%)}.horizon-bottom>span{display:none}.horizon-bottom>a{font-size:6px;margin-right:60px}.horizon-bottom>a small{font-size:10px}.horizon-motion{right:20px;bottom:18px}.horizon-bottom{pointer-events:none}.horizon-bottom>a{pointer-events:auto}.horizon-orbit{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.optimized-hole-canvas{transition:none}}
+
+.horizon-scene .optimized-hole{width:auto;height:auto}
+.horizon-visual,.horizon-scene .optimized-hole{mask-image:linear-gradient(90deg,transparent,#000 16%,#000 90%,transparent)}

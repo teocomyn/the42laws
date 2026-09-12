@@ -79,3 +79,7 @@ Entrée immersive de /#/parcours : canvas React chargé à la demande, lignes po
 ## 2026-09-12 — Footer partagé
 
 Footer éditorial commun généré depuis components/ui/footer-section.tsx par scripts/build-footer.mjs, appelé dans le pipeline React. HTML versionné dans les huit entrées, repris par les dossiers publics. Source statique au chargement ; pas de React/Motion chargé pour le footer. atlas/footer.js ajoute apparition progressive et retour en haut sans changement de route. Liens existants, continuations des laboratoires, note Navier conservés ; pas de réseaux sociaux inventés. Styles préfixés t42-footer dans atlas/brand.css. Modifier le TSX puis reconstruire, sans éditer les blocs HTML à la main.
+
+## 2026-09-12 — Hero Horizon
+
+L’accueil utilise maintenant une scène de trou noir React/WebGL chargée à la demande : components/ui/optimized-black-hole.tsx, adaptateur optimized-black-hole-utils/renderer et montage components/hero-entry.tsx. Le renderer absent de l’extrait réutilise le moteur original existant avec un budget accueil 640 × 360 / DPR 1 / 18 images/s ; le laboratoire garde 900 × 600 / 24 images/s. Palette glacée et rendu illustratif. Poster existant, pause, réduction de mouvement, arrêt hors écran/onglet caché, démontage au changement de route. atlas/hero-scene.js est généré ; aucune nouvelle dépendance. Composition dans atlas/app.js, styles horizon dans atlas/brand.css.
