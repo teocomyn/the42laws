@@ -61,3 +61,7 @@ Onze synthèses provisoires : ajout des dossiers 1 (existence), 32 (vie) et 36 (
 ## Identité — favicon
 
 2026-09-12 : favicon commun « 42 » blanc sur verre irisé, créé selon la référence de Teo avec image_gen. Master atlas/logo-42.png ; déclinaisons favicon-42-{16,32,48,180,512}.png et favicon.ico. Fond charbon opaque. Toutes les pages, y compris les laboratoires, partagent ces icônes ; aucun changement du logotype dans l’interface.
+
+## 2026-09-12 — Branding cobalt et verre
+
+Identité commune documentée dans BRANDING.md : couverture ivoire/cobalt, symbole original à sept couches, textures de points, six illustrations de laboratoires et cartes éditoriales. Le logo 42 irisé est conservé et utilisé dans la navigation. Couche atlas/brand.css commune aux sept entrées HTML et aux dossiers générés. Carte sociale atlas/brand-share.png (1200 × 630), source SVG versionnée. Les références fournies restent des inspirations ; aucun média de référence n’est publié. Aucun changement des modèles scientifiques, des données ou du stockage du carnet. Aucune dépendance de production ajoutée.

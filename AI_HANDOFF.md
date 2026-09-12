@@ -225,3 +225,11 @@ Demande : créer un logo 42 pour le favicon, inspiré de la référence de verre
 Intégration : accueil, six laboratoires, 42 dossiers générés, index des dossiers et page 404 utilisent le favicon commun ; apple-touch-icon 180 px pour les raccourcis mobiles. Nouvelles adresses PNG pour renouveler le cache. Anciennes icônes SVG conservées mais non référencées. Les logos dans le contenu de l’interface restent inchangés. Le build copie favicon.ico et le serveur local sert correctement PNG/ICO.
 
 Contrôles locaux : icône ICO multi-tailles valide, PNG aux dimensions déclarées, aperçu en 16 et 32 px ; construction publique et 1284 liens/ressources contrôlés dans 147 fichiers. Vérifier après publication les réponses HTTPS et les nouvelles balises sur le domaine.
+
+## Reprise — Branding cobalt / verre, 2026-09-12
+
+Travail isolé sur codex/branding depuis bd56fca. Accueil recomposé, logo 42 dans la navigation, cartes illustrées des six laboratoires, palette et typographie communes, continuité dans le lecteur, les guides et la page 404. Nouvel aperçu social brand-share.png. Voir BRANDING.md pour les fichiers et règles d’usage.
+
+Validation locale de livraison : 44 tests réussis, construction publique réussie, 158 fichiers et 1431 liens/ressources internes contrôlés, 42 dossiers statiques. Vérifications visuelles 320/390/768/1440 px ; six laboratoires à 320 px sans débordement horizontal ; passage accueil → atlas, recherche « conscience », lecture complète du dossier 10, menu mobile et Échap. Console sans erreur observée. Tests effectués sur une origine locale distincte (4249), sans toucher aux notes du navigateur sur 4242. Le dépôt principal était propre avant intégration. La publication repose sur le push de main et le déploiement automatique Vercel ; vérifier leur état pour connaître la version publique actuelle.
+
+Axeptio reste suspendu à la demande de Teo. Ne pas reprendre la branche de consentement dans ce chantier de branding.
