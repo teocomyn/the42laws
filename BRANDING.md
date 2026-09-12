@@ -47,3 +47,8 @@ Footer commun à l’atlas, aux dossiers et aux sept laboratoires : lueur cobalt
 ## Hero Horizon
 
 L’accueil s’ouvre sur un trou noir illustratif en bleu glacé, avec grande accroche sérif « Le réel dépasse notre imagination. », boutons de navigation et lien vers le laboratoire. Fond noir bleuté, masques de contraste, scène sous les boutons sur mobile. Animation facultative et repli fixe. Le reste de la palette cobalt/verre et le footer éditorial sont conservés. Composant React réutilisable : optimized-black-hole.tsx ; documentation technique dans REACT_COMPONENTS.md.
+
+
+## Pictogrammes de navigation
+
+Neuf SVG originaux dans atlas/app.js, grille 24 × 24 et contour de 1,5 unité : accueil, couches de l’atlas, fiole, orbites, réseau, itinéraire, carnet, livre et boussole. Même plaque de verre 32 px, trait bleu glacé et seconde teinte menthe. L’état actif ajoute un relief cobalt et un repère latéral ; survol et focus partagent le traitement. Les libellés restent visibles et portent les noms accessibles, les SVG sont décoratifs. Zones de navigation de 48 px minimum, aucune police d’icônes ni dépendance supplémentaire. Styles dans atlas/brand.css ; mouvement réduit et couleurs forcées pris en compte.

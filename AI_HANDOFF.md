@@ -278,3 +278,10 @@ Validation locale : TypeScript, 50 tests réussis ; contrôle de recherche éten
 Demande : extraire les informations pertinentes de la transcription sur le vivant. Branche codex/origines-vie depuis f5c5c86, worktree the42laws-origines-vie. Trois nouvelles synthèses 33/34/35 et approfondissement de 32, quatre résumés actualisés, nouveau parcours en quatre étapes, 14 définitions, cinq connexions et neuf références. Texte original reformulé ; les chiffres non vérifiés et l’affirmation d’une origine inévitable ne sont pas repris. Aucune relecture scientifique indépendante revendiquée.
 
 Validation locale : 50 tests réussis et TypeScript strict. Navigation parcours → dossier 33 → définition Protocellule → texte complet et sept références ; dossiers 34/35 et tableaux à 320 px sans débordement, références à 390 px. Recherche « abiogenese » sans accents renvoie 32/33/34. Console sans erreur observée. Correction de deux alias abusifs : Miller/Bennu ne doivent pas afficher la définition de molécule organique. Prévisualisation temporaire sur 4257. Publication par main à vérifier avec CI, Vercel et lecture des pages publiques après push. Aucun changement Analytics, Axeptio ou carnet.
+
+
+## 2026-09-12 — Famille de pictogrammes de navigation
+
+Demande : améliorer les neuf icônes de la capture pour mieux incarner la marque. Branche codex/nav-icons depuis 56a9909 ; SVG bicolores originaux sur grille commune, verre cobalt, états actif/survol/focus, zones de 48 px. Changements limités à atlas/app.js et atlas/brand.css, plus documentation. Aucun changement du contenu ni du carnet.
+
+Validation locale : 50 tests réussis, syntaxe JavaScript, build public et contrôle de 166 fichiers / 2300 liens et ressources. Rendu ordinateur 1440 et menu mobile 390 px observés ; neuf liens et SVG présents, navigation Laboratoires puis Glossaire, état actif correct. À 320 px, fermeture Échap rend le focus au bouton de menu ; aucun débordement horizontal ni erreur console observés. Prévisualisation temporaire 4258. Vérifier CI, Vercel et lecture distante après push pour établir la publication.

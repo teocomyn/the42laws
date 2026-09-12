@@ -92,3 +92,8 @@ Enrichissement à partir de la transcription fournie par Teo : dix idées et un 
 ## 2026-09-12 — Origine et recherche de la vie
 
 Les quatre questions du domaine Vie disposent de synthèses provisoires : 32 enrichie, 33/34/35 nouvelles. Parcours « De la chimie à la vie » (origines-vie), résumés courts, repères pédagogiques, 14 nouveaux termes de glossaire et cinq connexions transversales. Neuf références S336–S344, avec niveau réel de consultation. Les expériences, scénarios, probabilités fictives et observations astronomiques sont distingués ; aucune reconstitution complète de l’origine ni fréquence universelle affirmée. Total actuel : 14 synthèses, 28 fiches à explorer, sept laboratoires, cinq parcours. Base toujours Markdown/JSON, sans service distant ajouté. Axeptio reste suspendu.
+
+
+## 2026-09-12 — Icônes de navigation
+
+Les neuf caractères Unicode de la navigation sont remplacés par des pictogrammes SVG originaux dans atlas/app.js, avec plaques de verre cobalt communes dans atlas/brand.css. Les libellés, routes, aria-current et comportements du menu sont conservés. Voir BRANDING.md. Aucune nouvelle dépendance.
