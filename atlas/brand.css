@@ -306,3 +306,21 @@ body{background:var(--bg);color:var(--text)}
 .brand-error img{display:block;border-radius:18px;margin-bottom:35px}
 .brand-error h1{font:clamp(38px,6vw,65px)/1.1 var(--brand-serif);letter-spacing:-.05em;margin:22px 0}
 .brand-error p{color:#becce7;margin-bottom:30px}
+/* Gateway Flow: a visual entrance to the guided paths, loaded only on their index. */
+.gateway-hero{position:relative;isolation:isolate;display:grid;place-items:center;min-height:515px;padding:45px 24px 60px;overflow:hidden;border:1px solid #38445e;border-radius:22px;background:radial-gradient(ellipse at 50% 50%,#23376170,transparent 68%),#0b101b}
+.gateway-effect{position:absolute;inset:0;z-index:0}
+.gateway-card{position:relative;z-index:1;display:flex;align-items:center;flex-direction:column;text-align:center;padding:30px 34px;border:1px solid #56709b70;border-radius:18px;background:linear-gradient(130deg,#1a253aeF,#111926f5);box-shadow:0 18px 70px #0007,inset 0 1px #d8eaff10;max-width:100%;backdrop-filter:blur(8px)}
+.gateway-card>img{border-radius:12px;margin-bottom:22px;box-shadow:0 0 30px #aecbfd12}
+.gateway-card>.eyebrow{font-size:8px;color:#b8cae8;letter-spacing:.12em}
+.gateway-card h1{font:45px/1.05 Georgia,serif;letter-spacing:-.05em;margin:22px 0 18px}
+.gateway-card h1 em{color:#c3d6f6;font-weight:400}
+.gateway-card p{font-size:12px;line-height:1.85;color:#b4c2d9;margin:0 0 25px}
+.gateway-card .button{font-size:11px;gap:20px;background:#d0dffa;color:#192744;border-color:#d0dffa}
+.gateway-card>small{font:8px/1.6 ui-monospace,monospace;color:#a7b8d3;letter-spacing:.03em;margin-top:21px}
+.gateway-corner{position:absolute;left:24px;bottom:22px;pointer-events:none;font:7px ui-monospace,monospace;color:#8da4c6;letter-spacing:.12em}
+.gateway-motion{position:absolute;right:18px;bottom:14px;display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid #4f6386;border-radius:8px;background:#18233acc;color:#d0dffc;font:10px system-ui;cursor:pointer;min-height:36px}
+.gateway-motion:hover{background:#2a3b5b}
+.gateway-motion:focus-visible{outline:2px solid #d2e5ff;outline-offset:4px}
+.gateway-reading-note{font-size:11px;line-height:1.85;color:#aebdd5;border-top:1px solid #354159;margin-top:28px;padding-top:24px}
+@media(max-width:600px){.gateway-hero{padding:28px 18px 59px;border-radius:17px;min-height:475px}.gateway-card{padding:28px 20px;width:100%}.gateway-card h1{font-size:38px}.gateway-card p{font-size:11px}.gateway-card>.eyebrow{font-size:7px}.gateway-card>small{font-size:7px}.gateway-card .button{font-size:10px;padding:11px 13px;gap:13px}.gateway-corner{left:18px;font-size:6px;max-width:160px;line-height:1.7}.gateway-motion{right:14px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){.gateway-card{backdrop-filter:none}}

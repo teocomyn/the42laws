@@ -243,3 +243,11 @@ Livraison : /trou-noir/, composant réutilisable et démo source dans components
 Vérifications locales : TypeScript strict ; 49 tests (44 précédents + rayon/entrées/import et deux tests de cycle de vie) ; build public 163 fichiers, 1451 liens/ressources, 20 routes au sitemap et 42 dossiers statiques. Navigateur : rendu WebGL et changement de palette/angle, lecture/pause, plein écran, bornes clavier, réinitialisation, passage 10 → 20 masses solaires (29,53 → 59,07 km), 4 millions (11 813 358 km). Pages testées à 320/390/768 pixels et format ordinateur, sans débordement observé. Repli WebGL réellement exercé dans un fixture local ignoré, avec calculateur restant fonctionnel. Console sans erreur observée. Lien depuis les sept cartes de laboratoires validé.
 
 Serveur de test sur 4251. Après fusion, lancer npm ci dans le dossier principal et redémarrer le serveur 4242 pour activer le nouveau pipeline. La livraison distante doit être distinguée des contrôles locaux : vérifier GitHub Actions, Vercel et les assets publics du commit après push. Ne pas reprendre Axeptio.
+
+## 2026-09-12 — Intégration Gateway Flow
+
+Demande : intégrer le composant joint au bon endroit. Travail sur codex/gateway-flow, worktree the42laws-gateway-flow depuis e61d084. Emplacement retenu : ouverture des Parcours guidés, accessible par le bouton « Par où commencer ? » de l’accueil. Effet Bézier/particules adapté en canvas React direct ; source et démo dans components/ui. Pas d’authentification ajoutée ni de dépendances externes au chargement. Documentation dans REACT_COMPONENTS.md.
+
+Contrôles navigateur : rendu ordinateur et mobile 320/390 px, sans débordement à 320 px ; pause/reprise, parcours matière (six étapes), retour vers les quatre itinéraires. Canvas démonté à la navigation puis monté une seule fois au retour. Préférence de mouvement réduit gérée dans le composant et le montage. Serveur temporaire 4253 ; publication via main à vérifier avec CI, Vercel et lecture des assets distants. Axeptio reste suspendu.
+
+Validation locale Gateway : TypeScript strict, 49 tests réussis, paquet public de 164 fichiers / 1451 liens et ressources / 42 dossiers. Navigation depuis l’accueil testée ; aucune erreur console observée.

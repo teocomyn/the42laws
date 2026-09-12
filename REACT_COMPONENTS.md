@@ -1,6 +1,6 @@
-# Composant Trou noir — intégration React
+# Composants React — intégration
 
-Le site existant est un atlas statique en JavaScript. Le laboratoire `/trou-noir/` est une île React autonome, compilée avant publication. Les autres pages ne chargent ni React ni ses utilitaires.
+Le site existant est un atlas statique en JavaScript. Le laboratoire `/trou-noir/` est une île React autonome, compilée avant publication. La page des parcours charge également une île React à la demande ; les autres pages de l’atlas ne chargent pas React.
 
 ## Structure
 
@@ -59,3 +59,13 @@ Résolution interne limitée à 900 × 600 maximum ; animation visée à 24 imag
 Les réglages possèdent des libellés, sont utilisables au clavier et ne nécessitent pas un geste dans le canvas. Le contenu explicatif reste dans le HTML statique. Le repli WebGL ne bloque pas le calculateur. Le plein écran dépend du navigateur.
 
 La scène est une illustration à pas finis avec émission artistique, sans validation scientifique du rendu. Seul le calcul `rₛ = 2GM/c²` est présenté comme une relation physique quantitative pour un trou noir non chargé et sans rotation. Les deux sources NASA sont affichées dans le laboratoire et consignées dans le registre.
+
+## Gateway Flow — entrée des parcours
+
+`components/ui/gateway-flow.tsx` adapte le canvas fourni : courbes de Bézier pointillées, particules convergentes et impulsion au clic. Il est monté par `components/gateway-entry.tsx` uniquement sur `/#/parcours`, derrière le choix d’itinéraire. La carte et les liens restent dans le HTML de l’atlas. Le bouton de l’accueil « Par où commencer ? » ouvre cette page.
+
+L’iframe et le formulaire de connexion de la démo fournie ne participent pas à cet usage. Le rendu est direct, sans scripts CDN, police distante supplémentaire ni modification de l’horloge globale. Aucune dépendance supplémentaire n’est nécessaire. Démo réutilisable : `components/ui/gateway-flow-demo.tsx` ; styles d’intégration : `atlas/brand.css`.
+
+Props disponibles : `mode` (dark/light/auto), `speed`, `size`, `gap`, `length`, `density`, `strokeWidth`, `opacity`, `hue`, `saturation`, `brightness`, `className`, `style`. Le parent doit fournir une hauteur. L’intégration utilise le mode sombre et une vitesse de 0,5. `speed=0` suspend l’animation en conservant sa phase. Les valeurs numériques sont bornées.
+
+Le canvas décoratif est masqué aux technologies d’assistance ; bouton pause accessible, préférence de mouvement réduit respectée, arrêt hors écran ou dans un onglet caché. Résolution limitée à 1,5 fois la taille CSS, cadence visée de 30 images/s. Observateurs, événements et animation sont libérés à chaque changement de route. Le bundle `atlas/gateway-flow.js` est généré et ignoré par Git ; les commandes build/dev/public existantes le reconstruisent.
