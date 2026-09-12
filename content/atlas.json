@@ -172,6 +172,22 @@
         23,
         41
       ]
+    },
+    {
+      "id": "relativite",
+      "number": "06",
+      "title": "Relativité",
+      "subtitle": "Deux horloges, deux durées.",
+      "description": "Comparez le temps terrestre et le temps propre d’un voyageur. Modifiez vitesse et durée d’un aller-retour idéal.",
+      "url": "relativite/index.html",
+      "color": "#a8d8db",
+      "symbol": "τ",
+      "questions": [
+        9,
+        10,
+        21,
+        26
+      ]
     }
   ],
   "paths": [
@@ -213,13 +229,17 @@
       "id": "temps",
       "title": "Explorer le temps",
       "eyebrow": "UN FIL À DÉROULER",
-      "description": "Du temps mesuré aux conditions initiales et aux futurs possibles : cinq étapes rédigées, avec une expérience de comptage et ses limites.",
+      "description": "De la comparaison des horloges aux conditions initiales et aux futurs possibles : deux expériences pour distinguer durée mesurée et flèche du temps.",
       "color": "#bda9ee",
       "symbol": "◷",
       "steps": [
         {
           "type": "question",
           "id": 10
+        },
+        {
+          "type": "lab",
+          "id": "relativite"
         },
         {
           "type": "lab",
@@ -270,6 +290,28 @@
       ],
       "further": [
         42
+      ]
+    },
+    {
+      "id": "fondements",
+      "title": "Exister, vivre, ressentir",
+      "eyebrow": "TROIS QUESTIONS POUR ÉLARGIR LE REGARD",
+      "description": "Trois premières synthèses pour comparer une demande d’explication, une définition du vivant et le problème de l’expérience. Cet ordre de lecture ne constitue pas une chaîne de démonstrations.",
+      "color": "#e8a29b",
+      "symbol": "◎",
+      "steps": [
+        {
+          "type": "question",
+          "id": 1
+        },
+        {
+          "type": "question",
+          "id": 32
+        },
+        {
+          "type": "question",
+          "id": 36
+        }
       ]
     }
   ]

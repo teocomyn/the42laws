@@ -8,12 +8,12 @@ Carnet de recherche en français à partir des 42 questions fournies par Teo, r�
 
 ## Classification et architecture
 
-Projet de contenu et de recherche local avec atlas statique à la racine et quatre laboratoires intégrés, plus le module Navier-Stokes autonome. Les Markdown restent la source de vérité. Construction par scripts/build-atlas.mjs (Marked 18.0.12, dépendance de développement), données générées dans atlas/data.js. Dépôt source GitHub : https://github.com/teocomyn/the42laws (public, branche main ; envoi autorisé par Teo le 2026-09-12). Projet Vercel the42laws dans t4c2s-projects, relié à main. Première tentative échouée (dossier public absent) ; correction versionnée dans vercel.json : npm run build:public puis check:public, sortie build/public, Node 22.x. Aucun service applicatif distant. Serveur local facultatif : npm run dev. Dépôt Git initialisé le 2026-09-12, premier instantané 53642f3.
+Projet de contenu et de recherche local avec atlas statique à la racine et six laboratoires intégrés, dont Navier-Stokes et Relativité. Les Markdown restent la source de vérité. Construction par scripts/build-atlas.mjs (Marked 18.0.12, dépendance de développement), données générées dans atlas/data.js. Dépôt source GitHub : https://github.com/teocomyn/the42laws (public, branche main ; envoi autorisé par Teo le 2026-09-12). Projet Vercel the42laws dans t4c2s-projects, relié à main. Première tentative échouée (dossier public absent) ; correction versionnée dans vercel.json : npm run build:public puis check:public, sortie build/public, Node 22.x. Aucun service applicatif distant. Serveur local facultatif : npm run dev. Dépôt Git initialisé le 2026-09-12, premier instantané 53642f3.
 
 ## Structure
 
 - index.html, atlas/ : accueil, recherche des 42 questions, lecteur, parcours et carnet local.
-- content/ : résumés prudents 10/15/23/41, métadonnées, particules, glossaire et liens éditoriaux.
+- content/ : résumés prudents des onze synthèses, métadonnées, particules, glossaire et liens éditoriaux.
 - photon/, temps/ : nouveaux modèles de la V2 ; tests/v2.test.cjs.
 - PUBLICATION.md, scripts/build-public.mjs : site autonome dans build/public, sans publication.
 - Branche de finalisation isolée : codex/atlas-v2 ; copie intégrée au dossier principal après comparaison des fichiers.
@@ -23,7 +23,7 @@ Projet de contenu et de recherche local avec atlas statique à la racine et quat
 - METHODE.md : cadre de recherche.
 - questions/01.md à questions/42.md : fiches individuelles.
 - notes/ : notes datées sur des événements en cours (navier-stokes-2026.md).
-- navier-stokes/ : laboratoire pédagogique sur les équations de Navier-Stokes (Claude Code, 2026-09-12) ; tests/navier-stokes.test.cjs ; pas encore dans content/atlas.json.
+- navier-stokes/ : laboratoire pédagogique sur les équations de Navier-Stokes (Claude Code, 2026-09-12) ; tests/navier-stokes.test.cjs ; intégré dans content/atlas.json.
 - sources/README.md : registre des références vérifiées (S001 à S165 : neutrino S001-S008, antimatière S009-S016, question 41 S017-S073, question 23 S074-S139, note Navier-Stokes S140-S165 ; atlas V2 S200-S211).
 - neutrino/ : laboratoire pédagogique sur le neutrino (Codex, 2026-09-11) ; tests/physics.test.cjs.
 - antimatiere/ : laboratoire pédagogique sur l’antimatière avec notes scientifiques (Codex, 2026-09-12) ; tests/antimatter.test.cjs.
@@ -42,7 +42,7 @@ Conserver les 42 questions et leur numérotation. Distinguer résultats empiriqu
 
 ## Jalon actuel
 
-Fiches 10 et 15 (4 sources chacune), 23 (66 sources) et 41 (57 sources) en « Synthèse provisoire ». Les 38 autres restent « À explorer ». V2 : quatre laboratoires dans l’atlas, tableau des particules, glossaire, carte de liens et parcours enrichis. Carnet enregistré dans localStorage (the42laws:v1), sans synchronisation. Les statuts de lecture et de recherche sont distincts. Import avec aperçu et fusion non destructive par défaut, export JSON. Site publié sur Vercel (c8ac895 validé en production). Domaine principal choisi : https://the42laws.fr ; www redirige en 308 vers le domaine principal. DNS conservé chez Hostinger (A @ : 216.198.79.1, CNAME www : 302a4e082b86e61f.vercel-dns-017.com). La construction Vercel définit SITE_URL=https://the42laws.fr. Voir AI_HANDOFF.md pour les validations de la V2.
+Onze synthèses provisoires, six laboratoires et quatre parcours (voir le jalon Lot 3 ci-dessous). Carnet enregistré dans localStorage (the42laws:v1), sans synchronisation. Les statuts de lecture et de recherche sont distincts ; import avec aperçu et fusion non destructive par défaut, export JSON. Site publié sur Vercel avec déploiement automatique de main. Domaine principal : https://the42laws.fr ; www redirige en 308 vers le domaine principal. DNS chez Hostinger. La construction définit SITE_URL=https://the42laws.fr. Voir AI_HANDOFF.md pour distinguer les validations locales et distantes de chaque livraison.
 
 
 ## 2026-09-12 — Lots 1 et 2
@@ -51,4 +51,9 @@ Huit synthèses provisoires : 10, 15, 19, 23, 25, 26, 30 et 41 ; 34 fiches à ex
 
 Adresses de dossiers : /dossiers/{id}/, texte complet et sources présents dans le HTML public, même shell interactif. Reprise des liens historiques #/question/{id}, conservation du carnet the42laws:v1. Les fiches sans synthèse portent noindex et sont hors sitemap. Les pages nécessitent un hébergement à la racine du domaine.
 
-Chaque laboratoire propose un guide : prédiction, manipulation, relevés A/B, explication, export JSON. Ces réponses sont temporaires dans la page et ne sont pas ajoutées au carnet. Navier démarre en pause ; son schéma auto-similaire et les forces visuelles restent explicitement distincts d’une preuve ou d’une simulation physique rigoureuse en 3D. CI GitHub : build, tests, liens/ancres locaux, cohérence du fichier généré. Axeptio reste sur la branche séparée codex/analytics-consent en attente d’activation de formule et de publication.
+Chaque laboratoire propose un guide : prédiction, manipulation, relevés A/B, explication, export JSON. Ces réponses sont temporaires dans la page et ne sont pas ajoutées au carnet. Navier démarre en pause ; son schéma auto-similaire et les forces visuelles restent explicitement distincts d’une preuve ou d’une simulation physique rigoureuse en 3D. CI GitHub : build, tests, liens/ancres locaux, cohérence du fichier généré. Axeptio est mis de côté à la demande explicite de Teo ; la branche séparée codex/analytics-consent reste non fusionnée. Ne pas reprendre ce chantier sans nouvelle demande.
+
+
+## 2026-09-12 — Lot 3
+
+Onze synthèses provisoires : ajout des dossiers 1 (existence), 32 (vie) et 36 (conscience), avec sources S320–S325 et exercices de réflexion. Six laboratoires : relativite/ compare les durées propres d’un aller-retour idéal à vitesse constante sur deux segments, sans gravitation et avec demi-tour instantané. Sources S326–S327. Le parcours temps inclut cette expérience ; nouveau parcours « Exister, vivre, ressentir » pour les trois synthèses, sans implication démontrée entre elles. Quatre parcours, 31 fiches à explorer. L’import du carnet accepte désormais relativite et conserve la version 1. Axeptio est suspendu selon la demande de Teo.

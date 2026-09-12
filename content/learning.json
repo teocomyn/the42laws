@@ -126,5 +126,53 @@
       "interpretation": "Les extrapolations philosophiques ne sont pas des corollaires automatiques.",
       "conjecture": "Les propositions originales et conclusions générales demandent une relecture indépendante."
     }
+  },
+  "1": {
+    "level": "Découverte",
+    "minutes": 7,
+    "prerequisites": "Aucun prérequis ; distinguer un constat et une conclusion.",
+    "goal": "Distinguer le constat d’existence, une explication causale et une nécessité métaphysique.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "L’expérience fournit un point de départ : quelque chose existe.",
+      "resultat": "Du constat d’existence ne découle pas, seul, une existence nécessaire.",
+      "modele": "Un vide physique appartient encore à un cadre théorique.",
+      "interpretation": "Les exigences d’une explication ultime sont discutées.",
+      "conjecture": "Fait brut et fondement nécessaire restent des pistes argumentatives."
+    }
+  },
+  "32": {
+    "level": "Découverte",
+    "minutes": 7,
+    "prerequisites": "Notions de système, environnement et transmission de caractères.",
+    "goal": "Comparer des critères du vivant sans confondre définition, détection et origine.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "La biologie terrestre fournit nos exemples de départ.",
+      "resultat": "Un critère appliqué aux lignées ne s’applique pas automatiquement à chaque individu.",
+      "modele": "Une définition de travail guide la recherche sans fixer une essence universelle.",
+      "interpretation": "La frontière du vivant dépend des critères explicités.",
+      "conjecture": "L’organisation minimale et les formes possibles du vivant restent étudiées."
+    }
+  },
+  "36": {
+    "level": "Découverte",
+    "minutes": 7,
+    "prerequisites": "Différence entre corrélation, explication et témoignage.",
+    "goal": "Distinguer expérience subjective, compte rendu et test d’une théorie neuroscientifique.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Des protocoles relient contenus perceptifs rapportés et activité cérébrale.",
+      "resultat": "Un test contraint les prédictions examinées dans ses conditions.",
+      "modele": "GNWT et IIT proposent des descriptions concurrentes, encore discutées.",
+      "interpretation": "Le problème de l’expérience peut recevoir plusieurs formulations philosophiques.",
+      "conjecture": "Aucune explication complète et consensuelle n’est présentée ici."
+    }
   }
 }

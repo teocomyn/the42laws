@@ -4,7 +4,7 @@ Les fiches sont initialisées. Leur statut décrit notre travail, pas la possibi
 
 ## I. EXISTENCE — Pourquoi y a-t-il une réalité ?
 
-- [01. Pourquoi existe-t-il quelque chose plutôt que rien ?](questions/01.md) — À explorer
+- [01. Pourquoi existe-t-il quelque chose plutôt que rien ?](questions/01.md) — Synthèse provisoire
 - [02. Le néant absolu est-il réellement possible ?](questions/02.md) — À explorer
 - [03. L’existence est-elle nécessaire ou contingente ?](questions/03.md) — À explorer
 - [04. Pourquoi cette réalité existe-t-elle plutôt qu’une autre ?](questions/04.md) — À explorer
@@ -47,14 +47,14 @@ Les fiches sont initialisées. Leur statut décrit notre travail, pas la possibi
 
 ## V. VIE — Comment la matière est-elle devenue vivante ?
 
-- [32. Qu’est-ce que la vie, fondamentalement ?](questions/32.md) — À explorer
+- [32. Qu’est-ce que la vie, fondamentalement ?](questions/32.md) — Synthèse provisoire
 - [33. Comment la vie est-elle apparue à partir de matière non vivante ?](questions/33.md) — À explorer
 - [34. La vie est-elle rare ou presque inévitable lorsque les bonnes conditions existent ?](questions/34.md) — À explorer
 - [35. Sommes-nous seuls dans l’Univers ?](questions/35.md) — À explorer
 
 ## VI. CONSCIENCE — Pourquoi y a-t-il quelqu’un « à l’intérieur » ?
 
-- [36. Qu’est-ce que la conscience ?](questions/36.md) — À explorer
+- [36. Qu’est-ce que la conscience ?](questions/36.md) — Synthèse provisoire
 - [37. Pourquoi certains processus physiques s’accompagnent-ils d’une expérience subjective ?](questions/37.md) — À explorer
 - [38. Qu’est-ce que le « moi » et qu’est-ce qui fait que je reste la même personne ?](questions/38.md) — À explorer
 - [39. Une machine ou une IA peut-elle réellement devenir consciente ?](questions/39.md) — À explorer

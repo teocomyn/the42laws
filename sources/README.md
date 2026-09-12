@@ -117,3 +117,17 @@ Consultation le 2026-09-12. La lecture ciblée et le résumé sont distingués ;
 | S306 | [Ashtekar et Singh — Loop Quantum Cosmology: A Status Report (2011)](https://arxiv.org/abs/1108.0893) | Revue théorique ; résumé consulté, preuve du rebond non examinée |
 | S307 | [DESI — More Than a Hint of Evolving Dark Energy (19 mars 2025)](https://www.desi.lbl.gov/2025/03/19/more-than-a-hint-of-evolving-dark-energy-new-results-and-data-from-desi/) | Communication de la collaboration ; texte, résultat daté et dépendant des jeux de données |
 | S308 | [Caldwell, Kamionkowski et Weinberg — Phantom Energy and Cosmic Doomsday (2003)](https://arxiv.org/abs/astro-ph/0302506) | Article théorique ; résumé consulté, scénario conditionnel |
+
+
+## Lot 3 — Existence, vie, conscience et relativité
+
+| Id | Référence | Niveau de consultation | Consulté |
+| --- | --- | --- | --- |
+| S320 | [Roy Sorensen — Nothingness](https://plato.stanford.edu/entries/nothingness/) | Encyclopédie philosophique ; sections 1 à 5, lecture ciblée | 2026-09-12 |
+| S321 | [Sean M. Carroll — Why Is There Something, Rather Than Nothing?](https://arxiv.org/abs/1802.02231) | Argument philosophique de l’auteur ; résumé uniquement | 2026-09-12 |
+| S322 | [NASA — Life on Other Planets: What is Life and What Does It Need?](https://science.nasa.gov/universe/search-for-life/life-on-other-planets-what-is-life-and-what-does-it-need/) | Communication institutionnelle ; définition de travail et indices, texte ciblé | 2026-09-12 |
+| S323 | [Gerald Joyce, entretien par Leslie Mullen — Forming a Definition for Life](https://astrobiology.nasa.gov/news/forming-a-definition-for-life/) | Entretien du chercheur ; introduction et discussion de la définition | 2026-09-12 |
+| S324 | [David J. Chalmers — Facing Up to the Problem of Consciousness](https://consc.net/papers/facing.html) | Texte de l’auteur ; introduction et distinction entre fonctions et expérience | 2026-09-12 |
+| S325 | [COGITATE Consortium et collaborateurs — Adversarial testing of global neuronal workspace and integrated information theories of consciousness](https://www.nature.com/articles/s41586-025-08888-1) | Article original, Nature 642 (2025) ; résumé et introduction, lecture ciblée | 2026-09-12 |
+| S326 | [Feynman, Leighton et Sands — The Special Theory of Relativity](https://www.feynmanlectures.caltech.edu/I_15.html) | Cours des auteurs ; transformation du temps, lecture ciblée | 2026-09-12 |
+| S327 | [Chou et collaborateurs — Relativity and Optical Clocks](https://www.nist.gov/publications/relativity-and-optical-clocks) | Résumé expérimental sur le site du NIST uniquement | 2026-09-12 |

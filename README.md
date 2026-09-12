@@ -15,17 +15,17 @@ Ouvrir http://127.0.0.1:4242/. Si le port est occupé, ouvrir le serveur existan
 
 Le serveur est local, lié à 127.0.0.1. Il reconstruit les données lors de modifications des recherches ; rafraîchir ensuite le navigateur. Aucun compte, service distant ou déploiement n’est nécessaire.
 
-`index.html` et les laboratoires peuvent aussi être ouverts directement. Les fichiers générés sont inclus dans Git ; aucune installation n’est nécessaire pour cette consultation. La disponibilité du stockage personnel en mode fichier dépend du navigateur.
+Servez le site à la racine du domaine ou utilisez le serveur local : les routes des dossiers et la balise base ne sont pas prévues pour une ouverture directe en fichier. Les données générées sont incluses dans Git.
 
 ## La V2
 
 - Accueil avec carte interactive des 42 questions et accès aux expériences.
 - Atlas : recherche insensible aux accents, filtres par domaine et état de recherche.
-- Lecteur : dossiers 10, 15, 19, 23, 25, 26, 30 et 41 en trois vues (essentiel, dossier, sources). Les 34 autres fiches indiquent « À explorer ».
-- Quatre laboratoires dans l’atlas : [Neutrino](neutrino/index.html), [Antimatière](antimatiere/index.html), [Photon & double fente](photon/index.html), [Temps & entropie](temps/index.html).
+- Lecteur : dossiers 1, 10, 15, 19, 23, 25, 26, 30, 32, 36 et 41 en trois vues (essentiel, dossier, sources). Les 31 autres fiches indiquent « À explorer ».
+- Six laboratoires dans l’atlas : [Neutrino](neutrino/index.html), [Antimatière](antimatiere/index.html), [Photon & double fente](photon/index.html), [Temps & entropie](temps/index.html), [Navier-Stokes](navier-stokes/index.html) et [Relativité](relativite/index.html).
 - Tableau des particules : 17 entrées, filtres par famille, propriétés et liens vers les expériences.
 - Glossaire : 15 définitions, recherche et consultation au clic dans les dossiers. Carte de 37 liens éditoriaux entre les 42 questions.
-- Trois parcours guidés : matière, temps et connaissance. Ils incluent des dossiers encore à construire.
+- Quatre parcours guidés : matière, temps, connaissance et « Exister, vivre, ressentir ». Toutes leurs étapes obligatoires disposent d’un contenu.
 - Carnet personnel : favoris, lectures marquées manuellement, notes, export et import JSON avec aperçu et choix de résolution des conflits. Les notes existantes sont conservées par défaut. Données locales à ce navigateur et à cette adresse ; pas de synchronisation. Effacer les données du navigateur efface le carnet : l’export permet de conserver une copie.
 - Méthode et registre des sources consultables dans l’interface.
 
@@ -55,7 +55,7 @@ Marked est une dépendance de construction uniquement. La prévisualisation loca
 
 La fiche 41 est une **synthèse provisoire**, accompagnée de 57 références dont les niveaux de consultation diffèrent. Sa vue courte précise la portée des résultats et sépare limites démontrées sous hypothèses, extrapolations et conjectures. Le dossier original est conservé ; il n’a pas été intégralement validé par un tiers.
 
-La fiche 23 (théorie du tout) est également en **synthèse provisoire** (66 références, réponse en quatre sens). Une [note datée](notes/navier-stokes-2026.md) suit l’annonce d’OpenAI du 8 septembre 2026 sur Navier-Stokes, accompagnée d’un [laboratoire interactif](navier-stokes/index.html) (fluide 2D à manipuler, schéma de l’explosion, énoncés du prix Clay ; intégré à l’atlas avec un guide de dissipation). Les fiches 10 (temps) et 15 (constituants) disposent également d’une première synthèse pédagogique sourcée ; 34 fiches restent « À explorer ». Les laboratoires sont des outils pédagogiques sourcés ; ils ne résolvent pas les questions fondamentales du programme. Les prochains développements peuvent approfondir les dossiers ou ajouter des expériences dans ce cadre commun.
+La fiche 23 (théorie du tout) est également en **synthèse provisoire** (66 références, réponse en quatre sens). Une [note datée](notes/navier-stokes-2026.md) suit l’annonce d’OpenAI du 8 septembre 2026 sur Navier-Stokes, accompagnée d’un [laboratoire interactif](navier-stokes/index.html) (fluide 2D à manipuler, schéma de l’explosion, énoncés du prix Clay ; intégré à l’atlas avec un guide de dissipation). Les fiches 10 (temps) et 15 (constituants) disposent également d’une première synthèse pédagogique sourcée ; 31 fiches restent « À explorer ». Les laboratoires sont des outils pédagogiques sourcés ; ils ne résolvent pas les questions fondamentales du programme. Les prochains développements peuvent approfondir les dossiers ou ajouter des expériences dans ce cadre commun.
 
 
 ## Version publiable
@@ -67,10 +67,15 @@ npm run check:public
 
 Le site autonome est généré dans `build/public/`, avec 42 pages de questions lisibles sans JavaScript sous `/dossiers/`. L’archive `artifacts/the42laws-v2-public.zip` peut être remise à un hébergeur. Le domaine https://the42laws.fr et le déploiement Vercel sont configurés : voir [PUBLICATION.md](PUBLICATION.md) pour les URL canoniques, le sitemap et la prévisualisation du paquet.
 
-Les cinq laboratoires sont intégrés à l’atlas. Chacun propose une expérience guidée, deux relevés comparables et un export JSON des observations. Les réponses de ces guides sont temporaires et distinctes du carnet des dossiers.
+Les six laboratoires sont intégrés à l’atlas. Chacun propose une expérience guidée, deux relevés comparables et un export JSON des observations. Les réponses de ces guides sont temporaires et distinctes du carnet des dossiers.
 
 ## Lots 1 et 2
 
-Les adresses `/dossiers/1/` à `/dossiers/42/` servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les huit synthèses et leurs sources sont rendues dans le HTML public. Les 34 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les trois parcours obligatoires ne contiennent plus de fiche vide.
+Les adresses `/dossiers/1/` à `/dossiers/42/` servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les onze synthèses et leurs sources sont rendues dans le HTML public. Les 31 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les quatre parcours obligatoires ne contiennent plus de fiche vide.
 
 Le workflow `.github/workflows/quality.yml` construit le site, teste les modèles et la navigation, vérifie les liens locaux et détecte les données générées non synchronisées. Il ne garantit pas la disponibilité future des sources externes ni une validation scientifique indépendante.
+
+
+## Lot 3 — Élargir le parcours
+
+Premières synthèses sur l’existence (1), la vie (32) et la conscience (36), avec arguments, limites, exercices de réflexion et références consultées. Nouveau laboratoire [Relativité](relativite/index.html) : horloges, temps propre, aller-retour idéal, diagramme espace-temps, lecture manuelle et guide de comparaison. Le parcours temps l’intègre ; « Exister, vivre, ressentir » relie les trois nouvelles lectures. Onze synthèses, six laboratoires, quatre parcours. Le chantier Axeptio est mis de côté à la demande de Teo.
