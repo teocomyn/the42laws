@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "npm ci",
-  "buildCommand": "npm run build:public && npm run check:public",
+  "buildCommand": "SITE_URL=https://the42laws.fr npm run build:public && npm run check:public",
   "outputDirectory": "build/public",
   "trailingSlash": true
 }

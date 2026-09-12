@@ -185,3 +185,10 @@ Avant envoi : construction réussie (42 questions, 4 dossiers, 4 laboratoires in
 Autorisation : Teo demande de faire fonctionner son déploiement Vercel après STATIC_BUILD_NO_OUT_DIR sur 8e76010. Projet existant the42laws, équipe t4c2s-projects. vercel.json impose Other, npm ci, build:public puis check:public, sortie build/public et barre finale des URL de répertoires. Node fixé à 22.x dans package.json et lockfile.
 
 Validation avant push : installation propre, construction publique et contrôle des 132 fichiers/596 liens/42 pages réussis ; 35 tests réussis. Configuration documentée dans PUBLICATION.md. Correctif préparé dans le worktree codex/vercel-build-fix pour préserver la modification locale préexistante de navier-stokes/physics.js, exclue de ce lot. Le statut distant et les URL doivent être vérifiés après le push.
+
+
+## 2026-09-12 — Codex : domaine the42laws.fr
+
+Teo a acheté the42laws.fr chez Hostinger et a demandé sa connexion. Domaine principal associé à la production Vercel ; www.the42laws.fr ajouté avec redirection permanente 308 vers the42laws.fr. Valeurs DNS fournies par le tableau de bord du projet : A @ 216.198.79.1 et CNAME www 302a4e082b86e61f.vercel-dns-017.com. Zone initiale : A @ 2.57.91.91 (TTL 50), CNAME www the42laws.fr. (TTL 300), aucun autre enregistrement. Sauvegarde locale ignorée par Git dans artifacts/dns-the42laws-before.json. Validation et mise à jour Hostinger acceptées par API, TTL 300 pour les deux enregistrements. Aucune modification de serveurs de noms.
+
+La construction Vercel fournit SITE_URL=https://the42laws.fr. Construction locale avec le domaine validée : 133 fichiers, 595 liens locaux, 42 pages statiques et sitemap. Worktree codex/domain-fr ; modification Navier-Stokes du dossier principal préservée et exclue. Vérifier les DNS publics, HTTPS, redirection www et les métadonnées après propagation et nouveau déploiement.

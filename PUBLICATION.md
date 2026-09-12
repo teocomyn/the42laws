@@ -30,9 +30,9 @@ Ouvrir http://127.0.0.1:4245/. Vérifier aussi `/dossiers/`, `/dossiers/15/`, `/
 
 Le carnet appartient à l’origine du navigateur : changer d’adresse ou de port crée un espace distinct. Exporter depuis l’ancienne adresse puis importer sur la nouvelle permet de réunir ses données. L’import conserve par défaut les notes existantes en cas de conflit.
 
-## Quand un domaine sera choisi
+## Domaine de production
 
-Relancer la construction avec `SITE_URL` égal à l’adresse HTTPS réelle de base, terminée ou non par `/`. La variable doit être fournie par l’utilisateur ou l’hébergement ; aucune adresse n’est inventée dans le code.
+Le domaine choisi par Teo est `https://the42laws.fr`. La commande de construction dans vercel.json fournit cette valeur à SITE_URL pour générer les canoniques, le sitemap et les images de partage. Le domaine reste enregistré chez Hostinger ; www.the42laws.fr redirige vers le domaine principal dans Vercel. Pour une construction locale identique : `SITE_URL=https://the42laws.fr npm run build:public`.
 
 Cette option ajoute les URL canoniques, le sitemap et les métadonnées de partage avec image absolue. Sans domaine, ces éléments absolus sont volontairement omis. Le fichier `_headers` fournit des en-têtes pour les hébergeurs compatibles ; les autres devront les configurer selon leur documentation.
 
