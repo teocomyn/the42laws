@@ -1,6 +1,12 @@
 # Préparer la publication de The42laws
 
-La V2 est autonome et statique. Aucun hébergement n’est configuré et aucune publication n’a été effectuée. Teo a demandé une version publiable, sans adresse publique pour le moment.
+La V2 est autonome et statique. Le dépôt inclut les réglages Vercel depuis le 2026-09-12, à la demande de Teo après une première tentative de déploiement échouée.
+
+## Déployer sur Vercel
+
+Importer `teocomyn/the42laws`, branche `main`, à la racine du dépôt. `vercel.json` configure le preset Other, `npm ci`, la construction `npm run build:public && npm run check:public` et le dossier de sortie `build/public`. Node.js est fixé à la version majeure 22 dans package.json. Les URL de répertoires conservent leur barre finale pour les ressources relatives des laboratoires.
+
+L’ancien commit 8e76010 ne contient pas cette configuration : après un échec, lancer un déploiement du dernier commit de main, plutôt que reconstruire ce commit ancien. Seul build/public est servi, pas les fichiers de travail du dépôt.
 
 ## Construire la version à héberger
 

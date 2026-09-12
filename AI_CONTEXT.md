@@ -8,7 +8,7 @@ Carnet de recherche en français à partir des 42 questions fournies par Teo, r�
 
 ## Classification et architecture
 
-Projet de contenu et de recherche local avec atlas statique à la racine et quatre laboratoires intégrés, plus le module Navier-Stokes autonome. Les Markdown restent la source de vérité. Construction par scripts/build-atlas.mjs (Marked 18.0.12, dépendance de développement), données générées dans atlas/data.js. Dépôt source GitHub : https://github.com/teocomyn/the42laws (public, branche main ; envoi autorisé par Teo le 2026-09-12). Aucun hébergement du site ni service applicatif distant configuré. Serveur local facultatif : npm run dev. Dépôt Git initialisé le 2026-09-12, premier instantané 53642f3.
+Projet de contenu et de recherche local avec atlas statique à la racine et quatre laboratoires intégrés, plus le module Navier-Stokes autonome. Les Markdown restent la source de vérité. Construction par scripts/build-atlas.mjs (Marked 18.0.12, dépendance de développement), données générées dans atlas/data.js. Dépôt source GitHub : https://github.com/teocomyn/the42laws (public, branche main ; envoi autorisé par Teo le 2026-09-12). Projet Vercel the42laws dans t4c2s-projects, relié à main. Première tentative échouée (dossier public absent) ; correction versionnée dans vercel.json : npm run build:public puis check:public, sortie build/public, Node 22.x. Aucun service applicatif distant. Serveur local facultatif : npm run dev. Dépôt Git initialisé le 2026-09-12, premier instantané 53642f3.
 
 ## Structure
 

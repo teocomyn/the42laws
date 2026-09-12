@@ -178,3 +178,10 @@ Prochaine action : recueillir le retour de Teo sur la V2 ; lorsqu’un hébergem
 Teo a explicitement demandé de pousser le projet sur https://github.com/teocomyn/the42laws. Dépôt public existant, sans référence distante au contrôle initial. La branche main regroupe la V2 et les recherches/laboratoires déjà présents, dont Navier-Stokes. Les fichiers de construction, artefacts locaux, dépendances et fichiers .env restent ignorés.
 
 Avant envoi : construction réussie (42 questions, 4 dossiers, 4 laboratoires intégrés), 35 tests réussis, git diff --check sans erreur. Aucun motif de clé privée ou jeton courant détecté dans les fichiers à versionner ni l’historique. Ce jalon concerne le code source ; aucun déploiement du site ni domaine configuré. Vérifier la concordance entre HEAD local et origin/main après le push.
+
+
+## 2026-09-12 — Codex : correction du build Vercel
+
+Autorisation : Teo demande de faire fonctionner son déploiement Vercel après STATIC_BUILD_NO_OUT_DIR sur 8e76010. Projet existant the42laws, équipe t4c2s-projects. vercel.json impose Other, npm ci, build:public puis check:public, sortie build/public et barre finale des URL de répertoires. Node fixé à 22.x dans package.json et lockfile.
+
+Validation avant push : installation propre, construction publique et contrôle des 132 fichiers/596 liens/42 pages réussis ; 35 tests réussis. Configuration documentée dans PUBLICATION.md. Correctif préparé dans le worktree codex/vercel-build-fix pour préserver la modification locale préexistante de navier-stokes/physics.js, exclue de ce lot. Le statut distant et les URL doivent être vérifiés après le push.
