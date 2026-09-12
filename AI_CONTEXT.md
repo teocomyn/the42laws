@@ -65,3 +65,9 @@ Onze synthèses provisoires : ajout des dossiers 1 (existence), 32 (vie) et 36 (
 ## 2026-09-12 — Branding cobalt et verre
 
 Identité commune documentée dans BRANDING.md : couverture ivoire/cobalt, symbole original à sept couches, textures de points, six illustrations de laboratoires et cartes éditoriales. Le logo 42 irisé est conservé et utilisé dans la navigation. Couche atlas/brand.css commune aux sept entrées HTML et aux dossiers générés. Carte sociale atlas/brand-share.png (1200 × 630), source SVG versionnée. Les références fournies restent des inspirations ; aucun média de référence n’est publié. Aucun changement des modèles scientifiques, des données ou du stockage du carnet. Aucune dépendance de production ajoutée.
+
+## 2026-09-12 — Septième laboratoire : Trou noir
+
+`trou-noir/` est une île React/TypeScript compilée avec esbuild et Tailwind v4. Composant dans `components/ui/black-hole.tsx`, moteur WebGL original dans `black-hole-utils/renderer.ts`, conventions shadcn dans components.json et alias @/. Aucune migration du reste de l’atlas. `build:public` et `dev` construisent les assets générés ; le build nécessite désormais les dépendances React, TypeScript, esbuild et Tailwind verrouillées dans le lockfile. Voir REACT_COMPONENTS.md.
+
+Vue illustrative d’un disque autour d’un trou noir : angle, zoom, luminosité, palettes, pause et plein écran. Pas de validation scientifique du shader revendiquée. Calcul indépendant du rayon de Schwarzschild pour une masse choisie, cas sans rotation ni charge. Sources S328–S329. Sept laboratoires, onze synthèses et quatre parcours ; carnet version 1 conservé, identifiant trou-noir ajouté aux imports. Rien de nouveau concernant Axeptio.

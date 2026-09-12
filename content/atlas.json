@@ -188,6 +188,23 @@
         21,
         26
       ]
+    },
+    {
+      "id": "trou-noir",
+      "number": "07",
+      "title": "Trou noir",
+      "subtitle": "À la lisière de l’invisible.",
+      "description": "Changez d’angle autour d’un disque lumineux et explorez le rayon d’un horizon. Rendu illustratif et calcul physique sont distingués.",
+      "url": "trou-noir/index.html",
+      "color": "#e6bd8c",
+      "symbol": "◉",
+      "questions": [
+        9,
+        10,
+        21,
+        23,
+        30
+      ]
     }
   ],
   "paths": [

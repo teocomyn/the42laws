@@ -1,0 +1,16 @@
+/* Utilities for the React island only. No preflight reset of the existing atlas. */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "../components";
+@source "../trou-noir/app.tsx";
+@custom-variant dark (&:is(.dark *));
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+.bh-island { --background:#07090f; --foreground:#f3f2ed; --primary:#bfd2ff; --primary-foreground:#182748; --border:#343a47; --ring:#bfd2ff; }

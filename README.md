@@ -79,3 +79,7 @@ Le workflow `.github/workflows/quality.yml` construit le site, teste les modèle
 ## Lot 3 — Élargir le parcours
 
 Premières synthèses sur l’existence (1), la vie (32) et la conscience (36), avec arguments, limites, exercices de réflexion et références consultées. Nouveau laboratoire [Relativité](relativite/index.html) : horloges, temps propre, aller-retour idéal, diagramme espace-temps, lecture manuelle et guide de comparaison. Le parcours temps l’intègre ; « Exister, vivre, ressentir » relie les trois nouvelles lectures. Onze synthèses, six laboratoires, quatre parcours. Le chantier Axeptio est mis de côté à la demande de Teo.
+
+### Laboratoire Trou noir
+
+Le septième laboratoire, `/trou-noir/`, utilise un composant React/TypeScript et Tailwind compilé en assets statiques. Voir [REACT_COMPONENTS.md](REACT_COMPONENTS.md) pour la structure shadcn, le composant réutilisable et le fonctionnement du build. `npm ci` installe les dépendances ; `npm run dev` compile l’expérience avant de servir le site. `npm run typecheck` contrôle les nouveaux composants. Les autres laboratoires restent en JavaScript.

@@ -131,3 +131,10 @@ Consultation le 2026-09-12. La lecture ciblée et le résumé sont distingués ;
 | S325 | [COGITATE Consortium et collaborateurs — Adversarial testing of global neuronal workspace and integrated information theories of consciousness](https://www.nature.com/articles/s41586-025-08888-1) | Article original, Nature 642 (2025) ; résumé et introduction, lecture ciblée | 2026-09-12 |
 | S326 | [Feynman, Leighton et Sands — The Special Theory of Relativity](https://www.feynmanlectures.caltech.edu/I_15.html) | Cours des auteurs ; transformation du temps, lecture ciblée | 2026-09-12 |
 | S327 | [Chou et collaborateurs — Relativity and Optical Clocks](https://www.nist.gov/publications/relativity-and-optical-clocks) | Résumé expérimental sur le site du NIST uniquement | 2026-09-12 |
+
+## Laboratoire Trou noir — 2026-09-12
+
+| ID | Source | Consultation | Date |
+| --- | --- | --- | --- |
+| S328 | [NASA — Anatomy of a Black Hole](https://science.nasa.gov/universe/black-holes/anatomy/) | Texte : horizon, disque, ombre et lentille gravitationnelle. Le rendu original du site n’est pas une validation de ces phénomènes. | 2026-09-12 |
+| S329 | [NASA / Imagine the Universe — Black Holes](https://imagine.gsfc.nasa.gov/science/objects/black_holes1.html) | Texte : rayon de Schwarzschild et ordre de grandeur d’environ 3 km pour une masse solaire. | 2026-09-12 |

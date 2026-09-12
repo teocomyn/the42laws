@@ -7,3 +7,6 @@ artifacts/
 !.env.example
 
 /build/
+
+/trou-noir/scene.js
+/trou-noir/utilities.css

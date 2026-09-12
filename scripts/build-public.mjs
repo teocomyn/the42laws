@@ -3,6 +3,7 @@ import {resolve,dirname,extname,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
 const {fullDocument}=createRequire(import.meta.url)('../atlas/dossier.js');
+import {buildBlackHole} from './build-black-hole.mjs';
 import {build,root} from './build-atlas.mjs';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const out=resolve(root,'build/public');
@@ -28,6 +29,7 @@ async function addGoogleTag(directory) {
 }
 export async function buildPublic(siteURL=process.env.SITE_URL||''){
  let base='';if(siteURL){const url=new URL(siteURL);if(url.protocol!=='https:'||url.username||url.password||url.search||url.hash)throw Error('SITE_URL must be an HTTPS base address without credentials, query or fragment.');base=url.href.replace(/\/$/,'')+'/';}
+ await buildBlackHole();
  const data=await build();
  await mkdir(resolve(root,'build'),{recursive:true});
  try{await stat(out);await readFile(resolve(out,'.the42laws-build'));await rm(out,{recursive:true});}catch(error){if(error.code!=='ENOENT')throw error;try{await stat(out);throw Error('Existing public directory has no build marker; refusing to replace it.');}catch(check){if(check.code!=='ENOENT')throw check;}}
@@ -35,7 +37,7 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
  async function copy(path){const from=resolve(root,path),to=resolve(out,path);await mkdir(dirname(to),{recursive:true});await copyFile(from,to);}
  for(const f of ['index.html','favicon.ico','METHODE.md','QUESTIONS.md'])await copy(f);
  // Explicit public folders only. Runtime assets and research Markdown are public content.
- for(const folder of ['atlas','neutrino','antimatiere','photon','temps','navier-stokes','relativite','questions','sources','notes']){
+ for(const folder of ['atlas','neutrino','antimatiere','photon','temps','navier-stokes','relativite','trou-noir','questions','sources','notes']){
   let files=[];try{files=await readdir(resolve(root,folder),{withFileTypes:true});}catch(e){if(e.code==='ENOENT')continue;throw e;}
   for(const f of files)if(f.isFile()&&/\.(html|css|js|svg|png|md)$/.test(f.name))await copy(folder+'/'+f.name);
  }
