@@ -71,3 +71,19 @@ test('entrées invalides rejetées',()=>{
   for(const tau of [0,-1,1.5,NaN])assert.throws(()=>P.selfSimilarFamily(tau),RangeError);
   for(const h of [0,0.01,0.5,-1])assert.throws(()=>P.selfSimilarFamily(0.5,{h}),RangeError);
 });
+
+test('nouveaux états initiaux : vitesse finie, graine reproductible et amplitude nulle',()=>{
+ const P=require('../navier-stokes/physics.js');
+ for(const init of [P.dipole,P.turbulence,P.kelvinHelmholtz]){
+  const s=P.createFluid(32,{nu:0.01});init(s,0);
+  assert.ok([...s.u,...s.v,...s.dye].every(Number.isFinite));
+  assert.equal(P.kineticEnergy(s),0);
+ }
+ const a=P.createFluid(32),b=P.createFluid(32);P.turbulence(a,1,7);P.turbulence(b,1,7);assert.deepEqual(a.u,b.u);
+});
+test('advection de l’encre : champ uniforme conservé sans déclin',()=>{
+ const P=require('../navier-stokes/physics.js');const s=P.createFluid(32);P.uniformFlow(s,1);const dye=P.createDye(64);
+ P.paintDye(dye,()=>[0.2,0.4,0.6]);const mass=P.dyeMass(dye);P.advectDye(dye,s,0.02,0);
+ assert.ok(Math.abs(P.dyeMass(dye)-mass)<1e-5);
+ assert.ok([...dye.r,...dye.g,...dye.b].every(Number.isFinite));
+});

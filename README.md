@@ -21,7 +21,7 @@ Le serveur est local, lié à 127.0.0.1. Il reconstruit les données lors de mod
 
 - Accueil avec carte interactive des 42 questions et accès aux expériences.
 - Atlas : recherche insensible aux accents, filtres par domaine et état de recherche.
-- Lecteur : dossiers 10, 15, 23 et 41 en trois vues (essentiel, dossier, sources). Les 38 autres fiches indiquent « À explorer ».
+- Lecteur : dossiers 10, 15, 19, 23, 25, 26, 30 et 41 en trois vues (essentiel, dossier, sources). Les 34 autres fiches indiquent « À explorer ».
 - Quatre laboratoires dans l’atlas : [Neutrino](neutrino/index.html), [Antimatière](antimatiere/index.html), [Photon & double fente](photon/index.html), [Temps & entropie](temps/index.html).
 - Tableau des particules : 17 entrées, filtres par famille, propriétés et liens vers les expériences.
 - Glossaire : 15 définitions, recherche et consultation au clic dans les dossiers. Carte de 37 liens éditoriaux entre les 42 questions.
@@ -49,13 +49,13 @@ npm run build
 npm test
 ```
 
-Marked est une dépendance de construction uniquement. Le navigateur ne charge aucune bibliothèque ou police distante. Le rendu échappe le HTML brut des Markdown et filtre les protocoles des liens. Les tests couvrent l’intégrité de l’atlas, la recherche, les états enregistrés, le rendu Markdown et les modèles physiques ; l’import est validé et le paquet public peut être contrôlé avec `npm run check:public`.
+Marked est une dépendance de construction uniquement. La prévisualisation locale source ne charge pas de bibliothèque ou police distante. La construction publique conserve la balise Google Analytics configurée séparément. Le rendu échappe le HTML brut des Markdown et filtre les protocoles des liens. Les tests couvrent l’intégrité de l’atlas, la recherche, les états enregistrés, le rendu Markdown et les modèles physiques ; l’import est validé et le paquet public peut être contrôlé avec `npm run check:public`.
 
 ## État de la recherche
 
 La fiche 41 est une **synthèse provisoire**, accompagnée de 57 références dont les niveaux de consultation diffèrent. Sa vue courte précise la portée des résultats et sépare limites démontrées sous hypothèses, extrapolations et conjectures. Le dossier original est conservé ; il n’a pas été intégralement validé par un tiers.
 
-La fiche 23 (théorie du tout) est également en **synthèse provisoire** (66 références, réponse en quatre sens). Une [note datée](notes/navier-stokes-2026.md) suit l’annonce d’OpenAI du 8 septembre 2026 sur Navier-Stokes, accompagnée d’un [laboratoire interactif](navier-stokes/index.html) (fluide 2D à manipuler, schéma de l’explosion, énoncés du prix Clay ; pas encore relié à l’atlas). Les fiches 10 (temps) et 15 (constituants) disposent également d’une première synthèse pédagogique sourcée ; 38 fiches restent « À explorer ». Les laboratoires sont des outils pédagogiques sourcés ; ils ne résolvent pas les questions fondamentales du programme. Les prochains développements peuvent approfondir les dossiers ou ajouter des expériences dans ce cadre commun.
+La fiche 23 (théorie du tout) est également en **synthèse provisoire** (66 références, réponse en quatre sens). Une [note datée](notes/navier-stokes-2026.md) suit l’annonce d’OpenAI du 8 septembre 2026 sur Navier-Stokes, accompagnée d’un [laboratoire interactif](navier-stokes/index.html) (fluide 2D à manipuler, schéma de l’explosion, énoncés du prix Clay ; intégré à l’atlas avec un guide de dissipation). Les fiches 10 (temps) et 15 (constituants) disposent également d’une première synthèse pédagogique sourcée ; 34 fiches restent « À explorer ». Les laboratoires sont des outils pédagogiques sourcés ; ils ne résolvent pas les questions fondamentales du programme. Les prochains développements peuvent approfondir les dossiers ou ajouter des expériences dans ce cadre commun.
 
 
 ## Version publiable
@@ -65,6 +65,12 @@ npm run package:public
 npm run check:public
 ```
 
-Le site autonome est généré dans `build/public/`, avec 42 pages de questions lisibles sans JavaScript sous `/dossiers/`. L’archive `artifacts/the42laws-v2-public.zip` peut être remise à un hébergeur. Aucun domaine ni déploiement n’est configuré : voir [PUBLICATION.md](PUBLICATION.md) pour les URL canoniques, le sitemap et la prévisualisation du paquet.
+Le site autonome est généré dans `build/public/`, avec 42 pages de questions lisibles sans JavaScript sous `/dossiers/`. L’archive `artifacts/the42laws-v2-public.zip` peut être remise à un hébergeur. Le domaine https://the42laws.fr et le déploiement Vercel sont configurés : voir [PUBLICATION.md](PUBLICATION.md) pour les URL canoniques, le sitemap et la prévisualisation du paquet.
 
-Le laboratoire Navier-Stokes, créé séparément, est conservé dans le paquet comme contenu existant ; il reste en dehors des quatre entrées de laboratoire de l’atlas V2.
+Les cinq laboratoires sont intégrés à l’atlas. Chacun propose une expérience guidée, deux relevés comparables et un export JSON des observations. Les réponses de ces guides sont temporaires et distinctes du carnet des dossiers.
+
+## Lots 1 et 2
+
+Les adresses `/dossiers/1/` à `/dossiers/42/` servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les huit synthèses et leurs sources sont rendues dans le HTML public. Les 34 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les trois parcours obligatoires ne contiennent plus de fiche vide.
+
+Le workflow `.github/workflows/quality.yml` construit le site, teste les modèles et la navigation, vérifie les liens locaux et détecte les données générées non synchronisées. Il ne garantit pas la disponibilité future des sources externes ni une validation scientifique indépendante.

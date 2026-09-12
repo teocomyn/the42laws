@@ -109,11 +109,33 @@
     if(typeof force==='function'){force(state,dt);return;}
     if(force.fx&&force.fy){for(let k=0;k<size;k++){u[k]+=dt*force.fx[k];v[k]+=dt*force.fy[k];}}
   }
-  function step(state,dt,force){
+  function applyMask(state,mask){
+    if(!mask)return;const {u,v,size}=state;
+    for(let k=0;k<size;k++)if(mask[k]){u[k]=0;v[k]=0;}
+  }
+  // Confinement de vorticité (Fedkiw, Stam, Jensen 2001) : force ε·dx·(N × ω) qui recentre
+  // les tourbillons dissipés numériquement. Effet visuel, non physique ; ε = 0 pour toute mesure.
+  function vorticityConfinement(state,epsilon,dt){
+    if(!(epsilon>0))return;
+    const {n,dx,u,v,_c:w}=state;vorticity(state,w);const c=1/(2*dx),g=epsilon*dx*dt;
+    for(let j=0;j<n;j++){const jp=((j+1)%n)*n,jm=((j-1+n)%n)*n,r=j*n;
+      for(let i=0;i<n;i++){const ip=(i+1)%n,im=(i-1+n)%n,k=r+i;
+        const gx=(Math.abs(w[r+ip])-Math.abs(w[r+im]))*c,gy=(Math.abs(w[jp+i])-Math.abs(w[jm+i]))*c;
+        const len=Math.sqrt(gx*gx+gy*gy)+1e-6;
+        u[k]+=g*(gy/len)*w[k];v[k]-=g*(gx/len)*w[k];}}
+  }
+  function step(state,dt,options){
     assertFinite(dt,'dt',1e-6,1);
+    let force=null,confinement=0,pump=null,mask=null;
+    if(typeof options==='function'||(options&&options.fx&&options.fx.length))force=options;
+    else if(options){force=options.force||null;confinement=options.confinement||0;pump=options.pump||null;mask=options.mask||null;}
     applyForce(state,dt,force);
+    if(pump){const {u,v,size}=state,ax=dt*(pump.fx||0),ay=dt*(pump.fy||0);for(let k=0;k<size;k++){u[k]+=ax;v[k]+=ay;}}
+    vorticityConfinement(state,confinement,dt);
     advect(state,dt);
+    applyMask(state,mask);
     spectralStep(state,dt);
+    applyMask(state,mask);
     state.time+=dt;state.steps++;
     return diagnostics(state);
   }
@@ -181,6 +203,103 @@
     }
   }
 
+  // Vitesse à divergence nulle à partir d'une vorticité ω : Δψ = −ω, u = ∂ψ/∂y, v = −∂ψ/∂x (spectral).
+  function velocityFromVorticity(state,omega){
+    const {n,size,u,v,_re,_im,_re2,_im2,_row,_rowi}=state;
+    for(let k=0;k<size;k++){_re[k]=omega[k];_im[k]=0;}
+    fft2d(_re,_im,n,false,_row,_rowi);
+    const half=n>>1;
+    for(let ky=0;ky<n;ky++){const kyy=ky<=half?ky:ky-n;
+      for(let kx=0;kx<n;kx++){const kxx=kx<=half?kx:kx-n,idx=ky*n+kx,k2=kxx*kxx+kyy*kyy;
+        if(k2===0||kx===half||ky===half){_re[idx]=_im[idx]=_re2[idx]=_im2[idx]=0;continue;}
+        const pr=_re[idx]/k2,pi=_im[idx]/k2;
+        _re[idx]=-kyy*pi;_im[idx]=kyy*pr;_re2[idx]=kxx*pi;_im2[idx]=-kxx*pr;}}
+    fft2d(_re,_im,n,true,_row,_rowi);fft2d(_re2,_im2,n,true,_row,_rowi);
+    for(let k=0;k<size;k++){u[k]=_re[k];v[k]=_re2[k];}
+    state.time=0;state.steps=0;return state;
+  }
+  function lcg(seed){let s=(seed>>>0)||1;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+  // Couche de cisaillement fine avec perturbation localisée : instabilité de Kelvin-Helmholtz.
+  function kelvinHelmholtz(state,amplitude=1,options={}){
+    assertFinite(amplitude,'amplitude',0,100);
+    const delta=options.thickness===undefined?0.12:options.thickness,eps=options.perturbation===undefined?0.08:options.perturbation;
+    const {n,dx,u,v,dye}=state,y1=Math.PI/2,y2=3*Math.PI/2;
+    for(let j=0;j<n;j++)for(let i=0;i<n;i++){
+      const x=i*dx,y=j*dx,k=j*n+i,band=Math.tanh((y-y1)/delta)-Math.tanh((y-y2)/delta)-1;
+      const q1=(y-y1)/(4*delta),q2=(y-y2)/(4*delta),e1=Math.exp(-q1*q1),e2=Math.exp(-q2*q2);
+      u[k]=amplitude*band;
+      v[k]=amplitude*eps*((Math.sin(2*x)+0.6*Math.sin(3*x+1.1)+0.4*Math.sin(5*x+2.3))*e1+(Math.sin(2*x+2.0)+0.6*Math.sin(3*x+0.4)+0.4*Math.sin(5*x+1.7))*e2);
+      dye[k]=0.5+0.5*band;
+    }
+    state.time=0;state.steps=0;return state;
+  }
+  function gaussianVorticity(state,blobs){
+    const {n,dx}=state,w=new Float32Array(n*n);
+    for(let j=0;j<n;j++)for(let i=0;i<n;i++){const x=i*dx,y=j*dx;let s=0;
+      for(const b of blobs){let ddx=x-b.x,ddy=y-b.y;ddx-=Math.round(ddx/TWO_PI)*TWO_PI;ddy-=Math.round(ddy/TWO_PI)*TWO_PI;s+=b.a*Math.exp(-(ddx*ddx+ddy*ddy)/(2*b.s*b.s));}
+      w[j*n+i]=s;}
+    return w;
+  }
+  // Dipôle : deux tourbillons contrarotatifs, qui se propagent ensemble.
+  function dipole(state,amplitude=1){
+    assertFinite(amplitude,'amplitude',0,100);
+    const s=0.32,d=0.45,w=gaussianVorticity(state,[{x:Math.PI*0.55,y:Math.PI-d,a:-amplitude*6,s},{x:Math.PI*0.55,y:Math.PI+d,a:amplitude*6,s}]);
+    velocityFromVorticity(state,w);
+    const {n,dye}=state;for(let k=0;k<n*n;k++)dye[k]=Math.min(1,Math.abs(w[k])/(amplitude*6||1));
+    return state;
+  }
+  // Turbulence : superposition de tourbillons aléatoires (graine reproductible).
+  function turbulence(state,amplitude=1,seed=7){
+    assertFinite(amplitude,'amplitude',0,100);
+    const r=lcg(seed),blobs=[];
+    for(let b=0;b<28;b++)blobs.push({x:r()*TWO_PI,y:r()*TWO_PI,a:(r()<0.5?-1:1)*amplitude*(3+5*r()),s:0.18+0.32*r()});
+    const w=gaussianVorticity(state,blobs);velocityFromVorticity(state,w);
+    const {n,dye}=state;let m=0;for(let k=0;k<n*n;k++)m=Math.max(m,Math.abs(w[k]));for(let k=0;k<n*n;k++)dye[k]=Math.abs(w[k])/(m||1);
+    return state;
+  }
+  // Obstacle circulaire : masque de cellules où la vitesse est annulée (paroi immobile).
+  function diskMask(state,cx,cy,radius){
+    const {n,dx}=state,mask=new Uint8Array(n*n);
+    for(let j=0;j<n;j++)for(let i=0;i<n;i++){let ddx=i*dx-cx,ddy=j*dx-cy;ddx-=Math.round(ddx/TWO_PI)*TWO_PI;ddy-=Math.round(ddy/TWO_PI)*TWO_PI;if(ddx*ddx+ddy*ddy<=radius*radius)mask[j*n+i]=1;}
+    return mask;
+  }
+  function uniformFlow(state,speed=1){
+    assertFinite(speed,'speed',-100,100);
+    const {n,u,v,dye,dx}=state;for(let j=0;j<n;j++)for(let i=0;i<n;i++){const k=j*n+i;u[k]=speed;v[k]=0;dye[k]=0.5+0.5*Math.sin(j*dx*6);}
+    state.time=0;state.steps=0;return state;
+  }
+
+  // ---------- encre haute résolution (trois canaux) ----------
+  function createDye(m){
+    if(!Number.isInteger(m)||m<16||m>2048)throw new RangeError('m must be an integer between 16 and 2048');
+    const size=m*m;
+    return {m,size,dx:TWO_PI/m,r:new Float32Array(size),g:new Float32Array(size),b:new Float32Array(size),_r:new Float32Array(size),_g:new Float32Array(size),_b:new Float32Array(size)};
+  }
+  // Advection semi-lagrangienne de l'encre par la vitesse (grille plus fine que la vitesse).
+  function advectDye(dye,state,dt,decay=0){
+    const {m,dx:dxd,r,g,b,_r,_g,_b}=dye,{n,u,v}=state,ratio=n/m,s=dt/dxd,keep=1-decay;
+    for(let J=0;J<m;J++)for(let I=0;I<m;I++){
+      const k=J*m+I,xv=(I+0.5)*ratio,yv=(J+0.5)*ratio;
+      const u0=sample(u,n,xv,yv),v0=sample(v,n,xv,yv);
+      const Xm=I-0.5*s*u0,Ym=J-0.5*s*v0;
+      const um=sample(u,n,(Xm+0.5)*ratio,(Ym+0.5)*ratio),vm=sample(v,n,(Xm+0.5)*ratio,(Ym+0.5)*ratio);
+      const X0=I-s*um,Y0=J-s*vm;
+      _r[k]=keep*sample(r,m,X0,Y0);_g[k]=keep*sample(g,m,X0,Y0);_b[k]=keep*sample(b,m,X0,Y0);
+    }
+    r.set(_r);g.set(_g);b.set(_b);
+  }
+  function dyeMass(dye){let s=0;for(let k=0;k<dye.size;k++)s+=dye.r[k]+dye.g[k]+dye.b[k];return s*dye.dx*dye.dx;}
+  // Goutte d'encre colorée (position et rayon en unités physiques).
+  function splatDye(dye,x,y,radius,rgb,strength=1){
+    const {m,dx,r,g,b}=dye,cx=x/dx-0.5,cy=y/dx-0.5,rc=radius/dx,span=Math.ceil(3*rc),ci=Math.round(cx),cj=Math.round(cy),two=2*rc*rc;
+    for(let dj=-span;dj<=span;dj++)for(let di=-span;di<=span;di++){
+      const w=strength*Math.exp(-(di*di+dj*dj)/two);if(w<1e-3)continue;
+      const k=(((cj+dj)%m+m)%m)*m+(((ci+di)%m+m)%m);
+      r[k]=Math.min(1.5,r[k]+w*rgb[0]);g[k]=Math.min(1.5,g[k]+w*rgb[1]);b[k]=Math.min(1.5,b[k]+w*rgb[2]);
+    }
+  }
+  function paintDye(dye,fn){const {m,dx,r,g,b}=dye;for(let J=0;J<m;J++)for(let I=0;I<m;I++){const c=fn((I+0.5)*dx,(J+0.5)*dx),k=J*m+I;r[k]=c[0];g[k]=c[1];b[k]=c[2];}}
+
   // ---------- modèle auto-similaire (schéma du théorème 1.1 d'OpenAI, 2026) ----------
   // Échelles de longueur du texte : rayon ≍ τ^{1/2}, hauteur ≍ τ^{1/2−h}, 0 < h < 1/100, τ = 1 − t.
   // L'exposant de vitesse n'est PAS celui du papier : il est choisi pour que U²·volume reste constant,
@@ -195,8 +314,9 @@
       supNorm:velocity,l2Norm:Math.sqrt(velocity*velocity*volume),energyProxy:velocity*velocity*volume});
   }
 
-  const api=Object.freeze({TWO_PI,createFluid,setViscosity,reset,step,advect,spectralStep,applyForce,
+  const api=Object.freeze({TWO_PI,createFluid,setViscosity,reset,step,advect,spectralStep,applyForce,applyMask,vorticityConfinement,
     kineticEnergy,maxSpeed,divergence,vorticity,diagnostics,taylorGreen,taylorGreenEnergy,shearLayers,addImpulse,
-    selfSimilarFamily,fft1d,fft2d,sample});
+    velocityFromVorticity,kelvinHelmholtz,dipole,turbulence,diskMask,uniformFlow,
+    createDye,advectDye,dyeMass,splatDye,paintDye,selfSimilarFamily,fft1d,fft2d,sample});
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.NavierStokesPhysics=api;
 })(globalThis);

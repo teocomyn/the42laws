@@ -1,4 +1,4 @@
-# Préparer la publication de The42laws
+# Publication de The42laws
 
 La V2 est autonome et statique. Le dépôt inclut les réglages Vercel depuis le 2026-09-12, à la demande de Teo après une première tentative de déploiement échouée.
 
@@ -40,8 +40,16 @@ La publication consiste à servir le contenu de `build/public/`, en conservant l
 
 ## Périmètre éditorial
 
-Les fiches 10, 15, 23 et 41 sont provisoires. Les vues courtes précisent leurs limites. Les textes historiques et le registre conservent leurs niveaux de consultation ; une référence n’implique pas une lecture intégrale. Le paquet ne constitue pas une validation exhaustive des recherches.
+Les fiches 10, 15, 19, 23, 25, 26, 30 et 41 sont provisoires. Les vues courtes précisent leurs limites. Les textes historiques et le registre conservent leurs niveaux de consultation ; une référence n’implique pas une lecture intégrale. Le paquet ne constitue pas une validation exhaustive des recherches.
 
 ## Google Analytics
 
 La construction publique avec SITE_URL ajoute une seule balise Google gtag.js (G-L659XPNBR6) dans le head de chaque page HTML : accueil, laboratoires, dossiers et page 404. Le code local source reste sans balise. La balise de vérification Search Console de l’accueil est conservée. Installation du snippet standard fourni par Teo ; aucun événement personnalisé ni suivi spécifique des changements de fragments n’est ajouté.
+
+## Lecture et contrôles — lots 1 et 2
+
+Le dossier complet, ses sources et les outils interactifs utilisent la même adresse `/dossiers/{id}/`. Le texte est disponible dans le HTML même sans JavaScript. Les variantes de lecture gardent une URL canonique commune. Les liens à fragments historiques migrent côté navigateur, sans modifier les notes enregistrées. Les 34 fiches sans synthèse ne sont pas dans le sitemap et portent noindex,follow.
+
+GitHub Actions vérifie les tests, la construction et les ressources/ancres locales à chaque PR et push sur main. Les sources externes restent un contrôle éditorial daté, sans réseau obligatoire dans la CI. Un changement du domaine exige une mise à jour de SITE_URL. Le site est servi à la racine de son domaine, pas dans un sous-répertoire.
+
+La branche Axeptio reste séparée, en attente de l’activation de formule et de publication de sa configuration. Ces lots ne changent pas le fonctionnement de la balise GA existante.

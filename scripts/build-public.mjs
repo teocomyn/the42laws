@@ -1,6 +1,8 @@
 import {readFile,writeFile,readdir,mkdir,copyFile,rm,stat} from 'node:fs/promises';
 import {resolve,dirname,extname,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {createRequire} from 'node:module';
+const {fullDocument}=createRequire(import.meta.url)('../atlas/dossier.js');
 import {build,root} from './build-atlas.mjs';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const out=resolve(root,'build/public');
@@ -39,11 +41,20 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
  }
  const head=(title,description,path)=>`<meta name="description" content="${esc(description)}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta name="twitter:card" content="summary_large_image">${base?`<link rel="canonical" href="${esc(new URL(path,base).href)}"><meta property="og:url" content="${esc(new URL(path,base).href)}"><meta property="og:image" content="${esc(new URL('atlas/share-card.png',base).href)}"><meta name="twitter:image" content="${esc(new URL('atlas/share-card.png',base).href)}">`:''}`;
  for(const path of ['index.html',...data.labs.map(l=>l.url)]){const target=resolve(out,path);let html=await readFile(target,'utf8');const title=html.match(/<title>(.*?)<\/title>/s)?.[1]||'The42laws',description=html.match(/<meta name="description" content="([^"]*)"/)?.[1]||'Un atlas du réel.';html=html.replace(/<meta name="description" content="[^"]*">/,'').replace('</head>',head(title,description,path.replace(/index\.html$/,''))+'</head>');await writeFile(target,html);}
- const directory=data.questions.map(q=>`<a class="question-row" href="dossiers/${q.id}/"><span class="question-number">${String(q.id).padStart(2,'0')}</span><h2>${esc(q.title)}</h2><span class="badge">${esc(q.status)}</span></a>`).join('');
- const documents=[...data.questions.map(q=>({path:`dossiers/${q.id}/`,title:q.title,description:`Question ${q.id} — ${q.status}. Une exploration sourcée dans The42laws.`,body:`<a class="eyebrow" href="index.html#/atlas">← LES 42 QUESTIONS</a><h1>${esc(q.title)}</h1><p><span class="badge ready">${esc(q.status)}</span></p>${q.researched?`<div class="notice">Lecture courte d’un dossier provisoire. Les hypothèses et niveaux de consultation des sources restent à examiner dans la version complète.</div><article class="prose">${q.short?.html||'<p>Le dossier complet est disponible dans l’atlas.</p>'}</article>`:'<p class="muted">Cette fiche reste à explorer. Aucune synthèse n’est publiée pour le moment.</p>'}<div class="actions"><a class="button primary" href="index.html#/question/${q.id}">Ouvrir le lecteur et ses sources ↗</a><a class="button" href="dossiers/">Toutes les questions ↗</a></div>`})),{path:'dossiers/',title:'Les 42 questions — The42laws',description:'Le répertoire des 42 questions du projet The42laws.',body:'<h1>Les 42 questions.</h1><p>Un répertoire accessible sans JavaScript.</p>'+directory.replaceAll('href="dossiers/','href="dossiers/')}];
- for(const doc of documents){const target=resolve(out,doc.path,'index.html'),depth=doc.path.split('/').filter(Boolean).length,prefix='../'.repeat(depth);await mkdir(dirname(target),{recursive:true});await writeFile(target,`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="${prefix}"><title>${esc(doc.title)}</title>${head(doc.title,doc.description,doc.path)}<link rel="icon" href="atlas/icon.svg"><link rel="stylesheet" href="atlas/style.css"><link rel="stylesheet" href="atlas/features.css"></head><body><a class="skip" href="${doc.path}#reading">Aller au contenu</a><main class="page" id="reading" style="max-width:1000px">${doc.body}</main><footer class="footer"><a href="index.html#/accueil">THE42LAWS</a><a href="index.html#/apropos">Le projet ↗</a></footer></body></html>`);}
+ const shell=await readFile(resolve(root,'index.html'),'utf8');
+ const documents=data.questions.map(q=>({path:`dossiers/${q.id}/`,title:q.title,description:`Question ${q.id} — ${q.status}. ${q.learning?.goal||'Un dossier à explorer dans The42laws.'}`,body:fullDocument(q),researched:q.researched}));
+ documents.push({path:'dossiers/',title:'Les 42 questions — The42laws',description:'Les dossiers de recherche de The42laws.',body:`<div class="page"><h1>Les 42 questions.</h1>${data.questions.map(q=>`<a class="question-row" href="/dossiers/${q.id}/"><span class="question-number">${q.id}</span><h2>${esc(q.title)}</h2><span class="badge">${esc(q.status)}</span></a>`).join('')}</div>`,researched:true});
+ for(const doc of documents){
+  const target=resolve(out,doc.path,'index.html');await mkdir(dirname(target),{recursive:true});
+  const html=shell.replace(/<title>.*?<\/title>/s,`<title>${esc(doc.title)} — The42laws</title>`)
+   .replace(/<meta name="description" content="[^"]*">/,'')
+   .replace('</head>',head(doc.title,doc.description,doc.path)+(doc.researched?'':'<meta name="robots" content="noindex,follow">')+'</head>')
+   .replace('<main id="main" tabindex="-1"></main>',`<main id="main" tabindex="-1">${doc.body}</main>`)
+   .replace('<body>','<body><noscript><style>.sidebar,.topbar{display:none}.shell{margin-left:0}</style></noscript>');
+  await writeFile(target,html);
+ }
  await writeFile(resolve(out,'404.html'),'<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page introuvable — The42laws</title></head><body><h1>Reprenons le fil.</h1><p>Cette page n’existe pas.</p><a href="'+esc(base||'/')+'">Retour à l’atlas</a></body></html>');
- const routes=['',...data.labs.map(l=>l.url.replace('index.html','')),...documents.map(d=>d.path)];
+ const routes=['',...data.labs.map(l=>l.url.replace('index.html','')),...documents.filter(d=>d.researched).map(d=>d.path)];
  await writeFile(resolve(out,'robots.txt'),'User-agent: *\nAllow: /\n'+(base?'Sitemap: '+new URL('sitemap.xml',base).href+'\n':''));
  if(base)await writeFile(resolve(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+routes.map(r=>'<url><loc>'+esc(new URL(r,base).href)+'</loc></url>').join('')+'</urlset>');
  await writeFile(resolve(out,'_headers'),'/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n');

@@ -7,7 +7,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
   <script src="physics.js" defer></script><script src="app.js" defer></script>
   <link rel="stylesheet" href="../atlas/lab-nav.css">
-</head>
+<link rel="stylesheet" href="../atlas/guides.css"><script src="../atlas/guides.js" defer></script></head>
 <body>
 <nav class="atlas-bridge" aria-label="Navigation de l’atlas"><a class="bridge-home" href="../index.html#/accueil">← THE42LAWS / L’ATLAS DU RÉEL</a><span><a href="../index.html#/laboratoires">Laboratoires</a><a href="#portrait" aria-current="page">Navier-Stokes</a><a href="../notes/navier-stokes-2026.md">Note 2026 ↗</a></span></nav>
 <a class="skip" href="#laboratoire">Aller au laboratoire</a>
@@ -21,6 +21,11 @@
     <div class="eyebrow"><i class="dot"></i> PHYSIQUE MATHÉMATIQUE <span>/</span> FLUIDES & SINGULARITÉS</div>
     <h1>NAVIER-STOKES<span>∂</span></h1>
     <div class="intro-line"><h2>Une équation de 1822. Une question ouverte depuis un siècle.</h2><p>Manipulez un fluide visqueux, mesurez ce que l’équation conserve et dissipe, puis regardez de près ce qu’OpenAI affirme avoir démontré le 8 septembre 2026 : une vitesse qui devient infinie en temps fini, à énergie bornée, sous une force lisse. Et ce que cela ne règle pas.</p></div>
+  </section>
+
+  <section class="hero-band" aria-label="Bandeau animé : un fluide turbulent calculé en direct">
+    <canvas id="hero-canvas" width="1680" height="420" role="img" aria-label="Un fluide turbulent coloré, calculé en direct par les équations de Navier-Stokes. Décoratif."></canvas>
+    <div class="hero-caption"><span><i class="dot"></i> CALCUL EN DIRECT DANS VOTRE NAVIGATEUR</span><span>64² modes · encre 160² · domaine périodique répété trois fois</span></div>
   </section>
 
   <section class="section wrap" id="equation">
@@ -39,22 +44,35 @@
   </section>
 
   <section class="section wrap" id="laboratoire">
-    <div class="section-heading"><div><span class="eyebrow">02 — LE LABORATOIRE</span><h2>Un tore de fluide<br><em>entre vos mains.</em></h2></div><p>Résolution numérique en dimension 2 sur un domaine périodique. Faites glisser le pointeur pour appliquer une force. Les tourbillons de Taylor-Green sont une solution exacte : l’énergie théorique est affichée pour comparer.</p></div>
+    <div class="section-heading"><div><span class="eyebrow">02 — LE LABORATOIRE</span><h2>Un tore de fluide<br><em>entre vos mains.</em></h2></div><p>Un vrai solveur, dans votre navigateur : advection, diffusion et projection à chaque image. Six scènes, dont l’instabilité de Kelvin-Helmholtz et l’allée de tourbillons derrière un obstacle. Faites glisser le pointeur pour peindre et pousser le fluide.</p></div>
     <div class="lab">
-      <aside class="controls"><span class="eyebrow">RÉGLAGES</span><h3>Choisissez un fluide.</h3>
-        <div class="range-control"><label for="viscosity">Viscosité <output id="viscosity-value" for="viscosity">ν</output></label><p>Échelle logarithmique, de 10⁻⁴ à 0,3 (unités sans dimension, domaine de côté 2π).</p><input id="viscosity" type="range" min="0" max="100" value="57" step="1"></div>
-        <div class="range-control"><label for="force-strength">Force du pointeur <output id="force-value" for="force-strength">× 3</output></label><input id="force-strength" type="range" min="1" max="10" value="3" step="1"></div>
-        <div class="range-control"><label for="resolution">Résolution de grille</label><select id="resolution"><option value="64">64 × 64 (rapide)</option><option value="128" selected>128 × 128</option><option value="256">256 × 256 (lent)</option></select></div>
-        <span class="eyebrow">ÉTAT INITIAL</span>
-        <div class="presets" role="group" aria-label="État initial"><button data-preset="taylor-green" class="selected" aria-pressed="true">Taylor-Green</button><button data-preset="shear" aria-pressed="false">Deux jets opposés</button><button data-preset="calm" aria-pressed="false">Repos</button></div>
+      <aside class="controls"><span class="eyebrow">RÉGLAGES</span><h3>Choisissez un écoulement.</h3>
+        <span class="eyebrow">SCÈNE</span>
+        <div class="presets" role="group" aria-label="Écoulement">
+          <button data-preset="kelvin-helmholtz" class="selected" aria-pressed="true">Kelvin-Helmholtz</button>
+          <button data-preset="dipole" aria-pressed="false">Dipôle</button>
+          <button data-preset="cylindre" aria-pressed="false">Obstacle</button>
+          <button data-preset="turbulence" aria-pressed="false">Turbulence</button>
+          <button data-preset="taylor-green" aria-pressed="false">Taylor-Green</button>
+          <button data-preset="repos" aria-pressed="false">Toile vierge</button>
+        </div>
         <span class="eyebrow">VUE</span>
-        <div class="views" role="group" aria-label="Champ affiché"><button data-view="vorticity" class="selected" aria-pressed="true">Vorticité</button><button data-view="speed" aria-pressed="false">Vitesse</button><button data-view="dye" aria-pressed="false">Colorant</button></div>
+        <div class="views" role="group" aria-label="Champ affiché">
+          <button data-view="ink" class="selected" aria-pressed="true">Encre</button>
+          <button data-view="vorticity" aria-pressed="false">Vorticité</button>
+          <button data-view="speed" aria-pressed="false">Vitesse</button>
+        </div>
+        <div class="range-control"><label for="viscosity">Viscosité <output id="viscosity-value" for="viscosity">ν</output></label><p>Échelle logarithmique, de 10⁻⁴ à 0,3 (sans dimension, domaine de côté 2π).</p><input id="viscosity" type="range" min="0" max="100" value="57" step="1"></div>
+        <div class="range-control"><label for="confinement">Détail des tourbillons <output id="confinement-value" for="confinement">× 3</output></label><p>Confinement de vorticité : compense la dissipation numérique. <strong>Force ajoutée, non physique.</strong></p><input id="confinement" type="range" min="0" max="10" value="3" step="1"></div>
+        <p id="confinement-warning" class="warning">Le confinement est actif : il ajoute de l’énergie. Mettez-le à 0 pour comparer à la théorie.</p>
+        <div class="range-control"><label for="force-strength">Force du pointeur <output id="force-value" for="force-strength">× 4</output></label><input id="force-strength" type="range" min="1" max="10" value="4" step="1"></div>
+        <div class="range-control"><label for="quality">Qualité</label><select id="quality"><option value="fluide">Fluide — 64² / encre 192²</option><option value="equilibre" selected>Équilibré — 128² / encre 256²</option><option value="detaille">Détaillé — 128² / encre 384²</option><option value="extreme">Extrême — 256² / encre 384²</option></select></div>
         <button id="run-toggle" class="primary" aria-pressed="false">▶ Lancer</button>
         <div class="secondary-actions"><button id="step-button">+10 pas</button><button id="reset">↺ Réinitialiser</button></div>
-        <p class="control-note">Schéma : advection semi-lagrangienne (Stam 1999), diffusion et projection exactes par transformée de Fourier. Pas de temps 0,02. La dissipation numérique de l’advection s’ajoute à la viscosité : l’écart avec Taylor-Green le mesure.</p>
+        <p class="control-note"><strong>Faites glisser le pointeur sur l’image</strong> : vous appliquez une force extérieure f et vous injectez de l’encre. Schéma : advection semi-lagrangienne (Stam 1999), diffusion et projection exactes par transformée de Fourier, pas de temps 0,02.</p>
       </aside>
-      <div class="experiment"><div class="experiment-top"><span class="eyebrow">TORE [0, 2π)² · DIMENSION 2</span><span id="state-label" class="state">EN PAUSE</span></div>
-        <canvas id="fluid-canvas" width="768" height="768" role="img" aria-label="Champ de vorticité d’un fluide bidimensionnel périodique, mis à jour en continu. Les mesures sont disponibles sous l’image."></canvas>
+      <div class="experiment"><div class="experiment-top"><span class="eyebrow">TORE [0, 2π)² · DIMENSION 2</span><span class="top-right"><span id="measure-badge" class="badge ok">MESURES BRUTES</span><span id="state-label" class="state">EN PAUSE</span></span></div>
+        <canvas id="fluid-canvas" width="900" height="900" role="img" aria-label="Un fluide bidimensionnel périodique, mis à jour en continu. Les mesures sont disponibles sous l’image."></canvas>
         <div class="stats" aria-live="polite" aria-atomic="true">
           <div><span>TEMPS t</span><strong id="stat-time">0,00</strong></div>
           <div><span>ÉNERGIE CINÉTIQUE</span><strong id="stat-energy">—</strong></div>
@@ -65,8 +83,9 @@
           <div><span>MAX |∇·u| (DISCRET)</span><strong id="stat-div">—</strong></div>
           <div><span>VISCOSITÉ ν</span><strong id="stat-nu">—</strong></div>
           <div><span>CALCUL PAR PAS</span><strong id="stat-ms">—</strong></div>
+          <div><span>GRILLE / ENCRE</span><strong id="stat-grid">—</strong></div>
         </div>
-        <p class="result-note">Énergie = ½ ∫ |u|² dx dy. Pour Taylor-Green, E(t) = π² A² e^{−4νt} exactement ; l’écart négatif affiché est la dissipation numérique du schéma, qui diminue avec la résolution. En dimension 2, la solution reste lisse pour toujours (Ladyzhenskaya) : rien ne peut « exploser » ici, et c’est précisément pourquoi la dimension 3 est le problème.</p>
+        <p class="result-note">Énergie = ½ ∫ |u|² dx dy, calculée sur le champ de vitesse seul ; l’encre et les traceurs sont un rendu, ils n’entrent dans aucune mesure. Pour la scène <b>Taylor-Green</b>, une solution exacte, E(t) = π² A² e^{−4νt} : l’écart affiché est la dissipation numérique du schéma, qui diminue quand la résolution augmente. Elle n’est comparable que si le confinement est à 0.<br><b>En dimension 2, la solution reste lisse pour toujours</b> (Ladyzhenskaya) : rien ne peut « exploser » ici, quels que soient vos réglages. C’est exactement ce qui rend la dimension 3 difficile.</p>
       </div>
     </div>
   </section>

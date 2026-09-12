@@ -43,3 +43,12 @@ Conserver les 42 questions et leur numérotation. Distinguer résultats empiriqu
 ## Jalon actuel
 
 Fiches 10 et 15 (4 sources chacune), 23 (66 sources) et 41 (57 sources) en « Synthèse provisoire ». Les 38 autres restent « À explorer ». V2 : quatre laboratoires dans l’atlas, tableau des particules, glossaire, carte de liens et parcours enrichis. Carnet enregistré dans localStorage (the42laws:v1), sans synchronisation. Les statuts de lecture et de recherche sont distincts. Import avec aperçu et fusion non destructive par défaut, export JSON. Site publié sur Vercel (c8ac895 validé en production). Domaine principal choisi : https://the42laws.fr ; www redirige en 308 vers le domaine principal. DNS conservé chez Hostinger (A @ : 216.198.79.1, CNAME www : 302a4e082b86e61f.vercel-dns-017.com). La construction Vercel définit SITE_URL=https://the42laws.fr. Voir AI_HANDOFF.md pour les validations de la V2.
+
+
+## 2026-09-12 — Lots 1 et 2
+
+Huit synthèses provisoires : 10, 15, 19, 23, 25, 26, 30 et 41 ; 34 fiches à explorer. Cinq laboratoires intégrés, dont Navier-Stokes 2D. Trois parcours complets dans leurs étapes obligatoires ; la question 42 est un prolongement facultatif. Les Markdown restent la source, avec content/learning.json pour les repères pédagogiques et la transparence éditoriale. Aucune relecture scientifique humaine indépendante n’est revendiquée.
+
+Adresses de dossiers : /dossiers/{id}/, texte complet et sources présents dans le HTML public, même shell interactif. Reprise des liens historiques #/question/{id}, conservation du carnet the42laws:v1. Les fiches sans synthèse portent noindex et sont hors sitemap. Les pages nécessitent un hébergement à la racine du domaine.
+
+Chaque laboratoire propose un guide : prédiction, manipulation, relevés A/B, explication, export JSON. Ces réponses sont temporaires dans la page et ne sont pas ajoutées au carnet. Navier démarre en pause ; son schéma auto-similaire et les forces visuelles restent explicitement distincts d’une preuve ou d’une simulation physique rigoureuse en 3D. CI GitHub : build, tests, liens/ancres locaux, cohérence du fichier généré. Axeptio reste sur la branche séparée codex/analytics-consent en attente d’activation de formule et de publication.

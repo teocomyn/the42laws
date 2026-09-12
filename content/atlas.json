@@ -157,6 +157,21 @@
         26,
         30
       ]
+    },
+    {
+      "id": "navier-stokes",
+      "number": "05",
+      "title": "Navier-Stokes",
+      "subtitle": "Des fluides, des modèles et leurs limites.",
+      "description": "Explorez un fluide 2D périodique et sa dissipation. La simulation et le schéma auto-similaire ne démontrent pas un théorème de singularité en 3D.",
+      "url": "navier-stokes/index.html",
+      "color": "#f1ad76",
+      "symbol": "∂",
+      "questions": [
+        10,
+        23,
+        41
+      ]
     }
   ],
   "paths": [
@@ -186,6 +201,10 @@
         },
         {
           "type": "question",
+          "id": 19
+        },
+        {
+          "type": "question",
           "id": 23
         }
       ]
@@ -194,7 +213,7 @@
       "id": "temps",
       "title": "Explorer le temps",
       "eyebrow": "UN FIL À DÉROULER",
-      "description": "Partir du dossier sur le temps, expérimenter avec l’entropie, puis ouvrir les questions sur l’Univers primordial et son commencement.",
+      "description": "Du temps mesuré aux conditions initiales et aux futurs possibles : cinq étapes rédigées, avec une expérience de comptage et ses limites.",
       "color": "#bda9ee",
       "symbol": "◷",
       "steps": [
@@ -241,13 +260,16 @@
           "id": 19
         },
         {
-          "type": "question",
-          "id": 23
+          "type": "lab",
+          "id": "navier-stokes"
         },
         {
           "type": "question",
-          "id": 42
+          "id": 23
         }
+      ],
+      "further": [
+        42
       ]
     }
   ]

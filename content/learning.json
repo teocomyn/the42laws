@@ -1,0 +1,130 @@
+{
+  "10": {
+    "level": "Découverte",
+    "minutes": 8,
+    "prerequisites": "Probabilité, microétat et macroétat.",
+    "goal": "Distinguer durée mesurée, flèche thermodynamique et condition initiale.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les horloges permettent de comparer des durées.",
+      "resultat": "Le comptage des urnes suit la formule binomiale, sous équiprobabilité.",
+      "modele": "Deux urnes sans gravitation : aucun calcul d’entropie cosmique.",
+      "interpretation": "Relier une flèche thermodynamique à la préparation du système.",
+      "conjecture": "L’origine de la faible entropie cosmique initiale reste ouverte."
+    }
+  },
+  "15": {
+    "level": "Découverte",
+    "minutes": 7,
+    "prerequisites": "Atomes, charge électrique et interaction.",
+    "goal": "Situer leptons, quarks et bosons sans confondre description et ontologie ultime.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Des mesures contraignent les propriétés des particules.",
+      "resultat": "Les prédictions dépendent du domaine du modèle et de ses paramètres.",
+      "modele": "Le Modèle standard organise les constituants et interactions connus.",
+      "interpretation": "Élémentaire signifie sans structure interne détectée dans les limites des expériences.",
+      "conjecture": "Une structure plus profonde n’est ni prouvée ni exclue par cette classification."
+    }
+  },
+  "19": {
+    "level": "Intermédiaire",
+    "minutes": 8,
+    "prerequisites": "Probabilité et notion d’amplitude ; dossier 15 conseillé.",
+    "goal": "Expliquer une interférence et distinguer décohérence et résultat unique.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Des détections individuelles construisent des distributions.",
+      "resultat": "Le terme croisé provient du carré de la somme des amplitudes.",
+      "modele": "Le laboratoire Photon échantillonne une distribution conditionnée à l’écran.",
+      "interpretation": "Plusieurs lectures du formalisme abordent le problème de la mesure.",
+      "conjecture": "Une explication ultime de la sélection d’un résultat n’est pas fournie par l’animation."
+    }
+  },
+  "23": {
+    "level": "Approfondissement",
+    "minutes": 35,
+    "prerequisites": "Lois effectives, réduction et domaine de validité ; dossier 15 conseillé.",
+    "goal": "Distinguer unification des interactions, calcul prédictif et explication totale.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les domaines empiriques des théories ne couvrent pas toutes les échelles.",
+      "resultat": "Chaque théorème cité conserve ses propres hypothèses ; aucune impossibilité universelle n’en découle ici.",
+      "modele": "Une théorie effective peut réussir dans son domaine sans être fondamentale.",
+      "interpretation": "Les sens de « théorie du tout » doivent être séparés.",
+      "conjecture": "Les contributions originales du dossier restent à examiner, sans validation générale."
+    }
+  },
+  "25": {
+    "level": "Intermédiaire",
+    "minutes": 8,
+    "prerequisites": "Dossier 10 : entropie ; différence entre trace et reconstruction.",
+    "goal": "Relier les traces du passé aux modèles sans prétendre expliquer toutes les conditions initiales.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Fond diffus et abondances légères contraignent le passé.",
+      "resultat": "Le comptage à quatre objets est une dérivation dans un modèle fini.",
+      "modele": "L’inflation est une famille de scénarios pour l’état primordial.",
+      "interpretation": "L’homogénéité thermique ne suffit pas à caractériser l’entropie gravitationnelle.",
+      "conjecture": "Une explication complète de l’état initial manque."
+    }
+  },
+  "26": {
+    "level": "Intermédiaire",
+    "minutes": 8,
+    "prerequisites": "Dossiers 10 et 25 ; notion de domaine d’une fonction.",
+    "goal": "Formuler « avant » en précisant le modèle et le sens de Big Bang.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les traces de la phase chaude ne sont pas une image de l’origine absolue.",
+      "resultat": "La fonction illustrative √t ne s’étend pas en réel à t < 0 dans son domaine choisi.",
+      "modele": "Une frontière d’un modèle n’est pas automatiquement une frontière de la réalité.",
+      "interpretation": "Le sens temporel de « avant » dépend du cadre retenu.",
+      "conjecture": "Les scénarios de rebond ne sont pas établis par observation."
+    }
+  },
+  "30": {
+    "level": "Intermédiaire",
+    "minutes": 7,
+    "prerequisites": "Dossiers 10, 25 et 26 ; facteur d’échelle et extrapolation.",
+    "goal": "Comparer les futurs en explicitant les hypothèses sur l’énergie noire.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "L’histoire de l’expansion est contrainte par les observations.",
+      "resultat": "La dilution a^(−3(1+w)) suppose w constant et conservation séparée.",
+      "modele": "Constante cosmologique, énergie fantôme et recontraction impliquent des conditions différentes.",
+      "interpretation": "Une indication statistique datée ne garantit pas le futur lointain.",
+      "conjecture": "Aucun calendrier certain de fin de l’Univers n’est établi."
+    }
+  },
+  "41": {
+    "level": "Approfondissement",
+    "minutes": 40,
+    "prerequisites": "Preuve, axiomes, algorithme et distinction entre connaissance et calcul.",
+    "goal": "Distinguer limites logiques, calculatoires, physiques et pratiques.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-12",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les limites instrumentales sont distinctes des théorèmes formels.",
+      "resultat": "Gödel et Turing portent sur des cadres formels précis, pas sur toute connaissance humaine.",
+      "modele": "Relier ces cadres au monde physique demande des hypothèses supplémentaires.",
+      "interpretation": "Les extrapolations philosophiques ne sont pas des corollaires automatiques.",
+      "conjecture": "Les propositions originales et conclusions générales demandent une relecture indépendante."
+    }
+  }
+}

@@ -100,3 +100,20 @@ Ces entrées précisent la consultation effectuée pour les nouveaux outils ; el
 ## Note Navier-Stokes 2026
 
 Références vérifiées le 2026-09-12 pour [notes/navier-stokes-2026.md](../notes/navier-stokes-2026.md) (S140-S165 ; S064 réutilisé). Textes intégraux : Navier 1822 (Wikisource), Fefferman 2000 (PDF Clay), OpenAI 2026 (PDF, extraits), README du dépôt Lean d’OpenAI, billet de Tao du 7 septembre 2026. Résumés : Buckmaster-Vicol 2019, Albritton-Brué-Colombo 2022, Elgindi 2021, Chen-Hou 2022, Córdoba-Martínez-Zoroa 2023 et 2024, Wang et al. 2025. Presse : Quanta, Fortune, Implicator, Stanford Tech Review ; Wikipedia pour la chronologie. Événement en cours : tout est daté.
+
+
+## Lots 1 et 2 — dossiers 19, 25, 26, 30
+
+Consultation le 2026-09-12. La lecture ciblée et le résumé sont distingués ; aucune relecture scientifique indépendante n’est revendiquée.
+
+| Id | Référence | Consultation |
+| --- | --- | --- |
+| S300 | [Feynman, Leighton et Sands — Quantum Behavior](https://www.feynmanlectures.caltech.edu/III_01.html) | Cours des auteurs ; texte, amplitudes et interférences |
+| S301 | [Schlosshauer — Decoherence, the measurement problem, and interpretations of quantum mechanics](https://arxiv.org/html/quant-ph/0312059v4) | Revue scientifique ; introduction et sections sur la mesure/décohérence, lecture ciblée |
+| S302 | [ESA — Planck and the cosmic microwave background](https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_and_the_cosmic_microwave_background) | Présentation institutionnelle ; texte |
+| S303 | [ESA — The cosmic microwave background and inflation](https://www.esa.int/Science_Exploration/Space_Science/Planck/The_cosmic_microwave_background_and_inflation) | Présentation institutionnelle ; texte, scénario inflationnaire présenté avec réserves ici |
+| S304 | [NASA — Universe Overview](https://science.nasa.gov/universe/overview/) | Présentation institutionnelle ; histoire cosmique et futur, texte |
+| S305 | [Sean Carroll — From Eternity to Here, FAQ](https://preposterousuniverse.com/eternitytohere/faq/) | Explication par un chercheur ; texte sur entropie et conditions initiales |
+| S306 | [Ashtekar et Singh — Loop Quantum Cosmology: A Status Report (2011)](https://arxiv.org/abs/1108.0893) | Revue théorique ; résumé consulté, preuve du rebond non examinée |
+| S307 | [DESI — More Than a Hint of Evolving Dark Energy (19 mars 2025)](https://www.desi.lbl.gov/2025/03/19/more-than-a-hint-of-evolving-dark-energy-new-results-and-data-from-desi/) | Communication de la collaboration ; texte, résultat daté et dépendant des jeux de données |
+| S308 | [Caldwell, Kamionkowski et Weinberg — Phantom Energy and Cosmic Doomsday (2003)](https://arxiv.org/abs/astro-ph/0302506) | Article théorique ; résumé consulté, scénario conditionnel |

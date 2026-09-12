@@ -28,7 +28,7 @@ Les fiches sont initialisées. Leur statut décrit notre travail, pas la possibi
 - [16. Pourquoi existe-t-il quatre interactions fondamentales connues ?](questions/16.md) — À explorer
 - [17. Pourquoi les constantes fondamentales ont-elles les valeurs que nous mesurons ?](questions/17.md) — À explorer
 - [18. Pourquoi la mécanique quantique fonctionne-t-elle ainsi ?](questions/18.md) — À explorer
-- [19. Que signifie réellement une superposition quantique et qu’est-ce qu’une mesure ?](questions/19.md) — À explorer
+- [19. Que signifie réellement une superposition quantique et qu’est-ce qu’une mesure ?](questions/19.md) — Synthèse provisoire
 - [20. La nature est-elle fondamentalement déterministe ou probabiliste ?](questions/20.md) — À explorer
 - [21. Comment unifier la mécanique quantique et la relativité générale ?](questions/21.md) — À explorer
 - [22. L’espace-temps est-il quantifié ?](questions/22.md) — À explorer
@@ -37,12 +37,12 @@ Les fiches sont initialisées. Leur statut décrit notre travail, pas la possibi
 ## IV. UNIVERS — D’où vient tout cela ?
 
 - [24. L’Univers a-t-il réellement eu un commencement ?](questions/24.md) — À explorer
-- [25. Pourquoi l’Univers primordial était-il dans l’état que nous observons indirectement aujourd’hui ?](questions/25.md) — À explorer
-- [26. La question « qu’y avait-il avant le Big Bang ? » a-t-elle un sens ?](questions/26.md) — À explorer
+- [25. Pourquoi l’Univers primordial était-il dans l’état que nous observons indirectement aujourd’hui ?](questions/25.md) — Synthèse provisoire
+- [26. La question « qu’y avait-il avant le Big Bang ? » a-t-elle un sens ?](questions/26.md) — Synthèse provisoire
 - [27. L’Univers est-il fini ou infini ?](questions/27.md) — À explorer
 - [28. Existe-t-il d’autres univers ?](questions/28.md) — À explorer
 - [29. Que sont la matière noire et l’énergie noire ?](questions/29.md) — À explorer
-- [30. Quel sera le destin ultime de l’Univers ?](questions/30.md) — À explorer
+- [30. Quel sera le destin ultime de l’Univers ?](questions/30.md) — Synthèse provisoire
 - [31. Pourquoi l’Univers permet-il l’apparition de structures complexes et de la vie ?](questions/31.md) — À explorer
 
 ## V. VIE — Comment la matière est-elle devenue vivante ?

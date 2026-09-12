@@ -6,6 +6,16 @@ const files=await list(out),errors=[];let links=0;
 for(const path of files){const name=relative(out,path);if(/(?:^|\/)(?:\.git|node_modules|artifacts|AI_CONTEXT\.md|AI_HANDOFF\.md|\.env)/.test(name))errors.push('Non-public file: '+name);if(extname(path)!=='.html')continue;const html=await readFile(path,'utf8'),page=new URL(name,'https://preview.invalid/');const baseTag=html.match(/<base href="([^"]+)"/),base=baseTag?new URL(baseTag[1],page):page;
  for(const m of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){const value=m[1].replaceAll('&amp;','&');if(!value||/^(https?:|mailto:|data:)/.test(value))continue;const url=new URL(value,base);if(url.origin!=='https://preview.invalid')continue;const file=resolve(out,'.'+decodeURIComponent(url.pathname));try{let target=file;const info=await stat(target);if(info.isDirectory())target=resolve(target,'index.html');await stat(target);links++;if(url.hash&&!url.hash.startsWith('#/')&&extname(target)==='.html'){const dest=await readFile(target,'utf8'),id=decodeURIComponent(url.hash.slice(1));if(!dest.includes(`id="${id}"`))errors.push(`${name}: missing anchor ${value}`);}}catch{errors.push(`${name}: missing file ${value}`);}}
 }
+// Catch structural regressions in the HTML served before JavaScript runs.
+for(let id=1;id<=42;id++){
+ const html=await readFile(resolve(out,`dossiers/${id}/index.html`),'utf8');
+ if((html.match(/<h1[ >]/g)||[]).length!==1)errors.push(`Dossier ${id}: expected one page heading`);
+ const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+ if(new Set(ids).size!==ids.length)errors.push(`Dossier ${id}: duplicate HTML id`);
+ if(!html.includes('atlas/app.js')||!html.includes('atlas/dossier.js'))errors.push(`Dossier ${id}: missing reader assets`);
+ const ready=!html.includes('name="robots" content="noindex,follow"');
+ if(ready&&(!html.includes('Repères de lecture')||!html.includes('Dossier approfondi et sources')))errors.push(`Dossier ${id}: missing complete static reading`);
+}
 const manifest=JSON.parse(await readFile(resolve(out,'publication.json'),'utf8'));
 if(manifest.questions!==42)errors.push('Question count must remain 42');
 if(files.filter(p=>/\/dossiers\/\d+\/index\.html$/.test(p)).length!==42)errors.push('42 static question pages required');
