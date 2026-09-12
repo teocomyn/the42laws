@@ -75,3 +75,7 @@ Vue illustrative d’un disque autour d’un trou noir : angle, zoom, luminosit�
 ## 2026-09-12 — Gateway Flow dans les parcours
 
 Entrée immersive de /#/parcours : canvas React chargé à la demande, lignes pointillées convergentes et carte centrale de choix. Accueil « Par où commencer ? » dirige vers les quatre parcours. Source réutilisable components/ui/gateway-flow.tsx ; montage components/gateway-entry.tsx ; styles atlas/brand.css. Le pipeline React existant génère atlas/gateway-flow.js. Pas d’iframe, CDN ou formulaire de connexion de la démo, pas de nouvelle dépendance. Pause, réduction du mouvement et nettoyage au changement de route. Les itinéraires, contenus et données du carnet restent identiques.
+
+## 2026-09-12 — Footer partagé
+
+Footer éditorial commun généré depuis components/ui/footer-section.tsx par scripts/build-footer.mjs, appelé dans le pipeline React. HTML versionné dans les huit entrées, repris par les dossiers publics. Source statique au chargement ; pas de React/Motion chargé pour le footer. atlas/footer.js ajoute apparition progressive et retour en haut sans changement de route. Liens existants, continuations des laboratoires, note Navier conservés ; pas de réseaux sociaux inventés. Styles préfixés t42-footer dans atlas/brand.css. Modifier le TSX puis reconstruire, sans éditer les blocs HTML à la main.

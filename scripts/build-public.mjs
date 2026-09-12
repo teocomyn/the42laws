@@ -52,7 +52,7 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
    .replace(/<meta name="description" content="[^"]*">/,'')
    .replace('</head>',head(doc.title,doc.description,doc.path)+(doc.researched?'':'<meta name="robots" content="noindex,follow">')+'</head>')
    .replace('<main id="main" tabindex="-1"></main>',`<main id="main" tabindex="-1">${doc.body}</main>`)
-   .replace('<body>','<body><noscript><style>.sidebar,.topbar{display:none}.shell{margin-left:0}</style></noscript>');
+   .replace('<body id="page-top">','<body id="page-top"><noscript><style>.sidebar,.topbar{display:none}.shell{margin-left:0}</style></noscript>');
   await writeFile(target,html);
  }
  await writeFile(resolve(out,'404.html'),'<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page introuvable — The42laws</title><meta name="theme-color" content="#101115"><link rel="stylesheet" href="/atlas/style.css"><link rel="stylesheet" href="/atlas/brand.css"><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="48x48" href="/atlas/favicon-42-48.png"><link rel="icon" type="image/png" sizes="32x32" href="/atlas/favicon-42-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/atlas/favicon-42-180.png"></head><body class="brand-error"><main><img src="/atlas/favicon-42-180.png" width="64" height="64" alt=""><span class="eyebrow">THE42LAWS / 404</span><h1>Reprenons le fil.</h1><p>Cette page n’existe pas.</p><a class="button primary" href="'+esc(base||'/')+'">Retour à l’atlas</a></main></body></html>');

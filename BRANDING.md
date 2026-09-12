@@ -39,3 +39,7 @@ Les micro-interactions de marque se limitent au survol. Elles sont neutralisées
 ## Validation de cette livraison
 
 Vérification visuelle aux formats 320, 390, 768 et 1440 pixels. Les six laboratoires ont été ouverts à 320 pixels sans débordement horizontal. Lecture complète d’un dossier, recherche « conscience », menu mobile et fermeture Échap vérifiés. Les tests scientifiques et fonctionnels existants restent la référence pour les calculs ; cette livraison ne modifie pas les modèles.
+
+## Footer — signature éditoriale
+
+Footer commun à l’atlas, aux dossiers et aux sept laboratoires : lueur cobalt au bord supérieur, invitation « Le monde reste à explorer. », trois colonnes Explorer / Comprendre / Poursuivre et grande signature The42laws en sérif. Mobile : deux colonnes puis Poursuivre sur la largeur. Les continuations de laboratoire et la note scientifique Navier sont préservées. Source unique React compilée en HTML : components/ui/footer-section.tsx ; styles atlas/brand.css ; détails dans REACT_COMPONENTS.md.

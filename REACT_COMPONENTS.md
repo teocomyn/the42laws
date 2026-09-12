@@ -69,3 +69,11 @@ L’iframe et le formulaire de connexion de la démo fournie ne participent pas 
 Props disponibles : `mode` (dark/light/auto), `speed`, `size`, `gap`, `length`, `density`, `strokeWidth`, `opacity`, `hue`, `saturation`, `brightness`, `className`, `style`. Le parent doit fournir une hauteur. L’intégration utilise le mode sombre et une vitesse de 0,5. `speed=0` suspend l’animation en conservant sa phase. Les valeurs numériques sont bornées.
 
 Le canvas décoratif est masqué aux technologies d’assistance ; bouton pause accessible, préférence de mouvement réduit respectée, arrêt hors écran ou dans un onglet caché. Résolution limitée à 1,5 fois la taille CSS, cadence visée de 30 images/s. Observateurs, événements et animation sont libérés à chaque changement de route. Le bundle `atlas/gateway-flow.js` est généré et ignoré par Git ; les commandes build/dev/public existantes le reconstruisent.
+
+## Footer éditorial partagé
+
+`components/ui/footer-section.tsx` adapte le footer fourni à The42laws : invitation à explorer, trois colonnes de liens existants, logo 42, grande signature typographique et retour en haut. `Footer` accepte `continuation` (title/href) et `note` pour préserver les particularités des laboratoires. Démo source : `components/ui/footer-demo.tsx`.
+
+`components/footer-static.tsx` rend le composant avec React DOM Server. `scripts/build-footer.mjs`, appelé par le pipeline React existant, remplace le footer des huit entrées HTML ; les 42 dossiers publics et leur index héritent du shell. Ces blocs HTML sont générés : modifier le TSX puis exécuter `npm run build`. Le rendu est versionné et reste utilisable sans JavaScript. La page 404 conserve sa composition compacte.
+
+Les styles sont dans `atlas/brand.css`, avec sélecteurs préfixés pour résister aux anciens styles des laboratoires. L’apparition utilise CSS et IntersectionObserver dans `atlas/footer.js`, en remplacement de Motion ; aucune nouvelle dépendance ni bundle React côté visiteur pour ce footer. La réduction des mouvements est respectée. Le retour en haut conserve la route de l’atlas et replace le focus au début du document. Aucune image de stock ni lien social fictif ; les icônes Lucide existantes sont rendues en SVG dans le HTML.
