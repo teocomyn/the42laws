@@ -138,3 +138,14 @@ Consultation le 2026-09-12. La lecture ciblée et le résumé sont distingués ;
 | --- | --- | --- | --- |
 | S328 | [NASA — Anatomy of a Black Hole](https://science.nasa.gov/universe/black-holes/anatomy/) | Texte : horizon, disque, ombre et lentille gravitationnelle. Le rendu original du site n’est pas une validation de ces phénomènes. | 2026-09-12 |
 | S329 | [NASA / Imagine the Universe — Black Holes](https://imagine.gsfc.nasa.gov/science/objects/black_holes1.html) | Texte : rayon de Schwarzschild et ordre de grandeur d’environ 3 km pour une masse solaire. | 2026-09-12 |
+
+## IA et mathématiques — 2026-09-12
+
+| ID | Source | Consultation | Date |
+| --- | --- | --- | --- |
+| S330 | [Lean — Validating a Lean Proof](https://lean-lang.org/doc/reference/latest/ValidatingProofs/) | Documentation officielle ; lecture ciblée des contrôles, de la signification des énoncés et des dépendances. | 2026-09-12 |
+| S331 | [Lean — Axioms](https://lean-lang.org/doc/reference/latest/Axioms/) | Documentation officielle ; cohérence, sorryAx et audit des axiomes, lecture ciblée. | 2026-09-12 |
+| S332 | [Leiden Declaration on Artificial Intelligence and Mathematics](https://leidendeclaration.ai/) | Déclaration du 2 juin 2026 ; valeurs et recommandations, lecture ciblée. Position normative de ses signataires. | 2026-09-12 |
+| S333 | [European Mathematical Society — Leiden Declaration on Artificial Intelligence and Mathematics](https://euromathsoc.org/news/leiden-declaration-on-artificial-intelligence-and-mathematics-224) | Communiqué du 5 août 2026 ; texte intégral. Décision de ne pas soutenir formellement la déclaration. | 2026-09-12 |
+| S334 | [Clay Mathematics Institute — Navier-Stokes Announcement](https://www.claymath.org/news/navier-stokes-announcement/) | Communiqué du 11 septembre 2026 ; texte intégral. Accueil de la résolution apparente et rappel du processus d’évaluation. | 2026-09-12 |
+| S335 | [OpenAI — A solution to the Navier–Stokes problem](https://openai.com/index/navier-stokes-solution/) | Annonce du 8 septembre, actualisée le 10 septembre 2026 ; portée du résultat et réponse de l’entreprise consultées. Ni PDF démonstratif ni compilation Lean vérifiés ici. | 2026-09-12 |

@@ -4,6 +4,14 @@ Note de recherche rédigée le 2026-09-12, quatre jours après l’annonce. Tout
 
 [Fiche 23](../questions/23.md) · [Fiche 41](../questions/41.md) · [Registre des sources](../sources/README.md) · [Laboratoire interactif](../navier-stokes/index.html)
 
+## Actualisation documentaire — 12 septembre 2026
+
+Le communiqué du Clay Institute du **11 septembre** accueille l’annonce d’une résolution apparente et rappelle que l’évaluation et l’attribution du crédit suivent les règles du prix. Il ne proclame pas une attribution. Cette source primaire actualise les mentions de presse et de statut administratif conservées dans la note. [S334 — communiqué](https://www.claymath.org/news/navier-stokes-announcement/).
+
+Le billet officiel d’OpenAI, actualisé le **10 septembre**, affirme après son enquête que les prompts Codex des chercheurs pendant les deux mois précédents n’ont pas pu influencer le résultat, y compris par l’entraînement. C’est la réponse de l’entreprise, pas une conclusion d’audit indépendant établie ici. Elle complète la chronologie de la controverse ci-dessous. [S335 — billet et mise à jour](https://openai.com/index/navier-stokes-solution/).
+
+Aucune nouvelle compilation Lean ni expertise du PDF n’a été réalisée pour cette actualisation. Pour une grille de lecture plus générale : [IA et mathématiques, dossier 41](../questions/41.md).
+
 ## 1. L’équation
 
 Les équations de Navier-Stokes décrivent le mouvement d’un fluide visqueux incompressible (eau, air à basse vitesse). Inconnues : le champ de vitesse u(x, t) (un vecteur en chaque point et à chaque instant) et la pression p(x, t). Données : la viscosité ν > 0, la vitesse initiale u°(x) et une force extérieure f(x, t) (la gravité, par exemple).
@@ -73,10 +81,10 @@ Et la conséquence revendiquée : « Consequently, there is no smooth solution (
 1. **Formellement, l’alternative (C) du texte officiel est visée**, et (D) en découle par support compact. Le texte de Fefferman autorise une force lisse dans (C). Sur ce point, la lecture d’OpenAI est conforme à la lettre de l’énoncé.
 2. **Le problème que la communauté considère comme « le » problème, à savoir (A)/(B) avec f ≡ 0, reste ouvert.** La presse spécialisée parle d’« a force most mathematicians exclude » et note qu’il n’y a « no public evidence that the construction works without it » (S163). Tao, la veille de l’annonce, décrivait le même programme (forçage lisse) pour trois équations modèles et jugeait « very feasible » son achèvement prochain, avec « a high likelihood of also extending to Navier-Stokes » (S154). Le cas non forcé de Navier-Stokes n’est revendiqué par personne au 12 septembre.
 3. **Physiquement, rien n’explose.** Le résultat porte sur le modèle mathématique (milieu continu, incompressible, newtonien) ; il dit que ce modèle, poussé par une force lisse, peut produire des vitesses infinies en un point et un instant, à énergie bornée. Bien avant, l’hypothèse du continu cesse d’être valable. C’est une pathologie du modèle, importante pour comprendre la turbulence et la limite des simulations, pas une prédiction sur l’eau.
-4. **Le prix n’est pas attribué et ne peut pas l’être avant des années.** L’Institut Clay exige une publication dans une revue qualifiée, un délai de deux ans et l’acceptation générale de la communauté ; il liste toujours le problème comme « Active » (S165) ; son président Martin Bridson annonce une évaluation « deliberately unhurried » et « absolutely rigorous » (S163). Wikipedia qualifie le problème de « possibly solved » et précise que le résultat « has yet to be verified by the Clay Institute or the independent mathematical community » (S160).
+4. **Le prix n’est pas attribué et ne peut pas l’être avant des années.** L’Institut Clay exige une publication dans une revue qualifiée, un délai de deux ans et l’acceptation générale de la communauté ; la page du problème avait été relevée comme « Active » (S165), mais ce libellé ne doit pas remplacer le communiqué du 11 septembre (S334) ; son président Martin Bridson annonce une évaluation « deliberately unhurried » et « absolutely rigorous » (S163). Wikipedia qualifie le problème de « possibly solved » et précise que le résultat « has yet to be verified by the Clay Institute or the independent mathematical community » (S160).
 5. **Un certificat Lean prouve qu’un énoncé suit des axiomes ; il ne prouve pas que l’énoncé formalisé est celui du prix.** La correspondance entre le théorème Lean et les conditions (4)-(7) de Fefferman doit être vérifiée par des humains. Nous ne l’avons pas fait.
 
-## 5. La controverse de priorité (chronologie d’après S159, S161, S162, S154)
+## 5. La controverse de priorité (chronologie de presse, complétée par S335)
 
 - 17 septembre 2025 : prépublication à 22 auteurs (DeepMind, Gómez-Serrano, Buckmaster) sur les singularités instables (S153).
 - Depuis environ un an, en privé : Buckmaster (Courant Institute, NYU) et Alpöge (mathématicien, salarié d’Anthropic, collaboration « strictement personnelle ») poursuivent le programme Córdoba-Martínez-Zoroa avec des modèles de langage d’Anthropic et d’OpenAI.
@@ -130,9 +138,18 @@ Consultées le 2026-09-12. Statuts : « Texte » (texte intégral), « Résumé 
 | S164 | Stanford Tech Review, « OpenAI vs Buckmaster: The Navier-Stokes Lean Proofs, Audited » | Presse spécialisée |
 | S165 | Clay Mathematics Institute, page du problème, statut « Active » | Texte |
 
-Non consultés : le billet d’OpenAI en accès direct (403), l’article de Nature du 8 septembre (d41586-026-02842-5, accès refusé), la déclaration PDF de Buckmaster, les trois prépublications de Buckmaster-Alpöge-Coiculescu et leur dépôt Lean, le fil Mathstodon de Tao (contenu non chargé).
+Lors de la première rédaction, le billet d’OpenAI en accès direct était inaccessible (403) ; il a depuis été consulté pour S335. Restent non consultés : l’article de Nature du 8 septembre (d41586-026-02842-5, accès refusé), la déclaration PDF de Buckmaster, les trois prépublications de Buckmaster-Alpöge-Coiculescu et leur dépôt Lean, le fil Mathstodon de Tao (contenu non chargé).
+
+Complément documentaire du 12 septembre 2026 :
+
+| ID | Source | Consultation | Date |
+| --- | --- | --- | --- |
+| S334 | [Clay Mathematics Institute — Navier-Stokes Announcement](https://www.claymath.org/news/navier-stokes-announcement/) | Communiqué du 11 septembre 2026 ; texte intégral. Accueil de la résolution apparente et rappel du processus d’évaluation. | 2026-09-12 |
+| S335 | [OpenAI — A solution to the Navier–Stokes problem](https://openai.com/index/navier-stokes-solution/) | Annonce du 8 septembre, actualisée le 10 septembre 2026 ; portée du résultat et réponse de l’entreprise consultées. Ni PDF démonstratif ni compilation Lean vérifiés ici. | 2026-09-12 |
 
 ## Historique
 
 - 2026-09-12 : création, à la demande de Teo (« l’équation dite de Navier-Stokes avec la résolution d’OpenAI »). 26 références. À réviser dès qu’un examen indépendant du PDF ou une réponse de l’Institut Clay est publié.
 - 2026-09-12 (b) : laboratoire interactif navier-stokes/ ajouté (fluide 2D, schéma de l’explosion, énoncés (A)-(D)).
+
+- 2026-09-12 (c) : communiqué Clay du 11 septembre et réponse OpenAI actualisée le 10 septembre ajoutés ; distinction entre annonce, examen et attribution maintenue.

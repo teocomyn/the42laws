@@ -113,9 +113,9 @@
   },
   "41": {
     "level": "Approfondissement",
-    "minutes": 40,
+    "minutes": 45,
     "prerequisites": "Preuve, axiomes, algorithme et distinction entre connaissance et calcul.",
-    "goal": "Distinguer limites logiques, calculatoires, physiques et pratiques.",
+    "goal": "Distinguer limites logiques, calculatoires, physiques et pratiques ; séparer trouver, vérifier et comprendre une preuve.",
     "author": "Synthèse assistée par IA pour The42laws",
     "revised": "2026-09-12",
     "review": "non effectuée par un relecteur indépendant",

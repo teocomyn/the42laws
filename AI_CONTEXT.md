@@ -83,3 +83,7 @@ Footer éditorial commun généré depuis components/ui/footer-section.tsx par s
 ## 2026-09-12 — Hero Horizon
 
 L’accueil utilise maintenant une scène de trou noir React/WebGL chargée à la demande : components/ui/optimized-black-hole.tsx, adaptateur optimized-black-hole-utils/renderer et montage components/hero-entry.tsx. Le renderer absent de l’extrait réutilise le moteur original existant avec un budget accueil 640 × 360 / DPR 1 / 18 images/s ; le laboratoire garde 900 × 600 / 24 images/s. Palette glacée et rendu illustratif. Poster existant, pause, réduction de mouvement, arrêt hors écran/onglet caché, démontage au changement de route. atlas/hero-scene.js est généré ; aucune nouvelle dépendance. Composition dans atlas/app.js, styles horizon dans atlas/brand.css.
+
+## 2026-09-12 — IA et mathématiques dans la base de contenu
+
+Enrichissement à partir de la transcription fournie par Teo : dix idées et un exercice dans le dossier 41, prolongements dans 23/36, vues courtes actualisées, huit termes de glossaire, quatre liens entre questions et sources S330–S335. La recherche indexe désormais aussi les alias du glossaire, dont Lean. Aucun service de base de données ajouté : Markdown et JSON restent les sources de vérité. Onze synthèses ; 14/39 restent à explorer. Note Navier actualisée par le communiqué Clay du 11 septembre et la réponse OpenAI du 10 septembre, sans audit de preuve revendiqué.

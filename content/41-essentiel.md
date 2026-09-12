@@ -24,8 +24,14 @@ Le dossier examine aussi des limites physiques : informations accessibles, resso
 - Elle ne démontre pas qu’une théorie unifiée des interactions est impossible.
 - Ses propositions originales, comme la « conservation de l’ignorance », restent des conjectures ou des synthèses à examiner.
 
+## Ce que l’IA change dans cette question
+
+Une IA peut aider à chercher un argument ; une preuve formelle peut en faciliter le contrôle. La validité reste relative à l’énoncé et aux hypothèses examinés. Un meilleur outil de recherche ne supprime pas une impossibilité logique générale.
+
+**Trouver, vérifier, comprendre :** gardez ces trois verbes séparés. Le dossier complet propose dix idées sur l’IA et les mathématiques, un contre-exemple à calculer soi-même et une méthode pour examiner une annonce. Les notions de preuve formelle, d’axiome et de reproductibilité sont aussi disponibles dans le glossaire.
+
 ## Comment poursuivre
 
 Le **dossier complet** conserve la recherche originale et ses réserves. L’onglet **Sources** distingue les textes consultés, les résumés et les références bibliographiques seules. Une référence présente dans la liste n’implique pas une lecture intégrale.
 
-Cette vue courte a fait l’objet d’une relecture de portée le 12 septembre 2026, avec vérification de l’entrée de la Stanford Encyclopedia citée ci-dessus. Ce contrôle ciblé ne constitue pas une validation scientifique des 57 références du dossier complet.
+Cette vue courte a fait l’objet d’une relecture de portée le 12 septembre 2026, avec vérification de l’entrée de la Stanford Encyclopedia citée ci-dessus. Ce contrôle ciblé ne constitue pas une validation scientifique de l’ensemble des références du dossier complet.

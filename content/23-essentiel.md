@@ -22,3 +22,7 @@ Les chiffres de paysages théoriques, les résultats cosmologiques récents et l
 ## Un fil pour continuer
 
 Commencer par [les constituants connus](../questions/15.md), puis revenir aux [limites de la connaissance](../questions/41.md). Demander à chaque théorie : que décrit-elle, que prédit-elle et quelle observation permettrait de la mettre en défaut ?
+
+## L’IA peut-elle combler la distance entre une loi et une prédiction ?
+
+Une avancée sur une équation précise n’équivaut pas à une théorie du tout. Elle peut accroître ce que nous savons démontrer dans un modèle ; il reste à préciser ses hypothèses et ce qu’elle permet de tester dans le monde. Le dossier complet relie cette distinction au cas Navier–Stokes. Le [dossier 41](../questions/41.md) examine les différences entre trouver, vérifier et comprendre une preuve.

@@ -35,5 +35,9 @@
  {"from":37,"to":38,"label":"Expérience et identité personnelle"},
  {"from":38,"to":40,"label":"Le moi et l’action volontaire"},
  {"from":40,"to":42,"label":"Choix et valeur"},
- {"from":41,"to":42,"label":"Distinguer savoir et questions de valeur"}
+ {"from":41,"to":42,"label":"Distinguer savoir et questions de valeur"},
+ {"from":14,"to":41,"label":"Distinguer découverte, preuve et cadre formel"},
+ {"from":39,"to":41,"label":"Une performance mathématique ne tranche pas la conscience"},
+ {"from":36,"to":41,"label":"Séparer expérience subjective et résultat vérifiable"},
+ {"from":13,"to":23,"label":"Une propriété d’équation ne suffit pas à établir une loi physique"}
 ]
