@@ -41,3 +41,7 @@ La publication consiste à servir le contenu de `build/public/`, en conservant l
 ## Périmètre éditorial
 
 Les fiches 10, 15, 23 et 41 sont provisoires. Les vues courtes précisent leurs limites. Les textes historiques et le registre conservent leurs niveaux de consultation ; une référence n’implique pas une lecture intégrale. Le paquet ne constitue pas une validation exhaustive des recherches.
+
+## Google Analytics
+
+La construction publique avec SITE_URL ajoute une seule balise Google gtag.js (G-L659XPNBR6) dans le head de chaque page HTML : accueil, laboratoires, dossiers et page 404. Le code local source reste sans balise. La balise de vérification Search Console de l’accueil est conservée. Installation du snippet standard fourni par Teo ; aucun événement personnalisé ni suivi spécifique des changements de fragments n’est ajouté.
