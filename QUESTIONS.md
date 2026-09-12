@@ -16,7 +16,7 @@ Les fiches sont initialisées. Leur statut décrit notre travail, pas la possibi
 - [07. La matière est-elle fondamentale ou émergente ?](questions/07.md) — À explorer
 - [08. L’information est-elle plus fondamentale que la matière ?](questions/08.md) — À explorer
 - [09. L’espace est-il fondamental ou émergent ?](questions/09.md) — À explorer
-- [10. Qu’est-ce que le temps, et pourquoi semble-t-il avoir une direction ?](questions/10.md) — À explorer
+- [10. Qu’est-ce que le temps, et pourquoi semble-t-il avoir une direction ?](questions/10.md) — Synthèse provisoire
 - [11. Pourquoi existe-t-il des lois de la nature ?](questions/11.md) — À explorer
 - [12. Pourquoi ces lois-là plutôt que d’autres ?](questions/12.md) — À explorer
 - [13. Pourquoi les mathématiques décrivent-elles aussi efficacement la réalité ?](questions/13.md) — À explorer
@@ -24,7 +24,7 @@ Les fiches sont initialisées. Leur statut décrit notre travail, pas la possibi
 
 ## III. PHYSIQUE — Quelles sont les règles ultimes ?
 
-- [15. Quels sont les constituants ou structures les plus fondamentaux de la nature ?](questions/15.md) — À explorer
+- [15. Quels sont les constituants ou structures les plus fondamentaux de la nature ?](questions/15.md) — Synthèse provisoire
 - [16. Pourquoi existe-t-il quatre interactions fondamentales connues ?](questions/16.md) — À explorer
 - [17. Pourquoi les constantes fondamentales ont-elles les valeurs que nous mesurons ?](questions/17.md) — À explorer
 - [18. Pourquoi la mécanique quantique fonctionne-t-elle ainsi ?](questions/18.md) — À explorer
@@ -32,7 +32,7 @@ Les fiches sont initialisées. Leur statut décrit notre travail, pas la possibi
 - [20. La nature est-elle fondamentalement déterministe ou probabiliste ?](questions/20.md) — À explorer
 - [21. Comment unifier la mécanique quantique et la relativité générale ?](questions/21.md) — À explorer
 - [22. L’espace-temps est-il quantifié ?](questions/22.md) — À explorer
-- [23. Existe-t-il une théorie du tout ?](questions/23.md) — À explorer
+- [23. Existe-t-il une théorie du tout ?](questions/23.md) — Synthèse provisoire
 
 ## IV. UNIVERS — D’où vient tout cela ?
 

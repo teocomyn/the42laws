@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100e12"><meta name="description" content="Un laboratoire interactif sur les équations de Navier-Stokes : un fluide 2D à manipuler, le problème du millénaire et le schéma de l’explosion annoncée par OpenAI en septembre 2026.">
+  <title>Navier-Stokes — The42laws</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+  <script src="physics.js" defer></script><script src="app.js" defer></script>
+  <link rel="stylesheet" href="../atlas/lab-nav.css">
+</head>
+<body>
+<nav class="atlas-bridge" aria-label="Navigation de l’atlas"><a class="bridge-home" href="../index.html#/accueil">← THE42LAWS / L’ATLAS DU RÉEL</a><span><a href="../index.html#/laboratoires">Laboratoires</a><a href="#portrait" aria-current="page">Navier-Stokes</a><a href="../notes/navier-stokes-2026.md">Note 2026 ↗</a></span></nav>
+<a class="skip" href="#laboratoire">Aller au laboratoire</a>
+<header class="header">
+  <a class="brand" href="#portrait"><span class="brand-mark">42<span>°</span></span><span>THE42LAWS<small>UN ATLAS DE L’INVISIBLE</small></span></a>
+  <nav aria-label="Navigation principale"><a href="#equation">L’équation</a><a href="#laboratoire">Expérimenter ↗</a><a href="#explosion">L’explosion</a><a href="#enonces">Le prix Clay</a></nav>
+  <span class="edition">CARNET DE RECHERCHE <b>005</b></span>
+</header>
+<main>
+  <section class="intro wrap" id="portrait">
+    <div class="eyebrow"><i class="dot"></i> PHYSIQUE MATHÉMATIQUE <span>/</span> FLUIDES & SINGULARITÉS</div>
+    <h1>NAVIER-STOKES<span>∂</span></h1>
+    <div class="intro-line"><h2>Une équation de 1822. Une question ouverte depuis un siècle.</h2><p>Manipulez un fluide visqueux, mesurez ce que l’équation conserve et dissipe, puis regardez de près ce qu’OpenAI affirme avoir démontré le 8 septembre 2026 : une vitesse qui devient infinie en temps fini, à énergie bornée, sous une force lisse. Et ce que cela ne règle pas.</p></div>
+  </section>
+
+  <section class="section wrap" id="equation">
+    <div class="section-heading"><div><span class="eyebrow">01 — L’ÉQUATION</span><h2>Newton, écrit pour<br><em>une goutte d’eau.</em></h2></div><p>Inconnues : la vitesse u(x, t) et la pression p(x, t). Données : la viscosité ν, l’état initial u°, la force f. Un seul terme est non linéaire ; il fait toute la difficulté.</p></div>
+    <div class="equation-card">
+      <p class="equation"><span class="term">∂u/∂t</span> + <span class="term nonlinear">(u·∇)u</span> = <span class="term">−∇p</span> + <span class="term viscous">ν Δu</span> + <span class="term force">f</span><br><small>∇·u = 0 &nbsp;·&nbsp; u(x, 0) = u°(x)</small></p>
+      <div class="terms">
+        <article><h3>∂u/∂t</h3>Variation de la vitesse en un point fixe.</article>
+        <article class="nonlinear"><h3>(u·∇)u</h3>Le fluide transporte sa propre vitesse : une particule accélère parce qu’elle change de place. Non linéaire ; c’est lui qui crée les tourbillons et, peut-être, les singularités.</article>
+        <article><h3>−∇p</h3>Poussée du fluide comprimé vers le moins comprimé. La pression n’a pas d’équation propre : elle est ce qu’il faut pour que ∇·u = 0.</article>
+        <article class="viscous"><h3>ν Δu</h3>Frottement visqueux. Linéaire, il lisse les gradients et dissipe l’énergie. Le problème du millénaire demande si ce lissage suffit toujours en dimension 3.</article>
+        <article class="force"><h3>f</h3>Force extérieure imposée (gravité, pompe, votre doigt sur l’écran). L’énoncé officiel l’autorise dans les alternatives de rupture, pas dans celles d’existence.</article>
+        <article><h3>∇·u = 0</h3>Incompressibilité : ce qui entre dans un volume en sort. Avec ν = 0, ce sont les équations d’Euler (1757).</article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="laboratoire">
+    <div class="section-heading"><div><span class="eyebrow">02 — LE LABORATOIRE</span><h2>Un tore de fluide<br><em>entre vos mains.</em></h2></div><p>Résolution numérique en dimension 2 sur un domaine périodique. Faites glisser le pointeur pour appliquer une force. Les tourbillons de Taylor-Green sont une solution exacte : l’énergie théorique est affichée pour comparer.</p></div>
+    <div class="lab">
+      <aside class="controls"><span class="eyebrow">RÉGLAGES</span><h3>Choisissez un fluide.</h3>
+        <div class="range-control"><label for="viscosity">Viscosité <output id="viscosity-value" for="viscosity">ν</output></label><p>Échelle logarithmique, de 10⁻⁴ à 0,3 (unités sans dimension, domaine de côté 2π).</p><input id="viscosity" type="range" min="0" max="100" value="57" step="1"></div>
+        <div class="range-control"><label for="force-strength">Force du pointeur <output id="force-value" for="force-strength">× 3</output></label><input id="force-strength" type="range" min="1" max="10" value="3" step="1"></div>
+        <div class="range-control"><label for="resolution">Résolution de grille</label><select id="resolution"><option value="64">64 × 64 (rapide)</option><option value="128" selected>128 × 128</option><option value="256">256 × 256 (lent)</option></select></div>
+        <span class="eyebrow">ÉTAT INITIAL</span>
+        <div class="presets" role="group" aria-label="État initial"><button data-preset="taylor-green" class="selected" aria-pressed="true">Taylor-Green</button><button data-preset="shear" aria-pressed="false">Deux jets opposés</button><button data-preset="calm" aria-pressed="false">Repos</button></div>
+        <span class="eyebrow">VUE</span>
+        <div class="views" role="group" aria-label="Champ affiché"><button data-view="vorticity" class="selected" aria-pressed="true">Vorticité</button><button data-view="speed" aria-pressed="false">Vitesse</button><button data-view="dye" aria-pressed="false">Colorant</button></div>
+        <button id="run-toggle" class="primary" aria-pressed="false">▶ Lancer</button>
+        <div class="secondary-actions"><button id="step-button">+10 pas</button><button id="reset">↺ Réinitialiser</button></div>
+        <p class="control-note">Schéma : advection semi-lagrangienne (Stam 1999), diffusion et projection exactes par transformée de Fourier. Pas de temps 0,02. La dissipation numérique de l’advection s’ajoute à la viscosité : l’écart avec Taylor-Green le mesure.</p>
+      </aside>
+      <div class="experiment"><div class="experiment-top"><span class="eyebrow">TORE [0, 2π)² · DIMENSION 2</span><span id="state-label" class="state">EN PAUSE</span></div>
+        <canvas id="fluid-canvas" width="768" height="768" role="img" aria-label="Champ de vorticité d’un fluide bidimensionnel périodique, mis à jour en continu. Les mesures sont disponibles sous l’image."></canvas>
+        <div class="stats" aria-live="polite" aria-atomic="true">
+          <div><span>TEMPS t</span><strong id="stat-time">0,00</strong></div>
+          <div><span>ÉNERGIE CINÉTIQUE</span><strong id="stat-energy">—</strong></div>
+          <div><span>THÉORIE (TAYLOR-GREEN)</span><strong id="stat-theory">—</strong></div>
+          <div><span>ÉCART</span><strong id="stat-gap">—</strong></div>
+          <div><span>VITESSE MAX ‖u‖∞</span><strong id="stat-speed">—</strong></div>
+          <div><span>REYNOLDS ≈ U·2π/ν</span><strong id="stat-reynolds">—</strong></div>
+          <div><span>MAX |∇·u| (DISCRET)</span><strong id="stat-div">—</strong></div>
+          <div><span>VISCOSITÉ ν</span><strong id="stat-nu">—</strong></div>
+          <div><span>CALCUL PAR PAS</span><strong id="stat-ms">—</strong></div>
+        </div>
+        <p class="result-note">Énergie = ½ ∫ |u|² dx dy. Pour Taylor-Green, E(t) = π² A² e^{−4νt} exactement ; l’écart négatif affiché est la dissipation numérique du schéma, qui diminue avec la résolution. En dimension 2, la solution reste lisse pour toujours (Ladyzhenskaya) : rien ne peut « exploser » ici, et c’est précisément pourquoi la dimension 3 est le problème.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="explosion">
+    <div class="section-heading"><div><span class="eyebrow">03 — L’EXPLOSION</span><h2>Vitesse infinie,<br><em>énergie bornée.</em></h2></div><p>Le Théorème 1.1 d’OpenAI (8 septembre 2026) construit, en dimension 3 et sous une force lisse à support compact, un tourbillon dont le cœur se contracte en colonne : rayon ≍ τ^½, hauteur ≍ τ^(½−h), avec τ = 1 − t et 0 &lt; h &lt; 1/100. À t = 1, ‖u‖∞ = ∞ alors que ‖u‖₂ reste borné. Ce schéma reproduit ces deux échelles de longueur ; l’exposant de vitesse est choisi ici pour que l’énergie soit exactement constante, ce n’est pas celui du texte.</p></div>
+    <div class="blowup">
+      <canvas id="blowup-canvas" width="900" height="420" role="img" aria-label="À gauche, une colonne de fluide qui se contracte quand t tend vers 1 ; à droite, la vitesse maximale qui diverge et la norme d’énergie qui reste constante, en échelle logarithmique."></canvas>
+      <aside class="controls"><span class="eyebrow">TEMPS RESTANT τ = 1 − t</span>
+        <div class="range-control"><label for="tau-slider">Avancer vers t = 1 <output id="bl-t" for="tau-slider">0</output></label><input id="tau-slider" type="range" min="0" max="1000" value="0" step="1"></div>
+        <div class="range-control"><label for="h-slider">Exposant h <output id="bl-h" for="h-slider">0,0050</output></label><p>Le texte impose 0 &lt; h &lt; 1/100.</p><input id="h-slider" type="range" min="1" max="99" value="50" step="1"></div>
+        <button id="blowup-animate" class="primary">Animer jusqu’à t → 1</button>
+        <div class="stats"><div><span>RAYON</span><strong id="bl-radius">—</strong></div><div><span>HAUTEUR</span><strong id="bl-height">—</strong></div><div><span>RAYON / HAUTEUR</span><strong id="bl-aspect">—</strong></div><div><span>VITESSE ‖u‖∞ / U₀</span><strong id="bl-velocity">—</strong></div><div><span>ÉNERGIE (MODÈLE)</span><strong id="bl-energy">—</strong></div></div>
+        <p class="control-note">Modèle jouet : une famille auto-similaire dont la norme L² est constante et la norme L∞ diverge comme τ^{−(¾−h/2)}. Il illustre l’énoncé, pas la preuve de 166 pages.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section wrap" id="enonces">
+    <div class="section-heading"><div><span class="eyebrow">04 — LE PRIX CLAY</span><h2>Quatre énoncés,<br><em>un seul suffit.</em></h2></div><p>Fefferman (2000) demande la preuve de l’un des quatre. Les énoncés positifs sont sans force ; les énoncés de rupture autorisent une force lisse. L’asymétrie est dans le texte officiel.</p></div>
+    <div class="statements">
+      <article class="open"><span class="tag">OUVERT</span><h3>(A) Existence et régularité sur R³</h3>Pour toute donnée initiale lisse et décroissante, <strong>avec f ≡ 0</strong>, il existe une solution lisse d’énergie bornée pour tout temps.</article>
+      <article class="open"><span class="tag">OUVERT</span><h3>(B) Existence et régularité sur le tore</h3>Même énoncé pour des données périodiques, <strong>avec f ≡ 0</strong>.</article>
+      <article class="claimed"><span class="tag">REVENDIQUÉ LE 8 SEPT. 2026 · NON VALIDÉ</span><h3>(C) Rupture sur R³</h3>Il existe une donnée initiale lisse et <strong>une force lisse</strong> pour lesquelles aucune solution lisse d’énergie bornée n’existe. C’est l’énoncé du Théorème 1.1 d’OpenAI, avec u° = 0.</article>
+      <article class="claimed"><span class="tag">REVENDIQUÉ LE 8 SEPT. 2026 · NON VALIDÉ</span><h3>(D) Rupture sur le tore</h3>Même chose en périodique ; obtenu par support compact (Corollaire 10.6 du texte d’OpenAI).</article>
+    </div>
+    <p class="result-note">Un certificat Lean prouve qu’un énoncé suit des axiomes ; il ne prouve pas que l’énoncé formalisé est celui du prix. L’Institut Clay exige publication, deux ans et acceptation générale ; il liste toujours le problème comme actif. Buckmaster et Alpöge avaient obtenu le 15 août 2026 des résultats analogues pour Euler, Boussinesq et milieux poreux, publiés le 7 septembre. Détails et sources : <a href="../notes/navier-stokes-2026.md">note du 12 septembre 2026</a>.</p>
+  </section>
+
+  <section class="section wrap" id="references">
+    <div class="section-heading"><div><span class="eyebrow">05 — RÉFÉRENCES</span><h2>Sources<br><em>du laboratoire.</em></h2></div></div>
+    <ol class="refs">
+      <li>Navier, C.-L., « Mémoire sur les lois du mouvement des fluides », lu le 18 mars 1822, <em>Mém. Acad. Roy. Sci.</em> 6 (1827), 389-440.</li>
+      <li>Fefferman, C. L., « Existence and smoothness of the Navier-Stokes equation », <a href="https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf">Clay Mathematics Institute, 2000</a>. Énoncés (A)-(D).</li>
+      <li>OpenAI, « Finite Time Blowup for Navier-Stokes », <a href="https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf">PDF, 8 septembre 2026</a> ; certificats Lean : <a href="https://github.com/openai/NavierStokesAndEuler">openai/NavierStokesAndEuler</a>. Théorème 1.1 et section 2 pour les échelles.</li>
+      <li>Tao, T., « Finite time blowup with smooth forcing term for the incompressible porous medium, Boussinesq, and incompressible Euler equations », <a href="https://terrytao.wordpress.com/2026/09/07/finite-time-blowup-with-smooth-forcing-term-for-the-incompressible-porous-medium-boussinesq-and-incompressible-euler-equations/">blog, 7 septembre 2026</a>.</li>
+      <li>Stam, J., « Stable Fluids », <em>SIGGRAPH 99</em>, 121-128 (schéma d’advection semi-lagrangienne). Référence bibliographique, non consultée pour cette page.</li>
+      <li>Taylor, G. I., Green, A. E., « Mechanism of the production of small eddies from large ones », <em>Proc. R. Soc. A</em> 158 (1937), 499-521 (tourbillons utilisés comme test). Référence bibliographique, non consultée.</li>
+      <li><a href="../notes/navier-stokes-2026.md">Note de recherche du 12 septembre 2026</a> : 26 sources, chronologie, ce qui est réglé et ce qui ne l’est pas ; <a href="NOTES_SCIENTIFIQUES.md">notes scientifiques du laboratoire</a>.</li>
+    </ol>
+  </section>
+</main>
+<footer class="wrap">The42laws · Laboratoire pédagogique. La simulation est bidimensionnelle et ne peut pas présenter de singularité ; le schéma d’explosion reproduit des échelles de longueur publiées, pas la preuve. Aucune ressource distante ; tout est calculé dans votre navigateur.</footer>
+</body>
+</html>

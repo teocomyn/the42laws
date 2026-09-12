@@ -61,3 +61,42 @@ Références vérifiées les 2026-09-11 et 2026-09-12 pour la fiche [questions/4
 - **S067–S070** Heisenberg 1927 (INSPIRE + SEP) ; Wootters et Zurek 1982, Dieks 1982 (INSPIRE) ; Holevo 1973 (mathnet) ; Kochen et Specker 1967 via SEP Held. Q41, Q18, Q19, Q20.
 - **S071–S072** Aaronson 2011 ; Tao 2016 (*JAMS* 29). Résumés. Q41.
 - **S073** Wikipedia (en), « Ignoramus et ignorabimus ». Source secondaire pour les dates de Königsberg. Q41.
+
+## Question 23 — théorie du tout
+
+Références vérifiées le 2026-09-12 pour la fiche [questions/23.md](../questions/23.md), qui contient le tableau complet avec le statut de consultation.
+
+- **S074–S080** Hilbert 1900 (6e problème, bib.) ; Deng, Hani, Ma 2025 (arXiv:2503.01800, résumé) ; Nature/Simons 2026 (Fields, presse) ; Klein 1926 (INSPIRE) ; Hawking 1980 (bib.) ; Weinberg 1992 et 1995 (bib.). Q23, Q41.
+- **S081–S083** Anderson 1972 (INSPIRE) ; Laughlin et Pines 2000 (*PNAS*, texte via PMC) ; SEP « Quantum Gravity » (rév. 2024-02-26, texte). Q23, Q07, Q21.
+- **S084–S090** ’t Hooft-Veltman 1974 (bib. non vérifiée en base) ; Goroff-Sagnotti 1986 ; Donoghue 1994 (résumé) ; Wilson 1975, Weinberg 1979, Georgi 1993 (INSPIRE) ; Burgess 2007 (résumé). Q23, Q21, Q11.
+- **S091–S096** Penrose 1965, Hawking-Penrose 1970, Hawking 1975 et 1976 (INSPIRE) ; Almheiri et al. 2019 et 2021 (résumés). Q23, Q24, Q26.
+- **S097–S102** Weinberg 1987 et 1989 (résumés ADS) ; Martel-Shapiro-Weinberg 1998 ; Martin 2012 ; Planck 2018 ; DESI DR2 2025 (résumés). Q23, Q12, Q17, Q29, Q30.
+- **S103–S105** PDG 2024, ATLAS et CMS 2012 (INSPIRE) ; Kwon 2025 SUSY (résumé). Q23, Q15, Q16, Q17.
+- **S106–S119** Green-Schwarz 1984 (INSPIRE) ; Witten 1995 ; Maldacena 1997 ; Bousso-Polchinski 2000 ; KKLT 2003 ; Susskind 2003 ; Douglas 2003 ; Taylor-Wang 2015 ; Vafa 2005 ; Obied et al. 2018 ; Palti 2019 ; Lehnert 2025 ; Andriot 2026 ; Van Raamsdonk 2010 (résumés). Q23, Q09, Q12, Q28, Q29.
+- **S120–S128** Ashtekar 1986, Bombelli et al. 1987 (INSPIRE) ; Rovelli-Smolin 1995 ; Ashtekar-Bianchi 2021 ; Reuter 1998 ; Eichhorn 2019 ; Ambjørn-Jurkiewicz-Loll 2004 ; Loll 2020 ; Surya 2019 (résumés). Q23, Q21, Q22, Q09.
+- **S129–S135** Fermi 2009 ; Addazi et al. 2022 ; LIGO-Virgo 2016 (résumés) ; GWTC-3 tests (bib.) ; Bose et al. 2017 ; Marletto-Vedral 2017 (résumés) ; Aziz et al. 2025 (*Nature*, via Phys.org). Q23, Q21, Q22.
+- **S136–S139** Ellis-Silk 2014 (INSPIRE) ; Dawid 2013 (bib.) ; Barrow 2006/2011 (résumé) ; Allen-Lidström 2017 (résumé). Q23, Q41.
+
+
+## Atlas V2 — consultations du 12 septembre 2026
+
+Ces entrées précisent la consultation effectuée pour les nouveaux outils ; elles ne remplacent pas les niveaux de consultation des dossiers antérieurs. Les textes sont reformulés, les figures et programmes sont originaux.
+
+| Id | Référence | Consultation et usage |
+| --- | --- | --- |
+| S200 | [CERN — The Standard Model](https://home.cern/science/physics/standard-model/) | Texte ; classification pédagogique, fiche 15 et tableau |
+| S201 | [CERN — The Higgs boson](https://home.cern/science/physics/higgs-boson/) | Texte ; champ et boson, fiche 15 |
+| S202 | [PDG 2025 — Quark model](https://pdg.lbl.gov/2025/reviews/rpp2025-rev-quark-model.pdf) | Introduction et tableau de classification ; fiche 15 |
+| S203 | [PDG 2025 — Neutrino masses, mixing, and oscillations](https://pdg.lbl.gov/2025/reviews/rpp2025-rev-neutrino-mixing.pdf) | Introduction ; distinction saveur/masse |
+| S204 | [Feynman et al. — Quantum Behavior, III.1](https://www.feynmanlectures.caltech.edu/III_01.html) | Texte, amplitudes et information de chemin ; laboratoire photon |
+| S205 | [Feynman et al. — Diffraction, I.30](https://www.feynmanlectures.caltech.edu/I_30.html) | Texte, diffraction et interférence ; modèle de champ lointain |
+| S206 | [Aspden et al. — Video recording true single-photon double-slit interference, arXiv:1602.05987](https://arxiv.org/abs/1602.05987) | Résumé ; exemple expérimental, pas de reprise de la vidéo |
+| S207 | [Feynman et al. — The Laws of Thermodynamics, I.44](https://www.feynmanlectures.caltech.edu/I_44.html) | Texte ; entropie et second principe |
+| S208 | [Sean Carroll — From Eternity to Here, FAQ](https://preposterousuniverse.com/eternitytohere/faq/) | Texte ; conditions initiales et flèche du temps, présentation par l’auteur |
+| S209 | [NIST — Putting Einstein to the Test](https://www.nist.gov/atomic-clocks/a-powerful-tool-for-science/putting-einstein-test) | Texte ; mesure des durées |
+| S210 | [NASA — Universe Overview](https://science.nasa.gov/universe/overview/) | Texte ; jalons cosmiques et limites de l’extrapolation |
+| S211 | [Cubitt, Perez-Garcia, Wolf — Undecidability of the Spectral Gap, arXiv:1502.04573](https://arxiv.org/abs/1502.04573) | Résumé et formulation du résultat ; relecture ciblée de la portée de la fiche 23, pas relecture de la preuve |
+
+## Note Navier-Stokes 2026
+
+Références vérifiées le 2026-09-12 pour [notes/navier-stokes-2026.md](../notes/navier-stokes-2026.md) (S140-S165 ; S064 réutilisé). Textes intégraux : Navier 1822 (Wikisource), Fefferman 2000 (PDF Clay), OpenAI 2026 (PDF, extraits), README du dépôt Lean d’OpenAI, billet de Tao du 7 septembre 2026. Résumés : Buckmaster-Vicol 2019, Albritton-Brué-Colombo 2022, Elgindi 2021, Chen-Hou 2022, Córdoba-Martínez-Zoroa 2023 et 2024, Wang et al. 2025. Presse : Quanta, Fortune, Implicator, Stanford Tech Review ; Wikipedia pour la chronologie. Événement en cours : tout est daté.

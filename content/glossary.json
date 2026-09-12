@@ -1,0 +1,17 @@
+[
+ {"id":"elementaire","term":"Élémentaire","aliases":["élémentaires"],"definition":"Décrit sans constituants internes dans le cadre théorique considéré. Cela ne prouve pas qu’aucun niveau plus profond n’existe.","questions":[15,23]},
+ {"id":"quark","term":"Quark","aliases":["quarks"],"definition":"Fermion sensible à l’interaction forte. Les quarks entrent notamment dans la composition des protons et neutrons.","questions":[15,16]},
+ {"id":"lepton","term":"Lepton","aliases":["leptons"],"definition":"Famille de fermions comprenant les leptons chargés et les neutrinos, qui ne participent pas à l’interaction forte.","questions":[15,16]},
+ {"id":"boson","term":"Boson","aliases":["bosons"],"definition":"Particule de spin entier. Le photon et le Higgs sont des exemples, avec des rôles différents.","questions":[15,16]},
+ {"id":"spin","term":"Spin","aliases":[],"definition":"Propriété quantique de moment cinétique intrinsèque. Elle ne représente pas la rotation d’une petite bille.","questions":[15,18]},
+ {"id":"saveur","term":"Saveur","aliases":["saveurs"],"definition":"Pour les neutrinos, catégorie liée à leur production ou détection par interaction faible : électronique, muonique ou tauique. Une saveur n’est pas un état de masse unique.","questions":[15,19]},
+ {"id":"superposition","term":"Superposition","aliases":["superpositions"],"definition":"Combinaison linéaire d’états quantiques. Ses amplitudes peuvent interférer ; elle ne se réduit pas en général à une ignorance classique sur un état déjà fixé.","questions":[18,19]},
+ {"id":"interference","term":"Interférence","aliases":["interférences"],"definition":"Effet de l’addition d’amplitudes : leurs phases peuvent renforcer ou diminuer une probabilité de détection.","questions":[18,19]},
+ {"id":"diffraction","term":"Diffraction","aliases":[],"definition":"Étendue et structure spatiale d’une onde après une ouverture ou un obstacle. Dans le laboratoire photon, une seule fente produit déjà une enveloppe de diffraction.","questions":[18,19]},
+ {"id":"entropie","term":"Entropie","aliases":[],"definition":"Grandeur dont la définition dépend du cadre. Dans le modèle d’urnes : k_B fois le logarithme du nombre de configurations compatibles avec le macroétat.","questions":[10,25,30]},
+ {"id":"macroetat","term":"Macroétat","aliases":["macroétats"],"definition":"Description qui ne retient que certaines propriétés collectives. Plusieurs configurations microscopiques peuvent correspondre au même macroétat.","questions":[10,25]},
+ {"id":"temps-propre","term":"Temps propre","aliases":[],"definition":"Durée mesurée par une horloge le long de son trajet dans l’espace-temps.","questions":[10,21]},
+ {"id":"indecidable","term":"Indécidable","aliases":["indécidabilité"],"definition":"Le sens dépend du cadre : absence de procédure générale qui termine toujours avec la bonne réponse, ou absence de preuve et de réfutation dans un système formel donné.","questions":[23,41]},
+ {"id":"theorie-effective","term":"Théorie effective","aliases":["théories effectives"],"definition":"Description destinée à un domaine d’échelles ou d’énergies. Sa réussite dans ce domaine ne lui confère pas automatiquement un statut ultime.","questions":[15,21,23]},
+ {"id":"conjecture","term":"Conjecture","aliases":["conjectures"],"definition":"Proposition envisagée mais non démontrée. Dans cet atlas, une conjecture personnelle est distinguée d’un résultat établi.","questions":[23,41]}
+]

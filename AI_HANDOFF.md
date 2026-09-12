@@ -1,8 +1,8 @@
 # État de reprise
 
 Mis à jour : 2026-09-12
-Outils : Codex (laboratoires neutrino et antimatière, 2026-09-11 et 2026-09-12) et Claude Code (fiche 41, 2026-09-12), en parallèle dans le même dossier
-Branche : sans objet ; dossier sans dépôt Git.
+Outils : Codex (laboratoires neutrino et antimatière, 2026-09-11 et 2026-09-12) et Claude Code (fiches 41 puis 23, 2026-09-12), en parallèle dans le même dossier
+Branche principale : main. Finalisation V2 isolée sur codex/atlas-v2 ; voir le dernier jalon pour l’état actuel.
 
 ## Travail réalisé
 
@@ -29,6 +29,24 @@ Deuxième exploration interactive dans antimatiere/ : comparateur particule/anti
 - sources/README.md : section « Question 41 » ajoutée (S017 à S073 ; renumérotée après constat que Codex avait attribué S009 à S016 à l’antimatière au même moment).
 - AI_CONTEXT.md et README.md : jalon et déroulement mis à jour.
 
+### 2026-09-12 — Claude Code : deuxième synthèse, question 23
+
+Sur demande de Teo (« go sur la fiche 23 »). questions/23.md réécrite : réponse en quatre sens (unification / déduction des constantes / dérivation de tout / finalité) avec un verdict par sens ; sections sur ce que nous avons, où cela casse, les candidats (cordes/M, boucles, sécurité asymptotique, CDT, ensembles causaux) et leur statut empirique, les limites de principe, la méthode ; sept positions comparées ; huit questions ouvertes ; contributions propres signalées (quadripartition, argument « la finalité n’est pas une propriété empirique », carte quantitative de l’ignorance, test des cordes par interdiction via DESI, leçon du sixième problème de Hilbert résolu en 2025, conjecture d’indépendance des quatre sens) ; 66 sources (S074-S139). QUESTIONS.md et sources/README.md mis à jour ; questions/41.md corrigée pour créditer Barrow 2006 d’une formulation antérieure du « théorème des conséquences ».
+
+### 2026-09-12 — Claude Code : note Navier-Stokes et annonce d’OpenAI
+
+Sur demande de Teo (« l’équation dite de Navier-Stokes avec la résolution d’OpenAI »). Création de notes/navier-stokes-2026.md : l’équation (formes vectorielle et Fefferman, sens des termes, Navier 1822 cité), l’énoncé officiel du prix Clay avec les quatre alternatives (A)-(D) tirées du PDF de Fefferman, l’état de l’art avant 2026, le Théorème 1.1 du PDF d’OpenAI cité mot pour mot avec le mécanisme physique, le dépôt Lean, ce que cela règle (alternative (C) avec force lisse) et ne règle pas (cas sans force, prix, validation humaine), la chronologie de la controverse Buckmaster-Alpöge, les liens avec les fiches 23 et 41. 26 références (S140-S165). README, sources/README.md et questions/23.md mis à jour. L’événement date du 8 septembre 2026, postérieur à la date de connaissance de l’assistant : tout repose sur des sources consultées le 12 septembre.
+
+### 2026-09-12 — Claude Code : laboratoire Navier-Stokes
+
+Sur demande de Teo (« peux-tu me coder ça »), interprétée comme un laboratoire dans le format des précédents. Dossier navier-stokes/ : index.html, style.css, app.js, physics.js, icon.svg, README.md, NOTES_SCIENTIFIQUES.md ; test tests/navier-stokes.test.cjs (9 tests). Contenu : l’équation terme par terme ; un solveur 2D incompressible sur le tore (advection semi-lagrangienne RK2 + diffusion et projection exactes par FFT maison, grilles 64/128/256, viscosité 10⁻⁴ à 0,3, force au pointeur, vues vorticité/vitesse/colorant, états initiaux Taylor-Green et jets opposés, mesures en direct dont l’énergie théorique de Taylor-Green) ; un schéma de l’explosion (famille auto-similaire avec les échelles de longueur du Théorème 1.1 d’OpenAI, exposant de vitesse choisi pour une énergie constante, clairement signalé comme modèle jouet) ; les quatre énoncés (A)-(D) de Fefferman avec statut daté ; références. Navigation atlas-bridge comme les autres laboratoires. **Non relié à content/atlas.json** (fichier de Codex) : entrée suggérée ci-dessous.
+
+Entrée proposée pour content/atlas.json (à adapter au schéma exact) : id « navier-stokes », title « Navier-Stokes », url « navier-stokes/index.html », description « L’équation des fluides, un tore 2D à manipuler et le schéma de l’explosion revendiquée en 2026 », questions liées 23 et 41, parcours « connaissance ».
+
+## Coordination entre outils (Claude Code, 2026-09-12, 00:55)
+
+Constat : Codex a initialisé le dépôt Git (commits 53642f3 et 671f910), construit l’atlas V1 et continué à écrire (questions/10.md, 15.md, content/*-essentiel.md, photon/, temps/) pendant que Claude Code rédigeait les fiches 41 et 23 et la note Navier-Stokes. Les deux jeux de modifications sont mêlés dans l’arbre de travail, non commités. Claude Code n’a rien commité (aucune demande de Teo) et n’a touché à aucun fichier de l’atlas, des laboratoires ou de content/. Le script de construction lit le statut des fiches dans questions/*.md ; la fiche 23 apparaîtra comme « Synthèse provisoire » à la prochaine construction. npm test relancé par Claude Code après ses écritures : voir « Validation croisée ». Recommandation : que Teo ou Codex commite l’état courant en deux commits (contenu de recherche Claude / atlas et laboratoires Codex), puis un seul outil à la fois sur l’arbre, ou des branches.
+
 ## Validation
 
 Neutrino (Codex, 2026-09-11) et antimatière (Codex, 2026-09-12 ; tests relancés par Claude Code, voir ci-dessous) :
@@ -37,10 +55,13 @@ Neutrino (Codex, 2026-09-11) et antimatière (Codex, 2026-09-12 ; tests relancé
 - node --test tests/antimatter.test.cjs et node --check antimatiere/app.js : voir le résultat consigné dans la section « Validation croisée » ci-dessous.
 - Navigateur Chromium via agent-browser : réglages, saveurs, réinitialisation, sources, accordéons, pause/reprise, ancres ; aucune erreur JavaScript. Largeurs 320 à 1440 px sans débordement. Reduced-motion respecté.
 
-Fiche 41 (Claude Code, 2026-09-12) :
+Fiches 41, 23 et note Navier-Stokes (Claude Code, 2026-09-12) :
 - Sources : 57 références. Texte intégral consulté pour Laplace, Du Bois-Reymond (OCR), Turing 1936, Breuer 1995, Lloyd 2000, Hawking 2002 et cinq entrées de la Stanford Encyclopedia ; résumés consultés pour 30 articles (arXiv, mathnet, Tellus, IOP) ; données bibliographiques seules, vérifiées via INSPIRE, Wikipedia ou moteur de recherche, pour le reste (marqué « Bib. » dans le tableau). Accès refusés : Springer, APS, ACM, Wiley, ScienceDirect, Nature, Scholarpedia, Semantic Scholar (page), PhilPapers.
 - Calculs des corollaires (Bekenstein pour R = 0,1 m et m = 1,4 kg ; Margolus-Levitin ; Landauer à 310 K) refaits en Python avec les constantes CODATA ; chiffres reportés dans la fiche avec leurs hypothèses.
 - Vérification structurelle : liens internes de la fiche vers des fiches existantes ; sommaire et fiche mis à jour ensemble.
+- Fiche 23 : 23 références vérifiées via l’API INSPIRE (DOI → titre, auteurs, revue, volume, page) ; texte intégral pour Laughlin-Pines 2000 et la SEP ; résumés arXiv/ADS pour 45 articles ; le reste en bibliographie seule. L’API arXiv n’a pas répondu pour GWTC-3 ; l’article de Nature 2025 (Aziz et al.) n’est connu que par Phys.org.
+- Laboratoire Navier-Stokes : node --test tests/navier-stokes.test.cjs → 9/9 (FFT aller-retour < 10⁻¹², projection exacte, taux de diffusion e^{−2νΔt} à 10⁻⁶, Taylor-Green suivi à −12 % en 64² et −6 % en 128² sur t = 1, monotonie de l’énergie, absence de NaN, famille auto-similaire, entrées invalides) ; npm test complet → 35/35 ; node --check app.js ; page ouverte dans le navigateur intégré : rendu, animation (5,5 ms par pas en 128²), écart Taylor-Green −0,6 % à t = 0,14, schéma d’explosion, aucune erreur console.
+- Note Navier-Stokes : PDF d’OpenAI et PDF de Fefferman extraits par pdftotext et lus (résumé, théorème, sections 1-2 pour OpenAI ; énoncé complet pour Fefferman) ; preuve de 166 pages non examinée ; dépôts Lean non compilés ; billet d’OpenAI lu via miroir (accès direct refusé) ; Nature et Axios inaccessibles.
 - Aucune évaluation par un tiers ; les contributions propres sont marquées comme synthèse, dérivation ou conjecture.
 
 ## Validation croisée (Claude Code, 2026-09-12)
@@ -63,11 +84,17 @@ Antimatière : acceptation visuelle par Teo non recueillie ; section de reprise 
 
 Neutrino : modèle pédagogique, pas de données de détecteur ; pas d’effets de matière, de CP non nul ni de distributions d’énergie ; acceptation visuelle par Teo non recueillie.
 
+Laboratoire Navier-Stokes : simulation 2D (aucune singularité possible, dit explicitement) ; le schéma d’explosion n’utilise que les deux échelles de longueur citées du texte d’OpenAI ; dissipation numérique de l’advection documentée.
+
+Note Navier-Stokes : événement en cours, à réviser à chaque nouvelle source ; ne pas citer comme « résolu » sans les réserves de la section 4.
+
+Fiche 23 : Hawking 1980, Weinberg 1992, Dawid 2013 non lus ; décompte des paramètres du Modèle standard non tiré d’une source primaire ; DESI et le témoin d’intrication sont des sujets actifs à re-vérifier avant toute citation ultérieure.
+
 Fiche 41 : Chaitin 1974 et Popper 1950 non lus (accès fermé) ; deux prépublications citées (S042, S045) ; le débat Lucas-Penrose n’est pas traité ; l’ordre de grandeur du contenu informationnel d’un cerveau n’est pas sourcé ; les « nouvelles réponses » sont des synthèses et une conjecture, pas des résultats démontrés.
 
 ## Prochaine action historique (avant l’atlas V1)
 
-Éviter désormais les écritures concurrentes dans le même dossier (un outil à la fois, ou branches/worktrees dès qu’un dépôt Git existe). Recueillir la lecture de Teo sur questions/41.md et sur le laboratoire antimatière. Puis, au choix : (a) lecture directe de Chaitin 1974 et Popper 1950 pour lever les réserves ; (b) fiche 23 (théorie du tout) en s’appuyant sur le « théorème des conséquences » ; (c) fiche 10 (flèche du temps), identifiée comme partiellement answerable ; (d) retour à l’ordre du sommaire (fiche 01).
+Éviter désormais les écritures concurrentes dans le même dossier (un outil à la fois, ou branches/worktrees dès qu’un dépôt Git existe). Recueillir la lecture de Teo sur questions/41.md, questions/23.md et le laboratoire antimatière. Puis, au choix : (a) fiche 10 (flèche du temps) ou 19 (décohérence et mesure), identifiées comme partiellement answerable ; (b) comparaison des 42 questions d’Allen et Lidström 2017 (S139) avec les nôtres ; (c) lectures directes manquantes (Chaitin 1974, Popper 1950, Hawking 1980) ; (d) retour à l’ordre du sommaire (fiche 01).
 
 
 ## 2026-09-12 — Codex : atlas V1
@@ -102,3 +129,52 @@ La fiche 41 demeure provisoire. Sa lecture courte précise les hypothèses des l
 Les 41 autres dossiers sont explicitement à explorer ; aucun nouveau contenu de réponse n’a été fabriqué. Les parcours temps et connaissance incluent donc des étapes sans synthèse. L’export constitue une copie du carnet, pas un système de restauration intégré.
 
 Prochaine étape suggérée après retour de Teo : rédiger un nouveau dossier sourcé ou développer le prochain laboratoire (photon / double fente), en utilisant l’architecture commune. Les pistes antérieures ne sont pas des autorisations de travail supplémentaires.
+
+
+## 2026-09-12 — Codex : atlas V2, livraison des six volets
+
+Autorisation : Teo a demandé de mettre en place toute la feuille de route, puis a précisé « Pas encore : préparer la version publiable » pour l’hébergement. Aucun déploiement ni domaine créé.
+
+### Livré
+
+- Fiche 23 intégrée avec résumé de portée prudent. Dossier original et ses 66 références conservés, sans revue exhaustive ni validation nouvelle de toutes ses affirmations.
+- Fiches 15 et 10 rédigées comme premières synthèses pédagogiques (4 sources chacune) ; résumés courts et statuts synchronisés. Fiche 41 originale préservée. Quatre synthèses dans l’atlas, 38 questions à explorer.
+- Tableau interactif de 17 entrées de particules : filtres, sélection, propriétés, sources et liens. Détails accessibles dans une fenêtre sur mobile.
+- Photon : diffraction d’une ou deux fentes, information de chemin, longueur d’onde, séparation, impacts unitaires/par lots/animés, histogramme et modèle théorique. Probabilités conditionnées à un écran fini ; pas de trajectoires assignées. 10 000 impacts maximum.
+- Temps : modèle d’urnes avec transition paresseuse, comptage binomial, entropie du macroétat, fluctuations, distribution d’équilibre et historique rejouable. Pas de prétention à simuler l’Univers ou inverser son temps. 1 000 transitions maximum.
+- Trois parcours enrichis, 15 définitions dans le glossaire et au clic dans les dossiers, 37 liens éditoriaux sur une carte navigable au clavier ou par sélection.
+- Carnet : import JSON validé, aperçu, conflits explicités, conservation des notes existantes par défaut ou remplacement choisi. Fusion des favoris/lectures. Échec de stockage : carnet courant préservé. Export maintenu.
+- Présentation du projet et copie des liens de dossiers sans notes personnelles. Mention explicite quand l’adresse est locale.
+- Construction publique par liste de fichiers autorisés, 42 pages statiques de questions sans JavaScript, image de partage originale, sitemap/URL canoniques configurables via SITE_URL, archive ZIP et PUBLICATION.md. Aucun fichier de travail IA, secret ou carnet dans le paquet.
+
+### Préservation des travaux parallèles
+
+Un travail distinct sur Navier-Stokes a continué dans le dossier principal. La finalisation a été déplacée dans `/Users/teocomyn/.codex/worktrees/the42laws-atlas-v2` (branche codex/atlas-v2) ; les fichiers du dossier principal ont été comparés avant réintégration. Les textes et le laboratoire Navier-Stokes n’ont pas été modifiés par cette V2. Le laboratoire autonome est conservé dans le paquet, sans ajout aux quatre cartes de l’atlas.
+
+Les références propres à la V2 ont été déplacées de S140-S151 à **S200-S211**, pour préserver S140-S165 attribués par l’autre travail. Les Markdown des fiches 10/15 et le registre ont été synchronisés. Sauvegardes des modifications initiales et des fichiers avant intégration dans `artifacts/` (ignoré par Git).
+
+### Validation
+
+- 35 tests réussis : 26 pour l’atlas, l’import, les laboratoires neutrino/antimatière/photon/temps ; 9 tests du module Navier-Stokes existant relancés sans modification.
+- Tests indépendants : zéros et symétrie de diffraction, normalisation, disparition du terme d’interférence, énergie du photon ; comptage des urnes par énumération et équilibre détaillé ; entrées invalides et fusion des notes.
+- Navigateur : 17 particules, filtres, détails, 66 sources de la fiche 23, glossaire au clic, recherche, 42 nœuds de la carte, liens éditoriaux, partage, import invalide puis valide, conservation/remplacement des conflits, export réellement téléchargé et relu.
+- Laboratoires : incréments, réglages, remise à zéro, play/pause, historique, relecture exacte et conditions initiales contrôlés.
+- Onze vues de l’atlas à 320/390/768/1440 px sans débordement. Les deux nouveaux laboratoires contrôlés aux quatre largeurs. Menu et fenêtres : clavier/Échap. Aucun démarrage automatique ; contrôle reduced-motion et page statique avec JavaScript désactivé.
+- agent-browser utilisé ; deux sessions se sont bloquées lors du test du sélecteur de fichiers. Les essais finaux ont été réalisés avec Playwright fourni par le runtime, notamment un vrai setInputFiles, sans changer le produit pour contourner un défaut.
+- Paquet public : **132 fichiers, 596 liens/ressources locaux vérifiés**, 42 pages de dossiers statiques. Test des chemins canoniques, du sitemap et de l’image avec une adresse de test réservée, puis reconstruction sans domaine. Vérification sans fichiers de travail.
+- Captures et scripts de QA dans artifacts/. Archive livrable : artifacts/the42laws-v2-public.zip.
+
+### Limites et reprise
+
+Le carnet n’est pas synchronisé ; l’import/export permet son transfert d’une origine à une autre. Les liens de partage locaux ne sont pas des liens publics. La publication est préparée mais volontairement non effectuée, conformément au choix de Teo.
+
+Les dossiers demeurent provisoires. Les liens entre questions sont éditoriaux, pas des implications démontrées. La relecture scientifique de 23 est ciblée sur la portée, pas une revue des 66 références. Les assertions de la note Navier-Stokes appartiennent au travail distinct et n’ont pas été réévaluées dans ce lot.
+
+Prochaine action : recueillir le retour de Teo sur la V2 ; lorsqu’un hébergement sera choisi, configurer SITE_URL, reconstruire et vérifier les véritables URL publiques. Préférer un worktree par outil lors de recherches parallèles.
+
+
+## 2026-09-12 — Codex : préparation de l’envoi GitHub
+
+Teo a explicitement demandé de pousser le projet sur https://github.com/teocomyn/the42laws. Dépôt public existant, sans référence distante au contrôle initial. La branche main regroupe la V2 et les recherches/laboratoires déjà présents, dont Navier-Stokes. Les fichiers de construction, artefacts locaux, dépendances et fichiers .env restent ignorés.
+
+Avant envoi : construction réussie (42 questions, 4 dossiers, 4 laboratoires intégrés), 35 tests réussis, git diff --check sans erreur. Aucun motif de clé privée ou jeton courant détecté dans les fichiers à versionner ni l’historique. Ce jalon concerne le code source ; aucun déploiement du site ni domaine configuré. Vérifier la concordance entre HEAD local et origin/main après le push.
