@@ -97,3 +97,7 @@ Les quatre questions du domaine Vie disposent de synthèses provisoires : 32 enr
 ## 2026-09-12 — Icônes de navigation
 
 Les neuf caractères Unicode de la navigation sont remplacés par des pictogrammes SVG originaux dans atlas/app.js, avec plaques de verre cobalt communes dans atlas/brand.css. Les libellés, routes, aria-current et comportements du menu sont conservés. Voir BRANDING.md. Aucune nouvelle dépendance.
+
+## 2026-09-13 — Open Graph autour du trou noir
+
+Nouvelle carte sociale `atlas/brand-share-black-hole.png` (1200 × 630) et source SVG. Elle reprend le trou noir et l’accroche de la hero sur une composition sombre cobalt. Les métadonnées Open Graph/Twitter utilisent ce nouveau nom de fichier afin d’éviter l’ancien cache ; dimensions, type, URL sécurisée et textes alternatifs sont déclarés. L’ancien aperçu reste versionné pour les anciennes URL.

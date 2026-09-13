@@ -27,7 +27,7 @@ Les couleurs propres aux sept domaines sont conservées comme repères sémantiq
 - `atlas/brand-orb.svg` : sept couches, en référence aux sept domaines.
 - `atlas/brand-field.svg` : texture de points, utilisée seulement sur les surfaces décoratives.
 - `atlas/brand-lab-*.svg` : six illustrations de couverture.
-- `atlas/brand-share.svg` : source de la carte sociale, exportée en `brand-share.png` (1200 × 630). Le build public utilise ce PNG pour Open Graph et Twitter.
+- `atlas/brand-share-black-hole.svg` : source de la carte sociale actuelle, exportée en `brand-share-black-hole.png` (1200 × 630). Le trou noir reprend la direction visuelle de la hero ; le nom de fichier versionné force le renouvellement des caches sociaux. L’ancien `brand-share.png` reste disponible pour les aperçus déjà mis en cache.
 - `atlas/favicon-42-*.png` et `favicon.ico` : identité 42 déjà installée, réutilisée sans modification.
 
 ## Intégration
@@ -47,6 +47,10 @@ Footer commun à l’atlas, aux dossiers et aux sept laboratoires : lueur cobalt
 ## Hero Horizon
 
 L’accueil s’ouvre sur un trou noir illustratif en bleu glacé, avec grande accroche sérif « Le réel dépasse notre imagination. », boutons de navigation et lien vers le laboratoire. Fond noir bleuté, masques de contraste, scène sous les boutons sur mobile. Animation facultative et repli fixe. Le reste de la palette cobalt/verre et le footer éditorial sont conservés. Composant React réutilisable : optimized-black-hole.tsx ; documentation technique dans REACT_COMPONENTS.md.
+
+## Carte sociale — Horizon noir
+
+L’aperçu Open Graph et Twitter place le trou noir au centre de l’identité : fond noir bleuté, disque d’accrétion cobalt et menthe, titre de la hero, monogramme 42 et adresse du site. La composition reste lisible dans la zone sûre des recadrages sociaux. Le build publie l’URL HTTPS, le format PNG, les dimensions 1200 × 630 et un texte alternatif.
 
 
 ## Pictogrammes de navigation

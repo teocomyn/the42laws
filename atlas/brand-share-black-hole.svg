@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">The42laws — Le réel dépasse notre imagination</title>
+  <desc id="desc">Carte sociale sombre de The42laws avec un trou noir bleu, son disque lumineux et la signature de l’atlas.</desc>
+  <defs>
+    <radialGradient id="space" cx="72%" cy="48%" r="72%">
+      <stop offset="0" stop-color="#172f6c"/>
+      <stop offset=".42" stop-color="#0b1735"/>
+      <stop offset="1" stop-color="#05060b"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#b9d9ff" stop-opacity=".82"/>
+      <stop offset=".18" stop-color="#6f94ec" stop-opacity=".48"/>
+      <stop offset=".48" stop-color="#314fab" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#132249" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="disk" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#668de3" stop-opacity="0"/>
+      <stop offset=".2" stop-color="#8baff5"/>
+      <stop offset=".43" stop-color="#e3f0ff"/>
+      <stop offset=".55" stop-color="#bde9df"/>
+      <stop offset=".76" stop-color="#a89cdd"/>
+      <stop offset="1" stop-color="#546fca" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f4f8ff" stop-opacity=".42"/>
+      <stop offset=".45" stop-color="#86a8ee" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#b7e9df" stop-opacity=".28"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-80%" width="180%" height="260%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" seed="42" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .055"/></feComponentTransfer>
+    </filter>
+    <clipPath id="frame"><rect width="1200" height="630" rx="0"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="630" fill="url(#space)"/>
+    <circle cx="875" cy="315" r="310" fill="url(#halo)"/>
+    <path d="M560 84C714 17 1000 13 1182 133" fill="none" stroke="#5678cf" stroke-opacity=".12" stroke-width="1"/>
+    <path d="M518 546C714 613 1022 605 1186 474" fill="none" stroke="#b6e7df" stroke-opacity=".1" stroke-width="1"/>
+
+    <g fill="#d9e8ff">
+      <circle cx="556" cy="112" r="1.4" opacity=".42"/><circle cx="640" cy="78" r="1" opacity=".3"/>
+      <circle cx="711" cy="142" r="1.3" opacity=".5"/><circle cx="1040" cy="105" r="1" opacity=".38"/>
+      <circle cx="1122" cy="188" r="1.5" opacity=".55"/><circle cx="1008" cy="505" r="1.2" opacity=".42"/>
+      <circle cx="655" cy="506" r="1" opacity=".34"/><circle cx="1150" cy="432" r="1.3" opacity=".46"/>
+    </g>
+
+    <g transform="rotate(-8 850 315)">
+      <ellipse cx="850" cy="315" rx="275" ry="72" fill="none" stroke="url(#disk)" stroke-width="46" opacity=".34" filter="url(#soft)"/>
+      <path d="M579 315C680 249 1021 249 1121 315" fill="none" stroke="url(#disk)" stroke-width="10" opacity=".88" filter="url(#glow)"/>
+      <path d="M579 315C690 382 1012 382 1121 315C1002 354 694 354 579 315Z" fill="url(#disk)" opacity=".95" filter="url(#glow)"/>
+      <ellipse cx="850" cy="315" rx="151" ry="155" fill="none" stroke="#9ab9f1" stroke-opacity=".13" stroke-width="18" filter="url(#soft)"/>
+      <circle cx="850" cy="315" r="121" fill="#010208"/>
+      <circle cx="850" cy="315" r="122" fill="none" stroke="#d8e8ff" stroke-opacity=".16" stroke-width="2"/>
+      <path d="M778 218C809 192 862 184 904 202" fill="none" stroke="#bfd9ff" stroke-opacity=".38" stroke-width="3" stroke-linecap="round"/>
+      <path d="M792 419C829 440 884 439 920 414" fill="none" stroke="#b6e7df" stroke-opacity=".22" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <rect x="54" y="48" width="50" height="50" rx="14" fill="url(#glass)" stroke="#c6d9ff" stroke-opacity=".55"/>
+    <text x="79" y="81" fill="#f6f8ff" font-family="Georgia" font-size="21" font-weight="700" text-anchor="middle">42</text>
+    <text x="121" y="80" fill="#f3f2ed" font-family="Georgia" font-size="31" letter-spacing="-1.3">The42laws</text>
+    <text x="56" y="135" fill="#9faec7" font-family="Menlo" font-size="11" letter-spacing="2.5">UN ATLAS DU RÉEL</text>
+
+    <text x="56" y="246" fill="#f3f2ed" font-family="Georgia" font-size="65" letter-spacing="-2.8">Le réel dépasse</text>
+    <text x="56" y="318" fill="#bfd2ff" font-family="Georgia" font-size="65" font-style="italic" letter-spacing="-2.8">notre imagination.</text>
+    <text x="59" y="382" fill="#b5becd" font-family="Arial" font-size="18">42 questions pour explorer ce que l’on sait.</text>
+    <text x="59" y="411" fill="#b5becd" font-family="Arial" font-size="18">Et tout ce qu’il reste à comprendre.</text>
+
+    <path d="M58 522H416" stroke="#88a5d9" stroke-opacity=".38"/>
+    <text x="58" y="558" fill="#d5e0f4" font-family="Menlo" font-size="12" letter-spacing="2">THE42LAWS.FR</text>
+    <text x="1063" y="567" fill="#9aa9c2" font-family="Menlo" font-size="10" letter-spacing="1.6">42 / QUESTIONS</text>
+
+    <rect width="1200" height="630" filter="url(#grain)" opacity=".42"/>
+    <rect x="18" y="18" width="1164" height="594" rx="28" fill="none" stroke="#c8dcff" stroke-opacity=".08"/>
+  </g>
+</svg>

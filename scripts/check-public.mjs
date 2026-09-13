@@ -19,4 +19,10 @@ for(let id=1;id<=42;id++){
 const manifest=JSON.parse(await readFile(resolve(out,'publication.json'),'utf8'));
 if(manifest.questions!==42)errors.push('Question count must remain 42');
 if(files.filter(p=>/\/dossiers\/\d+\/index\.html$/.test(p)).length!==42)errors.push('42 static question pages required');
+const socialImage=await readFile(resolve(out,'atlas/brand-share-black-hole.png'));
+if(socialImage.toString('hex',0,8)!=='89504e470d0a1a0a'||socialImage.readUInt32BE(16)!==1200||socialImage.readUInt32BE(20)!==630)errors.push('Black-hole social image must be a 1200 × 630 PNG');
+if(manifest.baseURL){
+ const home=await readFile(resolve(out,'index.html'),'utf8'),imageURL=new URL('atlas/brand-share-black-hole.png',manifest.baseURL).href;
+ for(const marker of [`property="og:image" content="${imageURL}"`,'property="og:image:width" content="1200"','property="og:image:height" content="630"','property="og:image:alt"','name="twitter:image:alt"'])if(!home.includes(marker))errors.push('Homepage is missing social metadata: '+marker);
+}
 if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}else console.log(`Public package checked: ${files.length} files, ${links} local links/assets, 42 static question pages, no working files.`);

@@ -285,3 +285,7 @@ Validation locale : 50 tests réussis et TypeScript strict. Navigation parcours 
 Demande : améliorer les neuf icônes de la capture pour mieux incarner la marque. Branche codex/nav-icons depuis 56a9909 ; SVG bicolores originaux sur grille commune, verre cobalt, états actif/survol/focus, zones de 48 px. Changements limités à atlas/app.js et atlas/brand.css, plus documentation. Aucun changement du contenu ni du carnet.
 
 Validation locale : 50 tests réussis, syntaxe JavaScript, build public et contrôle de 166 fichiers / 2300 liens et ressources. Rendu ordinateur 1440 et menu mobile 390 px observés ; neuf liens et SVG présents, navigation Laboratoires puis Glossaire, état actif correct. À 320 px, fermeture Échap rend le focus au bouton de menu ; aucun débordement horizontal ni erreur console observés. Prévisualisation temporaire 4258. Vérifier CI, Vercel et lecture distante après push pour établir la publication.
+
+## 2026-09-13 — Nouvelle image Open Graph
+
+Demande : refaire les aperçus sociaux avec le trou noir comme élément principal. Branche `codex/og-black-hole` depuis 662b864. Nouvelle source vectorielle et nouveau PNG 1200 × 630, avec fond spatial sombre, disque cobalt/menthe, titre de la hero et monogramme 42. Le build référence `brand-share-black-hole.png` dans Open Graph et Twitter avec dimensions, type, URL HTTPS et texte alternatif ; le nom versionné renouvelle les caches. Le contrôle public valide désormais le PNG et les marqueurs sociaux. Aucun changement de contenu, d’Analytics, d’Axeptio ou de carnet.
