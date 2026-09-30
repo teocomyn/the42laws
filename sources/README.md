@@ -163,3 +163,18 @@ Consultation le 2026-09-12. La lecture ciblée et le résumé sont distingués ;
 | S342 | [David Kipping — An Objective Bayesian Analysis of Life’s Early Start and Our Late Arrival (2020)](https://arxiv.org/abs/2005.09008) | Résumé de l’auteur sur arXiv, article associé PNAS, DOI 10.1073/pnas.1921655117 ; modèle et sélection des observateurs, sans réanalyse des données. | 2026-09-12 |
 | S343 | [Green et collaborateurs — Call for a Framework for Reporting Evidence for Life Beyond Earth (2021)](https://arxiv.org/abs/2107.10975) | Résumé des auteurs ; Perspective associée Nature, DOI 10.1038/s41586-021-03804-9. Proposition de cadre, pas une norme universelle ni un constat de détection. | 2026-09-12 |
 | S344 | [NASA — UAP FAQs : recherche de vie extraterrestre](https://science.nasa.gov/uap/faqs/) | Réponse institutionnelle à la question 1 consultée le 12 septembre 2026 ; absence de preuve crédible trouvée par la NASA. Aucun inventaire exhaustif de la littérature revendiqué. | 2026-09-12 |
+
+## Matière noire et énergie noire — dossier 29
+
+Consultation ciblée le 2026-09-30 ; pas de revue exhaustive de l’actualité cosmologique.
+
+| Identifiant | Référence | Consultation et limites | Consulté le |
+| --- | --- | --- | --- |
+| S345 | [NASA — Dark Matter](https://science.nasa.gov/dark-matter/) | Page institutionnelle, indices et candidats ; budget arrondi de référence. | 2026-09-30 |
+| S346 | [NASA — Dark Energy](https://science.nasa.gov/dark-energy/) | Page institutionnelle ; accélération et modèles alternatifs. | 2026-09-30 |
+| S347 | [ESA — FAQ Euclid](https://www.esa.int/Science_Exploration/Space_Science/Euclid/Frequently_asked_questions_about_Euclid) | Objectifs et méthode, sans inventaire de résultats actuels. | 2026-09-30 |
+| S348 | [Clowe et al., 2006 — amas du Boulet](https://arxiv.org/abs/astro-ph/0608407) | Résumé uniquement ; reconstruction de masse par lentilles. | 2026-09-30 |
+| S349 | [Planck 2018 results VI](https://arxiv.org/abs/1807.06209) | Résumé de la version 4 (2021) uniquement ; paramètres sous hypothèses. | 2026-09-30 |
+| S350 | [Berkeley Lab — résultats DESI du 19 mars 2025](https://newscenter.lbl.gov/2025/03/19/new-desi-results-strengthen-hints-that-dark-energy-may-evolve/) | Communiqué détaillé, relié à S307 ; dépendance aux combinaisons de données, pas de lecture intégrale des articles. | 2026-09-30 |
+
+S307 : annonce consultée à nouveau le 2026-09-30, avec son communiqué détaillé S350. Ne pas présenter ces indices datés de 2025 comme les derniers résultats disponibles en 2026.

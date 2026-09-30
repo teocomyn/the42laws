@@ -8,7 +8,7 @@
   if(route==='question'){
    const q=data.questions.find(q=>q.id===Number(parts[1]));
    if(!q)return {...m,title:'Page introuvable — The42laws',description:'Cette question n’existe pas.',robots:'noindex,follow'};
-   return {...m,question:q.id,domain:q.domain,domainName:q.domainName,updated:q.learning?.revised||q.updated,title:`${q.title} — The42laws`,description:`Question ${q.id} — ${q.status}. ${q.learning?.goal||'Un dossier à explorer dans The42laws.'}`,path:`/dossiers/${q.id}/`,robots:q.researched?'index,follow':'noindex,follow'};
+   return {...m,question:q.id,domain:q.domain,domainName:q.domainName,updated:q.learning?.revised||q.updated,title:`${q.title} — The42laws`,description:q.researched&&q.answer?.description||`Question ${q.id} — ${q.status}. ${q.learning?.goal||'Un dossier à explorer dans The42laws.'}`,path:`/dossiers/${q.id}/`,robots:q.researched?'index,follow':'noindex,follow'};
   }
   if(pages[route]){const [title,description]=pages[route];m={...m,title:`${title} — The42laws`,description};}
   const publicPaths=C.publicPaths;

@@ -41,7 +41,7 @@ Les fiches sont initialisées. Leur statut décrit notre travail, pas la possibi
 - [26. La question « qu’y avait-il avant le Big Bang ? » a-t-elle un sens ?](questions/26.md) — Synthèse provisoire
 - [27. L’Univers est-il fini ou infini ?](questions/27.md) — À explorer
 - [28. Existe-t-il d’autres univers ?](questions/28.md) — À explorer
-- [29. Que sont la matière noire et l’énergie noire ?](questions/29.md) — À explorer
+- [29. Que sont la matière noire et l’énergie noire ?](questions/29.md) — Synthèse provisoire
 - [30. Quel sera le destin ultime de l’Univers ?](questions/30.md) — Synthèse provisoire
 - [31. Pourquoi l’Univers permet-il l’apparition de structures complexes et de la vie ?](questions/31.md) — À explorer
 

@@ -31,3 +31,29 @@ test('search filters do not contaminate canonical paths or analytics page locati
  }
  assert.equal(Consent.safePage({origin:'https://the42laws.fr',pathname:'/',hash:'#/carnet',search:''}),null);
 });
+const Reader=require('../atlas/dossier.js');
+test('editorial responses keep uncertainty, cited references and metadata together',()=>{
+ for(const id of [10,29,33,41]){
+  const q=D.questions.find(x=>x.id===id),a=q.answer,html=Reader.fullDocument(q,D);
+  assert.ok(q.researched);assert.ok(html.includes(C.escape(a.response)));assert.ok(html.includes(C.escape(a.limit)));
+  assert.equal(M.pageMetadata(D,['question',String(id)]).description,a.description);
+  for(const s of a.sources){assert.ok(q.html.includes(s.url.replaceAll('&','&amp;')));assert.ok(html.includes(s.url.replaceAll('&','&amp;')));}
+ }
+ assert.equal(Reader.answer({...D.questions[28],researched:false}),'');
+ const q={researched:true,answer:{response:'<script>bad</script>',limit:'&',sources:[{label:'<b>',url:'https://example.test/?a=1&b=2'}]}};
+ assert.ok(!Reader.answer(q).includes('<script>'));assert.ok(Reader.answer(q).includes('&amp;'));
+ assert.equal(M.pageMetadata(D,['question','28']).robots,'noindex,follow');assert.equal(M.pageMetadata(D,['question','29']).robots,'index,follow');
+});
+test('contextual reading links show editorial reasons, publication states and unique destinations',()=>{
+ for(const q of D.questions){
+  const html=Reader.related(q,D),destinations=[...html.matchAll(/href="\/dossiers\/(\d+)\/"/g)].map(m=>Number(m[1]));
+  assert.equal(destinations.length,new Set(destinations).size);assert.ok(destinations.length<=4);
+  for(const id of destinations){const edge=D.connections.find(e=>(e.from===q.id&&e.to===id)||(e.to===q.id&&e.from===id));assert.ok(edge);assert.ok(html.includes(C.escape(edge.label)));assert.notEqual(id,q.id);}
+ }
+ const html=Reader.related(D.questions[28],D);assert.ok(html.includes('/dossiers/25/'));assert.ok(html.includes('À EXPLORER'));assert.ok(html.includes('SYNTHÈSE DISPONIBLE'));
+});
+test('short uppercase glossary abbreviations do not hijack scientific mixed-case names',()=>{
+ const names=[{text:'IA',id:'intelligence-artificielle'},{text:'Énergie noire',id:'energie-noire'},{text:'ARN',id:'arn'}];
+ assert.equal(C.glossaryMatch(names,'Ia'),undefined);assert.equal(C.glossaryMatch(names,'IA').id,'intelligence-artificielle');
+ assert.equal(C.glossaryMatch(names,'energie noire').id,'energie-noire');assert.equal(C.glossaryMatch(names,'ARN').id,'arn');
+});

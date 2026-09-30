@@ -222,5 +222,21 @@
       "interpretation": "Un faisceau d’indices doit être évalué dans son contexte.",
       "conjecture": "La présence et la distribution d’autres vies restent inconnues."
     }
+  },
+  "29": {
+    "level": "Découverte",
+    "minutes": 7,
+    "prerequisites": "Gravitation, lumière et expansion ; aucune formule requise.",
+    "goal": "Distinguer les indices de matière noire et d’énergie noire, leurs modèles et leur identité encore inconnue.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-09-30",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Mouvements, lentilles gravitationnelles et mesures de distance contraignent les descriptions cosmologiques.",
+      "resultat": "Les paramètres et préférences statistiques dépendent des données et hypothèses explicites.",
+      "modele": "ΛCDM associe une matière noire froide et une constante cosmologique.",
+      "interpretation": "Une composante inférée par ses effets n’est pas une particule directement identifiée.",
+      "conjecture": "Les candidats microscopiques et les modèles dynamiques restent à départager."
+    }
   }
 }

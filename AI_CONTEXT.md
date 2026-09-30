@@ -13,7 +13,7 @@ Projet de contenu et de recherche local avec atlas statique à la racine et sept
 ## Structure
 
 - index.html, atlas/ : accueil, recherche des 42 questions, lecteur, parcours et carnet local.
-- content/ : résumés prudents des quatorze synthèses, métadonnées, particules, glossaire et liens éditoriaux.
+- content/ : résumés prudents des quinze synthèses, métadonnées, particules, glossaire et liens éditoriaux.
 - photon/, temps/ : nouveaux modèles de la V2 ; tests/v2.test.cjs.
 - PUBLICATION.md, scripts/build-public.mjs : site autonome dans build/public, sans publication.
 - Branche de finalisation isolée : codex/atlas-v2 ; copie intégrée au dossier principal après comparaison des fichiers.
@@ -42,7 +42,7 @@ Conserver les 42 questions et leur numérotation. Distinguer résultats empiriqu
 
 ## Jalon actuel
 
-Quatorze synthèses provisoires, sept laboratoires et cinq parcours (voir les jalons ci-dessous). Carnet enregistré dans localStorage (the42laws:v1), sans synchronisation. Les statuts de lecture et de recherche sont distincts ; import avec aperçu et fusion non destructive par défaut, export JSON. Site publié sur Vercel avec déploiement automatique de main. Domaine principal : https://the42laws.fr ; www redirige en 308 vers le domaine principal. DNS chez Hostinger. La construction définit SITE_URL=https://the42laws.fr. Voir AI_HANDOFF.md pour distinguer les validations locales et distantes de chaque livraison.
+Quinze synthèses provisoires, sept laboratoires et cinq parcours (voir les jalons ci-dessous). Carnet enregistré dans localStorage (the42laws:v1), sans synchronisation. Les statuts de lecture et de recherche sont distincts ; import avec aperçu et fusion non destructive par défaut, export JSON. Site publié sur Vercel avec déploiement automatique de main. Domaine principal : https://the42laws.fr ; www redirige en 308 vers le domaine principal. DNS chez Hostinger. La construction définit SITE_URL=https://the42laws.fr. Voir AI_HANDOFF.md pour distinguer les validations locales et distantes de chaque livraison.
 
 
 ## 2026-09-12 — Lots 1 et 2
@@ -117,3 +117,7 @@ Le lot suivant prérend l’accueil, les sept domaines, les cinq parcours, le gl
 Le navigateur est de nouveau utilisable : domaine Vie → dossier 33 → retour/rechargement ; hero et recherche abiogenèse (3 résultats, noindex), parcours origines-vie à 390 px sans débordement. Consentement réel : refus = aucun script Google, acceptation = un script, retrait/rechargement = aucun script. Console sans erreur observée. Capture ignorée artifacts/seo-validation/vie-mobile.png. Les réglages GA4 distants, DebugView et les informations légales publiques restent à compléter ; aucun gain SEO ou citation IA n’est encore mesuré.
 
 Publication SEO/GEO vérifiée : a5b6fdf sur main, CI 36755461617 et Vercel réussis ; lecture distante des 44 URL du sitemap conforme au build. Les contrôles réels du consentement et des relevés des sept guides sont complétés après déverrouillage du Mac. Réglages de propriété GA4, indexation GSC et mentions publiques restent non confirmés.
+
+## 2026-09-30 — Réponses sourcées et matière noire
+
+État actuel : 15 synthèses (nouveau dossier 29), 27 fiches à explorer, 41 définitions, 48 connexions éditoriales et 45 URL au sitemap. content/answers.json centralise les réponses courtes, réserves, références et descriptions des dossiers 10/29/33/41 ; atlas/dossier.js partage ces encadrés et les lectures liées entre HTML public et routeur. Les deux lettres d’un sigle majuscule du glossaire gardent leur casse : Ia (supernova) ne doit pas ouvrir IA (intelligence artificielle). Search Console exige une connexion dans le navigateur accessible ; aucun chiffre de trafic/indexation n’a été collecté.

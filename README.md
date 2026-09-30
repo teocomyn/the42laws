@@ -24,7 +24,7 @@ Servez le site à la racine du domaine ou utilisez le serveur local : les routes
 - Lecteur : dossiers 1, 10, 15, 19, 23, 25, 26, 30, 32, 36 et 41 en trois vues (essentiel, dossier, sources). Les 31 autres fiches indiquent « À explorer ».
 - Six laboratoires dans l’atlas : [Neutrino](neutrino/index.html), [Antimatière](antimatiere/index.html), [Photon & double fente](photon/index.html), [Temps & entropie](temps/index.html), [Navier-Stokes](navier-stokes/index.html) et [Relativité](relativite/index.html).
 - Tableau des particules : 17 entrées, filtres par famille, propriétés et liens vers les expériences.
-- Glossaire : 15 définitions, recherche et consultation au clic dans les dossiers. Carte de 37 liens éditoriaux entre les 42 questions.
+- Glossaire : 41 définitions, recherche et consultation au clic dans les dossiers. Carte de 48 liens éditoriaux entre les 42 questions.
 - Quatre parcours guidés : matière, temps, connaissance et « Exister, vivre, ressentir ». Toutes leurs étapes obligatoires disposent d’un contenu.
 - Carnet personnel : favoris, lectures marquées manuellement, notes, export et import JSON avec aperçu et choix de résolution des conflits. Les notes existantes sont conservées par défaut. Données locales à ce navigateur et à cette adresse ; pas de synchronisation. Effacer les données du navigateur efface le carnet : l’export permet de conserver une copie.
 - Méthode et registre des sources consultables dans l’interface.
@@ -55,7 +55,7 @@ Marked est une dépendance de construction uniquement. La prévisualisation loca
 
 La fiche 41 est une **synthèse provisoire**, accompagnée de 57 références dont les niveaux de consultation diffèrent. Sa vue courte précise la portée des résultats et sépare limites démontrées sous hypothèses, extrapolations et conjectures. Le dossier original est conservé ; il n’a pas été intégralement validé par un tiers.
 
-La fiche 23 (théorie du tout) est également en **synthèse provisoire** (66 références, réponse en quatre sens). Une [note datée](notes/navier-stokes-2026.md) suit l’annonce d’OpenAI du 8 septembre 2026 sur Navier-Stokes, accompagnée d’un [laboratoire interactif](navier-stokes/index.html) (fluide 2D à manipuler, schéma de l’explosion, énoncés du prix Clay ; intégré à l’atlas avec un guide de dissipation). Les fiches 10 (temps) et 15 (constituants) disposent également d’une première synthèse pédagogique sourcée ; 28 fiches restent « À explorer ». Les laboratoires sont des outils pédagogiques sourcés ; ils ne résolvent pas les questions fondamentales du programme. Les prochains développements peuvent approfondir les dossiers ou ajouter des expériences dans ce cadre commun.
+La fiche 23 (théorie du tout) est également en **synthèse provisoire** (66 références, réponse en quatre sens). Une [note datée](notes/navier-stokes-2026.md) suit l’annonce d’OpenAI du 8 septembre 2026 sur Navier-Stokes, accompagnée d’un [laboratoire interactif](navier-stokes/index.html) (fluide 2D à manipuler, schéma de l’explosion, énoncés du prix Clay ; intégré à l’atlas avec un guide de dissipation). Les fiches 10 (temps) et 15 (constituants) disposent également d’une première synthèse pédagogique sourcée ; 27 fiches restent « À explorer ». Les laboratoires sont des outils pédagogiques sourcés ; ils ne résolvent pas les questions fondamentales du programme. Les prochains développements peuvent approfondir les dossiers ou ajouter des expériences dans ce cadre commun.
 
 
 ## Version publiable
@@ -71,7 +71,7 @@ Les sept laboratoires proposent une expérience guidée avec sauvegarde des rép
 
 ## Lots 1 et 2
 
-Les adresses `/dossiers/1/` à `/dossiers/42/` servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les quatorze synthèses et leurs sources sont rendues dans le HTML public. Les 28 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les cinq parcours guidés ne contiennent plus de fiche vide.
+Les adresses `/dossiers/1/` à `/dossiers/42/` servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les quinze synthèses et leurs sources sont rendues dans le HTML public. Les 27 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les cinq parcours guidés ne contiennent plus de fiche vide.
 
 Le workflow `.github/workflows/quality.yml` construit le site, teste les modèles et la navigation, vérifie les liens locaux et détecte les données générées non synchronisées. Il ne garantit pas la disponibilité future des sources externes ni une validation scientifique indépendante.
 
@@ -91,3 +91,7 @@ Nouvelles synthèses [33](questions/33.md), [34](questions/34.md), [35](question
 ## Référencement
 
 Le paquet public sert le contenu de l’accueil, des domaines, des parcours, du glossaire et des dossiers sans JavaScript. Les liens publics, métadonnées, fils d’Ariane et données structurées partagent les adresses permanentes. Voir [SEO-GEO.md](SEO-GEO.md) pour le périmètre et les mesures à collecter. Publication de chaque lot validé sur main autorisée par Teo le 30 septembre 2026.
+
+## Matière noire et lecture contextualisée — 30 septembre 2026
+
+Le dossier 29 propose une première synthèse sourcée distinguant matière noire, énergie noire, observations et modèles. Les dossiers 10, 29, 33 et 41 partagent des réponses visibles avec réserves et références ; tous les dossiers proposent des lectures reliées par les connexions éditoriales, avec leur état de recherche. Le HTML public conserve ces éléments sans JavaScript. État actuel : 15 synthèses, 27 fiches à explorer, 41 définitions et 45 URL au sitemap.

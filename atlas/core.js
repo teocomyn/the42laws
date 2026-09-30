@@ -83,6 +83,7 @@
   const a=cleanState(current),b=cleanState(incoming);
   return cleanState({read:[...a.read,...b.read],saved:[...a.saved,...b.saved],labs:[...a.labs,...b.labs],notes:preferIncoming?{...a.notes,...b.notes}:{...b.notes,...a.notes},experiences:preferIncoming?{...a.experiences,...b.experiences}:{...b.experiences,...a.experiences},last:a.last||b.last});
  }
- const api={publicPaths,domainIds,pathIds,isAtlasPath,guideIds,cleanExperience,canonicalHref,locationRoute,normalize,escape,filterQuestions,cleanState,parseRoute,parseNotebookJSON,mergeNotebook};
+ function glossaryMatch(names,text){return names.find(n=>normalize(n.text)===normalize(text)&&(!/^[A-Z]{2}$/.test(n.text)||n.text===text));}
+ const api={glossaryMatch,publicPaths,domainIds,pathIds,isAtlasPath,guideIds,cleanExperience,canonicalHref,locationRoute,normalize,escape,filterQuestions,cleanState,parseRoute,parseNotebookJSON,mergeNotebook};
  if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.AtlasCore=api;
 })(globalThis);

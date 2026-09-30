@@ -1,0 +1,54 @@
+{
+  "10": {
+    "response": "Les horloges mesurent des durées. La flèche thermodynamique décrit une tendance statistique vers des macroétats plus probables, à partir de conditions initiales particulières.",
+    "limit": "Cette explication ne résout ni l’origine de la faible entropie cosmique passée ni la question de savoir si le temps est fondamental.",
+    "description": "Temps, horloges et entropie : comprendre la flèche thermodynamique et ce qui reste ouvert sur les conditions initiales de l’Univers.",
+    "sources": [
+      {
+        "label": "Feynman · thermodynamique",
+        "url": "https://www.feynmanlectures.caltech.edu/I_44.html"
+      },
+      {
+        "label": "Carroll · flèche du temps",
+        "url": "https://preposterousuniverse.com/eternitytohere/faq/"
+      }
+    ]
+  },
+  "29": {
+    "response": "La matière noire désigne une composante gravitationnelle non lumineuse ; l’énergie noire intervient dans les modèles décrivant l’accélération de l’expansion cosmique. Leurs effets et leurs rôles sont différents.",
+    "limit": "Les observations contraignent ces modèles, sans établir la nature microscopique de ces composantes. Les indices DESI évoqués ici sont ceux de mars 2025, pas une découverte confirmée.",
+    "description": "Matière noire et énergie noire : différences, indices gravitationnels, expansion cosmique, modèle ΛCDM et limites des hypothèses actuelles.",
+    "sources": [
+      {
+        "label": "NASA · matière noire",
+        "url": "https://science.nasa.gov/dark-matter/"
+      },
+      {
+        "label": "NASA · énergie noire",
+        "url": "https://science.nasa.gov/dark-energy/"
+      }
+    ]
+  },
+  "33": {
+    "response": "Des expériences reproduisent certaines étapes chimiques utiles au vivant. Le défi reste de coupler ressources, compartiment, réactions et hérédité avec variation pour expliquer l’apparition de systèmes capables d’évoluer.",
+    "limit": "Un résultat de laboratoire établit une possibilité dans ses conditions ; il ne reconstitue pas automatiquement l’histoire de la Terre. Une molécule organique n’est pas un organisme.",
+    "description": "Origine de la vie : ingrédients, protocellules, ARN et hérédité. Ce que montrent les expériences et pourquoi le scénario historique reste ouvert.",
+    "sources": [
+      {
+        "label": "Mansy et al. · protocellule (résumé référencé dans le dossier)",
+        "url": "https://www.nature.com/articles/nature07018"
+      }
+    ]
+  },
+  "41": {
+    "response": "Il existe des limites démontrées à la preuve et au calcul dans des cadres précis. Les théorèmes d’incomplétude portent sur des systèmes formels cohérents, effectivement axiomatisables et suffisamment riches en arithmétique.",
+    "limit": "Un énoncé indécidable dans un système n’est pas indémontrable dans tout cadre. Ces résultats ne démontrent pas que la conscience ou l’origine de l’Univers resteront toujours inconnaissables.",
+    "description": "Limites de la connaissance : comprendre la portée de Gödel, du calcul et des contraintes physiques sans les transformer en impossibilités universelles.",
+    "sources": [
+      {
+        "label": "Raatikainen · portée des théorèmes de Gödel",
+        "url": "https://plato.stanford.edu/entries/goedel-incompleteness/"
+      }
+    ]
+  }
+}

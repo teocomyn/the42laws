@@ -30,7 +30,7 @@ export function renderMarkdown(md,source='questions/41.md'){
 }
 export async function build(){
  const metadata=JSON.parse(await readFile(resolve(root,'content/atlas.json'),'utf8'));
- const extras={};for(const name of ['particles','glossary','connections','learning'])extras[name]=JSON.parse(await readFile(resolve(root,`content/${name}.json`),'utf8'));
+ const extras={};for(const name of ['particles','glossary','connections','learning','answers'])extras[name]=JSON.parse(await readFile(resolve(root,`content/${name}.json`),'utf8'));
  const questions=[];
  for(let id=1;id<=42;id++){
   const file=`questions/${String(id).padStart(2,'0')}.md`,md=await readFile(resolve(root,file),'utf8');
@@ -44,7 +44,12 @@ export async function build(){
   const sourceIds=[...new Set([...sources.matchAll(/\| (S\d{3}) \|/g)].map(m=>m[1]))];
   const document=renderMarkdown(body,file);
   let short=null;try{const shortFile=`content/${id}-essentiel.md`;short=renderMarkdown(await readFile(resolve(root,shortFile),'utf8'),shortFile);}catch(error){if(error.code!=='ENOENT')throw error;}
-  questions.push({id,title,status,researched,domain:domain.id,domainName:domain.name,color:domain.color,file,learning:extras.learning[id]||null,updated:md.match(/^Dernière mise à jour : (.+)$/m)?.[1]||'',html:document.html,headings:document.headings,short,sources:renderMarkdown(sources,file),sourceCount:sourceIds.length,keywords:[id===41?'Gödel Godel Turing connaissance logique calcul information limites intelligence':'',...metadata.labs.filter(l=>l.questions.includes(id)).map(l=>l.title),...extras.glossary.filter(t=>t.questions.includes(id)).flatMap(t=>[t.term,...t.aliases]),...extras.particles.filter(p=>p.questions.includes(id)).map(p=>p.name)].join(' ')});
+  questions.push({id,title,status,researched,domain:domain.id,domainName:domain.name,color:domain.color,file,answer:extras.answers[id]||null,learning:extras.learning[id]||null,updated:md.match(/^Dernière mise à jour : (.+)$/m)?.[1]||'',html:document.html,headings:document.headings,short,sources:renderMarkdown(sources,file),sourceCount:sourceIds.length,keywords:[id===41?'Gödel Godel Turing connaissance logique calcul information limites intelligence':'',...metadata.labs.filter(l=>l.questions.includes(id)).map(l=>l.title),...extras.glossary.filter(t=>t.questions.includes(id)).flatMap(t=>[t.term,...t.aliases]),...extras.particles.filter(p=>p.questions.includes(id)).map(p=>p.name)].join(' ')});
+ }
+ for(const [id,a] of Object.entries(extras.answers)){
+  const q=questions.find(q=>q.id===Number(id));
+  if(!q?.researched||!a.response?.trim()||!a.limit?.trim()||!a.description?.trim()||a.description.length>170||!a.sources?.length)throw Error(`Invalid editorial answer: ${id}`);
+  for(const s of a.sources)if(!s.label?.trim()||!/^https:\/\//.test(s.url)||!q.html.includes(esc(s.url)))throw Error(`Answer reference absent from dossier ${id}: ${s.url}`);
  }
  const legal=JSON.parse(await readFile(resolve(root,'content/legal.json'),'utf8'));
  legal.complete=['publisher','publicationDirector','address','email'].every(key=>typeof legal[key]==='string'&&legal[key].trim().length>0);
