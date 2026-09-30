@@ -17,7 +17,7 @@ export function Footer({continuation,note}:FooterProps) {
   </div>
   <div className="t42-footer-brandline"><a href="/#/accueil" aria-label="The42laws, retour à l’accueil"><img src="/atlas/favicon-42-48.png" alt="" width="40" height="40" loading="lazy"/><span>Un atlas du réel.<br/><small>Observer. Questionner. Comprendre.</small></span></a><p>Des questions ouvertes.<br/>Des connaissances qui se construisent.</p></div>
   <a className="t42-footer-wordmark" href="/#/accueil" aria-label="The42laws, accueil">The42laws<span aria-hidden="true">↗</span></a>
-  <div className="t42-footer-bottom"><span>© {new Date().getFullYear()} The42laws</span><span className="t42-footer-signature"><i aria-hidden="true"/> L’EXPLORATION CONTINUE</span><a href="#page-top">Retour en haut <ArrowUp size={13} aria-hidden="true"/></a></div>
+  <div className="t42-footer-bottom"><span>© {new Date().getFullYear()} The42laws</span><nav className="t42-footer-legal" aria-label="Informations et confidentialité"><a href="/confidentialite/">Confidentialité</a><a href="/mentions-legales/">Mentions légales</a><button type="button" data-cookie-settings>Cookies</button></nav><span className="t42-footer-signature"><i aria-hidden="true"/> L’EXPLORATION CONTINUE</span><a href="#page-top">Retour en haut <ArrowUp size={13} aria-hidden="true"/></a></div>
  </footer>;
 }
 export default Footer;

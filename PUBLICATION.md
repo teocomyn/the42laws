@@ -44,12 +44,26 @@ Les fiches 10, 15, 19, 23, 25, 26, 30 et 41 sont provisoires. Les vues courtes p
 
 ## Google Analytics
 
-La construction publique avec SITE_URL ajoute une seule balise Google gtag.js (G-L659XPNBR6) dans le head de chaque page HTML : accueil, laboratoires, dossiers et page 404. Le code local source reste sans balise. La balise de vérification Search Console de l’accueil est conservée. Installation du snippet standard fourni par Teo ; aucun événement personnalisé ni suivi spécifique des changements de fragments n’est ajouté.
+La construction avec `SITE_URL` configure l’identifiant GA4 `G-L659XPNBR6` dans un unique script local `atlas/consent.js`. Ce script ne charge Google qu’après acceptation explicite ; refus et acceptation ont la même visibilité. Le choix est mémorisé au maximum 180 jours, séparément du carnet, puis redemandé. Le bouton Cookies du footer permet de le modifier. Le retrait désactive GA, retire les cookies `_ga` accessibles et recharge la page pour arrêter le code Google déjà chargé. Axeptio reste absent.
+
+Ce mode est un blocage préalable (« basic consent mode »), sans pings Google avant consentement. Les quatre signaux de Consent Mode sont définis avant la configuration ; seuls les signaux Analytics peuvent devenir accordés. Signaux Google et personnalisation publicitaire sont désactivés. L’aperçu source sans `SITE_URL` ne charge jamais Google. Search Console est conservée.
+
+Un `page_view` explicite suit les pages publiques, après mise à jour des métadonnées. Les recherches, filtres, fragments libres, carnet et réponses sont exclus des paramètres construits par le site ; referrer et URL sont expurgés. **Dans la propriété GA4**, désactiver la mesure améliorée (notamment historique, recherche et formulaires) pour éviter tout événement automatique concurrent ; ne pas ajouter de seconde balise via GTM. La présence et le réglage de la propriété distante n’ont pas été confirmés par ce chantier local. Vérifier le réseau puis DebugView après la prochaine publication, sans transmettre de réponses personnelles.
+
+Les pages `/confidentialite/` et `/mentions-legales/` sont générées avec le site et liées dans tous les footers. Compléter `content/legal.json` avec l’identité, le responsable de publication, l’adresse adaptée au statut, le contact public, l’immatriculation si applicable et la conservation réellement choisie dans GA4. Aucun renseignement privé de l’historique n’est publié par défaut. Les mentions restent marquées comme brouillon et noindex tant que les informations éditoriales ne sont pas renseignées ; cette préparation ne vaut pas validation juridique complète.
+
+Références consultées le 30 septembre 2026 : [CNIL — mesure d’audience](https://www.cnil.fr/fr/mesurer-la-frequentation-de-vos-sites-web-et-de-vos-applications), [Google — Consent Mode](https://developers.google.com/tag-platform/security/guides/consent).
 
 ## Lecture et contrôles — lots 1 et 2
 
-Le dossier complet, ses sources et les outils interactifs utilisent la même adresse `/dossiers/{id}/`. Le texte est disponible dans le HTML même sans JavaScript. Les variantes de lecture gardent une URL canonique commune. Les liens à fragments historiques migrent côté navigateur, sans modifier les notes enregistrées. Les 34 fiches sans synthèse ne sont pas dans le sitemap et portent noindex,follow.
+Le dossier complet, ses sources et les outils interactifs utilisent la même adresse `/dossiers/{id}/`. Le texte est disponible dans le HTML même sans JavaScript. Les variantes de lecture gardent une URL canonique commune. Les liens à fragments historiques migrent côté navigateur, sans modifier les notes enregistrées. Les 28 fiches sans synthèse ne sont pas dans le sitemap et portent noindex,follow.
 
 GitHub Actions vérifie les tests, la construction et les ressources/ancres locales à chaque PR et push sur main. Les sources externes restent un contrôle éditorial daté, sans réseau obligatoire dans la CI. Un changement du domaine exige une mise à jour de SITE_URL. Le site est servi à la racine de son domaine, pas dans un sous-répertoire.
 
-La branche Axeptio reste séparée, en attente de l’activation de formule et de publication de sa configuration. Ces lots ne changent pas le fonctionnement de la balise GA existante.
+Axeptio reste suspendu. Le chantier du 30 septembre remplace le chargement immédiat historique de GA par le choix natif décrit ci-dessus.
+
+## Carnet des expériences — 30 septembre 2026
+
+Les sept guides enregistrent automatiquement prédiction, explication, réglages et relevés A/B dans `the42laws:v1`, avec un format version 2. La clé reste identique pour préserver les carnets précédents. Une expérience par guide est conservée ; de nouveaux relevés remplacent le créneau A ou B. Le carnet affiche les observations et permet la reprise. Les paramètres sont restaurés, sans prétendre rejouer l’état exact du fluide, les impacts, les urnes ou leurs historiques.
+
+L’export complet inclut toutes les expériences. L’export d’un guide contient uniquement cette expérience au format carnet ; il peut être fusionné depuis le carnet. Les exports version 1 et les anciens exports autonomes des guides restent acceptés. Le choix de conflit s’applique aux notes et expériences ; les données actuelles sont gardées par défaut. Un stockage bloqué est signalé ; l’export reste disponible.

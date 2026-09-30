@@ -1,9 +1,15 @@
 import {readFile,readdir,stat} from 'node:fs/promises';
 import {resolve,relative,extname} from 'node:path';
+import {createRequire} from 'node:module';
+import vm from 'node:vm';
+const {pageMetadata}=createRequire(import.meta.url)('../atlas/metadata.js');
 import {out} from './build-public.mjs';
 async function list(dir){const all=[];for(const item of await readdir(dir,{withFileTypes:true})){const file=resolve(dir,item.name);if(item.isDirectory())all.push(...await list(file));else all.push(file);}return all;}
+const context={window:{}};vm.runInNewContext(await readFile(resolve(out,'atlas/data.js'),'utf8'),context);const data=context.window.ATLAS_DATA;
 const files=await list(out),errors=[];let links=0;
 for(const path of files){const name=relative(out,path);if(/(?:^|\/)(?:\.git|node_modules|artifacts|AI_CONTEXT\.md|AI_HANDOFF\.md|\.env)/.test(name))errors.push('Non-public file: '+name);if(extname(path)!=='.html')continue;const html=await readFile(path,'utf8'),page=new URL(name,'https://preview.invalid/');const baseTag=html.match(/<base href="([^"]+)"/),base=baseTag?new URL(baseTag[1],page):page;
+ if((html.match(/src="\/atlas\/consent.js"/g)||[]).length!==1)errors.push(name+': expected one consent entry');
+ if(/<script[^>]+src="https:\/\/www.googletagmanager.com/.test(html))errors.push(name+': Google loaded before consent');
  for(const m of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){const value=m[1].replaceAll('&amp;','&');if(!value||/^(https?:|mailto:|data:)/.test(value))continue;const url=new URL(value,base);if(url.origin!=='https://preview.invalid')continue;const file=resolve(out,'.'+decodeURIComponent(url.pathname));try{let target=file;const info=await stat(target);if(info.isDirectory())target=resolve(target,'index.html');await stat(target);links++;if(url.hash&&!url.hash.startsWith('#/')&&extname(target)==='.html'){const dest=await readFile(target,'utf8'),id=decodeURIComponent(url.hash.slice(1));if(!dest.includes(`id="${id}"`))errors.push(`${name}: missing anchor ${value}`);}}catch{errors.push(`${name}: missing file ${value}`);}}
 }
 // Catch structural regressions in the HTML served before JavaScript runs.
@@ -13,6 +19,10 @@ for(let id=1;id<=42;id++){
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  if(new Set(ids).size!==ids.length)errors.push(`Dossier ${id}: duplicate HTML id`);
  if(!html.includes('atlas/app.js')||!html.includes('atlas/dossier.js'))errors.push(`Dossier ${id}: missing reader assets`);
+ const meta=pageMetadata(data,['question',String(id)]);
+ const descriptions=[...html.matchAll(/<meta name="description" content="([^"]*)"/g)];
+ if(descriptions.length!==1||descriptions[0][1].replaceAll('&amp;','&').replaceAll('&quot;','"').replaceAll('&#39;',"'").replaceAll('&lt;','<').replaceAll('&gt;','>')!==meta.description)errors.push(`Dossier ${id}: description differs from router`);
+ if((html.match(/name="robots"/g)||[]).length!==1||!html.includes(`name="robots" content="${meta.robots}"`))errors.push(`Dossier ${id}: robots differs from router`);
  const ready=!html.includes('name="robots" content="noindex,follow"');
  if(ready&&(!html.includes('Repères de lecture')||!html.includes('Dossier approfondi et sources')))errors.push(`Dossier ${id}: missing complete static reading`);
 }

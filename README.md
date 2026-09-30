@@ -49,7 +49,7 @@ npm run build
 npm test
 ```
 
-Marked est une dépendance de construction uniquement. La prévisualisation locale source ne charge pas de bibliothèque ou police distante. La construction publique conserve la balise Google Analytics configurée séparément. Le rendu échappe le HTML brut des Markdown et filtre les protocoles des liens. Les tests couvrent l’intégrité de l’atlas, la recherche, les états enregistrés, le rendu Markdown et les modèles physiques ; l’import est validé et le paquet public peut être contrôlé avec `npm run check:public`.
+Marked est une dépendance de construction uniquement. La prévisualisation locale source ne charge pas de bibliothèque ou police distante. La construction publique conditionne Google Analytics à un accord explicite via une bannière native, sans Axeptio ; voir PUBLICATION.md. Le rendu échappe le HTML brut des Markdown et filtre les protocoles des liens. Les tests couvrent l’intégrité de l’atlas, la recherche, les états enregistrés, le rendu Markdown et les modèles physiques ; l’import est validé et le paquet public peut être contrôlé avec `npm run check:public`.
 
 ## État de la recherche
 
@@ -67,7 +67,7 @@ npm run check:public
 
 Le site autonome est généré dans `build/public/`, avec 42 pages de questions lisibles sans JavaScript sous `/dossiers/`. L’archive `artifacts/the42laws-v2-public.zip` peut être remise à un hébergeur. Le domaine https://the42laws.fr et le déploiement Vercel sont configurés : voir [PUBLICATION.md](PUBLICATION.md) pour les URL canoniques, le sitemap et la prévisualisation du paquet.
 
-Les six laboratoires sont intégrés à l’atlas. Chacun propose une expérience guidée, deux relevés comparables et un export JSON des observations. Les réponses de ces guides sont temporaires et distinctes du carnet des dossiers.
+Les sept laboratoires proposent une expérience guidée avec sauvegarde des réponses, réglages et relevés A/B dans le carnet commun. Les exports incluent les expériences et les anciens carnets restent importables. La reprise restaure les paramètres, sans rejouer les tirages aléatoires ni l’état exact du fluide.
 
 ## Lots 1 et 2
 

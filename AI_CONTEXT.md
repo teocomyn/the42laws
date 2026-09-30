@@ -1,6 +1,6 @@
 # The42laws — Contexte du projet
 
-Mis à jour : 2026-09-12
+Mis à jour : 2026-09-30
 
 ## Objet
 
@@ -101,3 +101,9 @@ Les neuf caractères Unicode de la navigation sont remplacés par des pictogramm
 ## 2026-09-13 — Open Graph autour du trou noir
 
 Nouvelle carte sociale `atlas/brand-share-black-hole.png` (1200 × 630) et source SVG. Elle reprend le trou noir et l’accroche de la hero sur une composition sombre cobalt. Les métadonnées Open Graph/Twitter utilisent ce nouveau nom de fichier afin d’éviter l’ancien cache ; dimensions, type, URL sécurisée et textes alternatifs sont déclarés. L’ancien aperçu reste versionné pour les anciennes URL.
+
+## 2026-09-30 — Navigation, confidentialité et carnet des expériences (local)
+
+Métadonnées partagées entre le constructeur statique et le routeur via atlas/metadata.js. Robots, descriptions, titres sociaux et canoniques sont remis à jour à chaque rendu. GA4 passe par une bannière native avec blocage préalable, choix révocable et expiration ; Axeptio reste suspendu. Pages confidentialité et mentions légales, informations éditoriales centralisées dans content/legal.json (à compléter par Teo, sans recopier les coordonnées privées de l’historique). Les paramètres de la propriété Google et sa durée de conservation restent à confirmer à distance.
+
+Les sept guides partagent le carnet the42laws:v1 (format export version 2), conservent réponses, paramètres et relevés A/B. La reprise ne rejoue pas les tirages ni l’état exact du fluide. Imports version 1, version 2 et anciens exports isolés acceptés avec choix explicite de conflit. Nouveau guide trou noir : 10 et 20 masses solaires, rayon 29,53 et 59,07 km. Modifications locales sur codex/navigation-carnet ; aucune publication effectuée dans ce chantier.

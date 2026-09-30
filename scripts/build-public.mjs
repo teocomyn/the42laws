@@ -2,31 +2,25 @@ import {readFile,writeFile,readdir,mkdir,copyFile,rm,stat} from 'node:fs/promise
 import {resolve,dirname,extname,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
+const {pageMetadata,headMarkup}=createRequire(import.meta.url)('../atlas/metadata.js');
+const {page:legalPage}=createRequire(import.meta.url)('../atlas/legal.js');
 const {fullDocument}=createRequire(import.meta.url)('../atlas/dossier.js');
 import {buildBlackHole} from './build-black-hole.mjs';
 import {build,root} from './build-atlas.mjs';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const out=resolve(root,'build/public');
-const googleTag = `<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L659XPNBR6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L659XPNBR6');
-</script>`;
-
-async function addGoogleTag(directory) {
- for (const entry of await readdir(directory, {withFileTypes:true})) {
-  const path = resolve(directory, entry.name);
-  if (entry.isDirectory()) await addGoogleTag(path);
-  else if (entry.name.endsWith('.html')) {
-   const html = await readFile(path, 'utf8');
-   if (!html.includes('<head>')) throw Error('Missing head for analytics: '+path);
-   await writeFile(path, html.replace('<head>', '<head>'+googleTag));
+async function configureConsent(directory,enabled) {
+ for(const entry of await readdir(directory,{withFileTypes:true})){
+  const path=resolve(directory,entry.name);
+  if(entry.isDirectory())await configureConsent(path,enabled);
+  else if(entry.name.endsWith('.html')){let html=await readFile(path,'utf8');
+   if(!html.includes('src="/atlas/consent.js"'))html=html.replace('</head>','<script src="/atlas/consent.js" defer></script></head>');
+   if(enabled)html=html.replace('src="/atlas/consent.js"','src="/atlas/consent.js" data-measurement-id="G-L659XPNBR6"');
+   await writeFile(path,html);
   }
  }
 }
+function stripMetadata(html){return html.replace(/<meta\s+(?:name="(?:description|robots|twitter:[^"]+)"|property="og:[^"]+")[^>]*>/g,'').replace(/<link rel="canonical"[^>]*>/g,'');}
 export async function buildPublic(siteURL=process.env.SITE_URL||''){
  let base='';if(siteURL){const url=new URL(siteURL);if(url.protocol!=='https:'||url.username||url.password||url.search||url.hash)throw Error('SITE_URL must be an HTTPS base address without credentials, query or fragment.');base=url.href.replace(/\/$/,'')+'/';}
  await buildBlackHole();
@@ -41,28 +35,29 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
   let files=[];try{files=await readdir(resolve(root,folder),{withFileTypes:true});}catch(e){if(e.code==='ENOENT')continue;throw e;}
   for(const f of files)if(f.isFile()&&/\.(html|css|js|svg|png|md)$/.test(f.name))await copy(folder+'/'+f.name);
  }
- const head=(title,description,path)=>`<meta name="description" content="${esc(description)}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta name="twitter:card" content="summary_large_image">${base?`<link rel="canonical" href="${esc(new URL(path,base).href)}"><meta property="og:url" content="${esc(new URL(path,base).href)}"><meta property="og:image" content="${esc(new URL('atlas/brand-share-black-hole.png',base).href)}"><meta property="og:image:secure_url" content="${esc(new URL('atlas/brand-share-black-hole.png',base).href)}"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The42laws — un atlas du réel autour d’un trou noir"><meta name="twitter:image" content="${esc(new URL('atlas/brand-share-black-hole.png',base).href)}"><meta name="twitter:image:alt" content="The42laws — un atlas du réel autour d’un trou noir">`:''}`;
- for(const path of ['index.html',...data.labs.map(l=>l.url)]){const target=resolve(out,path);let html=await readFile(target,'utf8');const title=html.match(/<title>(.*?)<\/title>/s)?.[1]||'The42laws',description=html.match(/<meta name="description" content="([^"]*)"/)?.[1]||'Un atlas du réel.';html=html.replace(/<meta name="description" content="[^"]*">/,'').replace('</head>',head(title,description,path.replace(/index\.html$/,''))+'</head>');await writeFile(target,html);}
+ const head=(title,description,path,robots='index,follow')=>headMarkup({title,description,path,robots},base,esc);
+ for(const path of ['index.html',...data.labs.map(l=>l.url)]){const target=resolve(out,path);let html=await readFile(target,'utf8');const title=html.match(/<title>(.*?)<\/title>/s)?.[1]||'The42laws',description=html.match(/<meta name="description" content="([^"]*)"/)?.[1]||'Un atlas du réel.';html=stripMetadata(html).replace('</head>',head(title,description,path==='index.html'?'/':path.replace(/index\.html$/,''))+'</head>');await writeFile(target,html);}
  const shell=await readFile(resolve(root,'index.html'),'utf8');
- const documents=data.questions.map(q=>({path:`dossiers/${q.id}/`,title:q.title,description:`Question ${q.id} — ${q.status}. ${q.learning?.goal||'Un dossier à explorer dans The42laws.'}`,body:fullDocument(q),researched:q.researched}));
+ const documents=data.questions.map(q=>({path:`dossiers/${q.id}/`,meta:pageMetadata(data,['question',String(q.id)]),title:q.title,description:`Question ${q.id} — ${q.status}. ${q.learning?.goal||'Un dossier à explorer dans The42laws.'}`,body:fullDocument(q),researched:q.researched}));
  documents.push({path:'dossiers/',title:'Les 42 questions — The42laws',description:'Les dossiers de recherche de The42laws.',body:`<div class="page"><h1>Les 42 questions.</h1>${data.questions.map(q=>`<a class="question-row" href="/dossiers/${q.id}/"><span class="question-number">${q.id}</span><h2>${esc(q.title)}</h2><span class="badge">${esc(q.status)}</span></a>`).join('')}</div>`,researched:true});
+ for(const kind of ['confidentialite','mentions-legales'])documents.push({path:kind+'/',meta:pageMetadata(data,[kind]),body:legalPage(kind,data.legal,esc),researched:kind==='confidentialite'||data.legal?.complete});
  for(const doc of documents){
   const target=resolve(out,doc.path,'index.html');await mkdir(dirname(target),{recursive:true});
-  const html=shell.replace(/<title>.*?<\/title>/s,`<title>${esc(doc.title)} — The42laws</title>`)
-   .replace(/<meta name="description" content="[^"]*">/,'')
-   .replace('</head>',head(doc.title,doc.description,doc.path)+(doc.researched?'':'<meta name="robots" content="noindex,follow">')+'</head>')
+  const meta=doc.meta||pageMetadata(data,['atlas']);
+  const html=stripMetadata(shell).replace(/<title>.*?<\/title>/s,`<title>${esc(meta.title)}</title>`)
+   .replace('</head>',headMarkup(meta,base,esc)+'</head>')
    .replace('<main id="main" tabindex="-1"></main>',`<main id="main" tabindex="-1">${doc.body}</main>`)
    .replace('<body id="page-top">','<body id="page-top"><noscript><style>.sidebar,.topbar{display:none}.shell{margin-left:0}</style></noscript>');
   await writeFile(target,html);
  }
- await writeFile(resolve(out,'404.html'),'<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page introuvable — The42laws</title><meta name="theme-color" content="#101115"><link rel="stylesheet" href="/atlas/style.css"><link rel="stylesheet" href="/atlas/brand.css"><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="48x48" href="/atlas/favicon-42-48.png"><link rel="icon" type="image/png" sizes="32x32" href="/atlas/favicon-42-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/atlas/favicon-42-180.png"></head><body class="brand-error"><main><img src="/atlas/favicon-42-180.png" width="64" height="64" alt=""><span class="eyebrow">THE42LAWS / 404</span><h1>Reprenons le fil.</h1><p>Cette page n’existe pas.</p><a class="button primary" href="'+esc(base||'/')+'">Retour à l’atlas</a></main></body></html>');
+ await writeFile(resolve(out,'404.html'),'<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page introuvable — The42laws</title><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#101115"><link rel="stylesheet" href="/atlas/style.css"><link rel="stylesheet" href="/atlas/brand.css"><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="48x48" href="/atlas/favicon-42-48.png"><link rel="icon" type="image/png" sizes="32x32" href="/atlas/favicon-42-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/atlas/favicon-42-180.png"></head><body class="brand-error"><main><img src="/atlas/favicon-42-180.png" width="64" height="64" alt=""><span class="eyebrow">THE42LAWS / 404</span><h1>Reprenons le fil.</h1><p>Cette page n’existe pas.</p><a class="button primary" href="'+esc(base||'/')+'">Retour à l’atlas</a></main></body></html>');
  const routes=['',...data.labs.map(l=>l.url.replace('index.html','')),...documents.filter(d=>d.researched).map(d=>d.path)];
  await writeFile(resolve(out,'robots.txt'),'User-agent: *\nAllow: /\n'+(base?'Sitemap: '+new URL('sitemap.xml',base).href+'\n':''));
  if(base)await writeFile(resolve(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+routes.map(r=>'<url><loc>'+esc(new URL(r,base).href)+'</loc></url>').join('')+'</urlset>');
  await writeFile(resolve(out,'_headers'),'/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n');
  await writeFile(resolve(out,'publication.json'),JSON.stringify({application:'The42laws',version:2,baseURL:base||null,questions:42,researchDossiers:data.questions.filter(q=>q.researched).length,laboratories:data.labs.length,note:'Build statique. Aucun carnet personnel, fichier de travail IA ou secret inclus.'},null,2));
  // Only the hosted build receives analytics; local source previews stay offline.
- if(base) await addGoogleTag(out);
+ await configureConsent(out,!!base);
  return {out,routes,base};
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){const result=await buildPublic();console.log(`Public build: ${result.out}\n${result.routes.length} static routes. ${result.base?'Canonical URLs and sitemap configured.':'No domain configured; canonical URLs and sitemap omitted.'}`);}

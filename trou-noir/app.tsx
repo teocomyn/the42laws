@@ -1,8 +1,8 @@
-import { StrictMode, useEffect, useRef, useState } from 'react';
+import { StrictMode, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Play, Pause, RotateCcw, Maximize2, Minimize2, Orbit, Eye, Sparkles } from 'lucide-react';
 import BlackHole from '@/components/ui/black-hole';
-import { defaults, schwarzschildKm, type Settings } from '@/components/ui/black-hole-utils/model';
+import { defaults, normalizeSettings, schwarzschildKm, type Settings } from '@/components/ui/black-hole-utils/model';
 const format = (n:number) => new Intl.NumberFormat('fr-FR',{maximumFractionDigits: n < 1000 ? 2 : 0}).format(n);
 function App(){
  const [settings,setSettings]=useState<Settings>({...defaults});
@@ -18,8 +18,15 @@ function App(){
   media.addEventListener('change',preference);document.addEventListener('fullscreenchange',fullscreen);
   return()=>{media.removeEventListener('change',preference);document.removeEventListener('fullscreenchange',fullscreen);};
  },[]);
+ useLayoutEffect(()=>{
+  const restore=(event:Event)=>{const detail=(event as CustomEvent).detail;if(!detail||typeof detail!=='object')return;setSettings(normalizeSettings({...detail,playing:false}));if(typeof detail.mass==='number'&&Number.isFinite(detail.mass))setMass(Math.max(1,Math.min(1e9,detail.mass)));};
+  window.addEventListener('the42laws:restore-black-hole',restore);
+  return()=>window.removeEventListener('the42laws:restore-black-hole',restore);
+ },[]);
+ useLayoutEffect(()=>{window.dispatchEvent(new CustomEvent('the42laws:black-hole-settings',{detail:{...settings,mass}}));},[settings,mass]);
  async function fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else if(stage.current?.requestFullscreen)await stage.current.requestFullscreen();else setNotice('Le plein écran n’est pas proposé par ce navigateur.');}catch{setNotice('Le plein écran est indisponible. Vous pouvez continuer ici.');}}
  return <>
+ <output id="bh-model-state" hidden data-state={JSON.stringify({...settings,mass})}/>
  <div className="bh-stage bh-island" ref={stage}>
   <BlackHole settings={settings}/>
   <div className="bh-stage-top"><span><i aria-hidden="true"/> OBSERVATOIRE / 07</span><span>INTERPRÉTATION VISUELLE</span></div>
@@ -35,7 +42,7 @@ function App(){
   </div>
   <div className="bh-options"><div role="group" aria-label="Points de vue"><button type="button" onClick={()=>change({inclination:12,zoom:1})} aria-pressed={settings.inclination===12&&settings.zoom===1}><Eye size={15}/> Au bord</button><button type="button" onClick={()=>change({inclination:75,zoom:1})} aria-pressed={settings.inclination===75&&settings.zoom===1}><Orbit size={15}/> De dessus</button></div><div role="group" aria-label="Aspect du disque"><button type="button" aria-pressed={settings.disk} onClick={()=>change({disk:!settings.disk})}>{settings.disk?'Masquer le disque':'Afficher le disque'}</button><button type="button" aria-pressed={settings.palette==='ice'} onClick={()=>change({palette:settings.palette==='ice'?'amber':'ice'})}><Sparkles size={15}/>{settings.palette==='ice'?'Palette cobalt':'Palette ambre'}</button></div></div>
  </div>
- <section className="bh-scale" aria-labelledby="scale-title"><div><span className="eyebrow">UN REPÈRE PHYSIQUE</span><h2 id="scale-title">Une masse.<br/><em>Un horizon.</em></h2><p>Pour un trou noir sans rotation ni charge, le rayon de l’horizon est proportionnel à la masse. Doublez la masse : que devient ce rayon ?</p><label htmlFor="bh-mass">Masse <strong>{format(mass)} masses solaires</strong></label><input id="bh-mass" type="range" min="0" max="9" step="0.1" value={Math.log10(mass)} onChange={e=>setMass(10**Number(e.target.value))}/><div className="bh-mass-presets"><button type="button" onClick={()=>setMass(10)}>10 soleils</button><button type="button" onClick={()=>setMass(20)}>20 soleils</button><button type="button" onClick={()=>setMass(4e6)}>4 millions</button></div></div><div className="bh-radius"><span>RAYON DE SCHWARZSCHILD</span><output aria-live="polite" aria-atomic="true">{format(schwarzschildKm(mass))}<small>kilomètres</small></output><p>rₛ = 2GM / c²</p><small>La vue au-dessus garde la même échelle en unités de rₛ. Ce réglage modifie le calcul, pas la taille de l’image.</small></div></section>
+ <section className="bh-scale" aria-labelledby="scale-title"><div><span className="eyebrow">UN REPÈRE PHYSIQUE</span><h2 id="scale-title">Une masse.<br/><em>Un horizon.</em></h2><p>Pour un trou noir sans rotation ni charge, le rayon de l’horizon est proportionnel à la masse. Doublez la masse : que devient ce rayon ?</p><label htmlFor="bh-mass">Masse <strong id="bh-mass-value">{format(mass)} masses solaires</strong></label><input id="bh-mass" type="range" min="0" max="9" step="0.1" value={Math.log10(mass)} onChange={e=>setMass(10**Number(e.target.value))}/><div className="bh-mass-presets"><button type="button" onClick={()=>setMass(10)}>10 soleils</button><button type="button" onClick={()=>setMass(20)}>20 soleils</button><button type="button" onClick={()=>setMass(4e6)}>4 millions</button></div></div><div className="bh-radius"><span>RAYON DE SCHWARZSCHILD</span><output id="bh-radius" aria-live="polite" aria-atomic="true">{format(schwarzschildKm(mass))}<small>kilomètres</small></output><p>rₛ = 2GM / c²</p><small>La vue au-dessus garde la même échelle en unités de rₛ. Ce réglage modifie le calcul, pas la taille de l’image.</small></div></section>
  <p className="bh-status" role="status">{notice}</p>
  </>;
 }
