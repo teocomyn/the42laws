@@ -4,7 +4,7 @@ import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
 const {pageMetadata,headMarkup,breadcrumbs}=createRequire(import.meta.url)('../atlas/metadata.js');
 const {page:legalPage}=createRequire(import.meta.url)('../atlas/legal.js');
-const {canonicalHref}=createRequire(import.meta.url)('../atlas/core.js');
+const {canonicalHref,questionPath}=createRequire(import.meta.url)('../atlas/core.js');
 const {create:publicViews}=createRequire(import.meta.url)('../atlas/public-views.js');
 const {fullDocument}=createRequire(import.meta.url)('../atlas/dossier.js');
 import {buildBlackHole} from './build-black-hole.mjs';
@@ -17,7 +17,7 @@ async function configureConsent(directory,enabled) {
   if(entry.isDirectory())await configureConsent(path,enabled);
   else if(entry.name.endsWith('.html')){let html=await readFile(path,'utf8');
    if(!html.includes('src="/atlas/consent.js"'))html=html.replace('</head>','<script src="/atlas/consent.js" defer></script></head>');
-   if(enabled)html=html.replace('src="/atlas/consent.js"','src="/atlas/consent.js" data-measurement-id="G-L659XPNBR6"');
+   if(enabled&&!html.includes('data-seo-redirect'))html=html.replace('src="/atlas/consent.js"','src="/atlas/consent.js" data-measurement-id="G-L659XPNBR6"');
    html=html.replace(/href="([^"]+)"/g,(_,href)=>`href="${esc(canonicalHref(href.replaceAll('&amp;','&')))}"`);
    await writeFile(path,html);
   }
@@ -38,10 +38,10 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
   let files=[];try{files=await readdir(resolve(root,folder),{withFileTypes:true});}catch(e){if(e.code==='ENOENT')continue;throw e;}
   for(const f of files)if(f.isFile()&&/\.(html|css|js|svg|png|md)$/.test(f.name))await copy(folder+'/'+f.name);
  }
- const head=(title,description,path,robots='index,follow')=>headMarkup({title,description,path,robots},base,esc);
- for(const path of ['index.html',...data.labs.map(l=>l.url)]){const target=resolve(out,path);let html=await readFile(target,'utf8');const title=html.match(/<title>(.*?)<\/title>/s)?.[1]||'The42laws',description=html.match(/<meta name="description" content="([^"]*)"/)?.[1]||'Un atlas du réel.';const publicPath=path==='index.html'?'/':'/'+path.replace(/index\.html$/,'');html=stripMetadata(html).replace('</head>',head(title,description,publicPath)+'</head>');if(path!=='index.html'){const crumbs=`<nav class="seo-breadcrumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><a href="/laboratoires/">Laboratoires</a><span>${title.replace(/ — The42laws$/,'')}</span></nav>`;html=html.replace(/<main([^>]*)>/,`<main$1>${crumbs}`);}await writeFile(target,html);}
+ const head=(title,description,path,robots='index,follow')=>{const editorial=data.seo.routes[path];return headMarkup({title:editorial?editorial.title+' — The42laws':title,description:editorial?.description||description,path,robots},base,esc);};
+ for(const path of ['index.html',...data.labs.map(l=>l.url)]){const target=resolve(out,path);let html=await readFile(target,'utf8');let title=html.match(/<title>(.*?)<\/title>/s)?.[1]||'The42laws';const description=html.match(/<meta name="description" content="([^"]*)"/)?.[1]||'Un atlas du réel.';const publicPath=path==='index.html'?'/':'/'+path.replace(/index\.html$/,'');if(data.seo.routes[publicPath])title=data.seo.routes[publicPath].title+' — The42laws';html=stripMetadata(html).replace(/<title>.*?<\/title>/s,`<title>${esc(title)}</title>`).replace('</head>',head(title,description,publicPath)+'</head>');if(path!=='index.html'){const crumbs=`<nav class="seo-breadcrumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><a href="/laboratoires/">Laboratoires</a><span>${title.replace(/ — The42laws$/,'')}</span></nav>`;html=html.replace(/<main([^>]*)>/,`<main$1>${crumbs}`);}await writeFile(target,html);}
  const shell=await readFile(resolve(root,'index.html'),'utf8');
- const documents=data.questions.map(q=>({path:`dossiers/${q.id}/`,meta:pageMetadata(data,['question',String(q.id)]),title:q.title,description:`Question ${q.id} — ${q.status}. ${q.learning?.goal||'Un dossier à explorer dans The42laws.'}`,body:fullDocument(q,data),researched:q.researched}));
+ const documents=data.questions.map(q=>({path:questionPath(q.id).slice(1),meta:pageMetadata(data,['question',String(q.id)]),body:fullDocument(q,data),researched:q.researched}));
  const views=publicViews(data);
  const publicPages=[['accueil'],['atlas'],['laboratoires'],['parcours'],['glossaire'],['methode'],['sources'],['particules'],['liens'],['apropos'],...data.paths.map(p=>['parcours',p.id]),...data.domains.map(d=>['domaine',d.id])];
  for(const parts of publicPages){const meta=pageMetadata(data,parts);documents.push({path:meta.path.slice(1),meta,body:views.page(parts),researched:true});}
@@ -62,6 +62,14 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
  await writeFile(resolve(out,'robots.txt'),'User-agent: *\nAllow: /\n'+(base?'Sitemap: '+new URL('sitemap.xml',base).href+'\n':''));
  if(base)await writeFile(resolve(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+routes.map(r=>'<url><loc>'+esc(new URL(r,base).href)+'</loc></url>').join('')+'</urlset>');
  await writeFile(resolve(out,'_headers'),'/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n');
+ const redirects=[];
+ for(const q of data.questions){
+  const path=questionPath(q.id),target=resolve(out,`dossiers/${q.id}/index.html`);await mkdir(dirname(target),{recursive:true});
+  // Vercel uses HTTP 308 rules. This small alias also works on plain static previews.
+  await writeFile(target,`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Nouvelle adresse du dossier ${q.id} — The42laws</title><meta name="description" content="Ce dossier possède une nouvelle adresse permanente."><meta name="robots" content="noindex,follow">${base?`<link rel="canonical" href="${esc(new URL(path,base).href)}">`:''}<link rel="stylesheet" href="/atlas/brand.css"><link rel="stylesheet" href="/atlas/style.css"><script src="/atlas/redirect.js" defer></script></head><body class="brand-error"><main><h1>Ce dossier a une nouvelle adresse.</h1><p>${esc(q.title)}</p><a class="button primary" data-seo-redirect href="${path}">Ouvrir le dossier</a></main></body></html>`);
+  for(const source of [`/dossiers/${q.id}`,`/dossiers/${q.id}/`,`/dossiers/${q.id}/index.html`])redirects.push(`${source} ${path} 301!`);
+ }
+ await writeFile(resolve(out,'_redirects'),redirects.join('\n')+'\n');
  await writeFile(resolve(out,'publication.json'),JSON.stringify({application:'The42laws',version:2,baseURL:base||null,questions:42,researchDossiers:data.questions.filter(q=>q.researched).length,laboratories:data.labs.length,note:'Build statique. Aucun carnet personnel, fichier de travail IA ou secret inclus.'},null,2));
  // Only the hosted build receives analytics; local source previews stay offline.
  await configureConsent(out,!!base);

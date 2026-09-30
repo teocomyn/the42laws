@@ -1,14 +1,14 @@
 prompt_id,language,intent,target_url,prompt
-T42-01,fr,comprendre,https://the42laws.fr/dossiers/33/,Comment la vie a-t-elle pu apparaître à partir de matière non vivante et quelles incertitudes restent ouvertes ?
-T42-02,fr,comparer,https://the42laws.fr/dossiers/34/,Quelles preuves permettent de savoir si l'apparition de la vie est rare ou fréquente ?
-T42-03,fr,comprendre,https://the42laws.fr/dossiers/10/,Pourquoi le temps semble-t-il avoir une direction et quel rôle joue l'entropie ?
-T42-04,fr,distinguer,https://the42laws.fr/dossiers/26/,La question de ce qui existait avant le Big Bang a-t-elle un sens en physique ?
-T42-05,fr,comprendre,https://the42laws.fr/dossiers/41/,Quelles limites les théorèmes de Gödel et de Turing imposent-ils à la connaissance ?
-T42-06,fr,distinguer,https://the42laws.fr/dossiers/23/,Que peut signifier une théorie du tout et quelles limites faut-il distinguer ?
-T42-07,fr,comprendre,https://the42laws.fr/dossiers/19/,Que signifie une superposition quantique et pourquoi la mesure pose-t-elle problème ?
-T42-08,fr,comprendre,https://the42laws.fr/dossiers/36/,Quelles différences entre corrélats neuronaux de la conscience et explication de l'expérience subjective ?
+T42-01,fr,comprendre,https://the42laws.fr/dossiers/origine-vie-abiogenese/,Comment la vie a-t-elle pu apparaître à partir de matière non vivante et quelles incertitudes restent ouvertes ?
+T42-02,fr,comparer,https://the42laws.fr/dossiers/vie-rare-inevitable/,Quelles preuves permettent de savoir si l'apparition de la vie est rare ou fréquente ?
+T42-03,fr,comprendre,https://the42laws.fr/dossiers/temps-entropie-fleche-du-temps/,Pourquoi le temps semble-t-il avoir une direction et quel rôle joue l'entropie ?
+T42-04,fr,distinguer,https://the42laws.fr/dossiers/avant-big-bang/,La question de ce qui existait avant le Big Bang a-t-elle un sens en physique ?
+T42-05,fr,comprendre,https://the42laws.fr/dossiers/limites-connaissance-godel-turing/,Quelles limites les théorèmes de Gödel et de Turing imposent-ils à la connaissance ?
+T42-06,fr,distinguer,https://the42laws.fr/dossiers/theorie-du-tout/,Que peut signifier une théorie du tout et quelles limites faut-il distinguer ?
+T42-07,fr,comprendre,https://the42laws.fr/dossiers/superposition-quantique-mesure/,Que signifie une superposition quantique et pourquoi la mesure pose-t-elle problème ?
+T42-08,fr,comprendre,https://the42laws.fr/dossiers/conscience-experience-subjective/,Quelles différences entre corrélats neuronaux de la conscience et explication de l'expérience subjective ?
 T42-09,fr,experimenter,https://the42laws.fr/trou-noir/,Comment comparer le rayon de Schwarzschild de deux trous noirs de 10 et 20 masses solaires ?
 T42-10,fr,apprendre,https://the42laws.fr/parcours/origines-vie/,Quel parcours pédagogique en français relie définition de la vie et origine de la vie avec ses incertitudes ?
 T42-11,fr,experimenter,https://the42laws.fr/neutrino/,Comment les neutrinos oscillent-ils et quelles sont les limites d'un modèle dans le vide ?
 T42-12,fr,experimenter,https://the42laws.fr/antimatiere/,Comment calculer l'énergie libérée par l'annihilation d'un électron et d'un positron au repos ?
-T42-13,fr,comparer,https://the42laws.fr/dossiers/29/,Quelle est la différence entre matière noire et énergie noire et quelles observations soutiennent ces modèles ?
+T42-13,fr,comparer,https://the42laws.fr/dossiers/matiere-noire-energie-noire/,Quelle est la différence entre matière noire et énergie noire et quelles observations soutiennent ces modèles ?

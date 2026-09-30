@@ -26,7 +26,7 @@ Seuls les actifs du site et les textes de recherche sont inclus. Le dossier Git,
 python3 -m http.server 4245 --bind 127.0.0.1 --directory build/public
 ```
 
-Ouvrir http://127.0.0.1:4245/. Vérifier aussi `/dossiers/`, `/dossiers/15/`, `/photon/` et `/temps/`. Les pages `/dossiers/1/` à `/dossiers/42/` possèdent un contenu statique lisible sans JavaScript. Elles renvoient au lecteur interactif pour les notes et les sources détaillées.
+Ouvrir http://127.0.0.1:4245/. Vérifier aussi `/dossiers/`, `/dossiers/particules-elementaires-modele-standard/`, `/photon/` et `/temps/`. Les pages `/dossiers/pourquoi-quelque-chose-plutot-que-rien/` à `/dossiers/sens-valeur-existence/` possèdent un contenu statique lisible sans JavaScript. Elles renvoient au lecteur interactif pour les notes et les sources détaillées.
 
 Le carnet appartient à l’origine du navigateur : changer d’adresse ou de port crée un espace distinct. Exporter depuis l’ancienne adresse puis importer sur la nouvelle permet de réunir ses données. L’import conserve par défaut les notes existantes en cas de conflit.
 
@@ -56,7 +56,7 @@ Références consultées le 30 septembre 2026 : [CNIL — mesure d’audience](h
 
 ## Lecture et contrôles — lots 1 et 2
 
-Le dossier complet, ses sources et les outils interactifs utilisent la même adresse `/dossiers/{id}/`. Le texte est disponible dans le HTML même sans JavaScript. Les variantes de lecture gardent une URL canonique commune. Les liens à fragments historiques migrent côté navigateur, sans modifier les notes enregistrées. Les 28 fiches sans synthèse ne sont pas dans le sitemap et portent noindex,follow.
+Le dossier complet, ses sources et les outils interactifs utilisent la même adresse `/dossiers/{slug}/`. Le texte est disponible dans le HTML même sans JavaScript. Les variantes de lecture gardent une URL canonique commune. Les liens à fragments historiques migrent côté navigateur, sans modifier les notes enregistrées. Les 27 fiches sans synthèse ne sont pas dans le sitemap et portent noindex,follow.
 
 GitHub Actions vérifie les tests, la construction et les ressources/ancres locales à chaque PR et push sur main. Les sources externes restent un contrôle éditorial daté, sans réseau obligatoire dans la CI. Un changement du domaine exige une mise à jour de SITE_URL. Le site est servi à la racine de son domaine, pas dans un sous-répertoire.
 

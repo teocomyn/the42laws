@@ -23,5 +23,637 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/dossiers/1/index.html",
+      "destination": "/dossiers/pourquoi-quelque-chose-plutot-que-rien/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/1/",
+      "destination": "/dossiers/pourquoi-quelque-chose-plutot-que-rien/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/1",
+      "destination": "/dossiers/pourquoi-quelque-chose-plutot-que-rien/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/2/index.html",
+      "destination": "/dossiers/neant-absolu/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/2/",
+      "destination": "/dossiers/neant-absolu/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/2",
+      "destination": "/dossiers/neant-absolu/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/3/index.html",
+      "destination": "/dossiers/existence-necessaire-contingente/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/3/",
+      "destination": "/dossiers/existence-necessaire-contingente/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/3",
+      "destination": "/dossiers/existence-necessaire-contingente/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/4/index.html",
+      "destination": "/dossiers/pourquoi-cette-realite/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/4/",
+      "destination": "/dossiers/pourquoi-cette-realite/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/4",
+      "destination": "/dossiers/pourquoi-cette-realite/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/5/index.html",
+      "destination": "/dossiers/explication-faits-fondamentaux/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/5/",
+      "destination": "/dossiers/explication-faits-fondamentaux/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/5",
+      "destination": "/dossiers/explication-faits-fondamentaux/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/6/index.html",
+      "destination": "/dossiers/realite-fondamentale/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/6/",
+      "destination": "/dossiers/realite-fondamentale/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/6",
+      "destination": "/dossiers/realite-fondamentale/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/7/index.html",
+      "destination": "/dossiers/matiere-fondamentale-emergente/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/7/",
+      "destination": "/dossiers/matiere-fondamentale-emergente/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/7",
+      "destination": "/dossiers/matiere-fondamentale-emergente/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/8/index.html",
+      "destination": "/dossiers/information-matiere/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/8/",
+      "destination": "/dossiers/information-matiere/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/8",
+      "destination": "/dossiers/information-matiere/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/9/index.html",
+      "destination": "/dossiers/espace-fondamental-emergent/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/9/",
+      "destination": "/dossiers/espace-fondamental-emergent/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/9",
+      "destination": "/dossiers/espace-fondamental-emergent/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/10/index.html",
+      "destination": "/dossiers/temps-entropie-fleche-du-temps/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/10/",
+      "destination": "/dossiers/temps-entropie-fleche-du-temps/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/10",
+      "destination": "/dossiers/temps-entropie-fleche-du-temps/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/11/index.html",
+      "destination": "/dossiers/lois-de-la-nature/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/11/",
+      "destination": "/dossiers/lois-de-la-nature/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/11",
+      "destination": "/dossiers/lois-de-la-nature/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/12/index.html",
+      "destination": "/dossiers/pourquoi-ces-lois-physiques/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/12/",
+      "destination": "/dossiers/pourquoi-ces-lois-physiques/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/12",
+      "destination": "/dossiers/pourquoi-ces-lois-physiques/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/13/index.html",
+      "destination": "/dossiers/mathematiques-et-realite/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/13/",
+      "destination": "/dossiers/mathematiques-et-realite/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/13",
+      "destination": "/dossiers/mathematiques-et-realite/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/14/index.html",
+      "destination": "/dossiers/mathematiques-decouvertes-inventees/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/14/",
+      "destination": "/dossiers/mathematiques-decouvertes-inventees/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/14",
+      "destination": "/dossiers/mathematiques-decouvertes-inventees/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/15/index.html",
+      "destination": "/dossiers/particules-elementaires-modele-standard/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/15/",
+      "destination": "/dossiers/particules-elementaires-modele-standard/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/15",
+      "destination": "/dossiers/particules-elementaires-modele-standard/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/16/index.html",
+      "destination": "/dossiers/quatre-interactions-fondamentales/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/16/",
+      "destination": "/dossiers/quatre-interactions-fondamentales/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/16",
+      "destination": "/dossiers/quatre-interactions-fondamentales/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/17/index.html",
+      "destination": "/dossiers/constantes-fondamentales/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/17/",
+      "destination": "/dossiers/constantes-fondamentales/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/17",
+      "destination": "/dossiers/constantes-fondamentales/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/18/index.html",
+      "destination": "/dossiers/mecanique-quantique/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/18/",
+      "destination": "/dossiers/mecanique-quantique/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/18",
+      "destination": "/dossiers/mecanique-quantique/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/19/index.html",
+      "destination": "/dossiers/superposition-quantique-mesure/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/19/",
+      "destination": "/dossiers/superposition-quantique-mesure/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/19",
+      "destination": "/dossiers/superposition-quantique-mesure/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/20/index.html",
+      "destination": "/dossiers/determinisme-probabilites/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/20/",
+      "destination": "/dossiers/determinisme-probabilites/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/20",
+      "destination": "/dossiers/determinisme-probabilites/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/21/index.html",
+      "destination": "/dossiers/gravitation-quantique/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/21/",
+      "destination": "/dossiers/gravitation-quantique/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/21",
+      "destination": "/dossiers/gravitation-quantique/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/22/index.html",
+      "destination": "/dossiers/espace-temps-quantifie/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/22/",
+      "destination": "/dossiers/espace-temps-quantifie/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/22",
+      "destination": "/dossiers/espace-temps-quantifie/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/23/index.html",
+      "destination": "/dossiers/theorie-du-tout/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/23/",
+      "destination": "/dossiers/theorie-du-tout/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/23",
+      "destination": "/dossiers/theorie-du-tout/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/24/index.html",
+      "destination": "/dossiers/commencement-univers/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/24/",
+      "destination": "/dossiers/commencement-univers/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/24",
+      "destination": "/dossiers/commencement-univers/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/25/index.html",
+      "destination": "/dossiers/univers-primordial-conditions-initiales/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/25/",
+      "destination": "/dossiers/univers-primordial-conditions-initiales/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/25",
+      "destination": "/dossiers/univers-primordial-conditions-initiales/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/26/index.html",
+      "destination": "/dossiers/avant-big-bang/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/26/",
+      "destination": "/dossiers/avant-big-bang/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/26",
+      "destination": "/dossiers/avant-big-bang/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/27/index.html",
+      "destination": "/dossiers/univers-fini-infini/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/27/",
+      "destination": "/dossiers/univers-fini-infini/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/27",
+      "destination": "/dossiers/univers-fini-infini/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/28/index.html",
+      "destination": "/dossiers/multivers/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/28/",
+      "destination": "/dossiers/multivers/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/28",
+      "destination": "/dossiers/multivers/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/29/index.html",
+      "destination": "/dossiers/matiere-noire-energie-noire/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/29/",
+      "destination": "/dossiers/matiere-noire-energie-noire/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/29",
+      "destination": "/dossiers/matiere-noire-energie-noire/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/30/index.html",
+      "destination": "/dossiers/destin-univers/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/30/",
+      "destination": "/dossiers/destin-univers/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/30",
+      "destination": "/dossiers/destin-univers/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/31/index.html",
+      "destination": "/dossiers/univers-complexite-vie/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/31/",
+      "destination": "/dossiers/univers-complexite-vie/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/31",
+      "destination": "/dossiers/univers-complexite-vie/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/32/index.html",
+      "destination": "/dossiers/definition-vie/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/32/",
+      "destination": "/dossiers/definition-vie/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/32",
+      "destination": "/dossiers/definition-vie/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/33/index.html",
+      "destination": "/dossiers/origine-vie-abiogenese/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/33/",
+      "destination": "/dossiers/origine-vie-abiogenese/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/33",
+      "destination": "/dossiers/origine-vie-abiogenese/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/34/index.html",
+      "destination": "/dossiers/vie-rare-inevitable/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/34/",
+      "destination": "/dossiers/vie-rare-inevitable/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/34",
+      "destination": "/dossiers/vie-rare-inevitable/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/35/index.html",
+      "destination": "/dossiers/vie-extraterrestre/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/35/",
+      "destination": "/dossiers/vie-extraterrestre/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/35",
+      "destination": "/dossiers/vie-extraterrestre/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/36/index.html",
+      "destination": "/dossiers/conscience-experience-subjective/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/36/",
+      "destination": "/dossiers/conscience-experience-subjective/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/36",
+      "destination": "/dossiers/conscience-experience-subjective/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/37/index.html",
+      "destination": "/dossiers/conscience-processus-physiques/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/37/",
+      "destination": "/dossiers/conscience-processus-physiques/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/37",
+      "destination": "/dossiers/conscience-processus-physiques/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/38/index.html",
+      "destination": "/dossiers/moi-identite-personnelle/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/38/",
+      "destination": "/dossiers/moi-identite-personnelle/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/38",
+      "destination": "/dossiers/moi-identite-personnelle/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/39/index.html",
+      "destination": "/dossiers/conscience-intelligence-artificielle/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/39/",
+      "destination": "/dossiers/conscience-intelligence-artificielle/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/39",
+      "destination": "/dossiers/conscience-intelligence-artificielle/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/40/index.html",
+      "destination": "/dossiers/libre-arbitre/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/40/",
+      "destination": "/dossiers/libre-arbitre/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/40",
+      "destination": "/dossiers/libre-arbitre/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/41/index.html",
+      "destination": "/dossiers/limites-connaissance-godel-turing/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/41/",
+      "destination": "/dossiers/limites-connaissance-godel-turing/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/41",
+      "destination": "/dossiers/limites-connaissance-godel-turing/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/42/index.html",
+      "destination": "/dossiers/sens-valeur-existence/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/42/",
+      "destination": "/dossiers/sens-valeur-existence/",
+      "permanent": true
+    },
+    {
+      "source": "/dossiers/42",
+      "destination": "/dossiers/sens-valeur-existence/",
+      "permanent": true
+    }
   ]
 }

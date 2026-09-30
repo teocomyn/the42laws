@@ -9,7 +9,8 @@
     "build:public": "node scripts/build-public.mjs",
     "package:public": "node scripts/package-public.mjs",
     "check:public": "node scripts/check-public.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sync:seo": "node scripts/sync-seo.mjs"
   },
   "engines": {
     "node": "22.x"

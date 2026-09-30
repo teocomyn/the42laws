@@ -1,0 +1,344 @@
+{
+  "questions": {
+    "1": {
+      "slug": "pourquoi-quelque-chose-plutot-que-rien",
+      "title": "Pourquoi quelque chose plutôt que rien ?",
+      "description": "Explorer la question de l’existence : explication, nécessité et fait brut. Une synthèse philosophique provisoire, avec arguments et références."
+    },
+    "2": {
+      "slug": "neant-absolu",
+      "title": "Le néant absolu est-il possible ?",
+      "description": "Question à explorer : définir le néant absolu et examiner sa possibilité. Cette fiche accueille vos pistes ; aucune synthèse n’est encore publiée."
+    },
+    "3": {
+      "slug": "existence-necessaire-contingente",
+      "title": "Existence nécessaire ou contingente ?",
+      "description": "Question à explorer : distinguer ce qui pourrait ne pas exister de ce qui serait nécessaire. Une fiche ouverte, sans réponse de recherche publiée."
+    },
+    "4": {
+      "slug": "pourquoi-cette-realite",
+      "title": "Pourquoi cette réalité plutôt qu’une autre ?",
+      "description": "Question à explorer : possibilités, alternatives et explication de notre réalité. Retrouvez les questions liées ; la synthèse reste à construire."
+    },
+    "5": {
+      "slug": "explication-faits-fondamentaux",
+      "title": "Toute chose doit-elle avoir une explication ?",
+      "description": "Question à explorer : principe de raison suffisante, explication et faits fondamentaux. Cette fiche de recherche ne propose pas encore de synthèse."
+    },
+    "6": {
+      "slug": "realite-fondamentale",
+      "title": "De quoi la réalité est-elle faite ?",
+      "description": "Question à explorer : identifier les structures les plus fondamentales du réel. Suivez les liens vers matière et particules ; synthèse à construire."
+    },
+    "7": {
+      "slug": "matiere-fondamentale-emergente",
+      "title": "La matière est-elle fondamentale ou émergente ?",
+      "description": "Question à explorer : matière, niveaux de description et émergence. Consultez les dossiers liés ; aucune synthèse de cette question n’est publiée."
+    },
+    "8": {
+      "slug": "information-matiere",
+      "title": "L’information est-elle plus fondamentale que la matière ?",
+      "description": "Question à explorer : sens physique de l’information et rapport à la matière. Des pistes reliées au glossaire, sans synthèse de recherche publiée."
+    },
+    "9": {
+      "slug": "espace-fondamental-emergent",
+      "title": "L’espace est-il fondamental ou émergent ?",
+      "description": "Question à explorer : statut de l’espace et lien avec la gravitation quantique. Cette fiche ouvre la recherche ; la synthèse reste à rédiger."
+    },
+    "10": {
+      "slug": "temps-entropie-fleche-du-temps",
+      "title": "Temps et entropie : pourquoi une direction ?",
+      "description": "Temps, horloges et entropie : comprendre la flèche thermodynamique et ce qui reste ouvert sur les conditions initiales de l’Univers."
+    },
+    "11": {
+      "slug": "lois-de-la-nature",
+      "title": "Pourquoi existe-t-il des lois de la nature ?",
+      "description": "Question à explorer : ce que désigne une loi de la nature et ce qu’elle explique. Une fiche ouverte aux notes et aux liens, sans synthèse publiée."
+    },
+    "12": {
+      "slug": "pourquoi-ces-lois-physiques",
+      "title": "Pourquoi ces lois physiques plutôt que d’autres ?",
+      "description": "Question à explorer : formes des lois, alternatives et demande d’explication. Suivez les connexions de l’atlas ; aucune synthèse n’est publiée."
+    },
+    "13": {
+      "slug": "mathematiques-et-realite",
+      "title": "Pourquoi les mathématiques décrivent-elles le réel ?",
+      "description": "Question à explorer : portée des modèles mathématiques et rapport à la réalité. Les dossiers liés ouvrent des pistes ; cette synthèse reste à rédiger."
+    },
+    "14": {
+      "slug": "mathematiques-decouvertes-inventees",
+      "title": "Les mathématiques sont-elles découvertes ou inventées ?",
+      "description": "Question à explorer : découverte, invention et statut des objets mathématiques. Consultez les pistes liées ; aucune synthèse n’est encore publiée."
+    },
+    "15": {
+      "slug": "particules-elementaires-modele-standard",
+      "title": "Particules élémentaires : le Modèle standard",
+      "description": "Quarks, leptons et bosons : situer les constituants du Modèle standard, leurs interactions et les limites du mot élémentaire. Sources et expériences."
+    },
+    "16": {
+      "slug": "quatre-interactions-fondamentales",
+      "title": "Pourquoi quatre interactions fondamentales ?",
+      "description": "Question à explorer : gravitation, électromagnétisme et interactions faible et forte. Des laboratoires liés sont accessibles ; synthèse à construire."
+    },
+    "17": {
+      "slug": "constantes-fondamentales",
+      "title": "Pourquoi ces valeurs des constantes fondamentales ?",
+      "description": "Question à explorer : paramètres mesurés, constantes et demande d’explication. Retrouvez les expériences liées ; aucune synthèse n’est publiée."
+    },
+    "18": {
+      "slug": "mecanique-quantique",
+      "title": "Pourquoi la mécanique quantique fonctionne-t-elle ainsi ?",
+      "description": "Question à explorer : formalisme quantique, prédictions et interprétations. Des expériences et dossiers liés ouvrent des pistes ; synthèse à rédiger."
+    },
+    "19": {
+      "slug": "superposition-quantique-mesure",
+      "title": "Superposition quantique et mesure : comprendre",
+      "description": "Amplitudes, interférences et décohérence : comprendre la superposition quantique et les questions de la mesure, avec une expérience et des sources."
+    },
+    "20": {
+      "slug": "determinisme-probabilites",
+      "title": "La nature est-elle déterministe ou probabiliste ?",
+      "description": "Question à explorer : distinguer prédiction, hasard et interprétation des lois physiques. Cette fiche relie les dossiers ; la synthèse reste à rédiger."
+    },
+    "21": {
+      "slug": "gravitation-quantique",
+      "title": "Gravitation quantique : comment unifier les théories ?",
+      "description": "Question à explorer : unifier mécanique quantique et relativité générale. Suivez les questions sur l’espace-temps ; aucune synthèse n’est publiée."
+    },
+    "22": {
+      "slug": "espace-temps-quantifie",
+      "title": "L’espace-temps est-il quantifié ?",
+      "description": "Question à explorer : espace-temps, continuité et descriptions quantiques possibles. Une fiche de recherche ouverte, sans synthèse publiée."
+    },
+    "23": {
+      "slug": "theorie-du-tout",
+      "title": "Théorie du tout : unification et limites",
+      "description": "Que signifie une théorie du tout ? Distinguer unification des interactions, calcul des conséquences et explication totale, avec références et réserves."
+    },
+    "24": {
+      "slug": "commencement-univers",
+      "title": "L’Univers a-t-il eu un commencement ?",
+      "description": "Question à explorer : commencement, histoire cosmique et limites des extrapolations. Retrouvez les dossiers sur le Big Bang ; synthèse à construire."
+    },
+    "25": {
+      "slug": "univers-primordial-conditions-initiales",
+      "title": "Univers primordial : quelles conditions initiales ?",
+      "description": "Expansion, état primordial et faible entropie : séparer histoire cosmique étayée et conditions initiales encore ouvertes. Une synthèse sourcée."
+    },
+    "26": {
+      "slug": "avant-big-bang",
+      "title": "Avant le Big Bang : la question a-t-elle un sens ?",
+      "description": "Que signifie avant le Big Bang ? Distinguer histoire du cosmos, temps et extrapolation vers une origine, avec modèles, références et incertitudes."
+    },
+    "27": {
+      "slug": "univers-fini-infini",
+      "title": "L’Univers est-il fini ou infini ?",
+      "description": "Question à explorer : Univers observable, étendue totale et géométrie cosmique. Des questions liées pour poursuivre ; aucune synthèse n’est publiée."
+    },
+    "28": {
+      "slug": "multivers",
+      "title": "Existe-t-il d’autres univers ?",
+      "description": "Question à explorer : sens des hypothèses de multivers et possibilités de les tester. Cette fiche accueille des pistes ; la synthèse reste à construire."
+    },
+    "29": {
+      "slug": "matiere-noire-energie-noire",
+      "title": "Matière noire et énergie noire : différences",
+      "description": "Matière noire et énergie noire : différences, indices gravitationnels, expansion cosmique, modèle ΛCDM et limites des hypothèses actuelles."
+    },
+    "30": {
+      "slug": "destin-univers",
+      "title": "Destin de l’Univers : expansion et scénarios",
+      "description": "Explorer les scénarios d’évolution de l’Univers et leurs hypothèses cosmologiques. Distinguer observations, extrapolations et incertitudes."
+    },
+    "31": {
+      "slug": "univers-complexite-vie",
+      "title": "Pourquoi l’Univers permet-il complexité et vie ?",
+      "description": "Question à explorer : conditions cosmiques, structures complexes et apparition de la vie. Suivez les dossiers liés ; la synthèse reste à rédiger."
+    },
+    "32": {
+      "slug": "definition-vie",
+      "title": "Qu’est-ce que la vie ? Définitions et limites",
+      "description": "Organisation, métabolisme et évolution : comparer les critères du vivant, leurs usages et leurs limites. Une synthèse provisoire avec références."
+    },
+    "33": {
+      "slug": "origine-vie-abiogenese",
+      "title": "Origine de la vie : comprendre l’abiogenèse",
+      "description": "Origine de la vie : ingrédients, protocellules, ARN et hérédité. Ce que montrent les expériences et pourquoi le scénario historique reste ouvert."
+    },
+    "34": {
+      "slug": "vie-rare-inevitable",
+      "title": "L’apparition de la vie est-elle rare ou inévitable ?",
+      "description": "Pourquoi la possibilité chimique de la vie ne donne pas sa fréquence : probabilités, biais de sélection et incertitudes, avec références."
+    },
+    "35": {
+      "slug": "vie-extraterrestre",
+      "title": "Sommes-nous seuls ? La recherche de vie extraterrestre",
+      "description": "Biosignatures, habitabilité et recherche de vie extraterrestre : distinguer indices, non-détection et preuve. Une synthèse avec sources et limites."
+    },
+    "36": {
+      "slug": "conscience-experience-subjective",
+      "title": "Conscience : comprendre l’expérience subjective",
+      "description": "Explorer les définitions de la conscience, ses corrélats et l’expérience subjective. Distinguer observations, modèles et questions encore ouvertes."
+    },
+    "37": {
+      "slug": "conscience-processus-physiques",
+      "title": "Pourquoi une expérience subjective accompagne-t-elle le physique ?",
+      "description": "Question à explorer : processus physiques et expérience subjective. Suivez les liens vers conscience et identité ; aucune synthèse n’est publiée."
+    },
+    "38": {
+      "slug": "moi-identite-personnelle",
+      "title": "Le moi et l’identité personnelle : qu’est-ce qui persiste ?",
+      "description": "Question à explorer : identité personnelle, continuité et expérience du moi. Cette fiche accueille vos pistes ; aucune synthèse n’est publiée."
+    },
+    "39": {
+      "slug": "conscience-intelligence-artificielle",
+      "title": "Une intelligence artificielle peut-elle être consciente ?",
+      "description": "Question à explorer : conscience des machines et portée des performances de l’IA. Distinguer compétence et expérience ; synthèse à construire."
+    },
+    "40": {
+      "slug": "libre-arbitre",
+      "title": "Avons-nous un libre arbitre ?",
+      "description": "Question à explorer : liberté, choix et déterminisme. Les connexions de l’atlas ouvrent des pistes ; aucune synthèse de ce dossier n’est publiée."
+    },
+    "41": {
+      "slug": "limites-connaissance-godel-turing",
+      "title": "Limites de la connaissance : Gödel, Turing et physique",
+      "description": "Limites de la connaissance : comprendre la portée de Gödel, du calcul et des contraintes physiques sans les transformer en impossibilités universelles."
+    },
+    "42": {
+      "slug": "sens-valeur-existence",
+      "title": "La vie et l’existence ont-elles un sens objectif ?",
+      "description": "Question à explorer : sens de l’existence, valeur et objectivité. Une fiche pour noter vos arguments et suivre les liens ; synthèse à construire."
+    }
+  },
+  "routes": {
+    "/": {
+      "title": "42 questions sur l’Univers, la vie et le réel",
+      "description": "Explorez 42 questions sur l’existence, l’Univers, la vie et la conscience. Dossiers sourcés, expériences interactives et parcours pour apprendre."
+    },
+    "/dossiers/": {
+      "title": "Les 42 questions sur le réel : atlas de recherche",
+      "description": "Explorez les 42 questions de The42laws en sept domaines : existence, réalité, physique, Univers, vie, conscience et sens. Synthèses et états de recherche."
+    },
+    "/laboratoires/": {
+      "title": "Expériences de physique : sept laboratoires interactifs",
+      "description": "Explorez neutrinos, antimatière, photons, temps, relativité, fluides et trous noirs. Sept expériences guidées avec réglages, relevés et limites des modèles."
+    },
+    "/parcours/": {
+      "title": "Parcours pour comprendre la physique, la vie et le réel",
+      "description": "Cinq parcours guidés relient dossiers et expériences : matière, temps, connaissance, existence et origine de la vie. Choisissez votre point de départ."
+    },
+    "/glossaire/": {
+      "title": "Glossaire de physique, de la vie et de la connaissance",
+      "description": "Entropie, particules, abiogenèse, conscience et preuve : des définitions pédagogiques reliées aux dossiers pour comprendre leurs modèles et leurs limites."
+    },
+    "/methode/": {
+      "title": "Méthode de recherche : faits, modèles et hypothèses",
+      "description": "Comment The42laws construit ses synthèses : distinguer observations, résultats, modèles et conjectures, vérifier les sources et rendre les réserves visibles."
+    },
+    "/sources/": {
+      "title": "Sources scientifiques et philosophiques de l’atlas",
+      "description": "Consultez les références des dossiers et laboratoires de The42laws, avec dates, passages utiles et niveaux de consultation : texte, résumé ou bibliographie."
+    },
+    "/particules/": {
+      "title": "Particules du Modèle standard : tableau interactif",
+      "description": "Comparez quarks, leptons et bosons du Modèle standard : charge, spin, masse et rôle. Un tableau pédagogique relié aux dossiers et expériences."
+    },
+    "/liens/": {
+      "title": "Relier physique, vie et conscience : carte des questions",
+      "description": "Suivez les liens éditoriaux entre les 42 questions de The42laws. Des raisons de poursuivre la lecture, sans confondre connexion et démonstration."
+    },
+    "/apropos/": {
+      "title": "The42laws : un projet pour explorer les grandes questions",
+      "description": "Découvrez The42laws, un atlas français de recherche sur 42 grandes questions : dossiers provisoires, expériences, parcours et carnet personnel."
+    },
+    "/confidentialite/": {
+      "title": "Confidentialité, cookies et Google Analytics",
+      "description": "Comprenez comment The42laws conserve votre carnet sur cet appareil et utilise Google Analytics après accord. Consultez vos choix de confidentialité."
+    },
+    "/mentions-legales/": {
+      "title": "Mentions légales et informations éditoriales",
+      "description": "Informations d’édition et d’hébergement de The42laws, statut des synthèses et références. Les coordonnées publiques restant à compléter sont signalées."
+    },
+    "/#/carnet": {
+      "title": "Carnet personnel : lectures, notes et expériences",
+      "description": "Retrouvez vos lectures, favoris, notes et relevés d’expériences The42laws. Le carnet reste dans ce navigateur ; importez et exportez vos données."
+    },
+    "/domaines/existence/": {
+      "title": "Existence : réalité, néant et explication",
+      "description": "Pourquoi quelque chose plutôt que rien ? Explorez cinq questions sur existence, néant, nécessité et explication, avec les synthèses disponibles."
+    },
+    "/domaines/realite/": {
+      "title": "Réalité : matière, information, temps et mathématiques",
+      "description": "Explorez neuf questions sur la réalité : matière, information, espace, temps, lois et mathématiques. Dossiers disponibles et pistes de recherche."
+    },
+    "/domaines/physique/": {
+      "title": "Physique fondamentale : particules, quantique et gravité",
+      "description": "Explorez neuf questions sur particules, interactions, constantes, mécanique quantique et gravitation. Synthèses sourcées et expériences liées."
+    },
+    "/domaines/univers/": {
+      "title": "Univers : Big Bang, matière noire et histoire cosmique",
+      "description": "Explorez huit questions sur l’histoire et le contenu de l’Univers : Big Bang, état primordial, matière noire, énergie noire et destin du cosmos."
+    },
+    "/domaines/vie/": {
+      "title": "Origine de la vie, vivant et vie extraterrestre",
+      "description": "Qu’est-ce que la vie et comment apparaît-elle ? Quatre dossiers sur vivant, abiogenèse, fréquence de la vie et recherche extraterrestre, avec leurs limites."
+    },
+    "/domaines/conscience/": {
+      "title": "Conscience : expérience subjective, moi et machines",
+      "description": "Explorez quatre questions sur conscience, expérience subjective, identité personnelle et machines. Retrouvez les synthèses disponibles et les pistes ouvertes."
+    },
+    "/domaines/sens/": {
+      "title": "Libre arbitre, connaissance et sens de l’existence",
+      "description": "Explorez trois questions sur liberté, limites de la connaissance et valeur de l’existence. Distinguez théorèmes, arguments et questions ouvertes."
+    },
+    "/parcours/matiere/": {
+      "title": "Comprendre la matière : particules et expériences",
+      "description": "Un parcours guidé des particules aux neutrinos, à l’antimatière et aux photons. Reliez dossiers sourcés et expériences pour comprendre leurs modèles."
+    },
+    "/parcours/temps/": {
+      "title": "Comprendre le temps : entropie, relativité et cosmos",
+      "description": "Un parcours guidé pour distinguer horloges, relativité et flèche thermodynamique, puis explorer le Big Bang et les hypothèses sur l’évolution du cosmos."
+    },
+    "/parcours/connaitre/": {
+      "title": "Limites du savoir : preuve, calcul et théorie du tout",
+      "description": "Un parcours pour examiner Gödel, Turing, unification et portée des preuves. Reliez dossiers et laboratoire de fluides en gardant les hypothèses visibles."
+    },
+    "/parcours/fondements/": {
+      "title": "Existence, vie et conscience : un parcours de découverte",
+      "description": "Reliez trois grandes questions sur existence, organisation vivante et expérience subjective. Des étapes guidées, avec sources et incertitudes explicites."
+    },
+    "/parcours/origines-vie/": {
+      "title": "De la chimie à la vie : parcours sur l’abiogenèse",
+      "description": "Explorez définition de la vie, protocellules, ARN, fréquence du vivant et recherche extraterrestre. Un parcours guidé qui distingue résultats et hypothèses."
+    },
+    "/neutrino/": {
+      "title": "Neutrinos : explorer les oscillations de saveur",
+      "description": "Faites varier énergie et distance pour explorer les oscillations de neutrinos dans un modèle à trois saveurs. Guide, relevés et limites de la simulation."
+    },
+    "/antimatiere/": {
+      "title": "Antimatière : annihilation et énergie des photons",
+      "description": "Comparez matière et antimatière, puis explorez l’énergie des photons d’annihilation. Un laboratoire guidé avec réglages, calculs et références."
+    },
+    "/photon/": {
+      "title": "Photons : interférences et expérience des deux fentes",
+      "description": "Explorez une distribution de détections dans un modèle à une ou deux fentes. Comparez les chemins et l’interférence, avec guide et limites du modèle."
+    },
+    "/temps/": {
+      "title": "Entropie et flèche du temps : expérience interactive",
+      "description": "Répartissez des objets entre deux urnes et comparez leurs configurations. Une expérience guidée pour distinguer comptage, fluctuations et flèche du temps."
+    },
+    "/navier-stokes/": {
+      "title": "Navier–Stokes : laboratoire de fluides en deux dimensions",
+      "description": "Manipulez un modèle de fluide 2D et comparez la dissipation à une référence. Guide, limites numériques et note datée sur le problème de Navier–Stokes."
+    },
+    "/relativite/": {
+      "title": "Relativité : comparer les durées de deux horloges",
+      "description": "Comparez les temps propres d’un trajet idéal à vitesse constante. Une expérience guidée de relativité restreinte, avec hypothèses, calculs et relevés."
+    },
+    "/trou-noir/": {
+      "title": "Trou noir : visualisation et rayon de Schwarzschild",
+      "description": "Explorez une visualisation illustrative et comparez le rayon de Schwarzschild selon la masse. Guide 10/20 masses solaires, calculs et limites explicites."
+    }
+  }
+}

@@ -36,10 +36,15 @@
  const publicPaths={accueil:'/',atlas:'/dossiers/',laboratoires:'/laboratoires/',parcours:'/parcours/',glossaire:'/glossaire/',methode:'/methode/',sources:'/sources/',particules:'/particules/',liens:'/liens/',apropos:'/apropos/'};
  const domainIds=['existence','realite','physique','univers','vie','conscience','sens'];
  const pathIds=['matiere','temps','connaitre','fondements','origines-vie'];
+ const seo=typeof module==='object'&&module.exports?require('../content/seo.json'):root.ATLAS_DATA?.seo||{questions:{},routes:{}};
+ function questionPath(id){const item=seo.questions[Number(id)];return item?'/dossiers/'+item.slug+'/':'/dossiers/'+Number(id)+'/';}
+ function questionId(path){const match=String(path).replace(/index\.html$/,'').match(/^\/dossiers\/([^/]+)\/$/);if(!match)return null;if(/^\d+$/.test(match[1])&&seo.questions[Number(match[1])])return Number(match[1]);return Number(Object.keys(seo.questions).find(id=>seo.questions[id].slug===match[1]))||null;}
  function canonicalHref(href){
+  const direct=String(href).match(/^\/?dossiers\/(\d+)(?:\/(?:index\.html)?)?([?#].*)?$/);
+  if(direct&&seo.questions[Number(direct[1])])return questionPath(direct[1])+(direct[2]||'');
   const match=String(href).match(/^(?:\.\.\/index\.html|\/(?:index\.html)?|index\.html)?#\/([^?]+)(?:\?(.*))?$/);
   if(match){const parts=match[1].split('/'),params=new URLSearchParams(match[2]||'');let path;
-   if(parts[0]==='question'&&/^\d+$/.test(parts[1])&&parts.length===2)path='/dossiers/'+Number(parts[1])+'/';
+   if(parts[0]==='question'&&/^\d+$/.test(parts[1])&&parts.length===2)path=questionPath(parts[1]);
    else if(parts[0]==='atlas'&&domainIds.includes(params.get('d'))){path='/domaines/'+params.get('d')+'/';params.delete('d');}
    else if(parts.length===1)path=publicPaths[parts[0]];
    else if(parts[0]==='parcours'&&pathIds.includes(parts[1])&&parts.length===2)path='/parcours/'+parts[1]+'/';
@@ -48,12 +53,12 @@
   if(href.startsWith('#/'))return '/'+href;
   return href;
  }
- function isAtlasPath(path){path=path.replace(/index\.html$/,'');return path==='/'||/^\/dossiers\/(?:\d+\/)?$/.test(path)||Object.values(publicPaths).includes(path)||/^\/(confidentialite|mentions-legales)\/$/.test(path)||domainIds.some(id=>path==='/domaines/'+id+'/')||pathIds.some(id=>path==='/parcours/'+id+'/');}
+ function isAtlasPath(path){path=path.replace(/index\.html$/,'');return path==='/'||questionId(path)!==null||Object.values(publicPaths).includes(path)||/^\/(confidentialite|mentions-legales)\/$/.test(path)||domainIds.some(id=>path==='/domaines/'+id+'/')||pathIds.some(id=>path==='/parcours/'+id+'/');}
  function locationRoute(pathname,search,hash){
   if(hash.startsWith('#/'))return parseRoute(hash);
   const path=pathname.replace(/index\.html$/,'');
-  const match=path.match(/^\/dossiers\/(\d+)\/$/);
-  if(match)return {parts:['question',match[1]],params:new URLSearchParams(search)};
+  const id=questionId(path);
+  if(id!==null)return {parts:['question',String(id)],params:new URLSearchParams(search)};
   const domain=path.match(/^\/domaines\/([a-z-]+)\/$/);
   if(domain&&domainIds.includes(domain[1]))return {parts:['domaine',domain[1]],params:new URLSearchParams(search)};
   const trail=path.match(/^\/parcours\/([a-z-]+)\/$/);
@@ -84,6 +89,6 @@
   return cleanState({read:[...a.read,...b.read],saved:[...a.saved,...b.saved],labs:[...a.labs,...b.labs],notes:preferIncoming?{...a.notes,...b.notes}:{...b.notes,...a.notes},experiences:preferIncoming?{...a.experiences,...b.experiences}:{...b.experiences,...a.experiences},last:a.last||b.last});
  }
  function glossaryMatch(names,text){return names.find(n=>normalize(n.text)===normalize(text)&&(!/^[A-Z]{2}$/.test(n.text)||n.text===text));}
- const api={glossaryMatch,publicPaths,domainIds,pathIds,isAtlasPath,guideIds,cleanExperience,canonicalHref,locationRoute,normalize,escape,filterQuestions,cleanState,parseRoute,parseNotebookJSON,mergeNotebook};
+ const api={seo,questionPath,questionId,glossaryMatch,publicPaths,domainIds,pathIds,isAtlasPath,guideIds,cleanExperience,canonicalHref,locationRoute,normalize,escape,filterQuestions,cleanState,parseRoute,parseNotebookJSON,mergeNotebook};
  if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.AtlasCore=api;
 })(globalThis);

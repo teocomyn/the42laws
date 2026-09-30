@@ -3,12 +3,13 @@
  const C=typeof module==='object'&&module.exports?require('./core.js'):root.AtlasCore;
  const home={title:'The42laws — Un atlas du réel',description:'42 questions pour explorer la réalité. Un atlas de recherche, des expériences interactives et un carnet pour penser par soi-même.',path:'/',robots:'index,follow'};
  function pageMetadata(data,parts=['accueil'],params=new URLSearchParams()){
-  const route=parts[0];let m={...home};
+  const route=parts[0],seo=data.seo||C.seo;let m={...home};
   const pages={atlas:['Les 42 questions','Une carte des 42 questions, réparties en sept domaines, avec leurs synthèses et leur état de recherche.'],laboratoires:['Laboratoires','Sept expériences interactives pour explorer les modèles et leurs limites.'],particules:['Tableau des particules','Les familles du Modèle standard, leurs propriétés et leurs expériences.'],liens:['Carte des liens','Relier les 42 questions et suivre leurs connexions éditoriales.'],parcours:['Parcours guidés','Cinq itinéraires pour apprendre en reliant dossiers et expériences.'],glossaire:['Glossaire','Des définitions pour mieux comprendre les dossiers de The42laws.'],methode:['Notre méthode','Distinguer observation, résultat mathématique, modèle, hypothèse et argument philosophique.'],sources:['Registre des sources','Les références de The42laws, leurs dates et leurs niveaux de consultation.'],apropos:['Le projet','The42laws : un atlas de recherche et un carnet pour explorer le réel.'],carnet:['Mon carnet','Vos lectures, favoris, notes et expériences conservés dans ce navigateur.'],confidentialite:['Confidentialité et cookies','Comprendre le stockage du carnet, la mesure d’audience et vos choix de confidentialité.'], 'mentions-legales':['Mentions légales','Informations sur l’édition, l’hébergement et les contenus de The42laws.']};
   if(route==='question'){
    const q=data.questions.find(q=>q.id===Number(parts[1]));
    if(!q)return {...m,title:'Page introuvable — The42laws',description:'Cette question n’existe pas.',robots:'noindex,follow'};
-   return {...m,question:q.id,domain:q.domain,domainName:q.domainName,updated:q.learning?.revised||q.updated,title:`${q.title} — The42laws`,description:q.researched&&q.answer?.description||`Question ${q.id} — ${q.status}. ${q.learning?.goal||'Un dossier à explorer dans The42laws.'}`,path:`/dossiers/${q.id}/`,robots:q.researched?'index,follow':'noindex,follow'};
+   const editorial=seo.questions[q.id];
+   return {...m,question:q.id,label:q.title,domain:q.domain,domainName:q.domainName,updated:q.learning?.revised||q.updated,title:`${editorial?.title||q.title} — The42laws`,description:editorial?.description||q.researched&&q.answer?.description||`Question ${q.id} — ${q.status}. ${q.learning?.goal||'Un dossier à explorer dans The42laws.'}`,path:C.questionPath(q.id),robots:q.researched?'index,follow':'noindex,follow'};
   }
   if(pages[route]){const [title,description]=pages[route];m={...m,title:`${title} — The42laws`,description};}
   const publicPaths=C.publicPaths;
@@ -18,6 +19,8 @@
   if(route==='parcours'&&parts[1]){const p=data.paths.find(p=>p.id===parts[1]);if(p)m={...m,title:`${p.title} — The42laws`,description:p.description,path:`/parcours/${p.id}/`};else m.robots='noindex,follow';}
   if(route==='confidentialite'||route==='mentions-legales')m.path=`/${route}/`;
   if(route==='mentions-legales'&&!data.legal?.complete)m.robots='noindex,follow';
+  const editorial=seo.routes[route==='carnet'?'/#/carnet':m.path];
+  if(editorial)m={...m,title:`${editorial.title} — The42laws`,description:editorial.description};
   if(route==='carnet'||params.get('q'))m.robots='noindex,follow';
   if(!pages[route]&&route!=='accueil'&&route!=='domaine')m={...m,title:'Page introuvable — The42laws',description:'Cette page n’existe pas.',robots:'noindex,follow'};
   return m;
@@ -29,7 +32,7 @@
   if(meta.question){result.push({name:'Les 42 questions',path:'/dossiers/'},{name:meta.domainName,path:`/domaines/${meta.domain}/`});}
   else if(meta.domain)result.push({name:'Les 42 questions',path:'/dossiers/'});
   else if(/^\/parcours\/.+\/$/.test(meta.path))result.push({name:'Parcours guidés',path:'/parcours/'});
-  result.push({name:meta.title.replace(/ — The42laws$/,''),path:meta.path});return result;
+  result.push({name:meta.label||meta.title.replace(/ — The42laws$/,''),path:meta.path});return result;
  }
  function structuredData(meta,base){
   if(!base)return null;

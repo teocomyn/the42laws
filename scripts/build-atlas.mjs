@@ -2,6 +2,9 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {resolve,dirname,relative,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {Marked} from 'marked';
+import {createRequire} from 'node:module';
+import {checkSEO} from './sync-seo.mjs';
+const C=createRequire(import.meta.url)('../atlas/core.js');
 export const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function resolveLink(href,source){
@@ -11,7 +14,7 @@ export function resolveLink(href,source){
  const target=resolve(dirname(resolve(root,source)),href.split('#')[0]);
  const local=relative(root,target).split(sep).join('/');
  if(local.startsWith('../'))return '#';
- if(/^questions\/\d{2}\.md$/.test(local))return '/dossiers/'+Number(local.match(/\d{2}/)[0])+'/';
+ if(/^questions\/\d{2}\.md$/.test(local))return C.questionPath(Number(local.match(/\d{2}/)[0]));
  if(local==='QUESTIONS.md')return '/dossiers/';
  if(local==='METHODE.md')return '/methode/';
  if(local==='sources/README.md')return '/sources/';
@@ -29,8 +32,9 @@ export function renderMarkdown(md,source='questions/41.md'){
  return {html:marked.parse(md),headings};
 }
 export async function build(){
+ await checkSEO();
  const metadata=JSON.parse(await readFile(resolve(root,'content/atlas.json'),'utf8'));
- const extras={};for(const name of ['particles','glossary','connections','learning','answers'])extras[name]=JSON.parse(await readFile(resolve(root,`content/${name}.json`),'utf8'));
+ const extras={};for(const name of ['particles','glossary','connections','learning','answers','seo'])extras[name]=JSON.parse(await readFile(resolve(root,`content/${name}.json`),'utf8'));
  const questions=[];
  for(let id=1;id<=42;id++){
   const file=`questions/${String(id).padStart(2,'0')}.md`,md=await readFile(resolve(root,file),'utf8');
@@ -38,6 +42,7 @@ export async function build(){
   if(!title||!status)throw Error(`Missing question metadata: ${file}`);
   const domain=metadata.domains.find(d=>id>=d.range[0]&&id<=d.range[1]);
   const researched=status!=='À explorer';
+  if(researched&&extras.seo.questions[id].description.startsWith('Question à explorer'))throw Error(`Update the published dossier SEO description in content/seo.json: ${id}`);
   const body=md.slice(md.indexOf('\n## ')+1);
   const match=body.match(/## Sources vérifiées\n([\s\S]*?)(?=\n## |$)/);
   const sources=match?match[1].trim():'';

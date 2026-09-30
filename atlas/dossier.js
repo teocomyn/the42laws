@@ -1,5 +1,6 @@
 (function(root){
  'use strict';
+ const C=typeof module==='object'&&module.exports?require('./core.js'):root.AtlasCore;
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const labels={observation:'Observation',resultat:'Résultat sous hypothèses',modele:'Modèle',interpretation:'Interprétation',conjecture:'Conjecture'};
  function answer(q){
@@ -9,7 +10,7 @@
  function related(q,data={}){
   const seen=new Set(),items=(data.connections||[]).filter(e=>e.from===q.id||e.to===q.id).map(e=>({q:(data.questions||[]).find(x=>x.id===(e.from===q.id?e.to:e.from)),label:e.label})).filter(x=>x.q&&!seen.has(x.q.id)&&seen.add(x.q.id)).sort((a,b)=>Number(b.q.researched)-Number(a.q.researched)).slice(0,4);
   if(!items.length)return '';
-  return `<nav class="related-dossiers" aria-label="Dossiers pour poursuivre"><div class="section-head"><h2>Pour poursuivre la question.</h2></div><div class="related-grid">${items.map(x=>`<a class="related-dossier" href="/dossiers/${x.q.id}/"><span class="eyebrow">QUESTION ${String(x.q.id).padStart(2,'0')} · ${x.q.researched?'SYNTHÈSE DISPONIBLE':'À EXPLORER'}</span><h3>${esc(x.q.title)}</h3><p>${esc(x.label)}</p><span class="related-action">${x.q.researched?'Lire le dossier':'Voir la question'} <span aria-hidden="true">↗</span></span></a>`).join('')}</div></nav>`;
+  return `<nav class="related-dossiers" aria-label="Dossiers pour poursuivre"><div class="section-head"><h2>Pour poursuivre la question.</h2></div><div class="related-grid">${items.map(x=>`<a class="related-dossier" href="${C.questionPath(x.q.id)}"><span class="eyebrow">QUESTION ${String(x.q.id).padStart(2,'0')} · ${x.q.researched?'SYNTHÈSE DISPONIBLE':'À EXPLORER'}</span><h3>${esc(x.q.title)}</h3><p>${esc(x.label)}</p><span class="related-action">${x.q.researched?'Lire le dossier':'Voir la question'} <span aria-hidden="true">↗</span></span></a>`).join('')}</div></nav>`;
  }
  function overview(q){
   const l=q.learning;if(!l)return '';

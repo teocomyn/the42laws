@@ -49,7 +49,7 @@ Quinze synthèses provisoires, sept laboratoires et cinq parcours (voir les jalo
 
 Huit synthèses provisoires : 10, 15, 19, 23, 25, 26, 30 et 41 ; 34 fiches à explorer. Cinq laboratoires intégrés, dont Navier-Stokes 2D. Trois parcours complets dans leurs étapes obligatoires ; la question 42 est un prolongement facultatif. Les Markdown restent la source, avec content/learning.json pour les repères pédagogiques et la transparence éditoriale. Aucune relecture scientifique humaine indépendante n’est revendiquée.
 
-Adresses de dossiers : /dossiers/{id}/, texte complet et sources présents dans le HTML public, même shell interactif. Reprise des liens historiques #/question/{id}, conservation du carnet the42laws:v1. Les fiches sans synthèse portent noindex et sont hors sitemap. Les pages nécessitent un hébergement à la racine du domaine.
+Adresses de dossiers : /dossiers/{slug}/ (registre content/seo.json ; anciennes adresses numériques redirigées), texte complet et sources présents dans le HTML public, même shell interactif. Reprise des liens historiques #/question/{id}, conservation du carnet the42laws:v1. Les fiches sans synthèse portent noindex et sont hors sitemap. Les pages nécessitent un hébergement à la racine du domaine.
 
 Chaque laboratoire propose un guide : prédiction, manipulation, relevés A/B, explication, export JSON. Ces réponses sont temporaires dans la page et ne sont pas ajoutées au carnet. Navier démarre en pause ; son schéma auto-similaire et les forces visuelles restent explicitement distincts d’une preuve ou d’une simulation physique rigoureuse en 3D. CI GitHub : build, tests, liens/ancres locaux, cohérence du fichier généré. Axeptio est mis de côté à la demande explicite de Teo ; la branche séparée codex/analytics-consent reste non fusionnée. Ne pas reprendre ce chantier sans nouvelle demande.
 
@@ -121,3 +121,13 @@ Publication SEO/GEO vérifiée : a5b6fdf sur main, CI 36755461617 et Vercel réu
 ## 2026-09-30 — Réponses sourcées et matière noire
 
 État actuel : 15 synthèses (nouveau dossier 29), 27 fiches à explorer, 41 définitions, 48 connexions éditoriales et 45 URL au sitemap. content/answers.json centralise les réponses courtes, réserves, références et descriptions des dossiers 10/29/33/41 ; atlas/dossier.js partage ces encadrés et les lectures liées entre HTML public et routeur. Les deux lettres d’un sigle majuscule du glossaire gardent leur casse : Ia (supernova) ne doit pas ouvrir IA (intelligence artificielle). Search Console exige une connexion dans le navigateur accessible ; aucun chiffre de trafic/indexation n’a été collecté.
+
+## 2026-09-30 — URL descriptives et métadonnées par intention
+
+Registre éditorial dans `content/seo.json` : 42 slugs stables de dossiers, 73 pages HTTP publiques avec titres et descriptions spécifiques, plus le carnet privé. Exemple : `/dossiers/matiere-noire-energie-noire/`. Les identifiants numériques restent les clés des notes et des expériences. Ne pas modifier un slug publié simplement pour changer un titre.
+
+Le routeur, le HTML statique, les liens internes, le partage, les balises sociales, les canoniques, les fils d’Ariane et le sitemap utilisent le registre commun. Les 42 anciennes adresses numériques et leurs variantes sans barre finale ou index.html ont 126 règles permanentes Vercel (308). Des aliases avec lien et reprise JavaScript sont fournis pour les aperçus statiques ; `_redirects` fournit les règles 301 pour les hébergeurs compatibles.
+
+`npm run sync:seo` synchronise les règles et les huit en-têtes HTML source. Le build exige toutes les intentions, des champs non vides, uniques, et une description adaptée lorsque le dossier devient rédigé. Les budgets de longueur sont des choix éditoriaux, pas des limites techniques imposées par Google. `check:public` compare les métadonnées des 73 pages au registre et rejette les liens internes numériques. AGENTS.md conserve l’exigence SEO/GEO à chaque lot.
+
+Validation locale : 69 tests, TypeScript et contrôle public réussis (239 fichiers, 4630 références). Navigateur : fiche vide 28 → dossier 29, retour/rechargement, ancienne adresse 33 avec mode et ancre conservés ; descriptions, robots et canoniques corrects. Publication et redirections HTTP distantes à confirmer après push. Axeptio reste suspendu ; indexation GSC et citations IA non mesurées.

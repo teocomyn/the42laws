@@ -2,6 +2,7 @@ import {readFile,readdir,stat} from 'node:fs/promises';
 import {resolve,relative,extname} from 'node:path';
 import {createRequire} from 'node:module';
 import vm from 'node:vm';
+const C=createRequire(import.meta.url)('../atlas/core.js');
 const {pageMetadata}=createRequire(import.meta.url)('../atlas/metadata.js');
 import {out} from './build-public.mjs';
 async function list(dir){const all=[];for(const item of await readdir(dir,{withFileTypes:true})){const file=resolve(dir,item.name);if(item.isDirectory())all.push(...await list(file));else all.push(file);}return all;}
@@ -14,7 +15,7 @@ for(const path of files){const name=relative(out,path);if(/(?:^|\/)(?:\.git|node
 }
 // Catch structural regressions in the HTML served before JavaScript runs.
 for(let id=1;id<=42;id++){
- const html=await readFile(resolve(out,`dossiers/${id}/index.html`),'utf8');
+ const html=await readFile(resolve(out,'.'+C.questionPath(id),'index.html'),'utf8');
  if((html.match(/<h1[ >]/g)||[]).length!==1)errors.push(`Dossier ${id}: expected one page heading`);
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  if(new Set(ids).size!==ids.length)errors.push(`Dossier ${id}: duplicate HTML id`);
@@ -25,10 +26,22 @@ for(let id=1;id<=42;id++){
  if((html.match(/name="robots"/g)||[]).length!==1||!html.includes(`name="robots" content="${meta.robots}"`))errors.push(`Dossier ${id}: robots differs from router`);
  const ready=!html.includes('name="robots" content="noindex,follow"');
  if(ready&&(!html.includes('Repères de lecture')||!html.includes('Dossier approfondi et sources')))errors.push(`Dossier ${id}: missing complete static reading`);
+ const alias=await readFile(resolve(out,`dossiers/${id}/index.html`),'utf8');
+ if(!alias.includes('data-seo-redirect')||!alias.includes('content="noindex,follow"')||alias.includes('data-measurement-id'))errors.push(`Dossier ${id}: invalid static redirect fallback`);
+}
+// Every real public page has editorial metadata, mirrored in social tags and JSON-LD.
+const decode=s=>s.replaceAll('&amp;','&').replaceAll('&quot;','"').replaceAll('&#39;',"'").replaceAll('&lt;','<').replaceAll('&gt;','>');
+const expectedPages=[...data.questions.map(q=>({path:C.questionPath(q.id),...data.seo.questions[q.id]})),...Object.entries(data.seo.routes).filter(([path])=>!path.includes('#')).map(([path,item])=>({path,...item}))];
+for(const item of expectedPages){
+ const html=await readFile(resolve(out,'.'+item.path,'index.html'),'utf8'),title=item.title+' — The42laws';
+ if(decode(html.match(/<title>(.*?)<\/title>/s)?.[1]||'')!==title)errors.push(item.path+': title differs from editorial registry');
+ for(const key of ['description','og:description','twitter:description']){const values=[...html.matchAll(new RegExp(`<meta (?:name|property)="${key}" content="([^"]*)"`,'g'))];if(values.length!==1||decode(values[0][1])!==item.description)errors.push(item.path+': '+key+' differs from editorial registry');}
+ for(const key of ['og:title','twitter:title'])if(decode(html.match(new RegExp(`<meta (?:name|property)="${key}" content="([^"]*)"`))?.[1]||'')!==title)errors.push(item.path+': '+key+' mismatch');
+ if(/href="(?:\/)?dossiers\/\d+\//.test(html))errors.push(item.path+': internal link still uses an old numeric address');
 }
 const manifest=JSON.parse(await readFile(resolve(out,'publication.json'),'utf8'));
 if(manifest.questions!==42)errors.push('Question count must remain 42');
-if(files.filter(p=>/\/dossiers\/\d+\/index\.html$/.test(p)).length!==42)errors.push('42 static question pages required');
+if(files.filter(p=>/\/dossiers\/[a-z][a-z0-9-]*\/index\.html$/.test(p)).length!==42)errors.push('42 canonical static question pages required');
 if(manifest.baseURL){
  const sitemap=await readFile(resolve(out,'sitemap.xml'),'utf8');
  const urls=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
@@ -45,7 +58,7 @@ if(manifest.baseURL){
  }
  const glossary=await readFile(resolve(out,'glossaire/index.html'),'utf8');
  for(const term of data.glossary)if(!glossary.includes(`id="${term.id}"`))errors.push('Glossary term missing from HTML: '+term.id);
- for(const q of data.questions)if(sitemap.includes(`/dossiers/${q.id}/`)!==q.researched)errors.push('Sitemap research status mismatch: '+q.id);
+ for(const q of data.questions)if(sitemap.includes(C.questionPath(q.id))!==q.researched)errors.push('Sitemap research status mismatch: '+q.id);
 }
 const socialImage=await readFile(resolve(out,'atlas/brand-share-black-hole.png'));
 if(socialImage.toString('hex',0,8)!=='89504e470d0a1a0a'||socialImage.readUInt32BE(16)!==1200||socialImage.readUInt32BE(20)!==630)errors.push('Black-hole social image must be a 1200 × 630 PNG');

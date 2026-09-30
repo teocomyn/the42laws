@@ -71,7 +71,7 @@ Les sept laboratoires proposent une expérience guidée avec sauvegarde des rép
 
 ## Lots 1 et 2
 
-Les adresses `/dossiers/1/` à `/dossiers/42/` servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les quinze synthèses et leurs sources sont rendues dans le HTML public. Les 27 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les cinq parcours guidés ne contiennent plus de fiche vide.
+Les adresses descriptives des 42 dossiers servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les quinze synthèses et leurs sources sont rendues dans le HTML public. Les 27 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les cinq parcours guidés ne contiennent plus de fiche vide.
 
 Le workflow `.github/workflows/quality.yml` construit le site, teste les modèles et la navigation, vérifie les liens locaux et détecte les données générées non synchronisées. Il ne garantit pas la disponibilité future des sources externes ni une validation scientifique indépendante.
 

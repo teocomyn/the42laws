@@ -71,7 +71,7 @@ if(t.dataset.scroll){document.getElementById(t.dataset.scroll)?.scrollIntoView({
 if(t.dataset.lab){if(!state.labs.includes(t.dataset.lab))state.labs.push(t.dataset.lab);persist();}
 if(t.dataset.save||t.dataset.read){const save=!!t.dataset.save,id=Number(t.dataset.save||t.dataset.read),key=save?'saved':'read';state[key]=state[key].includes(id)?state[key].filter(x=>x!==id):[...state[key],id];const ok=persist(),enabled=state[key].includes(id);t.setAttribute('aria-pressed',String(enabled));t.textContent=save?(enabled?'★ Dans mes favoris':'☆ Ajouter aux favoris'):(enabled?'✓ Marqué comme lu':'Marquer comme lu');sidebar('atlas');toast(ok?'Carnet enregistré.':'Stockage indisponible : pensez à exporter votre carnet.');return;}
 if(t.dataset.share){
- const url=new URL('/dossiers/'+t.dataset.share+'/',location.origin);
+ const url=new URL(C.questionPath(t.dataset.share),location.origin);
  const isLocal=url.protocol==='file:'||['127.0.0.1','localhost'].includes(url.hostname);
  AtlasFeatures.modal('Partager ce dossier',`<p>${isLocal?'Cette adresse est locale à cet appareil. Elle deviendra partageable à distance après publication sur un hébergement.':'Copiez cette adresse pour partager le dossier.'} Vos notes personnelles ne sont pas incluses.</p><label class="eyebrow" for="share-url">ADRESSE DU DOSSIER</label><input class="share-url" id="share-url" readonly value="${E(url.href)}"><div class="actions"><button class="button primary" data-copy-link>Copier l’adresse</button></div><p id="copy-status" role="status"></p>`);return;
  }
@@ -91,6 +91,6 @@ document.addEventListener('submit',e=>{if(e.target.id==='filters'){e.preventDefa
 document.addEventListener('keydown',e=>{if(document.querySelector('dialog[open]'))return;if(e.key==='Escape') {closeMenu();if(innerWidth<=800)$('.menu-button').focus();}if(e.key==='Tab'&&$('#sidebar').classList.contains('open')){const links=$$('#sidebar a'),first=links[0],last=links.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
 function normalizeLinks(){for(const a of document.querySelectorAll('a[href]')){const href=a.getAttribute('href'),next=C.canonicalHref(href);if(href!==next)a.setAttribute('href',next);}}
 new MutationObserver(normalizeLinks).observe(document.body,{childList:true,subtree:true});
-function migrateLegacy(){const href=C.canonicalHref(location.hash);if(href.startsWith('/')&&!href.startsWith('/#'))history.replaceState(null,'',href);}
+function migrateLegacy(){const href=C.canonicalHref(location.hash.startsWith('#/')?location.hash:location.pathname+location.search+location.hash);if(href.startsWith('/')&&!href.startsWith('/#'))history.replaceState(null,'',href);}
 addEventListener('popstate',render);addEventListener('hashchange',()=>{migrateLegacy();render();});migrateLegacy();addEventListener('pageshow',e=>{if(e.persisted){try{state=C.cleanState(JSON.parse(localStorage.getItem(KEY)||'{}'));}catch{}render();}});addEventListener('resize',()=>{if(innerWidth>800)closeMenu();else if(!$('#sidebar').classList.contains('open'))$('#sidebar').inert=true;});render();
 })();
