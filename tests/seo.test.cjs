@@ -5,7 +5,7 @@ test('canonical public routes roundtrip including historical links and encoded f
  for(const [route,path]of Object.entries(C.publicPaths)){assert.equal(C.canonicalHref('/#/'+route),path);assert.deepEqual(C.locationRoute(path,'','').parts,[route]);assert.equal(C.isAtlasPath(path),true);assert.equal(C.isAtlasPath(path+'index.html'),true);}
  for(const domain of D.domains){const target=C.canonicalHref('/#/atlas?d='+domain.id+'&q=%C3%A9nergie');assert.equal(target,'/domaines/'+domain.id+'/?q=%C3%A9nergie');const r=C.locationRoute('/domaines/'+domain.id+'/','?q=%C3%A9nergie','');assert.deepEqual(r.parts,['domaine',domain.id]);assert.equal(r.params.get('q'),'énergie');}
  for(const p of D.paths){const target=C.canonicalHref('#/parcours/'+p.id);assert.equal(target,'/parcours/'+p.id+'/');assert.deepEqual(C.locationRoute(target,'','').parts,['parcours',p.id]);}
- assert.equal(C.isAtlasPath('/domaines/invente/'),false);assert.deepEqual(C.locationRoute('/inconnu/','','').parts,['introuvable']);assert.equal(C.canonicalHref('https://other.test/#/atlas'),'https://other.test/#/atlas');
+ assert.equal(C.isAtlasPath('/domaines/invente/'),false);assert.deepEqual(C.locationRoute('/inconnu/','','').parts,['introuvable']);assert.equal(C.canonicalHref('../index.html#/sources'),'/sources/');assert.equal(C.canonicalHref('https://other.test/#/atlas'),'https://other.test/#/atlas');
 });
 test('public HTML contains the real homepage content, all definitions and pathways without JavaScript',()=>{
  const v=V.create(D),home=v.home();assert.ok(home.includes('horizon-title'));assert.ok(!home.includes('href="#/'));for(const q of D.questions.filter(q=>q.researched))assert.ok(home.includes(`/dossiers/${q.id}/`));

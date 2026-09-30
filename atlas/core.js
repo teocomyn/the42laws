@@ -37,7 +37,7 @@
  const domainIds=['existence','realite','physique','univers','vie','conscience','sens'];
  const pathIds=['matiere','temps','connaitre','fondements','origines-vie'];
  function canonicalHref(href){
-  const match=String(href).match(/^(?:\/(?:index\.html)?|index\.html)?#\/([^?]+)(?:\?(.*))?$/);
+  const match=String(href).match(/^(?:\.\.\/index\.html|\/(?:index\.html)?|index\.html)?#\/([^?]+)(?:\?(.*))?$/);
   if(match){const parts=match[1].split('/'),params=new URLSearchParams(match[2]||'');let path;
    if(parts[0]==='question'&&/^\d+$/.test(parts[1])&&parts.length===2)path='/dossiers/'+Number(parts[1])+'/';
    else if(parts[0]==='atlas'&&domainIds.includes(params.get('d'))){path='/domaines/'+params.get('d')+'/';params.delete('d');}
