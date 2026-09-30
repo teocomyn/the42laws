@@ -33,19 +33,35 @@
   const [path,query='']=String(hash||'').replace(/^#\/?/,'').split('?');
   return {parts:(path||'accueil').split('/').filter(Boolean),params:new URLSearchParams(query)};
  }
+ const publicPaths={accueil:'/',atlas:'/dossiers/',laboratoires:'/laboratoires/',parcours:'/parcours/',glossaire:'/glossaire/',methode:'/methode/',sources:'/sources/',particules:'/particules/',liens:'/liens/',apropos:'/apropos/'};
+ const domainIds=['existence','realite','physique','univers','vie','conscience','sens'];
+ const pathIds=['matiere','temps','connaitre','fondements','origines-vie'];
  function canonicalHref(href){
-  const match=String(href).match(/^(?:\/?index\.html)?#\/question\/(\d+)(?:\?(.*))?$/);
-  if(match)return '/dossiers/'+Number(match[1])+'/'+(match[2]?'?'+match[2]:'');
+  const match=String(href).match(/^(?:\/(?:index\.html)?|index\.html)?#\/([^?]+)(?:\?(.*))?$/);
+  if(match){const parts=match[1].split('/'),params=new URLSearchParams(match[2]||'');let path;
+   if(parts[0]==='question'&&/^\d+$/.test(parts[1])&&parts.length===2)path='/dossiers/'+Number(parts[1])+'/';
+   else if(parts[0]==='atlas'&&domainIds.includes(params.get('d'))){path='/domaines/'+params.get('d')+'/';params.delete('d');}
+   else if(parts.length===1)path=publicPaths[parts[0]];
+   else if(parts[0]==='parcours'&&pathIds.includes(parts[1])&&parts.length===2)path='/parcours/'+parts[1]+'/';
+   if(path)return path+(params.size?'?'+params:'');
+  }
   if(href.startsWith('#/'))return '/'+href;
   return href;
  }
+ function isAtlasPath(path){path=path.replace(/index\.html$/,'');return path==='/'||/^\/dossiers\/(?:\d+\/)?$/.test(path)||Object.values(publicPaths).includes(path)||/^\/(confidentialite|mentions-legales)\/$/.test(path)||domainIds.some(id=>path==='/domaines/'+id+'/')||pathIds.some(id=>path==='/parcours/'+id+'/');}
  function locationRoute(pathname,search,hash){
   if(hash.startsWith('#/'))return parseRoute(hash);
-  const match=pathname.match(/^\/dossiers\/(\d+)\/(?:index\.html)?$/);
+  const path=pathname.replace(/index\.html$/,'');
+  const match=path.match(/^\/dossiers\/(\d+)\/$/);
   if(match)return {parts:['question',match[1]],params:new URLSearchParams(search)};
-  if(pathname==='/dossiers/'||pathname==='/dossiers/index.html')return {parts:['atlas'],params:new URLSearchParams(search)};
-  if(/^\/(confidentialite|mentions-legales)\/(?:index\.html)?$/.test(pathname))return {parts:[pathname.split('/')[1]],params:new URLSearchParams(search)};
-  return parseRoute(hash);
+  const domain=path.match(/^\/domaines\/([a-z-]+)\/$/);
+  if(domain&&domainIds.includes(domain[1]))return {parts:['domaine',domain[1]],params:new URLSearchParams(search)};
+  const trail=path.match(/^\/parcours\/([a-z-]+)\/$/);
+  if(trail&&pathIds.includes(trail[1]))return {parts:['parcours',trail[1]],params:new URLSearchParams(search)};
+  const route=Object.entries(publicPaths).find(([key,value])=>value===path)?.[0];
+  if(route)return {parts:[route],params:new URLSearchParams(search)};
+  if(/^\/(confidentialite|mentions-legales)\/$/.test(path))return {parts:[path.split('/')[1]],params:new URLSearchParams(search)};
+  return {parts:['introuvable'],params:new URLSearchParams(search)};
  }
  function parseNotebookJSON(text){
   if(typeof text!=='string'||text.length>10000000)throw new Error('Fichier trop volumineux.');
@@ -67,6 +83,6 @@
   const a=cleanState(current),b=cleanState(incoming);
   return cleanState({read:[...a.read,...b.read],saved:[...a.saved,...b.saved],labs:[...a.labs,...b.labs],notes:preferIncoming?{...a.notes,...b.notes}:{...b.notes,...a.notes},experiences:preferIncoming?{...a.experiences,...b.experiences}:{...b.experiences,...a.experiences},last:a.last||b.last});
  }
- const api={guideIds,cleanExperience,canonicalHref,locationRoute,normalize,escape,filterQuestions,cleanState,parseRoute,parseNotebookJSON,mergeNotebook};
+ const api={publicPaths,domainIds,pathIds,isAtlasPath,guideIds,cleanExperience,canonicalHref,locationRoute,normalize,escape,filterQuestions,cleanState,parseRoute,parseNotebookJSON,mergeNotebook};
  if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.AtlasCore=api;
 })(globalThis);

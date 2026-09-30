@@ -87,3 +87,7 @@ Le septième laboratoire, `/trou-noir/`, utilise un composant React/TypeScript e
 ## Origine et recherche de la vie — 2026-09-12
 
 Nouvelles synthèses [33](questions/33.md), [34](questions/34.md), [35](questions/35.md) et approfondissement de [32](questions/32.md). Parcours « De la chimie à la vie », quatorze nouvelles définitions et neuf références S336–S344. Le site compte désormais 14 synthèses provisoires, 7 laboratoires et 5 parcours. Les expériences documentées ne constituent pas une création de vie autonome ni une reconstruction historique complète.
+
+## Référencement
+
+Le paquet public sert le contenu de l’accueil, des domaines, des parcours, du glossaire et des dossiers sans JavaScript. Les liens publics, métadonnées, fils d’Ariane et données structurées partagent les adresses permanentes. Voir [SEO-GEO.md](SEO-GEO.md) pour le périmètre et les mesures à collecter. Publication de chaque lot validé sur main autorisée par Teo le 30 septembre 2026.

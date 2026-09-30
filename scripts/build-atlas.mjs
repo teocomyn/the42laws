@@ -12,9 +12,9 @@ export function resolveLink(href,source){
  const local=relative(root,target).split(sep).join('/');
  if(local.startsWith('../'))return '#';
  if(/^questions\/\d{2}\.md$/.test(local))return '/dossiers/'+Number(local.match(/\d{2}/)[0])+'/';
- if(local==='QUESTIONS.md')return '/#/atlas';
- if(local==='METHODE.md')return '/#/methode';
- if(local==='sources/README.md')return '/#/sources';
+ if(local==='QUESTIONS.md')return '/dossiers/';
+ if(local==='METHODE.md')return '/methode/';
+ if(local==='sources/README.md')return '/sources/';
  return '/'+local+(href.includes('#')?'#'+href.split('#')[1]:'');
 }
 export function renderMarkdown(md,source='questions/41.md'){

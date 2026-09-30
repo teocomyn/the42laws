@@ -29,6 +29,24 @@ for(let id=1;id<=42;id++){
 const manifest=JSON.parse(await readFile(resolve(out,'publication.json'),'utf8'));
 if(manifest.questions!==42)errors.push('Question count must remain 42');
 if(files.filter(p=>/\/dossiers\/\d+\/index\.html$/.test(p)).length!==42)errors.push('42 static question pages required');
+if(manifest.baseURL){
+ const sitemap=await readFile(resolve(out,'sitemap.xml'),'utf8');
+ const urls=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
+ if(new Set(urls).size!==urls.length)errors.push('Sitemap contains duplicate URLs');
+ for(const url of urls){const path=new URL(url).pathname,html=await readFile(resolve(out,'.'+path,'index.html'),'utf8');
+  if((html.match(/<h1[ >]/g)||[]).length!==1)errors.push(path+': expected one static H1');
+  if(!html.includes('content="index,follow"'))errors.push(path+': sitemap page is not indexable');
+  if(!html.includes(`rel="canonical" href="${url}"`))errors.push(path+': canonical differs from sitemap');
+  const schemas=[...html.matchAll(/<script type="application\/ld\+json" id="atlas-structured-data">(.*?)<\/script>/gs)];
+  if(schemas.length!==1){errors.push(path+': expected one structured-data graph');continue;}
+  try{const graph=JSON.parse(schemas[0][1])['@graph'];const page=graph.find(p=>p['@id'].endsWith('#webpage'));if(page.url!==url)errors.push(path+': schema URL mismatch');const crumb=graph.find(p=>p['@type']==='BreadcrumbList');if(crumb&&!html.includes('aria-label="Fil d’Ariane"'))errors.push(path+': missing visible breadcrumbs');}catch{errors.push(path+': invalid structured JSON');}
+  const main=html.match(/<main[^>]*>([\s\S]*?)<\/main>/)?.[1]||'';
+  if(main.replace(/<[^>]*>/g,'').trim().length<100)errors.push(path+': missing static content');
+ }
+ const glossary=await readFile(resolve(out,'glossaire/index.html'),'utf8');
+ for(const term of data.glossary)if(!glossary.includes(`id="${term.id}"`))errors.push('Glossary term missing from HTML: '+term.id);
+ for(const q of data.questions)if(sitemap.includes(`/dossiers/${q.id}/`)!==q.researched)errors.push('Sitemap research status mismatch: '+q.id);
+}
 const socialImage=await readFile(resolve(out,'atlas/brand-share-black-hole.png'));
 if(socialImage.toString('hex',0,8)!=='89504e470d0a1a0a'||socialImage.readUInt32BE(16)!==1200||socialImage.readUInt32BE(20)!==630)errors.push('Black-hole social image must be a 1200 × 630 PNG');
 if(manifest.baseURL){

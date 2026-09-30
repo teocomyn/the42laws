@@ -67,3 +67,7 @@ Axeptio reste suspendu. Le chantier du 30 septembre remplace le chargement immé
 Les sept guides enregistrent automatiquement prédiction, explication, réglages et relevés A/B dans `the42laws:v1`, avec un format version 2. La clé reste identique pour préserver les carnets précédents. Une expérience par guide est conservée ; de nouveaux relevés remplacent le créneau A ou B. Le carnet affiche les observations et permet la reprise. Les paramètres sont restaurés, sans prétendre rejouer l’état exact du fluide, les impacts, les urnes ou leurs historiques.
 
 L’export complet inclut toutes les expériences. L’export d’un guide contient uniquement cette expérience au format carnet ; il peut être fusionné depuis le carnet. Les exports version 1 et les anciens exports autonomes des guides restent acceptés. Le choix de conflit s’applique aux notes et expériences ; les données actuelles sont gardées par défaut. Un stockage bloqué est signalé ; l’export reste disponible.
+
+### Socle SEO/GEO du 30 septembre 2026
+
+44 URL dans le sitemap, contenu essentiel prérendu, reprises des anciens liens hash et JSON-LD partagé. `check:public` contrôle les H1, canoniques, contenu statique et données structurées des URL inscrites, ainsi que l’exclusion des dossiers vides. Les en-têtes sont configurés dans vercel.json pour Vercel. Voir SEO-GEO.md : vérifications GSC et GA4 distantes encore nécessaires.
