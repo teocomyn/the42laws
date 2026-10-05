@@ -6,6 +6,10 @@ Branche principale : main. Finalisation V2 isolée sur codex/atlas-v2 ; voir le 
 
 ## Travail réalisé
 
+### 2026-10-05 — Claude Code : en-têtes de sécurité (non commité)
+
+`vercel.json` ajoute une `Content-Security-Policy` stricte (scripts limités à `'self'` et `*.googletagmanager.com`, aucun inline, `frame-ancestors 'self'`), ainsi que `Permissions-Policy` et `Cross-Origin-Opener-Policy`. Vérifié : `build:public` puis `check:public` OK, 69 tests OK. 11 pages, dont les 7 laboratoires, servies avec les en-têtes sans aucune violation CSP ; chargement GA autorisé. Le fichier `_headers` généré par `build-public.mjs` (portabilité hors Vercel) n'a pas été modifié. Non poussé : en attente de l'accord de Teo.
+
 ### 2026-09-11 — Codex : laboratoire neutrino
 
 Structure initiale de recherche conservée. À la demande de Teo, création d’un laboratoire interactif en français sur le neutrino dans neutrino/ : page autonome HTML/CSS/JS, portrait Canvas animé, oscillations à trois saveurs, réglages d’énergie et distance, quatre sources sélectionnables, explications et références CERN/Fermilab.
