@@ -12,7 +12,7 @@ Rédaction : 2026-09-12. Sources détaillées dans [notes/navier-stokes-2026.md]
 ## Schéma numérique
 
 - Advection semi-lagrangienne : inconditionnellement stable, mais dissipative. Sur Taylor-Green (solution exacte), l’énergie mesurée est inférieure à la théorie d’environ 8 % après t = 1 à ν = 0,05 en 64², 4 % en 128² ; l’écart diminue avec la résolution et augmente quand ν diminue, parce que la dissipation numérique devient alors dominante. Le nombre de Reynolds affiché est donc une borne supérieure grossière.
-- Diffusion et projection dans l’espace de Fourier : exactes pour la grille (facteur e^{−ν|k|²Δt} par mode ; projection û − k(k·û)/|k|²). La divergence discrète affichée est calculée par différences centrées ; elle n’est pas identiquement nulle (opérateur différent), mais tend vers zéro avec la résolution.
+- Diffusion et projection dans l’espace de Fourier : exactes pour la grille (facteur e^{−ν|k|²Δt} par mode ; projection û − k(k·û)/|k|²). La divergence affichée est relative et mesurée dans l’espace de Fourier, avec le même opérateur que la projection : ‖k·û‖ / ‖k û‖. Elle reste de l’ordre de 10⁻⁷ à 10⁻⁶. Une mesure par différences centrées, utilisée jusqu’au 7 octobre 2026, affichait à tort des valeurs proches de 1 près des gradients raides et du bord de l’obstacle.
 - Modes de Nyquist mis à zéro (signe ambigu) ; pas de désaliasage supplémentaire. À très faible viscosité et forte excitation, de petites structures parasites peuvent apparaître ; elles sont un artefact du schéma.
 - Pas de temps fixe 0,02 ; pas de contrôle de CFL nécessaire pour la stabilité, mais la précision se dégrade pour des vitesses de grille supérieures à quelques cellules par pas.
 - Unités sans dimension : longueur du domaine 2π, viscosité ν, temps t. Le nombre de Reynolds est estimé par U_max·2π/ν.
@@ -20,3 +20,7 @@ Rédaction : 2026-09-12. Sources détaillées dans [notes/navier-stokes-2026.md]
 ## Références directes de la page
 
 Navier 1822 (S140, texte Wikisource) ; Fefferman 2000 (S143, PDF lu) ; OpenAI 2026 (S156, S158) ; Tao 2026 (S154). Stam 1999 et Taylor-Green 1937 sont cités pour attribution des méthodes, sans avoir été relus pour cette page.
+
+## Qualité adaptative
+
+Sur un petit écran ou un processeur à quatre cœurs ou moins, le laboratoire démarre en qualité « Fluide » (64² / encre 192²). Si une image coûte en moyenne plus de 32 ms pendant 60 images, la qualité baisse d’un cran et la page l’indique. Un choix manuel désactive cet ajustement.

@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import {createRequire} from 'node:module';
 import {renderMarkdown,resolveLink} from '../scripts/build-atlas.mjs';
 const require=createRequire(import.meta.url),C=require('../atlas/core.js');
-const context={window:{}};vm.runInNewContext(await readFile(new URL('../atlas/data.js',import.meta.url),'utf8'),context);const D=JSON.parse(JSON.stringify(context.window.ATLAS_DATA));
+const D=require('./atlas-data.cjs').loadAtlasData();
 test('atlas preserves all 42 questions, seven domains and current research states',()=>{assert.deepEqual(D.questions.map(q=>q.id),Array.from({length:42},(_,i)=>i+1));assert.equal(D.domains.length,7);assert.deepEqual(D.questions.filter(q=>q.researched).map(q=>q.id),[1,10,15,19,23,25,26,29,30,32,33,34,35,36,41]);assert.equal(D.questions[40].sourceCount,63);for(const q of D.questions){assert.ok(q.title);assert.ok(D.domains.some(d=>d.id===q.domain&&q.id>=d.range[0]&&q.id<=d.range[1]));}});
 test('search is accent insensitive and combines domain and research filters',()=>{assert.deepEqual(C.filterQuestions(D.questions,{query:'godel'}).map(q=>q.id),[41]);assert.deepEqual(C.filterQuestions(D.questions,{query:'Lean'}).map(q=>q.id),[23,36,39,41]);assert.deepEqual(C.filterQuestions(D.questions,{domain:'sens',status:'ready'}).map(q=>q.id),[41]);assert.deepEqual(C.filterQuestions(D.questions,{domain:'physique',status:'ready'}).map(q=>q.id),[15,19,23]);assert.ok(C.filterQuestions(D.questions,{query:'mecanique quantique'}).length>0);assert.deepEqual(C.filterQuestions(D.questions,{savedOnly:true,saved:[5,41]}).map(q=>q.id),[5,41]);});
 test('invalid or oversized persisted state is safely constrained',()=>{const s=C.cleanState({read:[41,41,-1,43,'2'],saved:[1,null],notes:{41:'x'.repeat(60000),0:'bad',43:'bad',2:{a:1}},labs:['neutrino','bad','neutrino'],last:99});assert.deepEqual(s.read,[41]);assert.deepEqual(s.saved,[1]);assert.equal(s.notes[41].length,50000);assert.equal(Object.keys(s.notes).length,1);assert.equal(s.last,null);assert.deepEqual(s.labs,['neutrino']);assert.equal(C.cleanState(null).read.length,0);});
@@ -37,3 +37,17 @@ test('New laboratory explorations round-trip with existing notebook data',()=>{
  const restored=C.parseNotebookJSON(JSON.stringify({application:'The42laws',...notebook}));
  assert.deepEqual(restored,notebook);
 });
+test('dossier text ships separately: light data.js, one fingerprinted content file per synthesis',async()=>{
+ const {createHash}=await import('node:crypto');
+ const raw=await readFile(new URL('../atlas/data.js',import.meta.url),'utf8'),context={window:{}};vm.runInNewContext(raw,context);
+ const light=context.window.ATLAS_DATA;
+ assert.ok(raw.length<260*1024,`data.js weighs ${Math.round(raw.length/1024)} KB`);
+ for(const q of light.questions){
+  for(const key of ['html','headings','short','sources'])assert.ok(!(key in q),`question ${q.id} still embeds ${key}`);
+  if(!q.researched){assert.equal(q.contentVersion,undefined);continue;}
+  const code=await readFile(new URL(`../atlas/dossiers/${q.id}.js`,import.meta.url),'utf8');
+  assert.equal(createHash('sha256').update(code).digest('hex').slice(0,12),q.contentVersion);
+  const box={window:{}};vm.runInNewContext(code,box);assert.ok(box.window.ATLAS_DOSSIERS[q.id].html.length>200);
+ }
+});
+

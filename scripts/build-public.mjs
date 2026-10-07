@@ -62,14 +62,14 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
  async function copy(path){const from=resolve(root,path),to=resolve(out,path);await mkdir(dirname(to),{recursive:true});await copyFile(from,to);}
  for(const f of ['index.html','favicon.ico','METHODE.md','QUESTIONS.md'])await copy(f);
  // Explicit public folders only. Runtime assets and research Markdown are public content.
- for(const folder of ['atlas','neutrino','antimatiere','photon','temps','navier-stokes','relativite','trou-noir','questions','sources','notes']){
+ for(const folder of ['atlas','atlas/dossiers','atlas/chunks','neutrino','antimatiere','photon','temps','navier-stokes','relativite','trou-noir','questions','sources','notes']){
   let files=[];try{files=await readdir(resolve(root,folder),{withFileTypes:true});}catch(e){if(e.code==='ENOENT')continue;throw e;}
   for(const f of files){const path=folder+'/'+f.name;if(f.isFile()&&/\.(html|css|js|svg|png|md)$/.test(f.name)&&!UNPUBLISHED.has(path)&&!(folder==='notes'&&f.name.endsWith('.md')))await copy(path);}
  }
  const head=(title,description,path,robots='index,follow')=>{const editorial=data.seo.routes[path];return headMarkup({title:editorial?editorial.title+' — The42laws':title,description:editorial?.description||description,path,robots},base,esc);};
  for(const path of ['index.html',...data.labs.map(l=>l.url)]){const target=resolve(out,path);let html=await readFile(target,'utf8');let title=html.match(/<title>(.*?)<\/title>/s)?.[1]||'The42laws';const description=html.match(/<meta name="description" content="([^"]*)"/)?.[1]||'Un atlas du réel.';const publicPath=path==='index.html'?'/':'/'+path.replace(/index\.html$/,'');if(data.seo.routes[publicPath])title=data.seo.routes[publicPath].title+' — The42laws';html=stripMetadata(html).replace(/<title>.*?<\/title>/s,`<title>${esc(title)}</title>`).replace('</head>',head(title,description,publicPath)+'</head>');if(path!=='index.html'){const crumbs=`<nav class="seo-breadcrumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><a href="/laboratoires/">Laboratoires</a><span>${title.replace(/ — The42laws$/,'')}</span></nav>`;html=html.replace(/<main([^>]*)>/,`<main$1>${crumbs}`);}await writeFile(target,html);}
  const shell=await readFile(resolve(root,'index.html'),'utf8');
- const documents=data.questions.map(q=>({path:questionPath(q.id).slice(1),meta:pageMetadata(data,['question',String(q.id)]),body:fullDocument(q,data),researched:q.researched}));
+ const documents=data.questions.map(q=>({path:questionPath(q.id).slice(1),meta:pageMetadata(data,['question',String(q.id)]),body:fullDocument(q,data),researched:q.researched,dossier:q.researched?q.id:null}));
  const views=publicViews(data);
  const publicPages=[['accueil'],['atlas'],['laboratoires'],['parcours'],['glossaire'],['methode'],['sources'],['particules'],['liens'],['apropos'],...data.paths.map(p=>['parcours',p.id]),...data.domains.map(d=>['domaine',d.id])];
  for(const parts of publicPages){const meta=pageMetadata(data,parts);documents.push({path:meta.path.slice(1),meta,body:views.page(parts),researched:true});}
@@ -79,7 +79,8 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
   const meta=doc.meta||pageMetadata(data,['atlas']);
   const crumbs=meta.path==='/'?'':`<nav class="seo-breadcrumbs" aria-label="Fil d’Ariane">${breadcrumbs(meta).map((item,i,all)=>i===all.length-1?`<span>${esc(item.name)}</span>`:`<a href="${item.path}">${esc(item.name)}</a>`).join('')}</nav>`;
   const body=doc.body.includes('aria-label="Fil d’Ariane"')?doc.body:crumbs+doc.body;
-  const html=stripMetadata(shell).replace(/<title>.*?<\/title>/s,`<title>${esc(meta.title)}</title>`)
+  const page=doc.dossier?shell.replace('<script src="atlas/data.js" defer></script>',`$&<script src="/atlas/dossiers/${doc.dossier}.js" defer></script>`):shell;
+  const html=stripMetadata(page).replace(/<title>.*?<\/title>/s,`<title>${esc(meta.title)}</title>`)
    .replace('</head>',headMarkup(meta,base,esc)+'</head>')
    .replace('<main id="main" tabindex="-1"></main>',`<main id="main" tabindex="-1">${body}</main>`)
    .replace('<body id="page-top">','<body id="page-top"><noscript><style>.sidebar,.topbar{display:none}.shell{margin-left:0}</style></noscript>');

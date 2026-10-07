@@ -1,6 +1,6 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const C=require('../atlas/core.js'),M=require('../atlas/metadata.js'),V=require('../atlas/public-views.js'),Consent=require('../atlas/consent.js');
-const context={window:{}};vm.runInNewContext(fs.readFileSync('atlas/data.js','utf8'),context);const D=JSON.parse(JSON.stringify(context.window.ATLAS_DATA));
+const D=require('./atlas-data.cjs').loadAtlasData();
 test('canonical public routes roundtrip including historical links and encoded filters',()=>{
  for(const [route,path]of Object.entries(C.publicPaths)){assert.equal(C.canonicalHref('/#/'+route),path);assert.deepEqual(C.locationRoute(path,'','').parts,[route]);assert.equal(C.isAtlasPath(path),true);assert.equal(C.isAtlasPath(path+'index.html'),true);}
  for(const domain of D.domains){const target=C.canonicalHref('/#/atlas?d='+domain.id+'&q=%C3%A9nergie');assert.equal(target,'/domaines/'+domain.id+'/?q=%C3%A9nergie');const r=C.locationRoute('/domaines/'+domain.id+'/','?q=%C3%A9nergie','');assert.deepEqual(r.parts,['domaine',domain.id]);assert.equal(r.params.get('q'),'énergie');}

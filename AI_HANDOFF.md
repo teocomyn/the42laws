@@ -2,16 +2,28 @@
 
 Mis à jour : 2026-10-07
 Outils : Codex et Claude Code, chacun dans son propre worktree. Ne jamais travailler à deux dans le même arbre.
-Branche principale : main, déployée automatiquement sur https://the42laws.fr par Vercel. Aucun lot en attente.
+Branche principale : main, déployée automatiquement sur https://the42laws.fr par Vercel. Lot en attente : claude/bloc-2 (commité, non poussé).
 
 ## État courant (2026-10-07)
 
 - Production : commit 9f01f51 (bloc 1), vérifié en ligne le 2026-10-07. En-têtes de sécurité, consentement GA4 et pages légales en ligne ; cache d’un an sur les ressources versionnées ; 46 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
-- Bloc 1 fusionné et vérifié en production (section du 2026-10-07 ci-dessous). Suivi mineur : la case « MAX |∇·u| (DISCRET) » affiche ≈ 1,5 sur la scène Obstacle, artefact des différences centrées au bord du disque ; afficher P.spectralDivergence.
-- Prochaine action après fusion : bloc 2 (performance : découpage de atlas/data.js, React partagé entre les îles), puis sources primaires des synthèses 01, 10, 15, 19, 25, 26, 30 et 35.
+- Bloc 1 fusionné et vérifié en production. Bloc 2 (performance) prêt sur claude/bloc-2, validé localement : à pousser avec l’accord de Teo, puis vérifier en production (pages de dossiers, navigation interne, îles React, cache de atlas/chunks/).
+- Prochaine action après fusion du bloc 2 : sources primaires des synthèses 01, 10, 15, 19, 25, 26, 30 et 35, puis fiches vides les plus citées (11, 12, 18, 24).
 - Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
 
 ## Travail réalisé
+
+### 2026-10-07 — Claude Code : bloc 2 (performance), branche claude/bloc-2
+
+Demande de Teo : « continuer » après le bloc 1. Worktree séparé, base d1e9740. Non poussé.
+
+- atlas/data.js : 550 → 136 Ko (112 → 33 Ko compressé). Le texte des 15 synthèses est dans atlas/dossiers/<id>.js (9 à 102 Ko), avec contentVersion dans data.js ; chaque page de dossier précharge le sien, la navigation interne charge l’autre à la demande (message « Chargement du dossier… », reprise du rendu si l’utilisateur n’a pas changé de page, message d’erreur sinon). Seul question() dans atlas/app.js lisait ce texte côté navigateur ; fullDocument reste côté construction. Tests : helper tests/atlas-data.cjs (reconstitue les données comme le navigateur) et nouveau test sur le découpage. check:public vérifie l’absence des champs lourds dans data.js, l’empreinte de chaque fichier et le préchargement. CI : git diff vérifie aussi atlas/dossiers.
+- Îles React : une passe esbuild avec découpage, morceau commun dans atlas/chunks/ (généré, ignoré par Git, copié par build-public, en-tête immutable dans vercel.json). 694 Ko / 218 Ko compressés → 244 Ko / 78 Ko pour les trois îles ; après l’accueil, les parcours ne téléchargent plus que 4 Ko. check:public vérifie que chaque import relatif d’un module publié existe.
+- Navier-Stokes : qualité « Fluide » d’office sur petit écran ou processeur à 4 cœurs ou moins, baisse automatique d’un cran au-delà de 32 ms par image pendant 60 images, note visible ; la reprise des réglages par le guide (événement simulé) n’est pas prise pour un choix manuel. Divergence affichée : P.spectralDivergence (2 à 5·10⁻⁷ au lieu de ≈ 1,5).
+- Image de partage : non recompressée (31 Ko : bandes dans le halo ; 247 Ko : couleur du disque altérée). Impact visiteur nul.
+
+Validation locale : sync:seo, build, 73 tests, typecheck, build:public et check:public (251 fichiers) réussis. Navigateur sur le build public servi localement : accueil sans aucun fichier de dossier chargé ; page 41 avec son seul contenu préchargé, onglets essentiel/complet ; navigation vers 23 avec chargement à la demande ; parcours avec 4 Ko de plus seulement ; trou noir avec ses modules en 200 (un premier chargement a subi des coupures du serveur Python local, rechargement sans erreur) ; Navier en mobile 375 px sans débordement. Limites : panneau masqué, donc animations non rejouées ; ajustement automatique de la qualité non déclenché en conditions réelles de lenteur.
+
 
 ### 2026-10-07 — Claude Code : bloc 1 (corrections), branche claude/bloc-1
 

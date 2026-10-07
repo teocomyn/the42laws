@@ -236,9 +236,25 @@
 
   /* ------------------------------------------------------------ laboratoire */
   const canvas=$('fluid-canvas');
-  const QUALITY={fluide:[64,192],equilibre:[128,256],detaille:[128,384],extreme:[256,384]};
-  const lab=FluidView(canvas,{n:128,m:256,nu:0.004,particles:2000,glow:0.5,exposure:1.75});
+  const QUALITY={fluide:[64,192],equilibre:[128,256],detaille:[128,384],extreme:[256,384]},QUALITY_ORDER=Object.keys(QUALITY);
+  // Petits écrans et processeurs modestes : qualité « fluide » d'office. Ensuite, si une image
+  // coûte durablement plus de 32 ms, la qualité baisse d'un cran, sauf choix explicite.
+  const lowPower=matchMedia('(max-width: 720px)').matches||(navigator.hardwareConcurrency||8)<=4;
+  let quality=lowPower?'fluide':'equilibre',manualQuality=false,frameCost=0,slowFrames=0,spectral=null,divergenceTick=0;
+  $('quality').value=quality;
+  const lab=FluidView(canvas,{n:QUALITY[quality][0],m:QUALITY[quality][1],nu:0.004,particles:2000,glow:0.5,exposure:1.75});
   let running=false,visible=true,raf=0,lastMs=0,userForced=false,dt=0.02,pointerForce=4;
+  function qualityNote(text){const note=$('quality-note');note.textContent=text;note.hidden=!text;}
+  if(lowPower)qualityNote('Qualité « Fluide » choisie d’office sur cet appareil. Vous pouvez la changer.');
+  // reason : 'auto' (baisse automatique), 'user' (choix explicite) ou 'restore' (reprise des
+  // réglages par le guide, qui simule un changement : ce n'est pas un choix de l'utilisateur).
+  function setQuality(name,reason){
+    quality=name;$('quality').value=name;const [n,m]=QUALITY[name];
+    lab.rebuild(n,m);spectral=null;frameCost=0;slowFrames=0;
+    applyPresetUI(lab.preset||'kelvin-helmholtz');
+    if(reason==='auto')qualityNote(`Qualité réduite automatiquement à « ${$('quality').selectedOptions[0].textContent.split(' — ')[0]} » pour garder l’animation fluide sur cet appareil.`);
+    else if(reason==='user'||name!=='fluide')qualityNote('');
+  }
 
   function applyPresetUI(name){
     const p=lab.load(name);userForced=false;
@@ -268,7 +284,10 @@
     $('stat-gap').textContent=theoretical===null?'—':(d.energy/theoretical-1>=0?'+':'')+fmt((d.energy/theoretical-1)*100,1)+' %';
     $('stat-speed').textContent=fmt(d.maxSpeed,3);
     $('stat-reynolds').textContent=d.maxSpeed>0?sci(d.reynolds):'—';
-    $('stat-div').textContent=sci(d.maxDivergence);
+    // Divergence relative mesurée avec l'opérateur spectral de la projection (P.spectralDivergence) :
+    // les différences centrées exagéraient l'écart près des gradients raides et de l'obstacle.
+    if(spectral===null||!running||++divergenceTick%15===0)spectral=P.spectralDivergence(s);
+    $('stat-div').textContent=sci(spectral);
     $('stat-nu').textContent=sci(s.nu);
     $('stat-ms').textContent=lastMs?fmt(lastMs,1)+' ms':'—';
     $('stat-grid').textContent=s.n+'² / '+lab.dye.m+'²';
@@ -278,6 +297,10 @@
     if(running&&visible&&!document.hidden){
       const t0=performance.now();const d=lab.stepOnce(dt);lastMs=performance.now()-t0;
       lab.render();updateStats(d);
+      const cost=performance.now()-t0;frameCost=frameCost?frameCost*0.9+cost*0.1:cost;
+      slowFrames=frameCost>32?slowFrames+1:0;
+      const index=QUALITY_ORDER.indexOf(quality);
+      if(!manualQuality&&slowFrames>=60&&index>0)setQuality(QUALITY_ORDER[index-1],'auto');
       raf=requestAnimationFrame(frame);
     }
   }
@@ -309,7 +332,7 @@
   $('viscosity').addEventListener('input',e=>{const nu=nuFromSlider(Number(e.target.value));P.setViscosity(lab.state,nu);userForced=true;$('viscosity-value').textContent='ν = '+sci(nu);$('stat-nu').textContent=sci(nu);});
   $('confinement').addEventListener('input',e=>{lab.confinement=Number(e.target.value);$('confinement-value').textContent=lab.confinement===0?'0 (désactivé)':'× '+lab.confinement;updateConfinementWarning();});
   $('force-strength').addEventListener('input',e=>{pointerForce=Number(e.target.value);$('force-value').textContent='× '+pointerForce;});
-  $('quality').addEventListener('change',e=>{const [n,m]=QUALITY[e.target.value];lab.rebuild(n,m);applyPresetUI(lab.preset||'kelvin-helmholtz');});
+  $('quality').addEventListener('change',e=>{if(e.isTrusted)manualQuality=true;setQuality(e.target.value,e.isTrusted?'user':'restore');});
   for(const b of document.querySelectorAll('[data-preset]'))b.addEventListener('click',()=>applyPresetUI(b.dataset.preset));
   for(const b of document.querySelectorAll('[data-view]'))b.addEventListener('click',()=>{
     lab.view=b.dataset.view;

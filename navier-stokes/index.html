@@ -66,7 +66,7 @@
         <div class="range-control"><label for="confinement">Détail des tourbillons <output id="confinement-value" for="confinement">× 3</output></label><p>Confinement de vorticité : compense la dissipation numérique. <strong>Force ajoutée, non physique.</strong></p><input id="confinement" type="range" min="0" max="10" value="3" step="1"></div>
         <p id="confinement-warning" class="warning">Le confinement est actif : il ajoute de l’énergie. Mettez-le à 0 pour comparer à la théorie.</p>
         <div class="range-control"><label for="force-strength">Force du pointeur <output id="force-value" for="force-strength">× 4</output></label><input id="force-strength" type="range" min="1" max="10" value="4" step="1"></div>
-        <div class="range-control"><label for="quality">Qualité</label><select id="quality"><option value="fluide">Fluide — 64² / encre 192²</option><option value="equilibre" selected>Équilibré — 128² / encre 256²</option><option value="detaille">Détaillé — 128² / encre 384²</option><option value="extreme">Extrême — 256² / encre 384²</option></select></div>
+        <div class="range-control"><label for="quality">Qualité</label><select id="quality"><option value="fluide">Fluide — 64² / encre 192²</option><option value="equilibre" selected>Équilibré — 128² / encre 256²</option><option value="detaille">Détaillé — 128² / encre 384²</option><option value="extreme">Extrême — 256² / encre 384²</option></select></div><p id="quality-note" class="control-note" role="status" hidden></p>
         <button id="run-toggle" class="primary" aria-pressed="false">▶ Lancer</button>
         <div class="secondary-actions"><button id="step-button">+10 pas</button><button id="reset">↺ Réinitialiser</button></div>
         <p class="control-note"><strong>Faites glisser le pointeur sur l’image</strong> : vous appliquez une force extérieure f et vous injectez de l’encre. Schéma : advection semi-lagrangienne (Stam 1999), diffusion et projection exactes par transformée de Fourier, pas de temps 0,02.</p>
@@ -80,7 +80,7 @@
           <div><span>ÉCART</span><strong id="stat-gap">—</strong></div>
           <div><span>VITESSE MAX ‖u‖∞</span><strong id="stat-speed">—</strong></div>
           <div><span>REYNOLDS ≈ U·2π/ν</span><strong id="stat-reynolds">—</strong></div>
-          <div><span>MAX |∇·u| (DISCRET)</span><strong id="stat-div">—</strong></div>
+          <div><span>DIVERGENCE RELATIVE (SPECTRALE)</span><strong id="stat-div">—</strong></div>
           <div><span>VISCOSITÉ ν</span><strong id="stat-nu">—</strong></div>
           <div><span>CALCUL PAR PAS</span><strong id="stat-ms">—</strong></div>
           <div><span>GRILLE / ENCRE</span><strong id="stat-grid">—</strong></div>

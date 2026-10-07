@@ -22,4 +22,4 @@ jobs:
         env:
           SITE_URL: https://the42laws.fr
       - run: npm run check:public
-      - run: git diff --exit-code -- atlas/data.js
+      - run: git diff --exit-code -- atlas/data.js atlas/dossiers

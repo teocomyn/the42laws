@@ -42,7 +42,7 @@ Les Markdown restent la source de vérité des recherches :
 - [content/atlas.json](content/atlas.json) : domaines, liens pédagogiques et parcours.
 - `content/*-essentiel.md` : lectures courtes, distinctes des recherches originales.
 - `content/particles.json`, `glossary.json`, `connections.json` : données pédagogiques de la V2.
-- [atlas/](atlas/) : interface statique HTML/CSS/JavaScript. `data.js` est généré, ne pas l’éditer à la main.
+- [atlas/](atlas/) : interface statique HTML/CSS/JavaScript. `data.js` (métadonnées et recherche) et `atlas/dossiers/<id>.js` (texte de chaque synthèse, chargé par sa page) sont générés : ne pas les éditer à la main. Les îles React partagent un morceau commun généré dans `atlas/chunks/`, non versionné.
 
 ```sh
 npm run build

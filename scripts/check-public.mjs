@@ -16,6 +16,11 @@ for(const path of files){const name=relative(out,path);if(/(?:^|\/)(?:\.git|node
  for(const [,value] of html.matchAll(/<(?:script\b[^>]*\bsrc|link\b[^>]*\brel="stylesheet"[^>]*\bhref)="([^"]+)"/g)){if(/^[a-z][a-z0-9+.-]*:|^\/\//i.test(value)||value.includes('?v=')||new URL(value,base).pathname==='/atlas/consent.js')continue;errors.push(`${name}: unversioned script or stylesheet ${value}`);}
  for(const m of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){const value=m[1].replaceAll('&amp;','&');if(!value||/^(https?:|mailto:|data:)/.test(value))continue;const url=new URL(value,base);if(url.origin!=='https://preview.invalid')continue;const file=resolve(out,'.'+decodeURIComponent(url.pathname));try{let target=file;const info=await stat(target);if(info.isDirectory())target=resolve(target,'index.html');await stat(target);links++;if(url.hash&&!url.hash.startsWith('#/')&&extname(target)==='.html'){const dest=await readFile(target,'utf8'),id=decodeURIComponent(url.hash.slice(1));if(!dest.includes(`id="${id}"`))errors.push(`${name}: missing anchor ${value}`);}}catch{errors.push(`${name}: missing file ${value}`);}}
 }
+// Modules : chaque import relatif (îles React et morceaux partagés) doit résoudre vers un fichier publié.
+for(const path of files.filter(p=>extname(p)==='.js'&&!/\/atlas\/(data|dossiers\/\d+)\.js$/.test(p))){
+ const code=await readFile(path,'utf8');
+ for(const [,spec] of code.matchAll(/(?:\bfrom|\bimport)\s*\(?\s*["'](\.{1,2}\/[^"']+)["']/g)){try{await stat(resolve(path,'..',spec));}catch{errors.push(`${relative(out,path)}: missing module ${spec}`);}}
+}
 // Catch structural regressions in the HTML served before JavaScript runs.
 for(let id=1;id<=42;id++){
  const html=await readFile(resolve(out,'.'+C.questionPath(id),'index.html'),'utf8');
@@ -29,6 +34,13 @@ for(let id=1;id<=42;id++){
  if((html.match(/name="robots"/g)||[]).length!==1||!html.includes(`name="robots" content="${meta.robots}"`))errors.push(`Dossier ${id}: robots differs from router`);
  const ready=!html.includes('name="robots" content="noindex,follow"');
  if(ready&&(!html.includes('Repères de lecture')||!html.includes('Dossier approfondi et sources')))errors.push(`Dossier ${id}: missing complete static reading`);
+ const record=data.questions.find(q=>q.id===id);
+ for(const key of ['html','headings','short','sources'])if(key in record)errors.push(`Dossier ${id}: ${key} must stay out of data.js`);
+ if(record.researched){
+  const file=resolve(out,`atlas/dossiers/${id}.js`);
+  try{const code=await readFile(file,'utf8'),box={window:{}};vm.runInNewContext(code,box);if(!box.window.ATLAS_DOSSIERS?.[id]?.html)errors.push(`Dossier ${id}: content file does not define its text`);if(createHash('sha256').update(code).digest('hex').slice(0,12)!==record.contentVersion)errors.push(`Dossier ${id}: contentVersion differs from content file`);}catch{errors.push(`Dossier ${id}: content file missing`);}
+  if(!html.includes(`src="/atlas/dossiers/${id}.js?v=${record.contentVersion}"`))errors.push(`Dossier ${id}: page does not preload its content`);
+ }else if(html.includes('/atlas/dossiers/'))errors.push(`Dossier ${id}: unexpected content preload`);
  const alias=await readFile(resolve(out,`dossiers/${id}/index.html`),'utf8');
  if(!alias.includes('data-seo-redirect')||!alias.includes('content="noindex,follow"')||alias.includes('data-measurement-id'))errors.push(`Dossier ${id}: invalid static redirect fallback`);
 }
