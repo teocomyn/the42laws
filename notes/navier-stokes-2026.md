@@ -18,19 +18,17 @@ Les équations de Navier-Stokes décrivent le mouvement d’un fluide visqueux i
 
 **Forme vectorielle** (densité normalisée à 1) :
 
-$$
-\frac{\partial u}{\partial t} + (u\cdot\nabla)\,u \;=\; -\nabla p \;+\; \nu\,\Delta u \;+\; f, \qquad \nabla\cdot u = 0, \qquad u(x,0) = u^\circ(x).
-$$
-
-En texte : du/dt + (u·∇)u = −∇p + ν Δu + f ; div u = 0 ; u(x, 0) = u°(x).
+```text
+∂u/∂t + (u·∇)u = −∇p + ν Δu + f        ∇·u = 0        u(x, 0) = u°(x)
+```
 
 **Forme en composantes, telle qu’écrite par Fefferman dans l’énoncé officiel du prix Clay (S143, équations (1)-(3))** :
 
-$$
-\frac{\partial u_i}{\partial t} + \sum_{j=1}^{n} u_j \frac{\partial u_i}{\partial x_j} \;=\; \nu\,\Delta u_i - \frac{\partial p}{\partial x_i} + f_i(x,t), \qquad
-\operatorname{div} u = \sum_{i=1}^{n} \frac{\partial u_i}{\partial x_i} = 0, \qquad
-u(x,0) = u^\circ(x),
-$$
+```text
+∂uᵢ/∂t + Σⱼ uⱼ ∂uᵢ/∂xⱼ = ν Δuᵢ − ∂p/∂xᵢ + fᵢ(x, t)
+div u = Σᵢ ∂uᵢ/∂xᵢ = 0
+u(x, 0) = u°(x)
+```
 
 avec x dans R^n (n = 2 ou 3), t ≥ 0, et Δ le laplacien en espace. Avec ν = 0, ce sont les équations d’Euler (1757).
 
@@ -58,7 +56,7 @@ Fefferman impose des conditions de décroissance à l’infini sur u° et f (éq
 
 Deux remarques qui commandent toute la suite. Premièrement, les énoncés positifs (A) et (B) sont **sans force** ; les énoncés négatifs (C) et (D) **autorisent une force lisse**. L’asymétrie est dans le texte officiel. Deuxièmement, Fefferman précise que si une solution explose en temps fini T, « the velocity becomes unbounded near the blowup time ».
 
-**Ce qu’on savait avant 2026 (sources vérifiées).** Leray 1934 : solutions faibles globales d’énergie finie, régularité laissée ouverte (S144) ; Ladyzhenskaya : régularité en dimension 2 (S143) ; Caffarelli, Kohn, Nirenberg 1982 : l’ensemble singulier d’une solution faible convenable est de mesure de Hausdorff parabolique unidimensionnelle nulle (S145) ; Tao 2016 : explosion en temps fini pour une équation de Navier-Stokes *moyennée* qui conserve l’identité d’énergie (S064) ; Buckmaster et Vicol 2019 : non-unicité des solutions faibles d’énergie finie (S147) ; Albritton, Brué et Colombo 2022 : deux solutions de Leray distinctes avec vitesse initiale nulle et la même force (S148) ; Elgindi 2021 : singularités en temps fini pour Euler dans la classe C^{1,α} sur R³ (S149) ; Chen et Hou 2022 : explosion auto-similaire pour Euler axisymétrique avec données lisses **et un bord**, preuve assistée par ordinateur (S150) ; Córdoba et Martínez-Zoroa 2023-2025 : mécanisme d’amplification couche par couche donnant des singularités pour Euler avec force et pour l’équation des milieux poreux avec source lisse (S151, S152) ; Wang, Gómez-Serrano, Buckmaster et al. (Google DeepMind) 2025 : découverte numérique de familles de singularités *instables* par réseaux de neurones (S153).
+**Ce qu’on savait avant 2026 (sources vérifiées).** Leray 1934 : solutions faibles globales d’énergie finie, régularité laissée ouverte (S144) ; Ladyzhenskaya : régularité en dimension 2 (S143) ; Caffarelli, Kohn, Nirenberg 1982 : l’ensemble singulier d’une solution faible convenable est de mesure de Hausdorff parabolique unidimensionnelle nulle (S145) ; Tao 2016 : explosion en temps fini pour une équation de Navier-Stokes *moyennée* qui conserve l’identité d’énergie (S072) ; Buckmaster et Vicol 2019 : non-unicité des solutions faibles d’énergie finie (S147) ; Albritton, Brué et Colombo 2022 : deux solutions de Leray distinctes avec vitesse initiale nulle et la même force (S148) ; Elgindi 2021 : singularités en temps fini pour Euler dans la classe C^{1,α} sur R³ (S149) ; Chen et Hou 2022 : explosion auto-similaire pour Euler axisymétrique avec données lisses **et un bord**, preuve assistée par ordinateur (S150) ; Córdoba et Martínez-Zoroa 2023-2025 : mécanisme d’amplification couche par couche donnant des singularités pour Euler avec force et pour l’équation des milieux poreux avec source lisse (S151, S152) ; Wang, Gómez-Serrano, Buckmaster et al. (Google DeepMind) 2025 : découverte numérique de familles de singularités *instables* par réseaux de neurones (S153).
 
 ## 3. Ce qu’OpenAI a annoncé le 8 septembre 2026
 
@@ -101,7 +99,7 @@ Nous ne prenons pas position sur les accusations ; les deux versions sont rappor
 
 ## 6. Rapport avec les fiches du carnet
 
-- **Fiche 41.** Les mêmes équations d’Euler et de Navier-Stokes admettent des solutions stationnaires Turing-complètes, donc des trajectoires indécidables (S047, S049). L’explosion en temps fini et l’universalité computationnelle sont deux pathologies distinctes du même modèle : la première dit que le modèle sort de son domaine de validité ; la seconde que, même dans son domaine, certaines questions sur ses solutions n’ont pas de réponse algorithmique. Tao avait relié les deux dès 2016 (S064).
+- **Fiche 41.** Les mêmes équations d’Euler et de Navier-Stokes admettent des solutions stationnaires Turing-complètes, donc des trajectoires indécidables (S047, S049). L’explosion en temps fini et l’universalité computationnelle sont deux pathologies distinctes du même modèle : la première dit que le modèle sort de son domaine de validité ; la seconde que, même dans son domaine, certaines questions sur ses solutions n’ont pas de réponse algorithmique. Tao avait relié les deux dès 2016 (S072).
 - **Fiche 23.** Le sixième problème de Hilbert (dériver les fluides des particules, S074-S075) et le problème du millénaire (régularité des fluides) sont les deux extrémités d’une même chaîne, et toutes deux ont bougé en 2025-2026, avec une assistance massive de l’IA dans le second cas. La « leçon du sixième problème » (fiche 23, contribution 5) vaut ici aussi : les solutions arrivent, mais la compréhension, au sens de Tao, est une autre affaire.
 - **Méthode.** Cet épisode est un cas d’école pour la règle « dater les états de la recherche » : tout ce qui est écrit ici peut être caduc dans un mois.
 
@@ -117,7 +115,7 @@ Consultées le 2026-09-12. Statuts : « Texte » (texte intégral), « Résumé 
 | S143 | Fefferman, C. L., « Existence and smoothness of the Navier-Stokes equation », Clay Mathematics Institute, 2000, https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf | Texte |
 | S144 | Leray, J., « Sur le mouvement d’un liquide visqueux emplissant l’espace », *Acta Math.* 63 (1934), 193-248 | Bib. |
 | S145 | Caffarelli, L., Kohn, R., Nirenberg, L., « Partial regularity of suitable weak solutions of the Navier-Stokes equations », *Comm. Pure Appl. Math.* 35 (1982), 771-831 | Bib. |
-| S064 | Tao, T., « Finite time blowup for an averaged three-dimensional Navier-Stokes equation », *J. Amer. Math. Soc.* 29 (2016), 601-674 (déjà au registre) | Résumé |
+| S072 | Tao, T., « Finite time blowup for an averaged three-dimensional Navier-Stokes equation », *J. Amer. Math. Soc.* 29 (2016), 601-674 (déjà au registre) | Résumé |
 | S147 | Buckmaster, T., Vicol, V., « Nonuniqueness of weak solutions to the Navier-Stokes equation », *Ann. Math.* 189 (2019), 101-144, arXiv:1709.10033 | Résumé |
 | S148 | Albritton, D., Brué, E., Colombo, M., « Non-uniqueness of Leray solutions of the forced Navier-Stokes equations », *Ann. Math.* 196 (2022), 415-455, arXiv:2112.03116 | Résumé |
 | S149 | Elgindi, T., « Finite-time singularity formation for C^{1,α} solutions to the incompressible Euler equations on R³ », *Ann. Math.* 194 (2021), 647-727, arXiv:1904.04795 | Résumé |
@@ -153,3 +151,5 @@ Complément documentaire du 12 septembre 2026 :
 - 2026-09-12 (b) : laboratoire interactif navier-stokes/ ajouté (fluide 2D, schéma de l’explosion, énoncés (A)-(D)).
 
 - 2026-09-12 (c) : communiqué Clay du 11 septembre et réponse OpenAI actualisée le 10 septembre ajoutés ; distinction entre annonce, examen et attribution maintenue.
+- 2026-10-07 : identifiant de Tao 2016 corrigé en S072, numéro qu’il porte dans la fiche 41 (S064 y désigne Palmer, Döring et Seregin 2014).
+- 2026-10-07 (b) : équations LaTeX remplacées par des écritures Unicode lisibles sur le site, sans bibliothèque de rendu ; la ligne « En texte » devenue redondante est retirée.

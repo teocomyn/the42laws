@@ -99,7 +99,7 @@ Ces entrées précisent la consultation effectuée pour les nouveaux outils ; el
 
 ## Note Navier-Stokes 2026
 
-Références vérifiées le 2026-09-12 pour [notes/navier-stokes-2026.md](../notes/navier-stokes-2026.md) (S140-S165 ; S064 réutilisé). Textes intégraux : Navier 1822 (Wikisource), Fefferman 2000 (PDF Clay), OpenAI 2026 (PDF, extraits), README du dépôt Lean d’OpenAI, billet de Tao du 7 septembre 2026. Résumés : Buckmaster-Vicol 2019, Albritton-Brué-Colombo 2022, Elgindi 2021, Chen-Hou 2022, Córdoba-Martínez-Zoroa 2023 et 2024, Wang et al. 2025. Presse : Quanta, Fortune, Implicator, Stanford Tech Review ; Wikipedia pour la chronologie. Événement en cours : tout est daté.
+Références vérifiées le 2026-09-12 pour [notes/navier-stokes-2026.md](../notes/navier-stokes-2026.md) (S140-S165 ; S072 réutilisé). Textes intégraux : Navier 1822 (Wikisource), Fefferman 2000 (PDF Clay), OpenAI 2026 (PDF, extraits), README du dépôt Lean d’OpenAI, billet de Tao du 7 septembre 2026. Résumés : Buckmaster-Vicol 2019, Albritton-Brué-Colombo 2022, Elgindi 2021, Chen-Hou 2022, Córdoba-Martínez-Zoroa 2023 et 2024, Wang et al. 2025. Presse : Quanta, Fortune, Implicator, Stanford Tech Review ; Wikipedia pour la chronologie. Événement en cours : tout est daté.
 
 
 ## Lots 1 et 2 — dossiers 19, 25, 26, 30

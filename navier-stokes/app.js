@@ -24,7 +24,7 @@
     const ctx=canvas.getContext('2d',{alpha:false});
     const tex=document.createElement('canvas'),tctx=tex.getContext('2d');
     const glow=document.createElement('canvas'),gctx=glow.getContext('2d');
-    let state,dye,image,vortBuf,px,py,ppx,ppy,mask=null,pump=null,preset='',confinement=0,view='ink',speedRef=1;
+    let state,dye,image,vortBuf,px,py,ppx,ppy,mask=null,sponge=null,preset='',confinement=0,view='ink',speedRef=1;
 
     function build(n,m){
       state=P.createFluid(n,{nu:o.nu});dye=P.createDye(m);
@@ -39,72 +39,51 @@
     }
     function clearDye(){dye.r.fill(0);dye.g.fill(0);dye.b.fill(0);}
 
+    // Paramètres physiques : P.SCENES (source unique, partagée avec les tests).
+    // Ici, seulement l'encre et la vitesse de référence du rendu.
     const PRESETS={
-      'kelvin-helmholtz':{
-        nu:6e-4,confinement:3,speed:2.2,
-        setup(){
-          P.kelvinHelmholtz(state,1,{thickness:0.1,perturbation:0.09});
-          P.paintDye(dye,(x,y)=>{
-            const y1=Math.PI/2,y2=3*Math.PI/2;
-            const band=Math.tanh((y-y1)/0.1)-Math.tanh((y-y2)/0.1)-1;
-            const q1=(y-y1)/0.30,q2=(y-y2)/0.30;
-            const edge=Math.exp(-q1*q1)+Math.exp(-q2*q2);
-            const base=mix([0.05,0.03,0.10],INK.violet,(0.5+0.5*band)*0.42);
-            const hot=mix(INK.gold,INK.orange,0.5+0.5*Math.sin(x*3));
-            return [base[0]+hot[0]*edge*1.25,base[1]+hot[1]*edge*1.25,base[2]+hot[2]*edge*1.25];
-          });
-        }},
-      'dipole':{
-        nu:4e-4,confinement:4,speed:2.4,
-        setup(){
-          P.dipole(state,1.15);clearDye();
-          P.splatDye(dye,Math.PI*0.55,Math.PI-0.45,0.34,INK.orange,1.25);
-          P.splatDye(dye,Math.PI*0.55,Math.PI+0.45,0.34,INK.cyan,1.25);
-          P.splatDye(dye,Math.PI*0.55,Math.PI,0.20,INK.gold,0.7);
-        }},
-      'cylindre':{
-        nu:1.6e-3,confinement:2,speed:2.6,
-        setup(){
-          P.uniformFlow(state,1.1);clearDye();
-          mask=P.diskMask(state,TAU*0.26,Math.PI,0.42);
-          pump={fx:0.55,fy:0};
-        }},
-      'turbulence':{
-        nu:2.5e-4,confinement:5,speed:2.6,
-        setup(){
-          P.turbulence(state,1.1,11);
-          P.paintDye(dye,(x,y)=>{
-            const a=Math.sin(x*3+Math.cos(y*2)),b=Math.cos(y*3.5-Math.sin(x*2));
-            const f=Math.pow(Math.max(0,1-Math.abs(a*b)),3);
-            const c=mix(mix(INK.violet,INK.rose,0.5+0.5*a),INK.gold,0.5+0.5*b);
-            const g=0.10;
-            return [c[0]*(g+f*1.5),c[1]*(g+f*1.5),c[2]*(g+f*1.5)];
-          });
-        }},
-      'taylor-green':{
-        nu:0.02,confinement:0,speed:1.4,
-        setup(){
-          P.taylorGreen(state,1);
-          P.paintDye(dye,(x,y)=>{
-            const w=Math.sin(x)*Math.sin(y),c=mix(INK.violet,INK.orange,0.5+0.5*w);
-            const k=0.18+0.95*Math.abs(w);
-            return [c[0]*k,c[1]*k,c[2]*k];
-          });
-        }},
-      'repos':{
-        nu:0.002,confinement:2,speed:2,
-        setup(){P.reset(state);clearDye();}}
+      'kelvin-helmholtz':{speed:2.2,paint(){
+        P.paintDye(dye,(x,y)=>{
+          const y1=Math.PI/2,y2=3*Math.PI/2;
+          const band=Math.tanh((y-y1)/0.1)-Math.tanh((y-y2)/0.1)-1;
+          const q1=(y-y1)/0.30,q2=(y-y2)/0.30;
+          const edge=Math.exp(-q1*q1)+Math.exp(-q2*q2);
+          const base=mix([0.05,0.03,0.10],INK.violet,(0.5+0.5*band)*0.42);
+          const hot=mix(INK.gold,INK.orange,0.5+0.5*Math.sin(x*3));
+          return [base[0]+hot[0]*edge*1.25,base[1]+hot[1]*edge*1.25,base[2]+hot[2]*edge*1.25];
+        });
+      }},
+      'dipole':{speed:2.4,paint(){
+        P.splatDye(dye,Math.PI*0.55,Math.PI-0.45,0.34,INK.orange,1.25);
+        P.splatDye(dye,Math.PI*0.55,Math.PI+0.45,0.34,INK.cyan,1.25);
+        P.splatDye(dye,Math.PI*0.55,Math.PI,0.20,INK.gold,0.7);
+      }},
+      'cylindre':{speed:2.6,paint(){}},
+      'turbulence':{speed:2.6,paint(){
+        P.paintDye(dye,(x,y)=>{
+          const a=Math.sin(x*3+Math.cos(y*2)),b=Math.cos(y*3.5-Math.sin(x*2));
+          const f=Math.pow(Math.max(0,1-Math.abs(a*b)),3);
+          const c=mix(mix(INK.violet,INK.rose,0.5+0.5*a),INK.gold,0.5+0.5*b);
+          const g=0.10;
+          return [c[0]*(g+f*1.5),c[1]*(g+f*1.5),c[2]*(g+f*1.5)];
+        });
+      }},
+      'taylor-green':{speed:1.4,paint(){
+        P.paintDye(dye,(x,y)=>{
+          const w=Math.sin(x)*Math.sin(y),c=mix(INK.violet,INK.orange,0.5+0.5*w);
+          const k=0.18+0.95*Math.abs(w);
+          return [c[0]*k,c[1]*k,c[2]*k];
+        });
+      }},
+      'repos':{speed:2,paint(){}}
     };
 
     function load(name){
-      const p=PRESETS[name]||PRESETS['repos'];
-      preset=name;mask=null;pump=null;
-      P.reset(state);clearDye();
-      P.setViscosity(state,p.nu);
-      p.setup();
-      confinement=p.confinement;speedRef=p.speed;
+      const key=PRESETS[name]?name:'repos',scene=P.loadScene(state,key);
+      preset=key;mask=scene.mask;sponge=scene.sponge;confinement=scene.confinement;
+      clearDye();PRESETS[key].paint();speedRef=PRESETS[key].speed;
       seedParticles();
-      return p;
+      return scene;
     }
 
     /* ------------------------------------------------------------ rendu */
@@ -192,6 +171,8 @@
     }
     let bandClock=0;
     function injectUpstream(dt){
+      // Le domaine est périodique : le sillage ressortirait à gauche. On l'efface en amont.
+      P.fadeDyeBand(dye,0,0.25,0.55);
       bandClock+=dt;
       const y0=Math.PI-0.5,y1=Math.PI+0.5;
       for(let q=0;q<5;q++){
@@ -213,7 +194,7 @@
     function stepOnce(dt){
       if(o.autonomous)autoInject(dt);
       if(preset==='cylindre')injectUpstream(dt);
-      const diag=P.step(state,dt,{confinement,mask,pump});
+      const diag=P.step(state,dt,{confinement,mask,sponge});
       P.advectDye(dye,state,dt,preset==='cylindre'?0.006:o.decay);
       advanceParticles(dt);
       return diag;

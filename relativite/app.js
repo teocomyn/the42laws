@@ -1,5 +1,6 @@
 (function(){
  'use strict';
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const P=RelativityPhysics,$=id=>document.getElementById(id),initial=P.settings(location.search);
  let beta=initial.beta,years=initial.years,fraction=0,timer=0,last=0;
  const format=(n,d=2)=>n.toLocaleString('fr-FR',{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -19,10 +20,10 @@
  function reset(){stop();fraction=0;draw(true);}
  function settings(){beta=Number($('speed').value);years=Number($('duration').value);reset();}
  function animate(now){fraction=Math.min(1,fraction+(now-last)/12000);last=now;draw();if(fraction===1){stop();draw(true);}else timer=requestAnimationFrame(animate);}
- $('play').addEventListener('click',()=>{if(timer){stop();draw(true);return;}if(fraction===1)fraction=0;last=performance.now();$('play').textContent='Pause';$('play').setAttribute('aria-pressed','true');$('status').textContent='Voyage en cours. Vous pouvez mettre en pause ou parcourir le voyage au curseur.';timer=requestAnimationFrame(animate);});
+ $('play').addEventListener('click',()=>{if(timer){stop();draw(true);return;}if(reduced.matches){stop();fraction=1;draw(true);return;}if(fraction===1)fraction=0;last=performance.now();$('play').textContent='Pause';$('play').setAttribute('aria-pressed','true');$('status').textContent='Voyage en cours. Vous pouvez mettre en pause ou parcourir le voyage au curseur.';timer=requestAnimationFrame(animate);});
  $('step').addEventListener('click',()=>{stop();fraction=Math.min(1,Math.round((fraction+.1)*100)/100);draw(true);});$('finish').addEventListener('click',()=>{stop();fraction=1;draw(true);});$('reset').addEventListener('click',reset);
  $('progress').addEventListener('input',()=>{stop();fraction=Number($('progress').value)/100;draw(true);});$('speed').addEventListener('input',settings);$('duration').addEventListener('input',settings);
  document.querySelectorAll('[data-speed]').forEach(b=>b.addEventListener('click',()=>{$('speed').value=b.dataset.speed;settings();}));
  $('share').addEventListener('click',async()=>{const url=new URL(location.href);url.search='';url.searchParams.set('v',String(beta));url.searchParams.set('duree',String(years));url.hash='laboratoire';try{await navigator.clipboard.writeText(url.href);$('share-status').textContent='Lien des réglages copié'+(location.hostname==='127.0.0.1'||location.hostname==='localhost'?' (adresse locale).':'.');}catch{const a=document.createElement('a');a.href=url.href;a.textContent=url.href;$('share-status').replaceChildren('Copiez ce lien : ',a);}});
- document.addEventListener('visibilitychange',()=>{if(document.hidden){stop();draw(true);}});reset();
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){stop();draw(true);}});reduced.addEventListener('change',e=>{if(e.matches&&timer){stop();draw(true);}});reset();
 })();

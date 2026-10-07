@@ -124,18 +124,39 @@
         const len=Math.sqrt(gx*gx+gy*gy)+1e-6;
         u[k]+=g*(gy/len)*w[k];v[k]-=g*(gx/len)*w[k];}}
   }
+  // Zone éponge : dans la bande x0 ≤ x < x1, la vitesse est rappelée vers (u, v) avec un taux
+  // `rate`, pondéré par un profil sin² pour éviter un forçage abrupt. Contrairement à une force
+  // uniforme, ce rappel vers une vitesse finie ne peut pas accélérer l'écoulement sans limite.
+  function spongeRelax(state,sponge,dt){
+    if(!sponge)return;
+    const {n,dx,u,v}=state,U=sponge.u||0,V=sponge.v||0,x0=sponge.x0||0,x1=sponge.x1,rate=sponge.rate||1,width=x1-x0;
+    if(!(width>0))return;
+    for(let i=0;i<n;i++){
+      const x=i*dx;if(x<x0||x>=x1)continue;
+      const w=Math.sin(Math.PI*(x-x0)/width)**2,a=1-Math.exp(-rate*w*dt);
+      for(let j=0;j<n;j++){const k=j*n+i;u[k]+=(U-u[k])*a;v[k]+=(V-v[k])*a;}
+    }
+  }
   function step(state,dt,options){
     assertFinite(dt,'dt',1e-6,1);
-    let force=null,confinement=0,pump=null,mask=null;
+    let force=null,confinement=0,pump=null,mask=null,sponge=null;
     if(typeof options==='function'||(options&&options.fx&&options.fx.length))force=options;
-    else if(options){force=options.force||null;confinement=options.confinement||0;pump=options.pump||null;mask=options.mask||null;}
+    else if(options){force=options.force||null;confinement=options.confinement||0;pump=options.pump||null;mask=options.mask||null;sponge=options.sponge||null;}
     applyForce(state,dt,force);
+    // `pump` reste accepté pour compatibilité, mais une force uniforme sur un tore accélère
+    // indéfiniment le mode moyen : préférer `sponge`.
     if(pump){const {u,v,size}=state,ax=dt*(pump.fx||0),ay=dt*(pump.fy||0);for(let k=0;k<size;k++){u[k]+=ax;v[k]+=ay;}}
+    spongeRelax(state,sponge,dt);
     vorticityConfinement(state,confinement,dt);
     advect(state,dt);
-    applyMask(state,mask);
-    spectralStep(state,dt);
-    applyMask(state,mask);
+    if(mask){
+      // Pénalisation puis projection : le champ final reste à divergence nulle. Annuler la
+      // vitesse après la projection réintroduisait une divergence au bord de l'obstacle.
+      applyMask(state,mask);
+      spectralStep(state,dt);
+      applyMask(state,mask);
+      spectralStep(state,dt,{diffuse:false});
+    }else spectralStep(state,dt);
     state.time+=dt;state.steps++;
     return diagnostics(state);
   }
@@ -156,6 +177,20 @@
     for(let j=0;j<n;j++){const jp=((j+1)%n)*n,jm=((j-1+n)%n)*n,r=j*n;
       for(let i=0;i<n;i++){const ip=(i+1)%n,im=(i-1+n)%n,d=(u[r+ip]-u[r+im]+v[jp+i]-v[jm+i])*c;o[r+i]=d;const a=Math.abs(d);if(a>m)m=a;}}
     return {field:o,max:m};
+  }
+  // Divergence mesurée avec l'opérateur spectral de la projection, rapportée à la norme du
+  // gradient (sans dimension). Contrairement aux différences centrées, elle ne signale pas
+  // de faux écarts sur les gradients raides.
+  function spectralDivergence(state){
+    const {n,size,u,v,_re:ur,_im:ui,_re2:vr,_im2:vi,_row,_rowi}=state;
+    for(let k=0;k<size;k++){ur[k]=u[k];ui[k]=0;vr[k]=v[k];vi[k]=0;}
+    fft2d(ur,ui,n,false,_row,_rowi);fft2d(vr,vi,n,false,_row,_rowi);
+    const half=n>>1;let div=0,grad=0;
+    for(let ky=0;ky<n;ky++){const b=ky<=half?ky:ky-n;
+      for(let kx=0;kx<n;kx++){const a=kx<=half?kx:kx-n,idx=ky*n+kx;
+        const dr=a*ur[idx]+b*vr[idx],di=a*ui[idx]+b*vi[idx];div+=dr*dr+di*di;
+        const k2=a*a+b*b;grad+=k2*(ur[idx]*ur[idx]+ui[idx]*ui[idx]+vr[idx]*vr[idx]+vi[idx]*vi[idx]);}}
+    return grad>0?Math.sqrt(div/grad):0;
   }
   function vorticity(state,out){
     const {n,dx,u,v}=state,o=out||new Float32Array(n*n),c=1/(2*dx);let m=0;
@@ -298,6 +333,12 @@
       r[k]=Math.min(1.5,r[k]+w*rgb[0]);g[k]=Math.min(1.5,g[k]+w*rgb[1]);b[k]=Math.min(1.5,b[k]+w*rgb[2]);
     }
   }
+  // Efface progressivement l'encre dans une bande verticale (x en unités physiques).
+  function fadeDyeBand(dye,x0,x1,keep){
+    const {m,dx,r,g,b}=dye;
+    for(let I=0;I<m;I++){const x=(I+0.5)*dx;if(x<x0||x>=x1)continue;
+      for(let J=0;J<m;J++){const k=J*m+I;r[k]*=keep;g[k]*=keep;b[k]*=keep;}}
+  }
   function paintDye(dye,fn){const {m,dx,r,g,b}=dye;for(let J=0;J<m;J++)for(let I=0;I<m;I++){const c=fn((I+0.5)*dx,(J+0.5)*dx),k=J*m+I;r[k]=c[0];g[k]=c[1];b[k]=c[2];}}
 
   // ---------- modèle auto-similaire (schéma du théorème 1.1 d'OpenAI, 2026) ----------
@@ -314,9 +355,29 @@
       supNorm:velocity,l2Norm:Math.sqrt(velocity*velocity*volume),energyProxy:velocity*velocity*volume});
   }
 
-  const api=Object.freeze({TWO_PI,createFluid,setViscosity,reset,step,advect,spectralStep,applyForce,applyMask,vorticityConfinement,
-    kineticEnergy,maxSpeed,divergence,vorticity,diagnostics,taylorGreen,taylorGreenEnergy,shearLayers,addImpulse,
-    velocityFromVorticity,kelvinHelmholtz,dipole,turbulence,diskMask,uniformFlow,
-    createDye,advectDye,dyeMass,splatDye,paintDye,selfSimilarFamily,fft1d,fft2d,sample});
+  // ---------- scènes du laboratoire ----------
+  // Source unique des paramètres physiques : l'interface et les tests lisent ce registre.
+  const SCENES=Object.freeze({
+    'kelvin-helmholtz':Object.freeze({nu:6e-4,confinement:3,setup(s){kelvinHelmholtz(s,1,{thickness:0.1,perturbation:0.09});return {};}}),
+    'dipole':Object.freeze({nu:4e-4,confinement:4,setup(s){dipole(s,1.15);return {};}}),
+    'cylindre':Object.freeze({nu:1.6e-3,confinement:2,setup(s){
+      uniformFlow(s,1.1);
+      return {mask:diskMask(s,TWO_PI*0.26,Math.PI,0.42),sponge:{u:1.1,v:0,x0:0,x1:0.7,rate:8}};
+    }}),
+    'turbulence':Object.freeze({nu:2.5e-4,confinement:5,setup(s){turbulence(s,1.1,11);return {};}}),
+    'taylor-green':Object.freeze({nu:0.02,confinement:0,setup(s){taylorGreen(s,1);return {};}}),
+    'repos':Object.freeze({nu:0.002,confinement:2,setup(){return {};}})
+  });
+  function loadScene(state,name){
+    const scene=SCENES[name];if(!scene)throw new RangeError('Unknown scene: '+name);
+    reset(state);setViscosity(state,scene.nu);
+    const extra=scene.setup(state)||{};
+    return {name,nu:scene.nu,confinement:scene.confinement,mask:extra.mask||null,sponge:extra.sponge||null};
+  }
+
+  const api=Object.freeze({TWO_PI,createFluid,setViscosity,reset,step,advect,spectralStep,applyForce,applyMask,vorticityConfinement,spongeRelax,
+    kineticEnergy,maxSpeed,divergence,spectralDivergence,vorticity,diagnostics,taylorGreen,taylorGreenEnergy,shearLayers,addImpulse,
+    velocityFromVorticity,kelvinHelmholtz,dipole,turbulence,diskMask,uniformFlow,SCENES,loadScene,
+    createDye,advectDye,dyeMass,splatDye,fadeDyeBand,paintDye,selfSimilarFamily,fft1d,fft2d,sample});
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.NavierStokesPhysics=api;
 })(globalThis);

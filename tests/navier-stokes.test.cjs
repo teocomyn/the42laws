@@ -87,3 +87,29 @@ test('advection de l’encre : champ uniforme conservé sans déclin',()=>{
  assert.ok(Math.abs(P.dyeMass(dye)-mass)<1e-5);
  assert.ok([...dye.r,...dye.g,...dye.b].every(Number.isFinite));
 });
+test('les six scènes du laboratoire restent bornées : énergie, vitesse et valeurs finies',()=>{
+  assert.deepEqual(Object.keys(P.SCENES).sort(),['cylindre','dipole','kelvin-helmholtz','repos','taylor-green','turbulence']);
+  for(const name of Object.keys(P.SCENES)){
+    const s=P.createFluid(64),scene=P.loadScene(s,name),E0=P.kineticEnergy(s);let Emax=E0;
+    for(let k=0;k<600;k++)Emax=Math.max(Emax,P.step(s,0.02,scene).energy);
+    assert.ok(finite(s.u)&&finite(s.v),`${name} : valeurs non finies`);
+    // Une force uniforme sur le tore faisait passer l'obstacle de 24 à plus de 900 en t = 12.
+    assert.ok(Emax<=Math.max(1e-9,2*E0),`${name} : énergie ${Emax} au-delà de 2 × ${E0}`);
+  }
+});
+test('obstacle : écoulement à divergence nulle, débit maintenu et disque presque immobile',()=>{
+  const s=P.createFluid(64),scene=P.loadScene(s,'cylindre');
+  for(let k=0;k<600;k++)P.step(s,0.02,scene);
+  assert.ok(P.spectralDivergence(s)<1e-5,`divergence ${P.spectralDivergence(s)}`);
+  let mean=0,inside=0;for(let k=0;k<s.size;k++){mean+=s.u[k];if(scene.mask[k])inside=Math.max(inside,Math.hypot(s.u[k],s.v[k]));}
+  mean/=s.size;
+  assert.ok(mean>0.8&&mean<1.3,`vitesse moyenne ${mean}`);
+  assert.ok(inside<0.2,`vitesse résiduelle dans le disque ${inside}`);
+});
+test('divergence spectrale : nulle pour Taylor-Green, nette pour un gradient pur',()=>{
+  const s=P.createFluid(64);P.taylorGreen(s,1);
+  assert.ok(P.spectralDivergence(s)<1e-6);
+  for(let j=0;j<64;j++)for(let i=0;i<64;i++){const x=i*s.dx,y=j*s.dx,k=j*64+i;s.u[k]=-Math.sin(x)*Math.cos(y);s.v[k]=-Math.cos(x)*Math.sin(y);}
+  assert.ok(P.spectralDivergence(s)>0.5);
+  assert.throws(()=>P.loadScene(s,'inconnue'),RangeError);
+});

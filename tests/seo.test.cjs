@@ -68,13 +68,15 @@ test('stable descriptive dossier routes preserve numeric bookmarks, modes and fr
  assert.equal(C.isAtlasPath('/dossiers/invente/'),false);assert.equal(C.questionId('/dossiers/999/'),null);assert.equal(C.canonicalHref('https://example.com/dossiers/29/'),'https://example.com/dossiers/29/');
 });
 test('all page intentions have specific metadata and permanent redirects without self loops',()=>{
- const config=JSON.parse(fs.readFileSync('vercel.json','utf8'));assert.equal(config.redirects.length,271);assert.equal(config.trailingSlash,undefined);
+ const config=JSON.parse(fs.readFileSync('vercel.json','utf8'));assert.equal(config.redirects.length,274);assert.equal(config.trailingSlash,undefined);
  const paths=new Set(),titles=new Set(),descriptions=new Set();
  for(const q of D.questions){const m=M.pageMetadata(D,['question',String(q.id)]);assert.equal(m.path,C.questionPath(q.id));assert.equal(m.title,D.seo.questions[q.id].title+' — The42laws');assert.equal(m.description,D.seo.questions[q.id].description);assert.ok(m.title.length<=85);assert.ok(m.description.length<=180);assert.ok(!titles.has(m.title));titles.add(m.title);assert.ok(!descriptions.has(m.description));descriptions.add(m.description);paths.add(m.path);
   for(const source of [`/dossiers/${q.id}`,`/dossiers/${q.id}/`,`/dossiers/${q.id}/index.html`]){const rule=config.redirects.find(x=>x.source===source);assert.equal(rule.destination,m.path);assert.equal(rule.permanent,true);assert.notEqual(rule.source,rule.destination);assert.ok(!config.redirects.some(x=>x.source===rule.destination));}
  }
  for(const [path,item] of Object.entries(D.seo.routes)){assert.ok(!titles.has(item.title+' — The42laws'));titles.add(item.title+' — The42laws');assert.ok(!descriptions.has(item.description));descriptions.add(item.description);if(path.includes('#'))continue;assert.ok(!paths.has(path));paths.add(path);}
- assert.equal(paths.size,73);
+ assert.equal(paths.size,74);
+ const alias=config.redirects.find(x=>x.source==='/notes/navier-stokes-2026.md');assert.equal(alias?.destination,'/notes/navier-stokes-2026/');assert.equal(alias.permanent,true);
+ const cache=config.headers.find(h=>h.has?.some(c=>c.type==='query'&&c.key==='v'));assert.equal(cache?.headers.find(h=>h.key==='Cache-Control')?.value,'public, max-age=31536000, immutable');
  for(const destination of paths){const sources=destination==='/'?['/index.html']:[destination.slice(0,-1),destination+'index.html'];for(const source of sources){const rule=config.redirects.find(x=>x.source===source);assert.equal(rule.destination,destination);assert.equal(rule.permanent,true);assert.ok(!config.redirects.some(x=>x.source===destination));}}
  assert.equal(new Set(config.redirects.map(x=>x.source)).size,config.redirects.length);
 });

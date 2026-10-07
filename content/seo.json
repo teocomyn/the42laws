@@ -339,6 +339,13 @@
     "/trou-noir/": {
       "title": "Trou noir : visualisation et rayon de Schwarzschild",
       "description": "Explorez une visualisation illustrative et comparez le rayon de Schwarzschild selon la masse. Guide 10/20 masses solaires, calculs et limites explicites."
+    },
+    "/notes/navier-stokes-2026/": {
+      "title": "Navier–Stokes et l’annonce d’OpenAI : note de recherche datée",
+      "description": "Ce que l’annonce d’OpenAI du 8 septembre 2026 établit sur Navier–Stokes, ce qu’elle ne règle pas encore et où en est la vérification. Note sourcée.",
+      "aliases": [
+        "/notes/navier-stokes-2026.md"
+      ]
     }
   }
 }

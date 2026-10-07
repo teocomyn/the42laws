@@ -18,6 +18,7 @@ export function resolveLink(href,source){
  if(local==='QUESTIONS.md')return '/dossiers/';
  if(local==='METHODE.md')return '/methode/';
  if(local==='sources/README.md')return '/sources/';
+ if(/^notes\/[a-z0-9-]+\.md$/.test(local))return '/notes/'+local.slice(6,-3)+'/'+(href.includes('#')?'#'+href.split('#')[1]:'');
  return '/'+local+(href.includes('#')?'#'+href.split('#')[1]:'');
 }
 export function renderMarkdown(md,source='questions/41.md'){

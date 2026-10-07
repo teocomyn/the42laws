@@ -1,6 +1,6 @@
 # The42laws — Contexte du projet
 
-Mis à jour : 2026-09-30
+Mis à jour : 2026-10-07
 
 ## Objet
 
@@ -22,7 +22,7 @@ Projet de contenu et de recherche local avec atlas statique à la racine et sept
 - QUESTIONS.md : sommaire des 42 questions avec statuts.
 - METHODE.md : cadre de recherche.
 - questions/01.md à questions/42.md : fiches individuelles.
-- notes/ : notes datées sur des événements en cours (navier-stokes-2026.md).
+- notes/ : notes datées sur des événements en cours, publiées en HTML sous /notes/<nom>/ (page générée par scripts/build-public.mjs, métadonnées dans content/seo.json, ancienne adresse .md redirigée par un alias du registre).
 - navier-stokes/ : laboratoire pédagogique sur les équations de Navier-Stokes (Claude Code, 2026-09-12) ; tests/navier-stokes.test.cjs ; intégré dans content/atlas.json.
 - sources/README.md : registre des références vérifiées (S001 à S165 : neutrino S001-S008, antimatière S009-S016, question 41 S017-S073, question 23 S074-S139, note Navier-Stokes S140-S165 ; atlas V2 S200-S211).
 - neutrino/ : laboratoire pédagogique sur le neutrino (Codex, 2026-09-11) ; tests/physics.test.cjs.
@@ -39,6 +39,7 @@ Conserver les 42 questions et leur numérotation. Distinguer résultats empiriqu
 - 2026-09-12 : deux outils ont écrit simultanément dans le dossier (Codex : antimatière ; Claude : fiche 41). Les identifiants de sources ont été renumérotés et la section de reprise antimatière reconstruite. Règle rappelée : un seul outil à la fois sur le même arbre.
 - 2026-09-12 : V1 de l’atlas autorisée par Teo et développée. La classification précédente « answerable » est une orientation de travail, pas une preuve que seule la question 41 admet des résultats démontrés. Dossier original conservé ; lecture courte avec réserves et sources séparées.
 - Les contributions originales (synthèses, dérivations, conjectures) sont admises si elles sont signalées comme telles dans la fiche.
+- 2026-10-07 : les ressources référencées par le HTML publié reçoivent une empreinte (?v=12 caractères hexadécimaux) et vercel.json les met en cache un an (immutable) ; le HTML reste revalidé à chaque visite. atlas/consent.js est exclu car il se retrouve par son attribut src exact. Les paramètres physiques des scènes Navier-Stokes ont une source unique : P.SCENES dans navier-stokes/physics.js, lue par l’interface et par les tests.
 
 ## Jalon actuel
 
@@ -133,3 +134,8 @@ Le routeur, le HTML statique, les liens internes, le partage, les balises social
 Validation locale : 69 tests, TypeScript et contrôle public réussis (239 fichiers, 4630 références). Navigateur : fiche vide 28 → dossier 29, retour/rechargement, ancienne adresse 33 avec mode et ancre conservés ; descriptions, robots et canoniques corrects. Publication et redirections HTTP distantes à confirmer après push. Axeptio reste suspendu ; indexation GSC et citations IA non mesurées.
 
 Validation distante du lot URL/métadonnées : commits 55cf549 puis d367f4e poussés sur main ; GitHub Actions 36771687618 et 36772083350 réussis, Vercel réussi. Lecture des 73 pages canoniques : HTTP 200 et HTML identique au build. Les 271 règles ont été testées sans suivi automatique : chaque variante reçoit directement HTTP 308 vers la canonique exacte, paramètres conservés, aucune chaîne. Neuf ressources et sitemap identiques au build ; adresse de dossier inconnue HTTP 404/noindex. Navigateur en production : ancienne adresse 29 sans barre finale, lecture complète et ancre conservées, métadonnées et lien Markdown corrects après rechargement. Preuve ignorée artifacts/seo-validation/url-migration-production.json. Les gains SEO, l’indexation effective et les citations IA restent non mesurés.
+
+## 2026-10-07 — Bloc 1 : corrections et cache
+
+Décisions effectives après fusion de la branche claude/bloc-1. Registre SEO : 74 pages publiques et 274 redirections permanentes ; un champ `aliases` d’une route déclare d’anciennes adresses redirigées vers elle. Fichiers conservés dans le dépôt mais non publiés : atlas/logo-42.png (maître), atlas/favicon-42-512.png, les sources SVG des cartes de partage et notes/*.md (remplacés par leur page HTML) ; brand-share.png et share-card.png restent publiés pour les anciens partages. Scène Obstacle de Navier-Stokes : entrée par zone éponge au lieu d’une force uniforme, pénalisation de l’obstacle avant projection. Les laboratoires photon, temps et relativité respectent « réduire les animations ».
+

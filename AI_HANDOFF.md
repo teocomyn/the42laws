@@ -1,14 +1,35 @@
 # État de reprise
 
-Mis à jour : 2026-09-12
-Outils : Codex (laboratoires neutrino et antimatière, 2026-09-11 et 2026-09-12) et Claude Code (fiches 41 puis 23, 2026-09-12), en parallèle dans le même dossier
-Branche principale : main. Finalisation V2 isolée sur codex/atlas-v2 ; voir le dernier jalon pour l’état actuel.
+Mis à jour : 2026-10-07
+Outils : Codex et Claude Code, chacun dans son propre worktree. Ne jamais travailler à deux dans le même arbre.
+Branche principale : main, déployée automatiquement sur https://the42laws.fr par Vercel. Lot en attente : claude/bloc-1 (commité, non poussé).
+
+## État courant (2026-10-07)
+
+- Production : commit dedcbea. En-têtes de sécurité, consentement GA4 et pages légales en ligne ; 45 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
+- En attente : branche claude/bloc-1 (voir la section du 2026-10-07 ci-dessous). Validée localement ; à fusionner et pousser sur main avec l’accord de Teo, puis à vérifier en production (en-tête Cache-Control des ressources ?v=, page /notes/navier-stokes-2026/, redirection de l’ancienne adresse .md).
+- Prochaine action après fusion : bloc 2 (performance : découpage de atlas/data.js, React partagé entre les îles), puis sources primaires des synthèses 01, 10, 15, 19, 25, 26, 30 et 35.
+- Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
 
 ## Travail réalisé
 
-### 2026-10-05 — Claude Code : en-têtes de sécurité (non commité)
+### 2026-10-07 — Claude Code : bloc 1 (corrections), branche claude/bloc-1
 
-`vercel.json` ajoute une `Content-Security-Policy` stricte (scripts limités à `'self'` et `*.googletagmanager.com`, aucun inline, `frame-ancestors 'self'`), ainsi que `Permissions-Policy` et `Cross-Origin-Opener-Policy`. Vérifié : `build:public` puis `check:public` OK, 69 tests OK. 11 pages, dont les 7 laboratoires, servies avec les en-têtes sans aucune violation CSP ; chargement GA autorisé. Le fichier `_headers` généré par `build-public.mjs` (portabilité hors Vercel) n'a pas été modifié. Non poussé : en attente de l'accord de Teo.
+Demande de Teo : « lance le bloc 1 ». Worktree /Users/teocomyn/.claude-worktrees/the42laws-bloc-1, base dedcbea. Non poussé.
+
+- Navier-Stokes : la scène Obstacle divergeait (énergie × 193 en t = 30) à cause d’une force uniforme sur le tore et d’un masque appliqué après la projection. Remplacé par une zone éponge (rappel vers u = 1,1) et une pénalisation suivie d’une projection. Énergie bornée entre 24 et 34 jusqu’à t = 100, divergence spectrale ~5·10⁻⁷, vitesse résiduelle dans le disque 0,06. Paramètres des six scènes centralisés dans P.SCENES / P.loadScene. Ajouts : spongeRelax, spectralDivergence, fadeDyeBand. Trois tests ajoutés (énergie bornée des six scènes, obstacle, divergence spectrale) ; l’ancien réglage fait échouer le premier (énergie × 38 en 600 pas).
+- Cache : build-public versionne par empreinte les scripts, feuilles de style et images référencés par le HTML publié (28 sur l’accueil, consent.js exclu) ; vercel.json ajoute Cache-Control « public, max-age=31536000, immutable » pour les requêtes portant ?v= de 12 caractères hexadécimaux. check:public vérifie chaque empreinte et refuse tout script ou feuille de style local non versionné.
+- Note Navier-Stokes publiée en HTML sous /notes/navier-stokes-2026/ (registre SEO, JSON-LD, canonique, fil d’Ariane, sitemap). L’ancienne adresse .md est redirigée par un alias du registre (sync-seo gère désormais `aliases`). Équations LaTeX, jamais rendues sur le site, remplacées par des écritures Unicode. Liens du laboratoire mis à jour ; resolveLink renvoie les liens Markdown vers les notes sur leur page HTML.
+- Paquet publié : 5,9 → 4,5 Mo (maître du logo, favicon 512 et sources SVG non publiés).
+- Photon, temps, relativité : « réduire les animations » respecté (ajout d’un lot sans défilement, saut direct à l’état final).
+- Corrections : Tao 2016 est S072 et non S064 dans la note et la fiche 23 ; réponse courte de la fiche 41 reformulée (« l’une des rares questions »).
+- Tests SEO : 274 redirections et 74 pages (au lieu de 271 et 73), alias et règle de cache vérifiés.
+
+Validation locale : sync:seo, build, 72 tests, typecheck, build:public (46 routes) et check:public (234 fichiers, 4 669 liens et ressources) réussis ; atlas/data.js régénéré et commité. Navigateur sur le build public servi localement : page de note (titre, H1 unique, canonique, consentement, aucune ressource en erreur), scène Obstacle (énergie 31 à t = 24, sillage propre), aucune erreur console. Limite : le panneau de navigation était masqué, requestAnimationFrame ne s’y déclenche pas ; le chemin animé normal de photon et relativité (non modifié) n’a donc pas été rejoué, et la branche « réduire les animations » des trois laboratoires n’a pas été exercée avec le réglage système activé. Non vérifié avant déploiement : l’acceptation par Vercel de la condition `has` avec `value.re` (documentée) et l’en-tête effectivement servi.
+
+### 2026-10-05 — Claude Code : en-têtes de sécurité (commité dedcbea, en production)
+
+`vercel.json` ajoute une `Content-Security-Policy` stricte (scripts limités à `'self'` et `*.googletagmanager.com`, aucun inline, `frame-ancestors 'self'`), ainsi que `Permissions-Policy` et `Cross-Origin-Opener-Policy`. Vérifié : `build:public` puis `check:public` OK, 69 tests OK. 11 pages, dont les 7 laboratoires, servies avec les en-têtes sans aucune violation CSP ; chargement GA autorisé. Le fichier `_headers` généré par `build-public.mjs` (portabilité hors Vercel) n'a pas été modifié. Poussé ensuite dans dedcbea ; en-têtes constatés en production le 2026-10-07.
 
 ### 2026-09-11 — Codex : laboratoire neutrino
 
