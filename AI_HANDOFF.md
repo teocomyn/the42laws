@@ -6,7 +6,7 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 
 ## État courant (2026-10-08)
 
-- Production : blocs 1 et 2 vérifiés en ligne le 2026-10-07 ; bloc 3 (sources primaires) poussé sur main le 2026-10-08, validation de production consignée ci-dessous. 46 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
+- Production : blocs 1 et 2 vérifiés en ligne le 2026-10-07 ; bloc 3 (sources primaires) poussé en 2b906fc et vérifié en ligne le 2026-10-08. 46 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
 - Registre des sources : prochain identifiant libre S405. Réutiliser l’identifiant existant pour une référence identique (S327 = Chou 2010 ; S101 = S349 = Planck 2018 VI, S101 privilégié).
 - Prochaine action : fiches vides les plus citées (11, 12, 18, 24), puis 37, 39 et 05.
 - Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
@@ -22,6 +22,8 @@ Demande de Teo : « continue et push sur le main ». Base c800712, worktree sép
 - Registre : section « Bloc 3 » générée à partir des tableaux des fiches (texte identique), ligne S327 complétée (la notice NIST indiquait *Nature* au lieu de *Science*). Titres, descriptions et slugs SEO inchangés : ils restent exacts.
 
 Validation locale : sync:seo, build, 73 tests, typecheck, build:public et check:public (250 fichiers) réussis. Pages 30 et 35 du build public vérifiées en 375 px : sections présentes, aucun débordement horizontal, tableaux défilants. Indices écrits en Unicode (w₀, wₐ, nₛ) ; un « w_a » brut corrigé après contrôle visuel.
+
+Validation distante : poussé sur main en 2b906fc ; GitHub Actions run 37697136382 et Vercel réussis. En production, les huit pages de dossier préchargent un fichier atlas/dossiers/<id>.js dont l’empreinte est identique au build local, servi en HTTP 200 avec cache immutable, et contenant le nouveau texte (sections Bell, stabilité du vide, quatre annonces, Leibniz, etc.). Lecture statique de la page 30 et page /sources/ (section Bloc 3) publiées ; ancienne adresse sans barre finale redirigée en 308 vers la canonique ; CSP présente.
 
 
 ### 2026-10-07 — Claude Code : bloc 2 (performance), branche claude/bloc-2
