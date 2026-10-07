@@ -2,12 +2,12 @@
 
 Mis à jour : 2026-10-07
 Outils : Codex et Claude Code, chacun dans son propre worktree. Ne jamais travailler à deux dans le même arbre.
-Branche principale : main, déployée automatiquement sur https://the42laws.fr par Vercel. Lot en attente : claude/bloc-2 (commité, non poussé).
+Branche principale : main, déployée automatiquement sur https://the42laws.fr par Vercel. Aucun lot en attente.
 
 ## État courant (2026-10-07)
 
-- Production : commit 9f01f51 (bloc 1), vérifié en ligne le 2026-10-07. En-têtes de sécurité, consentement GA4 et pages légales en ligne ; cache d’un an sur les ressources versionnées ; 46 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
-- Bloc 1 fusionné et vérifié en production. Bloc 2 (performance) prêt sur claude/bloc-2, validé localement : à pousser avec l’accord de Teo, puis vérifier en production (pages de dossiers, navigation interne, îles React, cache de atlas/chunks/).
+- Production : commit de8f7e1 (blocs 1 et 2), vérifié en ligne le 2026-10-07. En-têtes de sécurité, consentement GA4 et pages légales en ligne ; cache d’un an sur les ressources versionnées ; 46 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
+- Blocs 1 et 2 fusionnés et vérifiés en production. Bloc 3 en cours : sources primaires des synthèses.
 - Prochaine action après fusion du bloc 2 : sources primaires des synthèses 01, 10, 15, 19, 25, 26, 30 et 35, puis fiches vides les plus citées (11, 12, 18, 24).
 - Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
 
@@ -15,7 +15,7 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 
 ### 2026-10-07 — Claude Code : bloc 2 (performance), branche claude/bloc-2
 
-Demande de Teo : « continuer » après le bloc 1. Worktree séparé, base d1e9740. Non poussé.
+Demande de Teo : « continuer » après le bloc 1, puis « push sur le main ». Base d1e9740, worktree supprimé après fusion. Poussé en de8f7e1.
 
 - atlas/data.js : 550 → 136 Ko (112 → 33 Ko compressé). Le texte des 15 synthèses est dans atlas/dossiers/<id>.js (9 à 102 Ko), avec contentVersion dans data.js ; chaque page de dossier précharge le sien, la navigation interne charge l’autre à la demande (message « Chargement du dossier… », reprise du rendu si l’utilisateur n’a pas changé de page, message d’erreur sinon). Seul question() dans atlas/app.js lisait ce texte côté navigateur ; fullDocument reste côté construction. Tests : helper tests/atlas-data.cjs (reconstitue les données comme le navigateur) et nouveau test sur le découpage. check:public vérifie l’absence des champs lourds dans data.js, l’empreinte de chaque fichier et le préchargement. CI : git diff vérifie aussi atlas/dossiers.
 - Îles React : une passe esbuild avec découpage, morceau commun dans atlas/chunks/ (généré, ignoré par Git, copié par build-public, en-tête immutable dans vercel.json). 694 Ko / 218 Ko compressés → 244 Ko / 78 Ko pour les trois îles ; après l’accueil, les parcours ne téléchargent plus que 4 Ko. check:public vérifie que chaque import relatif d’un module publié existe.
@@ -23,6 +23,8 @@ Demande de Teo : « continuer » après le bloc 1. Worktree séparé, base d1e97
 - Image de partage : non recompressée (31 Ko : bandes dans le halo ; 247 Ko : couleur du disque altérée). Impact visiteur nul.
 
 Validation locale : sync:seo, build, 73 tests, typecheck, build:public et check:public (251 fichiers) réussis. Navigateur sur le build public servi localement : accueil sans aucun fichier de dossier chargé ; page 41 avec son seul contenu préchargé, onglets essentiel/complet ; navigation vers 23 avec chargement à la demande ; parcours avec 4 Ko de plus seulement ; trou noir avec ses modules en 200 (un premier chargement a subi des coupures du serveur Python local, rechargement sans erreur) ; Navier en mobile 375 px sans débordement. Limites : panneau masqué, donc animations non rejouées ; ajustement automatique de la qualité non déclenché en conditions réelles de lenteur.
+
+Validation distante : GitHub Actions run 37692672549 et Vercel réussis. En production : data.js 137 Ko servi en cache immutable ; la page 41 précharge seulement /atlas/dossiers/41.js (immutable) ; l’accueil n’en précharge aucun ; hero-scene.js importe deux morceaux de atlas/chunks/ servis en immutable (noms différents du build local, l’empreinte esbuild dépend de l’environnement) ; trou-noir/scene.js 8 Ko et gateway-flow.js 4 Ko ; navigation 41 → 23 avec chargement à la demande ; page trou noir : modules en 200, canvas présent, aucune erreur console ; libellé de divergence et note de qualité publiés ; CSP et X-Frame-Options présents ; sitemap de 46 URL.
 
 
 ### 2026-10-07 — Claude Code : bloc 1 (corrections), branche claude/bloc-1
