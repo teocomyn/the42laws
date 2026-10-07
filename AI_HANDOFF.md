@@ -1,17 +1,28 @@
 # État de reprise
 
-Mis à jour : 2026-10-07
+Mis à jour : 2026-10-08
 Outils : Codex et Claude Code, chacun dans son propre worktree. Ne jamais travailler à deux dans le même arbre.
 Branche principale : main, déployée automatiquement sur https://the42laws.fr par Vercel. Aucun lot en attente.
 
-## État courant (2026-10-07)
+## État courant (2026-10-08)
 
-- Production : commit de8f7e1 (blocs 1 et 2), vérifié en ligne le 2026-10-07. En-têtes de sécurité, consentement GA4 et pages légales en ligne ; cache d’un an sur les ressources versionnées ; 46 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
-- Blocs 1 et 2 fusionnés et vérifiés en production. Bloc 3 en cours : sources primaires des synthèses.
-- Prochaine action après fusion du bloc 2 : sources primaires des synthèses 01, 10, 15, 19, 25, 26, 30 et 35, puis fiches vides les plus citées (11, 12, 18, 24).
+- Production : blocs 1 et 2 vérifiés en ligne le 2026-10-07 ; bloc 3 (sources primaires) poussé sur main le 2026-10-08, validation de production consignée ci-dessous. 46 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
+- Registre des sources : prochain identifiant libre S405. Réutiliser l’identifiant existant pour une référence identique (S327 = Chou 2010 ; S101 = S349 = Planck 2018 VI, S101 privilégié).
+- Prochaine action : fiches vides les plus citées (11, 12, 18, 24), puis 37, 39 et 05.
 - Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
 
 ## Travail réalisé
+
+### 2026-10-08 — Claude Code : bloc 3 (sources primaires), branche claude/bloc-3
+
+Demande de Teo : « continue et push sur le main ». Base c800712, worktree séparé.
+
+- 54 références primaires nouvelles (S351-S404) et 8 réutilisées (S065, S091, S092, S093, S101, S102, S104, S327) dans les synthèses 01, 10, 15, 19, 25, 26, 30 et 35. Métadonnées de chaque référence vérifiées via INSPIRE-HEP, Crossref, PubMed ou arXiv ; le niveau de lecture (bib., résumé, texte) est indiqué ligne par ligne. Seul texte intégral lu : Leibniz 1714, §7-8 (Wikisource). Aucune relecture scientifique indépendante revendiquée.
+- Apports principaux : horloges (Hafele-Keating, Chou, Bothwell), fluctuations d’entropie mesurées, violation T de BaBar (10) ; trois familles au LEP, SLAC 1969, masse des hadrons sur réseau, Brout-Englert-Higgs, Super-K et SNO (15) ; Tonomura, C₆₀, molécules de 25 kDa, Born, Zurek, nouvelle section sur Bell et les tests de 2015, Everett, Bohm, GRW (19) ; Hubble, Penzias-Wilson, Fixsen, Planck, nucléosynthèse et problème du lithium, Guth, borne BICEP/Keck r < 0,036 (25) ; théorèmes de singularité et leurs hypothèses, portée exacte de Borde-Guth-Vilenkin, rebond de 2006, Hartle-Hawking, Vilenkin (26) ; supernovæ 1998-1999, lecture exacte de DESI DR2 (w₀ > −1 : pas d’indice de Big Rip), très long terme, métastabilité du vide (30) ; Leibniz, van Inwagen via la SEP, objection au « rien » physique (01) ; ALH84001, phosphine, K2-18 b, Perseverance, bornes SETI (35).
+- Registre : section « Bloc 3 » générée à partir des tableaux des fiches (texte identique), ligne S327 complétée (la notice NIST indiquait *Nature* au lieu de *Science*). Titres, descriptions et slugs SEO inchangés : ils restent exacts.
+
+Validation locale : sync:seo, build, 73 tests, typecheck, build:public et check:public (250 fichiers) réussis. Pages 30 et 35 du build public vérifiées en 375 px : sections présentes, aucun débordement horizontal, tableaux défilants. Indices écrits en Unicode (w₀, wₐ, nₛ) ; un « w_a » brut corrigé après contrôle visuel.
+
 
 ### 2026-10-07 — Claude Code : bloc 2 (performance), branche claude/bloc-2
 
