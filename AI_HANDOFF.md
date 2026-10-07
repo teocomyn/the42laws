@@ -2,12 +2,12 @@
 
 Mis à jour : 2026-10-07
 Outils : Codex et Claude Code, chacun dans son propre worktree. Ne jamais travailler à deux dans le même arbre.
-Branche principale : main, déployée automatiquement sur https://the42laws.fr par Vercel. Lot en attente : claude/bloc-1 (commité, non poussé).
+Branche principale : main, déployée automatiquement sur https://the42laws.fr par Vercel. Aucun lot en attente.
 
 ## État courant (2026-10-07)
 
-- Production : commit dedcbea. En-têtes de sécurité, consentement GA4 et pages légales en ligne ; 45 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
-- En attente : branche claude/bloc-1 (voir la section du 2026-10-07 ci-dessous). Validée localement ; à fusionner et pousser sur main avec l’accord de Teo, puis à vérifier en production (en-tête Cache-Control des ressources ?v=, page /notes/navier-stokes-2026/, redirection de l’ancienne adresse .md).
+- Production : commit 9f01f51 (bloc 1), vérifié en ligne le 2026-10-07. En-têtes de sécurité, consentement GA4 et pages légales en ligne ; cache d’un an sur les ressources versionnées ; 46 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
+- Bloc 1 fusionné et vérifié en production (section du 2026-10-07 ci-dessous). Suivi mineur : la case « MAX |∇·u| (DISCRET) » affiche ≈ 1,5 sur la scène Obstacle, artefact des différences centrées au bord du disque ; afficher P.spectralDivergence.
 - Prochaine action après fusion : bloc 2 (performance : découpage de atlas/data.js, React partagé entre les îles), puis sources primaires des synthèses 01, 10, 15, 19, 25, 26, 30 et 35.
 - Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
 
@@ -15,7 +15,7 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 
 ### 2026-10-07 — Claude Code : bloc 1 (corrections), branche claude/bloc-1
 
-Demande de Teo : « lance le bloc 1 ». Worktree /Users/teocomyn/.claude-worktrees/the42laws-bloc-1, base dedcbea. Non poussé.
+Demande de Teo : « lance le bloc 1 », puis « pousse sur main ». Base dedcbea, worktree séparé supprimé après fusion. Poussé sur main en 9f01f51.
 
 - Navier-Stokes : la scène Obstacle divergeait (énergie × 193 en t = 30) à cause d’une force uniforme sur le tore et d’un masque appliqué après la projection. Remplacé par une zone éponge (rappel vers u = 1,1) et une pénalisation suivie d’une projection. Énergie bornée entre 24 et 34 jusqu’à t = 100, divergence spectrale ~5·10⁻⁷, vitesse résiduelle dans le disque 0,06. Paramètres des six scènes centralisés dans P.SCENES / P.loadScene. Ajouts : spongeRelax, spectralDivergence, fadeDyeBand. Trois tests ajoutés (énergie bornée des six scènes, obstacle, divergence spectrale) ; l’ancien réglage fait échouer le premier (énergie × 38 en 600 pas).
 - Cache : build-public versionne par empreinte les scripts, feuilles de style et images référencés par le HTML publié (28 sur l’accueil, consent.js exclu) ; vercel.json ajoute Cache-Control « public, max-age=31536000, immutable » pour les requêtes portant ?v= de 12 caractères hexadécimaux. check:public vérifie chaque empreinte et refuse tout script ou feuille de style local non versionné.
@@ -25,7 +25,7 @@ Demande de Teo : « lance le bloc 1 ». Worktree /Users/teocomyn/.claude-worktre
 - Corrections : Tao 2016 est S072 et non S064 dans la note et la fiche 23 ; réponse courte de la fiche 41 reformulée (« l’une des rares questions »).
 - Tests SEO : 274 redirections et 74 pages (au lieu de 271 et 73), alias et règle de cache vérifiés.
 
-Validation locale : sync:seo, build, 72 tests, typecheck, build:public (46 routes) et check:public (234 fichiers, 4 669 liens et ressources) réussis ; atlas/data.js régénéré et commité. Navigateur sur le build public servi localement : page de note (titre, H1 unique, canonique, consentement, aucune ressource en erreur), scène Obstacle (énergie 31 à t = 24, sillage propre), aucune erreur console. Limite : le panneau de navigation était masqué, requestAnimationFrame ne s’y déclenche pas ; le chemin animé normal de photon et relativité (non modifié) n’a donc pas été rejoué, et la branche « réduire les animations » des trois laboratoires n’a pas été exercée avec le réglage système activé. Non vérifié avant déploiement : l’acceptation par Vercel de la condition `has` avec `value.re` (documentée) et l’en-tête effectivement servi.
+Validation locale : sync:seo, build, 72 tests, typecheck, build:public (46 routes) et check:public (234 fichiers, 4 669 liens et ressources) réussis ; atlas/data.js régénéré et commité. Navigateur sur le build public servi localement : page de note (titre, H1 unique, canonique, consentement, aucune ressource en erreur), scène Obstacle (énergie 31 à t = 24, sillage propre), aucune erreur console. Limite : le panneau de navigation était masqué, requestAnimationFrame ne s’y déclenche pas ; le chemin animé normal de photon et relativité (non modifié) n’a donc pas été rejoué, et la branche « réduire les animations » des trois laboratoires n’a pas été exercée avec le réglage système activé. Validation distante : GitHub Actions « Vérifier le site » (run 37684654549) et Vercel réussis. En production : /notes/navier-stokes-2026/ en HTTP 200 (titre du registre, canonique, index,follow, un H1, deux blocs d’équations, aucun LaTeX) ; l’ancienne adresse .md, la variante sans barre finale et /index.html répondent en 308 direct vers la page ; atlas/data.js?v=… est servi avec « public, max-age=31536000, immutable » tandis que le HTML et consent.js restent en « max-age=0, must-revalidate » ; 28 ressources versionnées sur l’accueil ; CSP, nosniff et X-Frame-Options présents ; sitemap de 46 URL avec la note ; logo-42.png et favicon-42-512.png en 404, brand-share.png conservé en 200 ; fiches 41 et 23 corrigées en ligne. Navigateur en production : scène Obstacle à t = 30, énergie 31,3 et vitesse maximale 1,98. Captures non versionnées dans le dossier temporaire de la session.
 
 ### 2026-10-05 — Claude Code : en-têtes de sécurité (commité dedcbea, en production)
 
