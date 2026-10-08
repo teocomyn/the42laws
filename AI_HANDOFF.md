@@ -13,6 +13,10 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 
 ## Travail réalisé
 
+### 2026-10-08 — Claude Code : crédit dans le pied de page
+
+Demande de Teo : mention « Réalisé par Teo Comyn – EXPERAISE » avec liens suivis (sans nofollow) vers https://teocomyn.com/ et https://experaise.com/. Ajoutée dans la barre basse du composant components/ui/footer-section.tsx, donc sur l’accueil, les pages de l’atlas, les dossiers statiques, la note et les laboratoires (74 pages publiques ; les pages de redirection et la 404 n’ont pas de pied de page). Graphie EXPERAISE reprise du site experaise.com. Vérifié en 1280 px et 375 px : pas de débordement.
+
 ### 2026-10-08 — Claude Code : bloc 3 (sources primaires), branche claude/bloc-3
 
 Demande de Teo : « continue et push sur le main ». Base c800712, worktree séparé.
