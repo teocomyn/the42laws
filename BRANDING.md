@@ -26,7 +26,8 @@ Les couleurs propres aux sept domaines sont conservées comme repères sémantiq
 - `atlas/brand.css` : couche commune chargée après les styles de l’atlas et des six laboratoires.
 - `atlas/brand-orb.svg` : sept couches, en référence aux sept domaines.
 - `atlas/brand-field.svg` : texture de points, utilisée seulement sur les surfaces décoratives.
-- `atlas/brand-lab-*.svg` : six illustrations de couverture.
+- `atlas/lab-art/<laboratoire>.png` : illustrations pixel des cartes de laboratoire (1600 × 1280, papier #f3f2ed, bleu #1e3d9a). Elles viennent du fichier Figma « The42laws — Affiches pixel », page « Affiches — sans texte » : calque « Illustration pixel » exporté à 50 %, recadré en 5:4 autour du sujet puis agrandi ×2 au plus proche voisin. Photon reprend l’affiche 19, Temps et entropie l’affiche 10, Trou noir l’affiche « Disque de profil ».
+- `atlas/brand-lab-trou-noir.svg` : image fixe sous la scène 3D du trou noir (accueil et laboratoire) et repli sans WebGL.
 - `atlas/brand-share-black-hole.svg` : source de la carte sociale actuelle, exportée en `brand-share-black-hole.png` (1200 × 630). Le trou noir reprend la direction visuelle de la hero ; le nom de fichier versionné force le renouvellement des caches sociaux. L’ancien `brand-share.png` reste disponible pour les aperçus déjà mis en cache.
 - `atlas/favicon-42-*.png` et `favicon.ico` : identité 42 déjà installée, réutilisée sans modification.
 
