@@ -9,11 +9,22 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 - Les 42 fiches sont au statut « Synthèse provisoire » : bloc 4 (27 fiches) poussé en 426a6b2 et vérifié en ligne le 2026-11-16. 7 laboratoires, 5 parcours, 73 URL au sitemap.
 - Registre des sources : prochain identifiant libre S672 (S663-S671 : laboratoire Trou noir, 2026-11-16). Réutiliser l’identifiant existant pour une référence identique (S327 = Chou 2010 ; S101 = S349 = Planck 2018 VI, S101 privilégié).
 - Le registre est servi par atlas/dossiers/registre.js (généré, chargé à la demande par la page Sources) ; atlas/data.js n’en contient plus.
+- Expériences interactives de dossier : content/explorers/<id>.json (une seule pour l’instant, la 39). Le build vérifie que chaque verdict cite une source du dossier ; le lecteur l’affiche sous la lecture (onglets L’essentiel et Dossier complet) et la page statique en tableau.
 - Aucune relecture scientifique humaine n’a eu lieu sur aucune fiche. C’est la prochaine étape utile, avant toute nouvelle extension.
 - Prochaines actions possibles : relecture humaine par domaine ; ajout des nouvelles fiches aux parcours guidés (content/atlas.json) ; lecture dans un navigateur des pourcentages PhilPapers 2020 cités dans les fiches 37 à 40 et 42 (lus sur des copies Internet Archive, le site refusant la lecture automatisée) et du tableau non lu pour la fiche 14.
 - Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
 
 ## Travail réalisé
+
+### 2026-11-16 — Claude Code : expérience « Qui serait conscient ? » (question 39), branche claude/explorer-39
+
+Demande de Teo : « pareil pour cette page » (question 39). Le texte collé était l’ancienne version : les améliorations du lecteur s’appliquaient déjà à la 39 en production.
+
+- Nouveau module : quatre systèmes (grand modèle de langage, futur système réunissant les indicateurs, cerveau simulé, être humain) × trois cadres (calculs suffisants, information intégrée, cerveau ou vivant). Chaque verdict a une échelle de non à oui, un texte et ses pastilles de sources ; une ligne « Comportement observé » montre que le test de Turing ne change aucun verdict ; synthèse « s’accordent / divergent » ; pied avec les chiffres PhilPapers 2020 et lien vers le carnet.
+- Contenu repris uniquement du dossier 39 et de ses sources (S324, S499, S630-S633, S635-S638). Seule valeur dérivée : 27 % = complément des 73 % dans le test à trois participants (S632). Aucune nouvelle source.
+- Code : content/explorers/39.json ; checkExplorer dans scripts/build-atlas.mjs (champ explorer du fichier de dossier, absent des autres dossiers) ; DossierView.explorer, explorerBoard et explorerTable dans atlas/dossier.js ; clic dans atlas/app.js ; styles .explorer dans atlas/brand.css ; test dédié.
+
+Validation : sync:seo, build, 79 tests, typecheck, build:public et check:public (278 fichiers, 6 330 liens internes) réussis. Vérifié en local à 1 280 px et 375 px : pas de débordement, changement de système, aperçu de source S633, lien carnet qui place le curseur dans la note.
 
 ### 2026-11-16 — Claude Code : lecteur de dossier (les 42 pages), même branche
 

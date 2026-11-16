@@ -9,7 +9,8 @@ const C=createRequire(import.meta.url)('../atlas/core.js');
 export const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Champs lourds des dossiers, écrits dans atlas/dossiers/<id>.js plutôt que dans data.js.
-export const DOSSIER_FIELDS=['html','headings','short','sources'];
+export const DOSSIER_FIELDS=['html','headings','short','sources','explorer'];
+export const EXPLORER_LEVELS=['non','improbable','incertain','possible','oui'];
 export function resolveLink(href,source){
  if(/^(https?:|mailto:)/i.test(href))return href;
  if(href.startsWith('#'))return href;
@@ -44,6 +45,24 @@ export function linkCitations(html,page=''){
  // Un groupe qui ne contient que des identifiants perd ses crochets : les pastilles suffisent à le signaler.
  return html.split(/(<[^>]+>)/).map((part,i)=>i%2?part:part.replace(/\[([^\[\]]*?\bS\d{3}\b[^\[\]]*?)\]/g,(_,inner)=>/^\s*S\d{3}(\s*[,;]?\s*S\d{3})*\s*$/.test(inner)?`<span class="cites">${cite(inner)}</span>`:'['+cite(inner)+']')).join('');
 }
+// Expérience interactive facultative (content/explorers/<id>.json) : chaque verdict doit citer
+// une source du dossier, et chaque système doit avoir un verdict pour chaque cadre.
+export function checkExplorer(x,id,sourceIds){
+ const fail=m=>{throw Error(`Invalid explorer ${id}: ${m}`);},text=v=>typeof v==='string'&&v.trim().length>0;
+ const cites=(list,where)=>{if(!Array.isArray(list))fail(where+' cites');for(const c of list)if(!sourceIds.includes(c))fail(`${where} cites ${c}, absent from the dossier sources`);};
+ for(const key of ['kicker','title','intro','choose','behaviourLabel','agree','disagree','foot','prompt','promptAction'])if(!text(x[key]))fail(key);
+ cites(x.footCites,'foot');
+ if(!x.frames?.length||!x.systems?.length)fail('frames and systems');
+ const ids=new Set();for(const f of x.frames){if(!/^[a-z]+$/.test(f.id)||ids.has(f.id)||!text(f.label)||!text(f.detail))fail('frame '+f.id);ids.add(f.id);}
+ const systems=new Set();
+ for(const s of x.systems){
+  if(!/^[a-z]+$/.test(s.id)||systems.has(s.id)||!text(s.label)||!text(s.detail)||!text(s.behaviour?.text))fail('system '+s.id);systems.add(s.id);
+  cites(s.behaviour.cites,s.id+' behaviour');
+  for(const f of x.frames){const v=s.verdicts?.[f.id];if(!v||!EXPLORER_LEVELS.includes(v.level)||!text(v.label)||!text(v.text))fail(`${s.id}/${f.id}`);cites(v.cites,`${s.id}/${f.id}`);}
+  if(Object.keys(s.verdicts).length!==x.frames.length)fail(s.id+' has extra verdicts');
+ }
+ return x;
+}
 export async function build(){
  await checkSEO();
  const metadata=JSON.parse(await readFile(resolve(root,'content/atlas.json'),'utf8'));
@@ -61,8 +80,10 @@ export async function build(){
   const sources=match?match[1].trim():'';
   const sourceIds=[...new Set([...sources.matchAll(/\| (S\d{3}) \|/g)].map(m=>m[1]))];
   const document=renderMarkdown(body,file);
+  let explorer=null;try{explorer=checkExplorer(JSON.parse(await readFile(resolve(root,`content/explorers/${id}.json`),'utf8')),id,sourceIds);}catch(error){if(error.code!=='ENOENT')throw error;}
+  if(explorer&&!researched)throw Error(`Explorer without a published dossier: ${id}`);
   let short=null;try{const shortFile=`content/${id}-essentiel.md`;short=renderMarkdown(await readFile(resolve(root,shortFile),'utf8'),shortFile);}catch(error){if(error.code!=='ENOENT')throw error;}
-  questions.push({id,title,status,researched,domain:domain.id,domainName:domain.name,color:domain.color,file,answer:extras.answers[id]||null,learning:extras.learning[id]||null,updated:md.match(/^Dernière mise à jour : (.+)$/m)?.[1]||'',html:document.html,headings:document.headings,short,sources:renderMarkdown(sources,file),sourceCount:sourceIds.length,keywords:[id===41?'Gödel Godel Turing connaissance logique calcul information limites intelligence':'',...metadata.labs.filter(l=>l.questions.includes(id)).map(l=>l.title),...extras.glossary.filter(t=>t.questions.includes(id)).flatMap(t=>[t.term,...t.aliases]),...extras.particles.filter(p=>p.questions.includes(id)).map(p=>p.name)].join(' ')});
+  questions.push({id,title,status,researched,domain:domain.id,domainName:domain.name,color:domain.color,file,answer:extras.answers[id]||null,learning:extras.learning[id]||null,updated:md.match(/^Dernière mise à jour : (.+)$/m)?.[1]||'',html:document.html,headings:document.headings,short,explorer,sources:renderMarkdown(sources,file),sourceCount:sourceIds.length,keywords:[id===41?'Gödel Godel Turing connaissance logique calcul information limites intelligence':'',...metadata.labs.filter(l=>l.questions.includes(id)).map(l=>l.title),...extras.glossary.filter(t=>t.questions.includes(id)).flatMap(t=>[t.term,...t.aliases]),...extras.particles.filter(p=>p.questions.includes(id)).map(p=>p.name)].join(' ')});
  }
  for(const [id,a] of Object.entries(extras.answers)){
   const q=questions.find(q=>q.id===Number(id));
@@ -86,7 +107,7 @@ export async function build(){
  for(const q of questions){
   const light=Object.fromEntries(Object.entries(q).filter(([key])=>!DOSSIER_FIELDS.includes(key)));
   if(q.researched){
-   const code='// Generated by npm run build. Edit questions/*.md or content/ instead.\n(window.ATLAS_DOSSIERS=window.ATLAS_DOSSIERS||{})['+q.id+'] = '+JSON.stringify(Object.fromEntries(DOSSIER_FIELDS.map(key=>[key,q[key]]))).replace(/</g,'\\u003c')+';\n';
+   const code='// Generated by npm run build. Edit questions/*.md or content/ instead.\n(window.ATLAS_DOSSIERS=window.ATLAS_DOSSIERS||{})['+q.id+'] = '+JSON.stringify(Object.fromEntries(DOSSIER_FIELDS.filter(key=>key!=='explorer'||q.explorer).map(key=>[key,q[key]]))).replace(/</g,'\\u003c')+';\n';
    await writeFile(resolve(dossierDir,q.id+'.js'),code);
    light.contentVersion=createHash('sha256').update(code).digest('hex').slice(0,12);
   }

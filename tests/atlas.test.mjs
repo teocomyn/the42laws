@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import {createRequire} from 'node:module';
-import {renderMarkdown,resolveLink} from '../scripts/build-atlas.mjs';
+import {renderMarkdown,resolveLink,checkExplorer} from '../scripts/build-atlas.mjs';
 const require=createRequire(import.meta.url),C=require('../atlas/core.js');
 const D=require('./atlas-data.cjs').loadAtlasData();
 test('atlas preserves all 42 questions, seven domains and current research states',()=>{assert.deepEqual(D.questions.map(q=>q.id),Array.from({length:42},(_,i)=>i+1));assert.equal(D.domains.length,7);assert.deepEqual(D.questions.filter(q=>q.researched).map(q=>q.id),Array.from({length:42},(_,i)=>i+1));assert.equal(D.questions[40].sourceCount,63);for(const q of D.questions){assert.ok(q.title);assert.ok(D.domains.some(d=>d.id===q.domain&&q.id>=d.range[0]&&q.id<=d.range[1]));}});
@@ -62,4 +62,23 @@ test('source citations link to their row on the dossier page and every cited sou
   const ids=new Set([...q.html.matchAll(/<tr id="src-(S\d{3})">/g)].map(m=>m[1]));
   for(const [,id] of `${q.html}${q.short?.html||''}`.matchAll(/class="cite" href="[^"]*#src-(S\d{3})"/g))assert.ok(ids.has(id),`Question ${q.id}: ${id} cited without a source row`);
  }
+});
+
+test('dossier explorers cite only their own sources and render every verdict',async()=>{
+ const V=require('../atlas/dossier.js'),x=JSON.parse(await readFile(new URL('../content/explorers/39.json',import.meta.url),'utf8'));
+ const md=await readFile(new URL('../questions/39.md',import.meta.url),'utf8'),ids=[...md.matchAll(/^\| (S\d{3}) \|/gm)].map(m=>m[1]);
+ assert.equal(checkExplorer(x,39,ids),x);
+ const q={id:39,explorer:x},html=V.explorer(q,'emulation');
+ assert.match(html,/data-explorer-system="emulation" aria-pressed="true"/);
+ assert.equal((html.match(/aria-pressed="true"/g)||[]).length,1);
+ assert.equal((html.match(/class="verdict"/g)||[]).length,x.frames.length);
+ assert.match(html,/Les théories divergent/);
+ assert.match(V.explorerBoard(q,'brain'),/data-agree="true"/);
+ for(const m of html.matchAll(/href="([^"]+)#src-(S\d{3})"/g)){assert.equal(m[1],C.questionPath(39));assert.ok(ids.includes(m[2]),m[2]);}
+ const table=V.explorerTable?V.explorerTable(q):V.fullDocument({...q,researched:true,html:'',short:{html:''},title:'',domain:'conscience',domainName:'',status:''},{});
+ assert.equal((table.match(/<tr><th scope="row">/g)||[]).length,x.systems.length);
+ const broken=structuredClone(x);broken.systems[0].verdicts.iit.cites=['S001'];
+ assert.throws(()=>checkExplorer(broken,39,ids),/S001, absent/);
+ const missing=structuredClone(x);delete missing.systems[1].verdicts.vivant;
+ assert.throws(()=>checkExplorer(missing,39,ids),/agent\/vivant/);
 });

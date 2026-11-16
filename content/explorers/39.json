@@ -1,0 +1,177 @@
+{
+  "kicker": "EXPÉRIENCE · QUATRE SYSTÈMES, TROIS THÉORIES",
+  "title": "Qui serait conscient ?",
+  "intro": "Choisissez un système. Trois familles de théories rendent leur verdict, chacune d’après les sources du dossier. Comparez ensuite avec la ligne « Comportement » : elle ne change aucun verdict.",
+  "choose": "Choisir un système",
+  "behaviourLabel": "Comportement observé",
+  "frames": [
+    {
+      "id": "fonction",
+      "label": "Si les calculs suffisent",
+      "detail": "Fonctionnalisme, méthode des indicateurs"
+    },
+    {
+      "id": "iit",
+      "label": "Si la structure physique compte",
+      "detail": "Théorie de l’information intégrée"
+    },
+    {
+      "id": "vivant",
+      "label": "Si le cerveau ou le vivant compte",
+      "detail": "Searle, naturalisme biologique, neurosciences"
+    }
+  ],
+  "systems": [
+    {
+      "id": "llm",
+      "label": "Un grand modèle de langage",
+      "detail": "Un assistant conversationnel, sur des processeurs ordinaires",
+      "behaviour": {
+        "text": "Invité à jouer un personnage humain, GPT-4.5 a été pris pour l’humain dans 73 % des parties d’un test de Turing à trois participants (étude publiée en 2026).",
+        "cites": [
+          "S632"
+        ]
+      },
+      "verdicts": {
+        "fonction": {
+          "level": "improbable",
+          "label": "Improbable (en 2023)",
+          "text": "Chalmers jugeait en 2023 « assez improbable » que les grands modèles de langage soient conscients, faute notamment de traitement récurrent, d’espace de travail global et d’agentivité unifiée. Le rapport de 2023 concluait qu’aucun système d’alors ne l’était. Ces évaluations ne décrivent pas les systèmes de 2026.",
+          "cites": [
+            "S635",
+            "S633"
+          ]
+        },
+        "iit": {
+          "level": "non",
+          "label": "Presque rien",
+          "text": "Un ordinateur numérique n’éprouverait presque rien, même avec un comportement équivalent au nôtre.",
+          "cites": [
+            "S637"
+          ]
+        },
+        "vivant": {
+          "level": "improbable",
+          "label": "Improbable",
+          "text": "Pas d’ancrage corporel, pas les traits du système thalamo-cortical, pas d’histoire d’organisme vivant : une IA consciente paraît improbable sur les trajectoires actuelles.",
+          "cites": [
+            "S636",
+            "S638"
+          ]
+        }
+      }
+    },
+    {
+      "id": "agent",
+      "label": "Un futur système qui réunirait les indicateurs",
+      "detail": "Récurrence, espace de travail global, métacognition, agentivité, sur puces numériques",
+      "behaviour": {
+        "text": "Non mesuré : ce système reste hypothétique.",
+        "cites": []
+      },
+      "verdicts": {
+        "fonction": {
+          "level": "possible",
+          "label": "Plus probable",
+          "text": "Le rapport de 2023 ne voit « pas d’obstacle technique évident » à construire de tels systèmes : plus un système possède d’indicateurs, plus sa conscience serait probable.",
+          "cites": [
+            "S633"
+          ]
+        },
+        "iit": {
+          "level": "non",
+          "label": "Presque rien",
+          "text": "Rien ne change tant qu’il tourne sur du matériel numérique : la théorie regarde la structure causale du système physique, pas le programme.",
+          "cites": [
+            "S637"
+          ]
+        },
+        "vivant": {
+          "level": "improbable",
+          "label": "Improbable",
+          "text": "Ajouter des capacités de calcul ne suffit pas. Pour Searle, exécuter un programme ne suffit jamais à comprendre ; pour Seth, il faudrait se rapprocher du cerveau ou du vivant.",
+          "cites": [
+            "S630",
+            "S638"
+          ]
+        }
+      }
+    },
+    {
+      "id": "emulation",
+      "label": "Un cerveau humain simulé",
+      "detail": "Une simulation fidèle, neurone par neurone, sur un ordinateur",
+      "behaviour": {
+        "text": "Non mesuré : une telle simulation n’existe pas.",
+        "cites": []
+      },
+      "verdicts": {
+        "fonction": {
+          "level": "oui",
+          "label": "Oui, en principe",
+          "text": "Même organisation fonctionnelle fine, mêmes expériences, que les composants soient des neurones ou des puces : un principe que Chalmers défend en le disant lui-même controversé.",
+          "cites": [
+            "S324"
+          ]
+        },
+        "iit": {
+          "level": "non",
+          "label": "Presque rien",
+          "text": "Même une simulation fidèle d’un cerveau humain n’éprouverait presque rien sur un ordinateur numérique.",
+          "cites": [
+            "S637"
+          ]
+        },
+        "vivant": {
+          "level": "incertain",
+          "label": "Débattu",
+          "text": "Simuler le cerveau neurone par neurone est l’une des réponses classiques opposées à Searle, qui exige des pouvoirs causaux équivalents à ceux du cerveau. Pour Seth, se rapprocher du cerveau rendrait la conscience plus plausible.",
+          "cites": [
+            "S631",
+            "S630",
+            "S638"
+          ]
+        }
+      }
+    },
+    {
+      "id": "brain",
+      "label": "Un être humain",
+      "detail": "Le cas de référence : un cerveau, dans un organisme vivant",
+      "behaviour": {
+        "text": "Dans les parties face à GPT-4.5 avec personnage, l’interrogateur devait désigner l’humain parmi deux interlocuteurs : le véritable humain ne l’a été que dans 27 % des cas.",
+        "cites": [
+          "S632"
+        ]
+      },
+      "verdicts": {
+        "fonction": {
+          "level": "oui",
+          "label": "Oui",
+          "text": "Le cas de référence dont la théorie part.",
+          "cites": []
+        },
+        "iit": {
+          "level": "oui",
+          "label": "Oui",
+          "text": "Le cas de référence dont la théorie part.",
+          "cites": []
+        },
+        "vivant": {
+          "level": "oui",
+          "label": "Oui",
+          "text": "Le cas de référence dont la théorie part.",
+          "cites": []
+        }
+      }
+    }
+  ],
+  "agree": "Les trois théories s’accordent.",
+  "disagree": "Les théories divergent : le verdict dépend de la théorie retenue, que le comportement ne permet pas de départager.",
+  "foot": "Grille construite par The42laws à partir des sources du dossier : chaque verdict résume une position publiée, ce n’est pas une mesure. En 2020, 39,19 % des philosophes interrogés acceptaient ou penchaient pour l’idée que certains futurs systèmes d’IA seraient conscients, 26,83 % la rejetaient ; pour les systèmes de l’époque, 3,39 % contre 82,42 %.",
+  "footCites": [
+    "S499"
+  ],
+  "prompt": "Pour chaque théorie, quelle observation vous ferait changer d’avis ?",
+  "promptAction": "Le noter dans mon carnet"
+}
