@@ -26,7 +26,7 @@ Demande de Teo : continuer le style des affiches pixel sur le site (« les icôn
 - Carte « L’essentiel en 30 secondes » en tête de chaque dossier (lecteur et page statique) : illustration, idée à retenir, 3 points numérotés avec pastilles de sources, « Testez-vous » (question, réponse dépliable). Contenu rédigé par 4 sous-agents à partir de chaque dossier, relu ici ; deux formulations retouchées (29, 23). Aucune nouvelle source, aucun chiffre hors dossier.
 - Points de vigilance signalés par les rédacteurs, à relire en priorité : 7 (le découpage 9 % de la masse du proton), 18 (condition de dimension de Gleason omise), 21 (débat 2025-2026 omis), 23 (verdicts adoucis comme dans 23-essentiel), 29, 34 (exemple chiffré inventé par le dossier, signalé comme tel), 41.
 
-Validation : build, 80 tests, typecheck, build:public et check:public (363 fichiers, 6 958 liens internes) réussis. Vérifié en local à 1 440 px et 375 px : carte essentielle (3 points, 7 renvois, réponse dépliable), 42 miniatures dans la liste, 42 cartes illustrées à l’accueil, aucun débordement.
+Validation : build, 80 tests, typecheck, build:public et check:public (363 fichiers, 6 958 liens internes) réussis. Vérifié en local à 1 440 px et 375 px : carte essentielle (3 points, 7 renvois, réponse dépliable), 42 miniatures dans la liste, 42 cartes illustrées à l’accueil, aucun débordement. Poussé sur main en 7884c42 ; GitHub Actions run 43889995982 et Vercel réussis. En production : carte essentielle présente sur le dossier 39 (3 points, « Testez-vous »), 9 icônes pixel, images atlas/art en 200.
 
 ### 2026-11-16 — Claude Code : illustrations Figma sur les cartes des laboratoires, branche claude/lab-art
 
