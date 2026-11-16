@@ -51,3 +51,15 @@ test('dossier text ships separately: light data.js, one fingerprinted content fi
  }
 });
 
+test('source citations link to their row on the dossier page and every cited source exists',async()=>{
+ const {renderMarkdown:render}=await import('../scripts/build-atlas.mjs');
+ const doc=render('Voir [S300] et [S492, rapporté d’après S489].\n\n| Id | Réf |\n| --- | --- |\n| S300 | a |\n| S489 | b |','questions/19.md');
+ assert.ok(doc.html.includes(`<span class="cites"><a class="cite" href="${C.questionPath(19)}#src-S300">S300</a></span>`));
+ assert.ok(doc.html.includes(`[<a class="cite" href="${C.questionPath(19)}#src-S492">S492</a>, rapporté d’après`));
+ assert.ok(doc.html.includes('<tr id="src-S300">')&&doc.html.includes('<tr id="src-S489">'));
+ assert.ok(render('[S300]','METHODE.md').html.includes('href="#src-S300"'));
+ for(const q of D.questions.filter(q=>q.researched)){
+  const ids=new Set([...q.html.matchAll(/<tr id="src-(S\d{3})">/g)].map(m=>m[1]));
+  for(const [,id] of `${q.html}${q.short?.html||''}`.matchAll(/class="cite" href="[^"]*#src-(S\d{3})"/g))assert.ok(ids.has(id),`Question ${q.id}: ${id} cited without a source row`);
+ }
+});

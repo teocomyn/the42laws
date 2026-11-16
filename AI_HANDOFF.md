@@ -15,6 +15,15 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 
 ## Travail réalisé
 
+### 2026-11-16 — Claude Code : lecteur de dossier (les 42 pages), même branche
+
+Demande de Teo : « améliore l’expérience à 1000 % » de la page dossier (exemple : question 10).
+
+- Renvois aux sources : à la construction, chaque [S300] devient une pastille liée à la ligne du tableau (id="src-S300") avec l’adresse complète du dossier (les pages déclarent <base href="/">). Dans le lecteur, un clic ouvre un aperçu de la référence et de son niveau de lecture, avec « Toutes les sources » (onglet Sources, ligne centrée et surlignée). Sans JavaScript, le lien mène à la ligne. Un test vérifie que chaque renvoi des 42 dossiers a sa ligne ; check:public valide désormais 6 313 liens internes.
+- Lecture : barre de progression, sommaire qui suit la lecture (puces horizontales sur petit écran), onglets avec durée ou nombre de sources, bloc de fin adapté (essentiel → dossier complet ; complet → sources et « marquer comme lu » ; sources → fichier Markdown), grand numéro de question en filigrane, couleur du domaine, date en toutes lettres.
+- Navigation : laboratoires en cartes illustrées, précédent/suivant avec le titre des questions voisines, section « Prolongements » quand aucun laboratoire n’est lié ; laboratoires reliés à 6, 13, 16, 20 et 24 dans content/atlas.json.
+- Le lien « Fichier de recherche » quitte l’en-tête pour la fin de l’onglet Sources.
+
 ### 2026-11-16 — Claude Code : refonte du laboratoire Trou noir, branche claude/trou-noir-v2
 
 Demande de Teo : « améliore l’expérience à 1000 % » de /trou-noir/. Diagnostic : l’image n’apparaissait qu’à 1 250 px (après le guide), l’animation était en pause, la masse se réglait 1 200 px plus bas, un seul nombre calculé, anneaux parasites (moiré) dans le disque.

@@ -31,9 +31,18 @@ export function renderMarkdown(md,source='questions/41.md'){
   image({text}){return esc(text);},
   heading({tokens,depth}){const title=this.parser.parseInline(tokens);const id='part-'+(++n);headings.push({id,title:title.replace(/<[^>]+>/g,''),depth});return `<h${Math.max(2,depth)} id="${id}" tabindex="-1">${title}</h${Math.max(2,depth)}>`;},
   link({href,title,tokens}){const url=resolveLink(href,source),external=/^https?:/i.test(url);return `<a href="${esc(url)}"${external?' target="_blank" rel="noopener noreferrer"':''}${title?` title="${esc(title)}"`:''}>${this.parser.parseInline(tokens)}</a>`;},
-  table(token){const head=token.header.map(c=>`<th scope="col">${this.parser.parseInline(c.tokens)}</th>`).join('');const rows=token.rows.map(row=>`<tr>${row.map(c=>`<td>${this.parser.parseInline(c.tokens)}</td>`).join('')}</tr>`).join('');return `<div class="table-scroll" tabindex="0" role="region" aria-label="Tableau de recherche"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;}
+  table(token){const head=token.header.map(c=>`<th scope="col">${this.parser.parseInline(c.tokens)}</th>`).join('');const rows=token.rows.map(row=>{const first=String(row[0]?.text||'').trim(),id=/^S\d{3}$/.test(first)?` id="src-${first}"`:'';return `<tr${id}>${row.map(c=>`<td>${this.parser.parseInline(c.tokens)}</td>`).join('')}</tr>`;}).join('');return `<div class="table-scroll" tabindex="0" role="region" aria-label="Tableau de recherche"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;}
  }});
- return {html:marked.parse(md),headings};
+ const page=source.match(/^questions\/(\d{2})\.md$|^content\/(\d+)-essentiel\.md$/);
+ return {html:linkCitations(marked.parse(md),page?C.questionPath(Number(page[1]||page[2])):''),headings};
+}
+// Les renvois entre crochets, « [S300] » ou « [S492, rapporté d’après S489] », deviennent des liens vers la ligne
+// du tableau des sources (id="src-S300"). Le texte affiché reste identique ; le lecteur en tire un aperçu.
+// L’adresse inclut la page du dossier : les pages publiques déclarent <base href="/">.
+export function linkCitations(html,page=''){
+ const cite=s=>s.replace(/\bS(\d{3})\b/g,`<a class="cite" href="${page}#src-S$1">S$1</a>`);
+ // Un groupe qui ne contient que des identifiants perd ses crochets : les pastilles suffisent à le signaler.
+ return html.split(/(<[^>]+>)/).map((part,i)=>i%2?part:part.replace(/\[([^\[\]]*?\bS\d{3}\b[^\[\]]*?)\]/g,(_,inner)=>/^\s*S\d{3}(\s*[,;]?\s*S\d{3})*\s*$/.test(inner)?`<span class="cites">${cite(inner)}</span>`:'['+cite(inner)+']')).join('');
 }
 export async function build(){
  await checkSEO();
