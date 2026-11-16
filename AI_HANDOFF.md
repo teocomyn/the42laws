@@ -24,6 +24,8 @@ Demande de Teo : « améliore l’expérience à 1000 % » de la page dossier (e
 - Navigation : laboratoires en cartes illustrées, précédent/suivant avec le titre des questions voisines, section « Prolongements » quand aucun laboratoire n’est lié ; laboratoires reliés à 6, 13, 16, 20 et 24 dans content/atlas.json.
 - Le lien « Fichier de recherche » quitte l’en-tête pour la fin de l’onglet Sources.
 
+Validation : sync:seo, build, 78 tests, typecheck, build:public et check:public (278 fichiers, 6 313 liens internes) réussis. Poussé sur main en b38f34d ; GitHub Actions run 43882296082 et Vercel réussis. En production : /trou-noir/ affiche l’observatoire à 270 px du haut, animé, sans erreur de rendu, 6 échelles et 4 relevés de descente, guide inséré après les échelles ; dossier 19 en lecture complète : 19 renvois cliquables, aperçu de S301, barre de progression, numéro en filigrane, 2 laboratoires en cartes, navigation avec titres.
+
 ### 2026-11-16 — Claude Code : refonte du laboratoire Trou noir, branche claude/trou-noir-v2
 
 Demande de Teo : « améliore l’expérience à 1000 % » de /trou-noir/. Diagnostic : l’image n’apparaissait qu’à 1 250 px (après le guide), l’animation était en pause, la masse se réglait 1 200 px plus bas, un seul nombre calculé, anneaux parasites (moiré) dans le disque.
