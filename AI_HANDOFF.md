@@ -26,7 +26,7 @@ Demande de Teo : continuer le style pixel et l’apprentissage simple sur le glo
 - Carte des liens : nœuds carrés, traits nets, illustration de la question choisie au centre ; panneau avec l’illustration, l’idée à retenir et les questions voisines illustrées. Version statique : paires de questions illustrées.
 - Données : chaque question porte maintenant `idea` (idée de content/essentiels.json) dans atlas/data.js, pour les parcours et la carte.
 
-Validation : build, 81 tests, typecheck, build:public et check:public réussis. Vérifié en local à 1 440 px et 375 px : mode révision, frises de parcours, chemin pixel, carte et panneau, aucun débordement.
+Validation : build, 81 tests, typecheck, build:public et check:public réussis. Vérifié en local à 1 440 px et 375 px : mode révision, frises de parcours, chemin pixel, carte et panneau, aucun débordement. Poussé sur main en 78e1e77 ; GitHub Actions run 43891434372 et Vercel réussis. En production : /parcours/matiere/ en chemin pixel, /glossaire/ (41 fiches illustrées, mode révision testé), /liens/ (48 paires illustrées).
 
 ### 2026-11-16 — Claude Code : style pixel sur tout le site et cartes 80/20, branche claude/pixel-learning
 
