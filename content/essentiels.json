@@ -1,0 +1,1370 @@
+{
+ "1": {
+  "idea": "Constater que quelque chose existe ne prouve pas que cela devait exister. Il faut d’abord préciser ce qui compterait comme une bonne réponse.",
+  "points": [
+   {
+    "text": "Le mot « rien » a plusieurs sens : une pièce vide, un vide physique ou l’absence de toute réalité. Le vide des physiciens reste un état défini par une théorie.",
+    "cites": [
+     "S320"
+    ]
+   },
+   {
+    "text": "En 1714, Leibniz conclut à un être nécessaire, qu’il nomme Dieu. Carroll défend des faits sans raison plus profonde. Ce sont des arguments, pas des expériences.",
+    "cites": [
+     "S395",
+     "S321"
+    ]
+   },
+   {
+    "text": "L’Univers né « de rien » de Vilenkin (1982) suppose déjà les lois de la mécanique quantique et de la gravitation. Pour les philosophes, il répond à une autre question.",
+    "cites": [
+     "S388",
+     "S320"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi « quelque chose existe » ne prouve-t-il pas que quelque chose devait exister ?",
+   "answer": "Le constat dit ce qui est, pas ce qui ne pouvait pas manquer. Passer de l’un à l’autre demande une prémisse de plus : c’est justement le cœur du problème.",
+   "cites": []
+  }
+ },
+ "2": {
+  "idea": "Personne ne sait démontrer si le néant absolu est possible ou non. Il ne faut le confondre ni avec un espace vidé, ni avec le vide des physiciens.",
+  "points": [
+   {
+    "text": "Le vide physique est l’état de plus basse énergie de champs présents partout. Il a des effets mesurables, comme une force entre deux surfaces très proches (1997).",
+    "cites": [
+     "S321",
+     "S411"
+    ]
+   },
+   {
+    "text": "Baldwin (1996) propose de retirer les objets un à un, par la pensée, jusqu’au monde vide. Objection : « chaque chose peut manquer » n’entraîne pas « tout peut manquer ».",
+    "cites": [
+     "S405",
+     "S320"
+    ]
+   },
+   {
+    "text": "Aucune observation ne peut trancher, car observer suppose un observateur. La logique classique ne traite pas le cas où rien n’existe : c’est un choix, pas une preuve.",
+    "cites": [
+     "S320",
+     "S407"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi le vide quantique n’est-il pas un exemple de néant absolu ?",
+   "answer": "Ce vide est un état de champs présents partout, avec des effets mesurables. Le néant absolu serait l’absence de tout, champs, espace et temps compris.",
+   "cites": [
+    "S321",
+    "S411"
+   ]
+  }
+ },
+ "3": {
+  "idea": "Que chaque chose aurait pu ne pas exister n’entraîne ni que tout aurait pu manquer, ni qu’un être nécessaire existe. Chaque pas demande une prémisse de plus.",
+  "points": [
+   {
+    "text": "Un être contingent existe mais aurait pu ne pas exister. Leibniz et Clarke partent de là et concluent à un être nécessaire, qui ne pouvait pas manquer.",
+    "cites": [
+     "S420",
+     "S415",
+     "S421"
+    ]
+   },
+   {
+    "text": "Hume : tout ce qu’on conçoit existant peut se concevoir inexistant. Kant : l’existence n’ajoute rien au concept d’une chose. Spinoza, lui, juge que rien n’est contingent.",
+    "cites": [
+     "S416",
+     "S417",
+     "S418"
+    ]
+   },
+   {
+    "text": "Selon l’encyclopédie de Stanford (2026), l’argument qui conclut à un être nécessaire suscite un scepticisme répandu, malgré des défenseurs actifs.",
+    "cites": [
+     "S414"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi « chaque chose aurait pu manquer » ne prouve-t-il pas que tout aurait pu manquer ?",
+   "answer": "Chaque être peut manquer dans un monde possible sans qu’aucun monde soit vide. Passer de « chaque » à « tout » demande une prémisse de plus.",
+   "cites": [
+    "S414"
+   ]
+  }
+ },
+ "4": {
+  "idea": "Expliquer que nous observons un monde habitable n’explique ni pourquoi ce monde existe, ni pourquoi les possibilités sont celles-là.",
+  "points": [
+   {
+    "text": "Quatre réponses : pas d’autre possibilité ; un choix pour une qualité remarquable, comme être le meilleur selon Leibniz ; tout le possible existe ; aucune raison.",
+    "cites": [
+     "S425",
+     "S426",
+     "S422"
+    ]
+   },
+   {
+    "text": "En 1998, Parfit appelle « sélecteur » la propriété qui expliquerait le choix, et « fait brut » son absence. Aucune de ces réponses n’est établie ni testée.",
+    "cites": [
+     "S426"
+    ]
+   },
+   {
+    "text": "Si les conditions varient entre de nombreux univers, des observateurs n’existent que là où c’est possible. Mais ce raisonnement ne montre pas que ces univers existent.",
+    "cites": [
+     "S429"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi l’effet de sélection n’explique-t-il pas que notre monde existe ?",
+   "answer": "Il explique au mieux pourquoi des observateurs voient un monde habitable, si de nombreux univers variés existent. Il ne prouve pas ces univers et n’explique pas l’existence de l’ensemble.",
+   "cites": [
+    "S429"
+   ]
+  }
+ },
+ "5": {
+  "idea": "Chercher des explications est une règle de méthode. Affirmer que tout en possède une est une thèse sur le réel, que le succès de la règle ne prouve pas.",
+  "points": [
+   {
+    "text": "Le principe de raison suffisante dit que tout fait a une raison. Selon l’encyclopédie de Stanford (2023), les tentatives pour le prouver ont pour la plupart échoué.",
+    "cites": [
+     "S430"
+    ]
+   },
+   {
+    "text": "Selon van Inwagen, si toute vérité qui aurait pu être fausse avait une raison suffisante, tout serait nécessaire. Ses défenseurs l’affaiblissent ou acceptent ce prix.",
+    "cites": [
+     "S431",
+     "S414",
+     "S433",
+     "S432"
+    ]
+   },
+   {
+    "text": "La lecture usuelle de la physique quantique ne donne que des probabilités pour un événement isolé. Des versions déterministes, non relativistes, prédisent la même chose.",
+    "cites": [
+     "S434",
+     "S371"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi le succès de la science ne prouve-t-il pas que tout a une explication ?",
+   "answer": "La science suppose seulement qu’il vaut la peine de chercher : c’est une règle de recherche. Selon Mackie, elle fonctionnerait aussi bien avec des faits sans raison.",
+   "cites": [
+    "S430",
+    "S414"
+   ]
+  }
+ },
+ "6": {
+  "idea": "Personne ne sait de quoi la réalité est faite tout en bas. « Fondamental » désigne le dernier niveau de nos théories testées, sans garantie qu’il soit ultime.",
+  "points": [
+   {
+    "text": "Cinq candidats sont discutés : particules, champs, état quantique, structures de relations, information. Les théories prédisent très bien sans dire lesquels existent.",
+    "cites": []
+   },
+   {
+    "text": "Selon des théorèmes, l’image de petites billes localisées est, au sens strict, incompatible avec la relativité. Les impacts détectés s’expliquent sans ces billes.",
+    "cites": [
+     "S439",
+     "S440"
+    ]
+   },
+   {
+    "text": "Un théorème de 2012 montre que, sous des hypothèses précises, l’état quantique ne peut pas être une simple information sur une réalité plus profonde.",
+    "cites": [
+     "S435"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi une mesure ne peut-elle pas désigner à elle seule le vrai constituant ultime ?",
+   "answer": "Deux lectures qui font les mêmes prédictions donnent les mêmes résultats. Une expérience élimine des familles d’hypothèses précises, sans choisir entre celles qui restent compatibles.",
+   "cites": [
+    "S373",
+    "S374"
+   ]
+  }
+ },
+ "7": {
+  "idea": "« Émergent » ne veut pas dire « illusoire » : la matière existe. La vraie question est de savoir de quoi dépendent ses propriétés, comme sa masse.",
+  "points": [
+   {
+    "text": "Selon un calcul de 2018, environ 9 % de la masse du proton dépend des masses des quarks. Le reste vient du mouvement et des interactions des quarks et des gluons.",
+    "cites": [
+     "S444"
+    ]
+   },
+   {
+    "text": "Selon le Modèle standard, les particules élémentaires tirent leur masse de leur interaction avec le champ de Higgs. Le photon, qui n’interagit pas avec lui, n’en a pas.",
+    "cites": [
+     "S201"
+    ]
+   },
+   {
+    "text": "Hypothèse de physiciens : les particules élémentaires seraient collectives, comme dans un solide. Le dossier n’en connaît aucune confirmation expérimentale.",
+    "cites": [
+     "S450",
+     "S082"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Une charge égale au tiers de celle de l’électron, qui n’existe que dans un solide, est-elle illusoire ?",
+   "answer": "Non. Elle a été mesurée en 1997. Elle est émergente : c’est une propriété du collectif d’électrons, sans qu’aucun électron soit coupé en trois.",
+   "cites": [
+    "S446",
+    "S082"
+   ]
+  }
+ },
+ "8": {
+  "idea": "« L’information est physique » est un résultat établi. « Tout est information » reste un programme de recherche, pour l’instant sans vérification.",
+  "points": [
+   {
+    "text": "Au sens de Shannon, l’information est une quantité mesurée en bits et définie par des probabilités. Elle ignore le sens des messages.",
+    "cites": [
+     "S451",
+     "S452"
+    ]
+   },
+   {
+    "text": "Effacer un bit dégage une chaleur minimale, selon le principe énoncé par Landauer en 1961. Des expériences l’ont vérifié en 2012 et en 2014.",
+    "cites": [
+     "S029",
+     "S030"
+    ]
+   },
+   {
+    "text": "Des arguments théoriques bornent l’information d’une région par l’aire de sa surface, à 10⁶⁹ bits par mètre carré. Cette borne n’a pas été mesurée directement.",
+    "cites": [
+     "S037"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi le coût d’effacement d’un bit ne prouve-t-il pas que tout est information ?",
+   "answer": "Il montre que l’information obéit à des lois physiques. Mais ce bit est porté par un système physique : l’idée inverse, « tout est information », reste une hypothèse.",
+   "cites": [
+    "S453",
+    "S452"
+   ]
+  }
+ },
+ "9": {
+  "idea": "On ne sait pas si l’espace est fondamental. S’il émergeait, ce serait un peu comme la température : réelle, mais absente pour une molécule isolée.",
+  "points": [
+   {
+    "text": "En 1715-1716, Leibniz soutient contre Clarke que l’espace n’est qu’un ordre entre les choses. La relativité générale admet pourtant un espace-temps vide de matière.",
+    "cites": [
+     "S458",
+     "S459"
+    ]
+   },
+   {
+    "text": "Plusieurs approches de la gravitation quantique traitent l’espace-temps comme dérivé d’une structure plus profonde. L’holographie le relie à l’intrication quantique.",
+    "cites": [
+     "S083",
+     "S460",
+     "S119"
+    ]
+   },
+   {
+    "text": "La gravité émergente de Verlinde, testée sur les galaxies, a donné des résultats partagés en 2017 et en 2021. Aucune de ces approches n’a de confirmation directe.",
+    "cites": [
+     "S464",
+     "S465",
+     "S083"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi l’holographie ne prouve-t-elle pas que notre espace est émergent ?",
+   "answer": "Ses résultats valent surtout pour des univers théoriques différents du nôtre. Et aucune expérience n’atteint l’échelle où ces idées se départageraient.",
+   "cites": [
+    "S463",
+    "S083"
+   ]
+  }
+ },
+ "10": {
+  "idea": "Trois questions à séparer : ce que mesurent les horloges, pourquoi certaines évolutions ont un sens, et pourquoi le passé de l’Univers était si particulier.",
+  "points": [
+   {
+    "text": "Des horloges en mouvement ou à des hauteurs différentes mesurent des durées différentes. En 1971, des horloges en avion ont perdu environ 59 nanosecondes vers l’est.",
+    "cites": [
+     "S209",
+     "S351"
+    ]
+   },
+   {
+    "text": "L’entropie compte les arrangements microscopiques compatibles avec ce qu’on voit. Dans un système isolé, elle ne diminue pas, sauf brèves fluctuations à petite échelle.",
+    "cites": [
+     "S207",
+     "S354"
+    ]
+   },
+   {
+    "text": "Cette explication statistique suppose un passé de faible entropie, très particulier. Son origine reste un problème ouvert, que le mot « Big Bang » ne résout pas.",
+    "cites": [
+     "S208"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi l’entropie ne suffit-elle pas à expliquer toute la flèche du temps ?",
+   "answer": "Elle explique pourquoi certaines évolutions sont typiques à partir d’un état donné. Elle ne dit pas pourquoi l’Univers est parti d’un état de si faible entropie.",
+   "cites": [
+    "S208"
+   ]
+  }
+ },
+ "11": {
+  "idea": "La physique explique des lois par d’autres lois ou par des symétries. Aucune source consultée n’explique pourquoi il existe des régularités.",
+  "points": [
+   {
+    "text": "Une loi résume-t-elle ce qui arrive, ou l’impose-t-elle ? Les philosophes en débattent, et la synthèse consultée ne rapporte aucune réponse acceptée par tous.",
+    "cites": [
+     "S466"
+    ]
+   },
+   {
+    "text": "Selon le théorème de Noether (1918), si rien ne change quand on décale une expérience dans le temps, l’énergie se conserve. Reste à savoir pourquoi ces symétries.",
+    "cites": [
+     "S471",
+     "S473"
+    ]
+   },
+   {
+    "text": "Le son dans un cristal suit des règles simples, presque indépendantes des détails atomiques. Cela explique la robustesse de ces lois, pas l’existence de régularités.",
+    "cites": [
+     "S082"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Le théorème de Noether explique-t-il pourquoi il existe des lois ?",
+   "answer": "Non. Il tire des lois de conservation de symétries, pour des théories d’un type précis. Ces symétries restent admises : la question se déplace sans disparaître.",
+   "cites": [
+    "S471",
+    "S473"
+   ]
+  }
+ },
+ "12": {
+  "idea": "« Les lois », ce sont la forme des équations, les nombres qu’elles contiennent et les conditions de départ. Les réponses ne visent pas toutes la même chose.",
+  "points": [
+   {
+    "text": "Trois pistes, aucune établie : pas d’autre choix ; un cas parmi beaucoup, sélectionné par notre existence ; ou des lois profondes différentes, mêmes lois à notre échelle.",
+    "cites": [
+     "S429",
+     "S082"
+    ]
+   },
+   {
+    "text": "Une fois choisi le groupe de symétrie du Modèle standard, exiger qu’aucune symétrie ne soit détruite par les effets quantiques fixe les charges des quarks et des leptons.",
+    "cites": [
+     "S476"
+    ]
+   },
+   {
+    "text": "Les explications par un multivers sont très difficiles à tester : il faut choisir quels observateurs compter, et comment compter dans des ensembles infinis.",
+    "cites": [
+     "S429"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Deux règles microscopiques différentes donnent la même loi à grande échelle. Qu’est-ce que cela explique ?",
+   "answer": "La forme de la loi, qui ne dépend presque pas de la règle de départ : c’est l’universalité. Pas le nombre qui garde la trace de cette règle.",
+   "cites": []
+  }
+ },
+ "13": {
+  "idea": "Les mathématiques décrivent certains phénomènes avec une précision réelle, mais pas partout, et aucune explication de ce succès n’est admise par tous.",
+  "points": [
+   {
+    "text": "En 2023, la mesure du moment magnétique de l’électron, qui décrit son comportement d’aimant, a testé une prédiction théorique à 1 partie sur 10¹².",
+    "cites": [
+     "S484"
+    ]
+   },
+   {
+    "text": "Cette efficacité est inégale : selon Wigner, les lois ne couvrent qu’une petite part de notre savoir, et d’autres auteurs la jugent bien moindre hors de la physique.",
+    "cites": [
+     "S475",
+     "S481",
+     "S487"
+    ]
+   },
+   {
+    "text": "En 1960, Wigner parlait d’un « miracle ». En 1980, Hamming proposa quatre explications partielles, comme le choix des problèmes et des outils, et les jugea insuffisantes.",
+    "cites": [
+     "S475",
+     "S479"
+    ]
+   }
+  ],
+  "check": {
+   "question": "La précision des mathématiques en physique prouve-t-elle que le monde est mathématique ?",
+   "answer": "Non. Elle s’accorde aussi avec des lectures où les mathématiques sont des fictions utiles ou décrivent des structures. Elle ne démontre aucune de ces lectures.",
+   "cites": []
+  }
+ },
+ "14": {
+  "idea": "On choisit en partie les règles, puis leurs conséquences s’imposent. Savoir si les objets mathématiques existent hors de nous reste une question ouverte.",
+  "points": [
+   {
+    "text": "Le choix des axiomes n’est pas toujours imposé : l’hypothèse du continu, sur la taille des ensembles infinis, n’est ni démontrable ni réfutable avec les axiomes usuels.",
+    "cites": [
+     "S490",
+     "S493",
+     "S494"
+    ]
+   },
+   {
+    "text": "Platonisme : les objets mathématiques existent sans nous, mais comment les connaît-on ? Pour d’autres, ce sont des constructions, mais pourquoi si contraignantes ?",
+    "cites": [
+     "S489",
+     "S488"
+    ]
+   },
+   {
+    "text": "Des nouveau-nés associent déjà quantités vues et entendues ; la graduation régulière des nombres semble culturelle. Cela éclaire l’origine des concepts, pas leur statut.",
+    "cites": [
+     "S497",
+     "S496"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Sur un globe, un triangle peut avoir trois angles droits. Qu’y a-t-il d’inventé, et de découvert ?",
+   "answer": "On choisit les règles, plan ou sphère : c’est la part d’invention. La somme des angles qui en découle ne se décide pas : on la trouve.",
+   "cites": []
+  }
+ },
+ "15": {
+  "idea": "Quarks, leptons et bosons sont élémentaires dans la description testée aujourd’hui, ce qui ne prouve pas qu’aucune structure plus profonde n’existe.",
+  "points": [
+   {
+    "text": "Le Modèle standard range la matière en quarks et leptons sur trois générations. Les mesures du boson Z comptent 2,9840 ± 0,0082 espèces de neutrinos légers.",
+    "cites": [
+     "S200",
+     "S362"
+    ]
+   },
+   {
+    "text": "Un proton est composite : deux quarks up et un down, plus des gluons. Sa masse vient surtout de l’interaction forte, pas directement du champ de Higgs.",
+    "cites": [
+     "S202",
+     "S359",
+     "S201"
+    ]
+   },
+   {
+    "text": "Restent ouverts : ce niveau est-il ultime ou seulement valable à nos échelles ? Comment y intégrer la gravitation ? Qu’est-ce que la matière noire ?",
+    "cites": []
+   }
+  ],
+  "check": {
+   "question": "Pourquoi dire qu’un quark est « élémentaire » plutôt que « ultime » ?",
+   "answer": "Parce que la description testée n’a besoin d’aucune structure interne pour lui. Cela ne prouve pas qu’il n’en a pas : des observations futures pourraient en imposer une.",
+   "cites": []
+  }
+ },
+ "16": {
+  "idea": "Les « quatre » interactions sont un décompte historique et provisoire : personne ne sait déduire ce nombre d’un principe.",
+  "points": [
+   {
+    "text": "L’électromagnétisme et l’interaction faible forment une seule théorie, confirmée en 1983 par la découverte des bosons W et Z. On peut compter quatre forces, ou trois.",
+    "cites": [
+     "S505",
+     "S506"
+    ]
+   },
+   {
+    "text": "Trois des quatre reposent sur un même principe, la symétrie de jauge : une fois cette symétrie choisie, la forme de l’interaction en découle.",
+    "cites": [
+     "S507",
+     "S508"
+    ]
+   },
+   {
+    "text": "La grande unification, conjecture de 1974, prédit que le proton peut se désintégrer : rien de tel n’a été vu. La quête d’une cinquième force n’a donné que des limites.",
+    "cites": [
+     "S510",
+     "S512",
+     "S513",
+     "S514"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi le nombre d’interactions fondamentales dépend-il de la façon de compter ?",
+   "answer": "Parce que l’électromagnétisme et l’interaction faible relèvent d’une seule théorie, et que trois interactions suivent le même principe de jauge. Aucun principe connu ne fixe le total.",
+   "cites": [
+    "S505",
+    "S506",
+    "S507",
+    "S508"
+   ]
+  }
+ },
+ "17": {
+  "idea": "Seuls les nombres sans dimension, identiques dans toutes les unités, appellent une explication physique ; à ce jour, on les mesure sans savoir les déduire.",
+  "points": [
+   {
+    "text": "La vitesse de la lumière vaut 299 792 458 m/s par définition depuis 2019 : demander pourquoi revient à demander comment le mètre est défini.",
+    "cites": [
+     "S516"
+    ]
+   },
+   {
+    "text": "Selon un décompte, physique des particules et cosmologie exigent 31 nombres sans dimension, comme α ≈ 1/137,036. Ils sont mesurés, pas calculés.",
+    "cites": [
+     "S515",
+     "S519"
+    ]
+   },
+   {
+    "text": "Trois pistes restent défendables : une théorie plus profonde qui les calculerait, une sélection parmi des valeurs variables, ou un fait brut. Aucune n’est établie.",
+    "cites": [
+     "S519"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi la valeur de c pose-t-elle une question d’unités, et α une question de physique ?",
+   "answer": "La valeur de c dépend des unités et est fixée par définition. α est sans dimension : sa valeur est la même dans tout système d’unités, c’est donc elle qui demande une explication.",
+   "cites": [
+    "S516",
+    "S518"
+   ]
+  }
+ },
+ "18": {
+  "idea": "On sait reconstruire la mécanique quantique à partir de quelques principes, mais pas expliquer pourquoi la nature suit ces principes-là.",
+  "points": [
+   {
+    "text": "Les règles abstraites de la théorie se déduisent d’axiomes plus intuitifs, par plusieurs chemins différents : c’est le signe d’une théorie très rigide.",
+    "cites": [
+     "S527",
+     "S457",
+     "S528"
+    ]
+   },
+   {
+    "text": "Selon le théorème de Gleason, une fois admis le cadre mathématique de la théorie, la règle de Born est la seule manière cohérente d’attribuer des probabilités.",
+    "cites": [
+     "S529",
+     "S530"
+    ]
+   },
+   {
+    "text": "Dans un test de corrélations, le classique plafonne à 2 et le quantique à 2,83. Jusqu’à 4, aucun signal ne dépasserait la lumière. Pourquoi 2,83 ? Question ouverte.",
+    "cites": [
+     "S531",
+     "S533",
+     "S534",
+     "S535"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Que manque-t-il encore une fois la mécanique quantique reconstruite à partir d’axiomes ?",
+   "answer": "Une raison pour ces axiomes. La reconstruction montre que la théorie en découle, pas pourquoi la nature les respecte : d’autres axiomes donneraient d’autres théories cohérentes.",
+   "cites": [
+    "S527",
+    "S528"
+   ]
+  }
+ },
+ "19": {
+  "idea": "Une superposition n’est pas une simple ignorance : ses possibilités peuvent interférer. Pourquoi une mesure donne un seul résultat reste discuté.",
+  "points": [
+   {
+    "text": "Des électrons envoyés un par un laissent des impacts isolés qui finissent par dessiner des franges. On l’a vu aussi avec des molécules comptant jusqu’à 2 000 atomes.",
+    "cites": [
+     "S365",
+     "S367"
+    ]
+   },
+   {
+    "text": "Mesurer, c’est interagir et laisser une trace ; le modèle n’inclut aucune conscience. Si l’environnement emporte l’information, les interférences s’effacent localement.",
+    "cites": [
+     "S301"
+    ]
+   },
+   {
+    "text": "Cet effacement, la décohérence, ne dit pas à lui seul pourquoi un seul résultat est vécu. Bohm, Everett et les modèles d’effondrement y répondent chacun autrement.",
+    "cites": [
+     "S301",
+     "S370",
+     "S371",
+     "S372"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi une superposition n’est-elle pas juste « on ne sait pas lequel » ?",
+   "answer": "Parce que ses amplitudes s’additionnent et peuvent interférer : deux possibilités peuvent se renforcer ou s’annuler, ce qu’une simple ignorance ne produirait pas.",
+   "cites": []
+  }
+ },
+ "20": {
+  "idea": "Le hasard quantique est certifié sous hypothèses, pas prouvé dans l’absolu : déterminisme et hasard fondamental restent tous deux défendables.",
+  "points": [
+   {
+    "text": "La mécanique quantique combine une équation déterministe (Schrödinger) et une règle qui ne donne que des probabilités (Born). Tout dépend de l’interprétation.",
+    "cites": [
+     "S434",
+     "S368"
+    ]
+   },
+   {
+    "text": "Imprévisible ne veut pas dire indéterministe : un système chaotique suit une loi sans hasard, mais une infime erreur de départ y grandit jusqu’à tout brouiller.",
+    "cites": [
+     "S063"
+    ]
+   },
+   {
+    "text": "En 2018, une expérience quantique a certifié 1 024 bits imprévisibles pour tous, si aucun signal ne dépasse la lumière et si les réglages sont indépendants.",
+    "cites": [
+     "S546"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Une expérience qui certifie du hasard prouve-t-elle que la nature n’est pas déterministe ?",
+   "answer": "Non. Elle certifie une imprévisibilité sous hypothèses. Une théorie déterministe comme celle de Bohm fixe chaque résultat sans permettre de mieux le prédire.",
+   "cites": [
+    "S546",
+    "S434"
+   ]
+  }
+ },
+ "21": {
+  "idea": "À nos échelles, la gravité quantique se calcule déjà. Il manque une théorie valable à toutes les échelles, et une mesure montrant que la gravité est quantique.",
+  "points": [
+   {
+    "text": "Aux énergies ordinaires, la gravitation se traite comme une théorie quantique « effective » qui se comporte bien. Aucune mesure n’exige encore l’unification.",
+    "cites": [
+     "S086",
+     "S083"
+    ]
+   },
+   {
+    "text": "À très haute énergie, les calculs donnent des infinis que l’on ne sait pas éliminer. Tester les écarts attendus demanderait un accélérateur de taille galactique.",
+    "cites": [
+     "S085",
+     "S083"
+    ]
+   },
+   {
+    "text": "Test proposé : voir si la gravité seule « intrique » deux masses, les lie quantiquement. En 2026, on reste des dizaines de millions de fois sous la masse visée.",
+    "cites": [
+     "S133",
+     "S134",
+     "S556"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi le conflit entre gravité et quantique n’apparaît-il pas aux énergies ordinaires ?",
+   "answer": "Parce qu’à ces énergies, la gravité se traite comme une théorie quantique effective qui se comporte bien. Le conflit surgit quand on veut une théorie valable partout.",
+   "cites": [
+    "S086"
+   ]
+  }
+ },
+ "22": {
+  "idea": "Ni le continu ni le discret ne sont établis : aucun « grain » d’espace-temps n’a été observé, et les mesures n’écartent que des effets précis.",
+  "points": [
+   {
+    "text": "Les photons des sursauts gamma n’arrivent pas en retard selon leur énergie : à 95 % de confiance, cela écarte un retard proportionnel à l’énergie à l’échelle de Planck.",
+    "cites": [
+     "S553"
+    ]
+   },
+   {
+    "text": "L’échelle attendue d’un grain est la longueur de Planck, 1,6 × 10⁻³⁵ m. Qu’elle soit une vraie limite physique reste un argument, pas un résultat.",
+    "cites": [
+     "S558",
+     "S083"
+    ]
+   },
+   {
+    "text": "Discret ne veut pas dire contraire à la relativité : dès 1947, Snyder décrit un espace-temps discret qui la respecte. Les bornes actuelles ne testent pas ce cas.",
+    "cites": [
+     "S560",
+     "S562"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi les sursauts gamma ne prouvent-ils pas que l’espace-temps est continu ?",
+   "answer": "Ils bornent un seul effet, un retard des photons selon leur énergie. Ils ne disent rien, à eux seuls, d’un espace-temps discret qui respecterait la relativité.",
+   "cites": [
+    "S553",
+    "S562"
+   ]
+  }
+ },
+ "23": {
+  "idea": "« Théorie du tout » cache quatre questions : unifier les forces, expliquer les constantes, tout prédire, être définitive. Elles n’ont pas la même réponse.",
+  "points": [
+   {
+    "text": "Unifier les quatre forces reste ouvert : aucun candidat, comme la théorie des cordes, n’a de prédiction confirmée. Expliquer les constantes reste aussi en débat.",
+    "cites": [
+     "S083"
+    ]
+   },
+   {
+    "text": "Connaître les lois ne livre pas toutes leurs conséquences : l’équation de Schrödinger est connue, mais insoluble au-delà d’une dizaine de particules.",
+    "cites": [
+     "S082"
+    ]
+   },
+   {
+    "text": "Un argument : toute expérience a une portée limitée. Aucune donnée ne peut donc prouver qu’une théorie est la dernière, seulement qu’elle tient jusque-là.",
+    "cites": [
+     "S087",
+     "S088",
+     "S089",
+     "S090"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi une théorie unifiant toutes les forces ne serait-elle pas une théorie de « tout » ?",
+   "answer": "Parce que connaître les lois ne donne pas leurs conséquences : certains calculs restent hors de portée, et certaines questions sur des modèles précis sont indécidables, sans méthode générale de réponse.",
+   "cites": [
+    "S082",
+    "S138"
+   ]
+  }
+ },
+ "24": {
+  "idea": "Une phase très chaude et dense il y a environ 13,8 milliards d’années est bien établie ; un premier instant du temps n’est ni démontré ni exclu.",
+  "points": [
+   {
+    "text": "Les observations montrent qu’il y a environ 13,8 milliards d’années, l’Univers observable était très chaud et très dense. Elles ne montrent pas un premier instant.",
+    "cites": [
+     "S304",
+     "S575"
+    ]
+   },
+   {
+    "text": "Sous conditions, des théorèmes de relativité générale montrent que les trajectoires ne se prolongent pas sans fin vers le passé. Ils disent où la théorie cesse de valoir.",
+    "cites": [
+     "S575",
+     "S385",
+     "S582"
+    ]
+   },
+   {
+    "text": "Des modèles sans commencement existent, comme des univers cycliques. Aucun n’est confirmé par l’observation, et d’autres physiciens les jugent insuffisants.",
+    "cites": [
+     "S576",
+     "S577",
+     "S579",
+     "S580",
+     "S581"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Le Big Bang prouve-t-il que le temps lui-même a commencé ?",
+   "answer": "Non. Il établit une phase chaude et dense il y a environ 13,8 milliards d’années. Un commencement absolu du temps n’est ni démontré ni exclu.",
+   "cites": [
+    "S304",
+    "S575"
+   ]
+  }
+ },
+ "25": {
+  "idea": "Des traces montrent un Univers jeune chaud, dense et presque uniforme ; pourquoi il a démarré dans cet état très particulier reste ouvert.",
+  "points": [
+   {
+    "text": "L’expansion, les éléments légers et le fond diffus, une très vieille lumière, soutiennent une phase chaude et dense. Ce sont des traces, pas une photo de l’origine.",
+    "cites": [
+     "S302",
+     "S304"
+    ]
+   },
+   {
+    "text": "L’inflation, une expansion accélérée supposée au tout début, peut expliquer certaines propriétés des fluctuations. Elle n’explique pas toutes les conditions de départ.",
+    "cites": [
+     "S303"
+    ]
+   },
+   {
+    "text": "Presque uniforme, l’Univers jeune pouvait être proche de l’équilibre pour la matière, mais très particulier pour la gravité. Quelle physique l’a préparé reste ouvert.",
+    "cites": [
+     "S305"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Une fois la phase chaude admise, que reste-t-il à expliquer sur l’Univers primordial ?",
+   "answer": "Pourquoi l’état de départ était si uniforme, avec juste de petites fluctuations. L’inflation éclaire certaines propriétés de ces fluctuations, pas toutes les conditions initiales.",
+   "cites": [
+    "S303"
+   ]
+  }
+ },
+ "26": {
+  "idea": "La question a un sens ou non selon ce qu’on appelle Big Bang, et les observations ne disent pas à elles seules s’il y a eu un « avant ».",
+  "points": [
+   {
+    "text": "Si Big Bang veut dire la phase chaude et dense, chercher une phase antérieure a un sens dans plusieurs modèles. Si c’est un début du temps, « avant » sort du modèle.",
+    "cites": [
+     "S304"
+    ]
+   },
+   {
+    "text": "Prolonger vers le passé certains modèles classiques mène à une singularité. C’est une limite de la description, pas l’observation d’un point infiniment dense.",
+    "cites": [
+     "S306"
+    ]
+   },
+   {
+    "text": "Des pistes qui mêlent gravité et physique quantique proposent un « grand rebond » au lieu d’un début. Elles restent à confronter aux observations.",
+    "cites": [
+     "S306",
+     "S386"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi « qu’y avait-il avant le Big Bang ? » n’a-t-elle pas une seule réponse ?",
+   "answer": "Elle dépend du sens donné à Big Bang : phase chaude, limite d’un modèle ou origine absolue. Les traces d’une phase chaude ne décident pas à elles seules d’un « avant ».",
+   "cites": [
+    "S304"
+   ]
+  }
+ },
+ "27": {
+  "idea": "La partie de l’Univers que nous voyons est finie ; pour l’Univers entier, les mesures donnent une taille minimale et ne tranchent pas.",
+  "points": [
+   {
+    "text": "L’univers observable, la région dont la lumière a pu nous parvenir, a un rayon d’environ 47 milliards d’années-lumière. La taille de l’Univers entier est inconnue.",
+    "cites": [
+     "S573",
+     "S583"
+    ]
+   },
+   {
+    "text": "La courbure mesurée est compatible avec zéro. Mais plat ne veut pas dire infini : une feuille plate roulée puis refermée en anneau reste plate, et finie.",
+    "cites": [
+     "S101",
+     "S583"
+    ]
+   },
+   {
+    "text": "Aucun motif répété n’a été vu dans le fond diffus. « Fini » pourrait un jour se prouver si l’Univers est assez petit ; « infini », pas par l’observation.",
+    "cites": [
+     "S587",
+     "S588",
+     "S575",
+     "S583"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Si l’espace est plat, l’Univers est-il forcément infini ?",
+   "answer": "Non. Un espace plat peut être fini s’il se referme sur lui-même, comme la feuille refermée en anneau. Et une mesure compatible avec zéro laisse aussi possible une sphère immense.",
+   "cites": [
+    "S583"
+   ]
+  }
+ },
+ "28": {
+  "idea": "Aucune observation ne montre d’autre univers ; le mot « multivers » recouvre quatre idées, et on débat même de la façon de les tester.",
+  "points": [
+   {
+    "text": "Quatre idées : des régions au-delà de notre horizon, des « bulles » nées de l’inflation éternelle, les branches quantiques d’Everett, toutes les structures mathématiques.",
+    "cites": [
+     "S592"
+    ]
+   },
+   {
+    "text": "Les trois premières découlent de théories bâties pour d’autres raisons. Ce ne sont pas des idées gratuites, mais aucune n’est confirmée.",
+    "cites": [
+     "S592",
+     "S575"
+    ]
+   },
+   {
+    "text": "En 2011, aucune trace de choc entre bulles n’a été trouvée dans le fond diffus. Un autre argument compte les observateurs d’une façon que nul ne sait justifier.",
+    "cites": [
+     "S596",
+     "S099",
+     "S597",
+     "S575"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi faut-il préciser de quel multivers on parle ?",
+   "answer": "Le mot désigne au moins quatre idées d’origines différentes, qui ne s’impliquent pas entre elles. Aucune n’a aujourd’hui de réponse par l’observation.",
+   "cites": [
+    "S592"
+   ]
+  }
+ },
+ "29": {
+  "idea": "La matière noire rend compte d’une gravité en trop, l’énergie noire d’une expansion qui accélère ; leur nature physique reste inconnue.",
+  "points": [
+   {
+    "text": "Mouvements des galaxies et lumière déviée par la gravité pèsent la matière autrement qu’en comptant les étoiles. Dans l’amas du Boulet, la masse ne suit pas le gaz.",
+    "cites": [
+     "S345",
+     "S348"
+    ]
+   },
+   {
+    "text": "Des explosions d’étoiles, les supernovæ, ont donné un indice majeur : l’expansion accélère. « Énergie noire » nomme ce qui la décrit, sans l’expliquer.",
+    "cites": [
+     "S346"
+    ]
+   },
+   {
+    "text": "Le partage arrondi, 5 % de matière ordinaire, 27 % de matière noire et 68 % d’énergie noire, vient d’un modèle de référence, pas d’une mesure directe.",
+    "cites": [
+     "S345",
+     "S349"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Matière noire et énergie noire, est-ce la même chose ?",
+   "answer": "Non. La matière noire rend compte d’effets de gravité en trop dans les galaxies et les amas ; l’énergie noire décrit l’accélération de l’expansion. Leur nature reste inconnue.",
+   "cites": [
+    "S345",
+    "S346"
+   ]
+  }
+ },
+ "30": {
+  "idea": "Le destin de l’Univers ne s’observe pas : il dépend de ce qui pilotera l’expansion, et chaque hypothèse mène à un futur différent.",
+  "points": [
+   {
+    "text": "Si l’énergie noire reste une constante positive, l’expansion continue et les possibilités d’activité diminuent à très long terme. C’est un modèle, pas une observation.",
+    "cites": [
+     "S304"
+    ]
+   },
+   {
+    "text": "D’autres hypothèses mènent à d’autres fins, comme un Big Rip ou une recontraction de l’Univers. Rien ne permet d’en faire un calendrier certain.",
+    "cites": [
+     "S308"
+    ]
+   },
+   {
+    "text": "En mars 2025, DESI a annoncé des indices d’une énergie noire qui varie, selon les données combinées. Cela ne prouve ni un Big Rip ni un Big Crunch.",
+    "cites": [
+     "S307"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi ne peut-on pas annoncer une date pour la fin de l’Univers ?",
+   "answer": "Ce futur se calcule dans un modèle : il dépend de ce que fera l’énergie noire et de la validité future de nos lois. Une mesure d’aujourd’hui ne fixe pas la règle pour toujours.",
+   "cites": [
+    "S304"
+   ]
+  }
+ },
+ "31": {
+  "idea": "On comprend assez bien comment la complexité est apparue ; pourquoi les conditions s’y prêtaient reste ouvert, et même l’« ajustement fin » est débattu.",
+  "points": [
+   {
+    "text": "La gravité forme étoiles et galaxies, les étoiles fabriquent le carbone, et tout profite d’un Univers parti d’une très basse entropie, pas encore à l’équilibre.",
+    "cites": [
+     "S304",
+     "S601",
+     "S604"
+    ]
+   },
+   {
+    "text": "Ajustement fin : la complexité exigerait des constantes dans des plages étroites. Pourtant, une revue de 2019 trouve des univers viables sur toute une plage.",
+    "cites": [
+     "S429",
+     "S600"
+    ]
+   },
+   {
+    "text": "Quatre lectures s’opposent : rien à expliquer, une physique plus profonde, un multivers, un dessein. Aucune n’est établie, et l’observation ne les départage pas.",
+    "cites": [
+     "S575"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Sur la complexité de l’Univers, qu’est-ce qui est compris et qu’est-ce qui reste ouvert ?",
+   "answer": "Le comment est compris : gravité, étoiles et basse entropie de départ. Le pourquoi de ces conditions reste ouvert, et le constat d’ajustement fin est lui-même discuté.",
+   "cites": [
+    "S304",
+    "S604",
+    "S429",
+    "S600"
+   ]
+  }
+ },
+ "32": {
+  "idea": "Pour chercher la vie, on utilise une définition de travail : un système chimique capable de se maintenir et d’évoluer à la manière de Darwin.",
+  "points": [
+   {
+    "text": "C’est un outil pour guider l’enquête, pas une règle universelle. Rien ne garantit que toute vie possible ait la même chimie que la vie terrestre.",
+    "cites": [
+     "S322"
+    ]
+   },
+   {
+    "text": "Se maintenir n’est pas être isolé : le vivant échange avec son milieu. L’évolution vise des lignées, pas chaque individu : un animal stérile est vivant.",
+    "cites": [
+     "S323"
+    ]
+   },
+   {
+    "text": "Une molécule intéressante ne suffit pas à prouver une vie ailleurs : il faut d’abord écarter les explications non biologiques.",
+    "cites": [
+     "S322"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi « grandir » ou « se copier » ne suffit-il pas à définir la vie ?",
+   "answer": "Pris seul, chaque critère est trop large ou trop strict. La définition de travail associe une chimie, un système qui se maintient et une évolution sur plusieurs générations.",
+   "cites": [
+    "S322"
+   ]
+  }
+ },
+ "33": {
+  "idea": "On sait refaire au labo plusieurs étapes chimiques utiles à la vie, mais pas raconter de façon complète et validée comment elle est apparue.",
+  "points": [
+   {
+    "text": "En 1953, Miller obtient des acides aminés, des constituants du vivant, avec de l’eau, des gaz et des décharges électriques. Il fabrique des molécules, pas de la vie.",
+    "cites": [
+     "S336"
+    ]
+   },
+   {
+    "text": "Le vrai défi est de tout coupler : ressources, compartiment, réactions alimentées et hérédité avec variation. Fabriquer chaque pièce à part ne suffit pas.",
+    "cites": []
+   },
+   {
+    "text": "Un succès au labo montre une possibilité, pas l’histoire réelle. Les sources hydrothermales, par exemple, restent une piste, pas un lieu d’origine démontré.",
+    "cites": [
+     "S340"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi l’expérience de Miller n’a-t-elle pas expliqué l’origine de la vie ?",
+   "answer": "Elle produit des molécules, pas un système vivant. Il reste à réunir compartiment, réactions alimentées et hérédité avec variation, puis à montrer que la Terre a suivi ce chemin.",
+   "cites": [
+    "S336"
+   ]
+  }
+ },
+ "34": {
+  "idea": "On ne sait pas si la vie est rare ou fréquente : l’abondance des ingrédients ne mesure pas la chance qu’elle apparaisse.",
+  "points": [
+   {
+    "text": "Notre existence prouve qu’une histoire a réussi. Mais ce cas n’est pas tiré au hasard : des observateurs ne se trouvent que dans une histoire compatible avec eux.",
+    "cites": []
+   },
+   {
+    "text": "Mille essais à une chance sur mille donnent 63,2 % d’au moins un succès ; à une chance sur un million, 0,10 %. Exemple inventé : tout dépend de la chance par essai.",
+    "cites": []
+   },
+   {
+    "text": "Selon un modèle de Kipping (2020), la chronologie de la Terre favorise une apparition assez rapide de la vie. Ce n’est pas une mesure du nombre de planètes habitées.",
+    "cites": [
+     "S342"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Beaucoup de planètes et d’ingrédients rendent-ils la vie presque inévitable ?",
+   "answer": "Non. Les molécules de Bennu montrent une chimie organique hors de la Terre, pas un taux d’apparition de la vie. Tout dépend d’une probabilité encore mal connue.",
+   "cites": [
+    "S341"
+   ]
+  }
+ },
+ "35": {
+  "idea": "Nous ne savons pas si nous sommes seuls : aucune preuve crédible de vie ailleurs selon la NASA en septembre 2026, mais aucune preuve d’absence non plus.",
+  "points": [
+   {
+    "text": "Un ingrédient, un lieu habitable et un indice de vie sont trois choses différentes. Des bases de l’ADN, comme celles de l’astéroïde Bennu, ne font pas une cellule.",
+    "cites": [
+     "S341"
+    ]
+   },
+   {
+    "text": "La phosphine annoncée sur Vénus (2020) et un indice de gaz sur K2-18 b (2025) ont été remis en cause par d’autres analyses. Inexpliqué ne veut pas dire biologique.",
+    "cites": [
+     "S398",
+     "S399",
+     "S400",
+     "S401"
+    ]
+   },
+   {
+    "text": "Breakthrough Listen a écouté 1 327 étoiles proches sans aucun candidat. Mais l’espace de recherche radio exploré ressemble à une petite piscine face aux océans.",
+    "cites": [
+     "S404",
+     "S403"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi l’absence de signal détecté ne prouve-t-elle pas que nous sommes seuls ?",
+   "answer": "Une recherche ne voit que ce que permettent ses cibles, sa sensibilité et sa durée. La part explorée reste minuscule : ce silence est un résultat, pas une absence.",
+   "cites": [
+    "S403"
+   ]
+  }
+ },
+ "36": {
+  "idea": "Mesurer l’activité du cerveau liée à une expérience est une avancée ; cela ne donne pas pour autant une explication complète du vécu.",
+  "points": [
+   {
+    "text": "Ici, la conscience désigne le vécu : ce que cela fait de voir une couleur ou de ressentir une émotion. Ni l’éveil, ni l’attention, ni la capacité à en rendre compte.",
+    "cites": [
+     "S324"
+    ]
+   },
+   {
+    "text": "En 2025, l’étude COGITATE a testé deux grandes théories sur 256 personnes : certaines prédictions tiennent, d’autres sont mises en difficulté, pour les deux.",
+    "cites": [
+     "S325"
+    ]
+   },
+   {
+    "text": "Réussir une tâche, même en mathématiques, ne suffit pas à conclure qu’une machine ressent quelque chose, ni qu’elle ne ressent rien : il faut un argument de plus.",
+    "cites": [
+     "S324"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi mesurer ce que fait le cerveau ne suffit-il pas à expliquer la conscience ?",
+   "answer": "Une mesure montre une activité qui va avec l’expérience. Expliquer pourquoi ce travail du cerveau s’accompagne d’un vécu demande davantage qu’une simple association.",
+   "cites": [
+    "S324"
+   ]
+  }
+ },
+ "37": {
+  "idea": "Personne ne sait pourquoi le travail du cerveau s’accompagne d’un vécu, et les spécialistes ne s’accordent même pas sur ce qui compterait comme une explication.",
+  "points": [
+   {
+    "text": "Jackson imagine Mary : elle sait toute la physique des couleurs mais n’a vécu qu’en noir et blanc. Si le rouge lui apprend quelque chose, la physique ne disait pas tout.",
+    "cites": [
+     "S608",
+     "S610"
+    ]
+   },
+   {
+    "text": "Quatre réponses s’affrontent : le vécu est un processus du cerveau, n’est pas ce qu’il semble être, est une propriété en plus, ou existe partout sous forme élémentaire.",
+    "cites": [
+     "S609",
+     "S611"
+    ]
+   },
+   {
+    "text": "En 2025, un test préenregistré sur 256 personnes a mis en difficulté les deux théories confrontées. Il porte sur ce que l’on voit, pas sur la raison d’être du vécu.",
+    "cites": [
+     "S325"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Quelle différence entre expliquer ce que fait le cerveau et le « problème difficile » ?",
+   "answer": "Expliquer comment le cerveau distingue ou rapporte une information relève de mécanismes que la science sait chercher. Le problème difficile demande pourquoi cela s’accompagne d’un vécu.",
+   "cites": [
+    "S324"
+   ]
+  }
+ },
+ "38": {
+  "idea": "« Rester le même » peut vouloir dire persister dans le temps ou se sentir soi dans ce corps : les expériences éclairent le second, sans trancher le premier.",
+  "points": [
+   {
+    "text": "Sur la persistance, trois réponses s’opposent : la continuité de la vie mentale, celle de l’organisme vivant, ou l’idée qu’aucun critère informatif n’existe.",
+    "cites": [
+     "S618"
+    ]
+   },
+   {
+    "text": "Cas imaginaire : une machine vous détruit et fabrique sur Mars un double exact. En 2020, 35,24 % des philosophes interrogés y voyaient une survie, 40,06 % une mort.",
+    "cites": [
+     "S620",
+     "S499"
+    ]
+   },
+   {
+    "text": "En laboratoire, on peut attribuer à une main en caoutchouc le toucher que l’on ressent, ou se situer hors des limites de son corps grâce à la réalité virtuelle.",
+    "cites": [
+     "S626",
+     "S627"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi une illusion corporelle ne dit-elle pas ce qui fait qu’on reste la même personne ?",
+   "answer": "Elle montre que le sentiment d’avoir un corps se construit en combinant la vue, le toucher et la position du corps. Elle ne dit pas à quelles conditions l’être de demain sera vous.",
+   "cites": [
+    "S626",
+    "S627"
+   ]
+  }
+ },
+ "39": {
+  "idea": "Réussir une tâche, paraître humain et ressentir quelque chose sont trois questions distinctes ; sur la troisième, on ne sait pas, ni pour le oui ni pour le non.",
+  "points": [
+   {
+    "text": "Selon une étude de 2026, GPT-4.5, invité à jouer un humain, a été pris pour l’humain dans 73 % des cas au test de Turing. Cela mesure un comportement, pas un vécu.",
+    "cites": [
+     "S632"
+    ]
+   },
+   {
+    "text": "Si la conscience tient aux calculs, une machine peut en principe être consciente ; si elle tient au support ou au vivant, les ordinateurs actuels sont exclus ou presque.",
+    "cites": [
+     "S633",
+     "S637",
+     "S638"
+    ]
+   },
+   {
+    "text": "Aucune méthode validée ne permet de savoir si une machine ressent quelque chose : un article de 2026 réclame encore des méthodes rigoureuses.",
+    "cites": [
+     "S634"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi réussir le test de Turing ne prouve-t-il pas qu’une IA est consciente ?",
+   "answer": "Le test juge un comportement : paraître humain en conversation. Un système peut être entraîné à imiter les humains, y compris en se disant conscient ; ce n’est pas une mesure du vécu.",
+   "cites": [
+    "S629",
+    "S633"
+   ]
+  }
+ },
+ "40": {
+  "idea": "Avant de répondre oui ou non, il faut préciser de quelle liberté on parle ; le débat porte largement sur ce qu’il faut pour être responsable de ses actes.",
+  "points": [
+   {
+    "text": "Agir selon ses raisons : les sciences n’ont pas montré qu’on en soit privé. Faire autrement avec le même passé : impossible si le monde est déterministe, ce qu’on ignore.",
+    "cites": [
+     "S641"
+    ]
+   },
+   {
+    "text": "Libet (1983) : une activité cérébrale précède d’environ 350 ms l’intention rapportée d’un geste spontané. Relue comme des fluctuations, elle manque aux choix délibérés.",
+    "cites": [
+     "S648",
+     "S650",
+     "S651"
+    ]
+   },
+   {
+    "text": "En 2020, 59,16 % des philosophes sondés étaient favorables au compatibilisme : la liberté resterait possible dans un monde déterministe. Un sondage ne démontre rien.",
+    "cites": [
+     "S499"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Pourquoi peut-on répondre « oui » et « non » au libre arbitre sans se contredire ?",
+   "answer": "Chaque réponse peut viser une définition différente : agir selon ses raisons, pouvoir faire autrement avec le même passé, ou être la source ultime de ce que l’on est.",
+   "cites": [
+    "S641"
+   ]
+  }
+ },
+ "41": {
+  "idea": "Oui, dans des cadres précis : des théorèmes montrent qu’aucune intelligence ne peut tout connaître, mais ils identifient rarement les questions concernées.",
+  "points": [
+   {
+    "text": "Gödel : tout système d’axiomes cohérent et assez riche pour l’arithmétique a des énoncés qu’il ne peut trancher. Un système plus fort les tranche, mais a les siens.",
+    "cites": [
+     "S020",
+     "S021"
+    ]
+   },
+   {
+    "text": "Turing : aucune méthode générale ne peut dire, pour n’importe quel programme, s’il s’arrêtera. Plus de puissance de calcul résout des cas, pas le problème général.",
+    "cites": [
+     "S022"
+    ]
+   },
+   {
+    "text": "La physique ajoute des bornes : une région finie contient une information finie, et effacer un bit d’information coûte une énergie minimale, mesurée en laboratoire.",
+    "cites": [
+     "S035",
+     "S037",
+     "S029",
+     "S030"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Ces théorèmes prouvent-ils que la conscience restera toujours un mystère ?",
+   "answer": "Non. Ils prouvent qu’il existe des questions hors de portée, pas que telle question précise l’est. Appliquer Gödel hors des mathématiques semble, dans plusieurs cas, reposer sur des malentendus.",
+   "cites": [
+    "S021"
+   ]
+  }
+ },
+ "42": {
+  "idea": "« La vie a-t-elle un sens ? » regroupe au moins trois questions : sur l’Univers, sur une vie, sur le statut des valeurs. Leurs réponses peuvent différer.",
+  "points": [
+   {
+    "text": "Aucun résultat scientifique ne tranche et aucune position ne s’impose : en 2020, 33,04 % des philosophes sondés étaient favorables à un sens subjectif, 32,06 % objectif.",
+    "cites": [
+     "S499",
+     "S652"
+    ]
+   },
+   {
+    "text": "Une valeur objective vaudrait quoi qu’en pense quiconque. Des philosophes en contestent l’existence ; d’autres, réalistes, leur répondent, sans clore le débat.",
+    "cites": [
+     "S652",
+     "S657",
+     "S656"
+    ]
+   },
+   {
+    "text": "La psychologie mesure le sentiment de sens : des groupes variés se placent nettement au-dessus du milieu de l’échelle. Cela ne dit pas si ce sentiment est fondé.",
+    "cites": [
+     "S661",
+     "S662"
+    ]
+   }
+  ],
+  "check": {
+   "question": "Une enquête montre qu’une activité donne plus de sens à la vie. Faut-il donc la pratiquer ?",
+   "answer": "Pas sans une prémisse de plus, comme « il faut faire ce qui accroît le sentiment de sens ». Un fait mesuré ne dit pas, à lui seul, ce qui vaut.",
+   "cites": [
+    "S617",
+    "S659"
+   ]
+  }
+ }
+}

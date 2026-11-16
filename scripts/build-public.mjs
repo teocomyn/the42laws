@@ -62,7 +62,7 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
  async function copy(path){const from=resolve(root,path),to=resolve(out,path);await mkdir(dirname(to),{recursive:true});await copyFile(from,to);}
  for(const f of ['index.html','favicon.ico','METHODE.md','QUESTIONS.md'])await copy(f);
  // Explicit public folders only. Runtime assets and research Markdown are public content.
- for(const folder of ['atlas','atlas/dossiers','atlas/chunks','atlas/lab-art','neutrino','antimatiere','photon','temps','navier-stokes','relativite','trou-noir','questions','sources','notes']){
+ for(const folder of ['atlas','atlas/dossiers','atlas/chunks','atlas/lab-art','atlas/art','neutrino','antimatiere','photon','temps','navier-stokes','relativite','trou-noir','questions','sources','notes']){
   let files=[];try{files=await readdir(resolve(root,folder),{withFileTypes:true});}catch(e){if(e.code==='ENOENT')continue;throw e;}
   for(const f of files){const path=folder+'/'+f.name;if(f.isFile()&&/\.(html|css|js|svg|png|md)$/.test(f.name)&&!UNPUBLISHED.has(path)&&!(folder==='notes'&&f.name.endsWith('.md')))await copy(path);}
  }

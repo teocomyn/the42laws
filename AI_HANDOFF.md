@@ -10,11 +10,23 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 - Registre des sources : prochain identifiant libre S672 (S663-S671 : laboratoire Trou noir, 2026-11-16). Réutiliser l’identifiant existant pour une référence identique (S327 = Chou 2010 ; S101 = S349 = Planck 2018 VI, S101 privilégié).
 - Le registre est servi par atlas/dossiers/registre.js (généré, chargé à la demande par la page Sources) ; atlas/data.js n’en contient plus.
 - Expériences interactives de dossier : content/explorers/<id>.json (une seule pour l’instant, la 39). Le build vérifie que chaque verdict cite une source du dossier ; le lecteur l’affiche sous la lecture (onglets L’essentiel et Dossier complet) et la page statique en tableau.
+- Cartes « L’essentiel en 30 secondes » : content/essentiels.json (42 entrées : idée, 3 points, une question-réponse, renvois aux sources du dossier). checkEssential (scripts/build-atlas.mjs) bloque la construction si une limite de longueur, la typographie ou un renvoi hors dossier est en défaut.
 - Aucune relecture scientifique humaine n’a eu lieu sur aucune fiche. C’est la prochaine étape utile, avant toute nouvelle extension.
 - Prochaines actions possibles : relecture humaine par domaine ; ajout des nouvelles fiches aux parcours guidés (content/atlas.json) ; lecture dans un navigateur des pourcentages PhilPapers 2020 cités dans les fiches 37 à 40 et 42 (lus sur des copies Internet Archive, le site refusant la lecture automatisée) et du tableau non lu pour la fiche 14.
 - Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
 
 ## Travail réalisé
+
+### 2026-11-16 — Claude Code : style pixel sur tout le site et cartes 80/20, branche claude/pixel-learning
+
+Demande de Teo : continuer le style des affiches pixel sur le site (« les icônes, tout ») et donner dans les pages le 80/20 des informations, pour apprendre de façon très simple.
+
+- Illustrations : les 42 calques « Illustration pixel » de la page « Affiches — sans texte » (Figma W1sdl5Fm0wpSAYWMAKHFQ1) exportés à 50 % : atlas/art/qNN.png (800 × 1000) et qNN-s.png (240 × 240, carré centré automatiquement sur le dessin). Affichées dans les lignes de la liste des questions, les cartes de l’accueil, « Pour poursuivre » et la nouvelle carte essentielle. Le fichier Figma n’a pas été modifié.
+- Icônes : les 9 pictogrammes de la navigation redessinés en pixels (12 × 12, deux tons, lime au survol et sur la page active).
+- Carte « L’essentiel en 30 secondes » en tête de chaque dossier (lecteur et page statique) : illustration, idée à retenir, 3 points numérotés avec pastilles de sources, « Testez-vous » (question, réponse dépliable). Contenu rédigé par 4 sous-agents à partir de chaque dossier, relu ici ; deux formulations retouchées (29, 23). Aucune nouvelle source, aucun chiffre hors dossier.
+- Points de vigilance signalés par les rédacteurs, à relire en priorité : 7 (le découpage 9 % de la masse du proton), 18 (condition de dimension de Gleason omise), 21 (débat 2025-2026 omis), 23 (verdicts adoucis comme dans 23-essentiel), 29, 34 (exemple chiffré inventé par le dossier, signalé comme tel), 41.
+
+Validation : build, 80 tests, typecheck, build:public et check:public (363 fichiers, 6 958 liens internes) réussis. Vérifié en local à 1 440 px et 375 px : carte essentielle (3 points, 7 renvois, réponse dépliable), 42 miniatures dans la liste, 42 cartes illustrées à l’accueil, aucun débordement.
 
 ### 2026-11-16 — Claude Code : illustrations Figma sur les cartes des laboratoires, branche claude/lab-art
 

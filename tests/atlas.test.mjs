@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import {createRequire} from 'node:module';
-import {renderMarkdown,resolveLink,checkExplorer} from '../scripts/build-atlas.mjs';
+import {renderMarkdown,resolveLink,checkExplorer,checkEssential} from '../scripts/build-atlas.mjs';
 const require=createRequire(import.meta.url),C=require('../atlas/core.js');
 const D=require('./atlas-data.cjs').loadAtlasData();
 test('atlas preserves all 42 questions, seven domains and current research states',()=>{assert.deepEqual(D.questions.map(q=>q.id),Array.from({length:42},(_,i)=>i+1));assert.equal(D.domains.length,7);assert.deepEqual(D.questions.filter(q=>q.researched).map(q=>q.id),Array.from({length:42},(_,i)=>i+1));assert.equal(D.questions[40].sourceCount,63);for(const q of D.questions){assert.ok(q.title);assert.ok(D.domains.some(d=>d.id===q.domain&&q.id>=d.range[0]&&q.id<=d.range[1]));}});
@@ -81,4 +81,25 @@ test('dossier explorers cite only their own sources and render every verdict',as
  assert.throws(()=>checkExplorer(broken,39,ids),/S001, absent/);
  const missing=structuredClone(x);delete missing.systems[1].verdicts.vivant;
  assert.throws(()=>checkExplorer(missing,39,ids),/agent\/vivant/);
+});
+
+test('every question has its pixel illustration and a 30-second essential card citing its own sources',async()=>{
+ const {existsSync}=await import('node:fs'),V=require('../atlas/dossier.js');
+ const E=JSON.parse(await readFile(new URL('../content/essentiels.json',import.meta.url),'utf8'));
+ for(let id=1;id<=42;id++){
+  for(const small of [false,true])assert.ok(existsSync(new URL('..'+C.questionArt(id,small),import.meta.url)),C.questionArt(id,small));
+  const md=await readFile(new URL(`../questions/${String(id).padStart(2,'0')}.md`,import.meta.url),'utf8');
+  const ids=[...md.matchAll(/^\| (S\d{3}) \|/gm)].map(m=>m[1]);
+  assert.equal(checkEssential(E[id],id,ids),E[id]);
+  const html=V.essential({id,essential:E[id]});
+  assert.equal((html.match(/<li>/g)||[]).length,3);
+  assert.match(html,/<details class="essential-check">/);
+  assert.ok(html.includes(`src="${C.questionArt(id)}"`));
+  for(const m of html.matchAll(/href="([^"]+)#src-(S\d{3})"/g)){assert.equal(m[1],C.questionPath(id));assert.ok(ids.includes(m[2]));}
+ }
+ assert.equal(C.questionArt(7,true),'/atlas/art/q07-s.png');
+ const bad=structuredClone(E[1]);bad.points.pop();
+ assert.throws(()=>checkEssential(bad,1,[]),/exactly 3 points/);
+ const dash=structuredClone(E[1]);dash.idea='Une idée — avec un tiret';
+ assert.throws(()=>checkEssential(dash,1,[]),/typography/);
 });

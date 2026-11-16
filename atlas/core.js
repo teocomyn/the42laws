@@ -37,6 +37,8 @@
  const domainIds=['existence','realite','physique','univers','vie','conscience','sens'];
  const pathIds=['matiere','temps','connaitre','fondements','origines-vie'];
  const seo=typeof module==='object'&&module.exports?require('../content/seo.json'):root.ATLAS_DATA?.seo||{questions:{},routes:{}};
+ // Illustration pixel de la question (Figma « The42laws — Affiches pixel », version sans texte).
+ function questionArt(id,small=false){return '/atlas/art/q'+String(Number(id)).padStart(2,'0')+(small?'-s':'')+'.png';}
  function questionPath(id){const item=seo.questions[Number(id)];return item?'/dossiers/'+item.slug+'/':'/dossiers/'+Number(id)+'/';}
  function questionId(path){const match=String(path).replace(/index\.html$/,'').match(/^\/dossiers\/([^/]+)\/$/);if(!match)return null;if(/^\d+$/.test(match[1])&&seo.questions[Number(match[1])])return Number(match[1]);return Number(Object.keys(seo.questions).find(id=>seo.questions[id].slug===match[1]))||null;}
  function canonicalHref(href){
@@ -89,6 +91,6 @@
   return cleanState({read:[...a.read,...b.read],saved:[...a.saved,...b.saved],labs:[...a.labs,...b.labs],notes:preferIncoming?{...a.notes,...b.notes}:{...b.notes,...a.notes},experiences:preferIncoming?{...a.experiences,...b.experiences}:{...b.experiences,...a.experiences},last:a.last||b.last});
  }
  function glossaryMatch(names,text){return names.find(n=>normalize(n.text)===normalize(text)&&(!/^[A-Z]{2}$/.test(n.text)||n.text===text));}
- const api={seo,questionPath,questionId,glossaryMatch,publicPaths,domainIds,pathIds,isAtlasPath,guideIds,cleanExperience,canonicalHref,locationRoute,normalize,escape,filterQuestions,cleanState,parseRoute,parseNotebookJSON,mergeNotebook};
+ const api={seo,questionPath,questionArt,questionId,glossaryMatch,publicPaths,domainIds,pathIds,isAtlasPath,guideIds,cleanExperience,canonicalHref,locationRoute,normalize,escape,filterQuestions,cleanState,parseRoute,parseNotebookJSON,mergeNotebook};
  if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.AtlasCore=api;
 })(globalThis);
