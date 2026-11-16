@@ -17,6 +17,17 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 
 ## Travail réalisé
 
+### 2026-11-16 — Claude Code : glossaire, parcours et carte des liens en style pixel, branche claude/pixel-pages
+
+Demande de Teo : continuer le style pixel et l’apprentissage simple sur le glossaire, les parcours et la carte.
+
+- Glossaire : fiches papier (#f3f2ed, ombre bleue, lime au survol) ; « Mode révision » qui cache les définitions, à révéler une par une ; miniatures cliquables des questions où le mot sert. Version statique : mêmes fiches sans le mode révision.
+- Parcours : cartes avec une frise de 6 cases (illustrations des étapes, labo ou question) ; page d’un parcours en chemin pixel : barre de progression en blocs (étapes lues ou labos ouverts), étapes numérotées sur une ligne pointillée, illustration, et « À retenir » (idée de la carte essentielle) pour chaque question.
+- Carte des liens : nœuds carrés, traits nets, illustration de la question choisie au centre ; panneau avec l’illustration, l’idée à retenir et les questions voisines illustrées. Version statique : paires de questions illustrées.
+- Données : chaque question porte maintenant `idea` (idée de content/essentiels.json) dans atlas/data.js, pour les parcours et la carte.
+
+Validation : build, 81 tests, typecheck, build:public et check:public réussis. Vérifié en local à 1 440 px et 375 px : mode révision, frises de parcours, chemin pixel, carte et panneau, aucun débordement.
+
 ### 2026-11-16 — Claude Code : style pixel sur tout le site et cartes 80/20, branche claude/pixel-learning
 
 Demande de Teo : continuer le style des affiches pixel sur le site (« les icônes, tout ») et donner dans les pages le 80/20 des informations, pour apprendre de façon très simple.

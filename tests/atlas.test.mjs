@@ -103,3 +103,20 @@ test('every question has its pixel illustration and a 30-second essential card c
  const dash=structuredClone(E[1]);dash.idea='Une idée — avec un tiret';
  assert.throws(()=>checkEssential(dash,1,[]),/typography/);
 });
+
+test('glossary, guided paths and the links page use the pixel illustrations and the 30-second ideas',()=>{
+ const V=require('../atlas/public-views.js').create(D,{read:[15],labs:['neutrino'],saved:[],notes:{}});
+ const glossary=V.page(['glossaire']);
+ assert.equal((glossary.match(/class="definition-card"/g)||[]).length,D.glossary.length);
+ for(const t of D.glossary)for(const id of t.questions)assert.ok(glossary.includes(`src="${C.questionArt(id,true)}"`),t.id+' '+id);
+ for(const p of D.paths){
+  const html=V.page(['parcours',p.id]);
+  assert.equal((html.match(/class="trail-step/g)||[]).length,p.steps.length,p.id);
+  for(const s of p.steps)assert.ok(html.includes(s.type==='lab'?`/atlas/lab-art/${s.id}.png`:C.questionArt(s.id,true)),p.id+' '+s.id);
+  for(const s of p.steps.filter(s=>s.type==='question'))assert.ok(html.includes(C.escape(D.questions.find(q=>q.id===s.id).idea)),p.id+' idea '+s.id);
+ }
+ const matiere=V.page(['parcours','matiere']);
+ assert.match(matiere,/aria-label="2 étapes sur 6 faites"/);
+ assert.equal((V.page(['liens']).match(/class="connection-pair"/g)||[]).length,D.connections.length);
+ assert.ok(D.questions.every(q=>q.idea&&q.idea.length<=160));
+});
