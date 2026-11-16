@@ -8,6 +8,7 @@ function loadAtlasData(){
  for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.js')))vm.runInNewContext(fs.readFileSync(path.join(dir,file),'utf8'),context);
  const data=JSON.parse(JSON.stringify(context.window.ATLAS_DATA)),store=JSON.parse(JSON.stringify(context.window.ATLAS_DOSSIERS||{}));
  for(const q of data.questions)Object.assign(q,store[q.id]||{});
+ if(store.registre)data.sources=store.registre;
  return data;
 }
 module.exports={loadAtlasData};

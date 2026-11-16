@@ -1,17 +1,33 @@
 # État de reprise
 
-Mis à jour : 2026-10-08
+Mis à jour : 2026-11-16
 Outils : Codex et Claude Code, chacun dans son propre worktree. Ne jamais travailler à deux dans le même arbre.
 Branche principale : main, déployée automatiquement sur https://the42laws.fr par Vercel. Aucun lot en attente.
 
-## État courant (2026-10-08)
+## État courant (2026-11-16)
 
-- Production : blocs 1 et 2 vérifiés en ligne le 2026-10-07 ; bloc 3 (sources primaires) poussé en 2b906fc et vérifié en ligne le 2026-10-08. 46 URL au sitemap ; 15 synthèses, 27 fiches à explorer, 7 laboratoires.
-- Registre des sources : prochain identifiant libre S405. Réutiliser l’identifiant existant pour une référence identique (S327 = Chou 2010 ; S101 = S349 = Planck 2018 VI, S101 privilégié).
-- Prochaine action : fiches vides les plus citées (11, 12, 18, 24), puis 37, 39 et 05.
+- Les 42 fiches sont au statut « Synthèse provisoire » : bloc 4 (27 fiches) poussé sur main le 2026-11-16, validation de production consignée ci-dessous. 7 laboratoires, 5 parcours, 73 URL attendues au sitemap.
+- Registre des sources : prochain identifiant libre S663. Réutiliser l’identifiant existant pour une référence identique (S327 = Chou 2010 ; S101 = S349 = Planck 2018 VI, S101 privilégié).
+- Le registre est servi par atlas/dossiers/registre.js (généré, chargé à la demande par la page Sources) ; atlas/data.js n’en contient plus.
+- Aucune relecture scientifique humaine n’a eu lieu sur aucune fiche. C’est la prochaine étape utile, avant toute nouvelle extension.
+- Prochaines actions possibles : relecture humaine par domaine ; ajout des nouvelles fiches aux parcours guidés (content/atlas.json) ; lecture dans un navigateur des pourcentages PhilPapers 2020 cités dans les fiches 37 à 40 et 42 (lus sur des copies Internet Archive, le site refusant la lecture automatisée) et du tableau non lu pour la fiche 14.
 - Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
 
 ## Travail réalisé
+
+### 2026-11-16 — Claude Code : bloc 4 (les 27 fiches restantes), branche claude/bloc-4
+
+Demande de Teo : « remplis les fiches vides et push sur le main ». Base 424faad, worktree séparé.
+
+- Rédaction : fiches 02 à 09, 11 à 14, 16 à 18, 20 à 22, 24, 27, 28, 31, 37 à 40 et 42, au format des fiches 19, 25, 26 et 30 (En deux minutes, Prérequis, Dossier approfondi, Expérience ou exemple, Objections et limites, Questions encore ouvertes, Sources vérifiées). Environ 37 800 mots, 258 références nouvelles (S405-S662) et 48 réutilisées. Chaque fiche a son essentiel (content/N-essentiel.md), ses repères (learning.json), sa description SEO et une réponse courte avec limites (answers.json). Slugs et titres SEO inchangés.
+- Méthode : huit sous-agents en parallèle, un par lot thématique, avec un cahier des charges commun (scratchpad de la session, non versionné). Chaque référence est passée par un outil interrogeant INSPIRE-HEP, Crossref, arXiv, OpenAlex ou PubMed, ou par la lecture directe d’une page (SEP, Wikisource, NASA, CERN, BIPM) ; le niveau de lecture est indiqué ligne par ligne (bib., résumé, texte et passages lus). Les contenus connus seulement par une référence bibliographique sont « rapportés d’après » une source lue.
+- Contrôle par le coordinateur : relecture intégrale des 27 fiches ; script vérifiant structure, correspondance citations/tableau, liens internes, absence de LaTeX, puis revérification de chaque DOI, identifiant arXiv et URL nouveaux (0 erreur réelle ; deux faux positifs sur le titre long de Wigner 1960 et sur S009, identifiant ancien en liste). Calculs originaux refaits à la main ou par script (fiches 04, 05, 08, 11 à 14, 16 à 18, 20 à 22, 24, 27, 28, 31, 40). Doublons entre lots fusionnés sous un identifiant unique (12 références, dont SEP « Fine-Tuning », Tegmark 2008, PhilPapers 2020, Hume) et numérotation rendue continue.
+- Réserves connues : aucune relecture humaine ; beaucoup d’articles lus par leur seul résumé ; pourcentages PhilPapers 2020 lus par deux lots sur des copies Internet Archive (le site refuse la lecture automatisée), non lus pour la fiche 14 ; fiche 07, la glose des termes de la décomposition de la masse du proton (Yang et al. 2018) est à faire relire par un physicien ; les états de l’art sont datés et ne valent pas inventaire de fin 2026.
+- Site : textes qui supposaient des fiches vides reformulés (accueil, atlas, domaines) ; l’option de filtre « À explorer » n’apparaît que s’il reste une fiche vide ; renvois des fiches 01, 29 et 36 mis à jour ; learning.revised aligné sur la date réelle de chaque fiche (12 dates en retard depuis le bloc 3).
+- Performance : avec 42 synthèses et un registre de 660 lignes, data.js serait passé de 165 à 397 Ko. Le registre est sorti dans atlas/dossiers/registre.js (184 Ko, préchargé par la page Sources, chargé à la demande ailleurs) et les doublons learning/answers au niveau racine sont retirés du fichier client : data.js pèse 142 Ko (39 Ko compressé). check:public vérifie l’empreinte et le préchargement du registre.
+- Tests : 73 réussis ; attentes mises à jour pour 42 synthèses, cas « fiche vide » conservés avec des données modifiées en mémoire (noindex, libellé À EXPLORER, filtre brouillon).
+
+Validation locale : sync:seo, build, 73 tests, typecheck, build:public (73 routes statiques) et check:public (278 fichiers) réussis. Navigateur sur le build public servi localement : fiche 39 en 375 px (réponse, tableaux, 14 sources, aucun débordement), fiche 27 en vue essentiel, page Sources en accès direct (préchargement) et par navigation interne (chargement à la demande), filtre de l’atlas sans option « À explorer », aucune erreur console.
 
 ### 2026-10-08 — Claude Code : crédit dans le pied de page
 

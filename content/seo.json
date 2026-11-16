@@ -8,42 +8,42 @@
     "2": {
       "slug": "neant-absolu",
       "title": "Le néant absolu est-il possible ?",
-      "description": "Question à explorer : définir le néant absolu et examiner sa possibilité. Cette fiche accueille vos pistes ; aucune synthèse n’est encore publiée."
+      "description": "Le néant absolu est-il cohérent ? Vide physique et néant, Parménide, argument de la soustraction, logique et domaine vide : une synthèse sourcée, sans verdict."
     },
     "3": {
       "slug": "existence-necessaire-contingente",
       "title": "Existence nécessaire ou contingente ?",
-      "description": "Question à explorer : distinguer ce qui pourrait ne pas exister de ce qui serait nécessaire. Une fiche ouverte, sans réponse de recherche publiée."
+      "description": "Être nécessaire, existence contingente, nécessitarisme : l’argument de Leibniz et Clarke, les objections de Hume et de Kant, la position de Spinoza. Synthèse sourcée."
     },
     "4": {
       "slug": "pourquoi-cette-realite",
       "title": "Pourquoi cette réalité plutôt qu’une autre ?",
-      "description": "Question à explorer : possibilités, alternatives et explication de notre réalité. Retrouvez les questions liées ; la synthèse reste à construire."
+      "description": "Pourquoi cette réalité plutôt qu’une autre ? Meilleur des mondes de Leibniz, réalisme modal, sélecteurs de Parfit, univers mathématique et effets de sélection, avec leurs limites."
     },
     "5": {
       "slug": "explication-faits-fondamentaux",
       "title": "Toute chose doit-elle avoir une explication ?",
-      "description": "Question à explorer : principe de raison suffisante, explication et faits fondamentaux. Cette fiche de recherche ne propose pas encore de synthèse."
+      "description": "Principe de raison suffisante ou faits bruts ? Leibniz, Hume, Kant, l’objection de van Inwagen, ce que change la physique quantique, positions de Carroll et de Parfit."
     },
     "6": {
       "slug": "realite-fondamentale",
       "title": "De quoi la réalité est-elle faite ?",
-      "description": "Question à explorer : identifier les structures les plus fondamentales du réel. Suivez les liens vers matière et particules ; synthèse à construire."
+      "description": "Particules, champs, état quantique, structures ou information : ce que la physique permet de dire du niveau fondamental, et ce qu’aucune expérience ne tranche encore."
     },
     "7": {
       "slug": "matiere-fondamentale-emergente",
       "title": "La matière est-elle fondamentale ou émergente ?",
-      "description": "Question à explorer : matière, niveaux de description et émergence. Consultez les dossiers liés ; aucune synthèse de cette question n’est publiée."
+      "description": "La masse vient surtout de l’interaction forte et des particules peuvent n’exister que dans un milieu : en quel sens la matière est dérivée, et ce qui reste une hypothèse."
     },
     "8": {
       "slug": "information-matiere",
       "title": "L’information est-elle plus fondamentale que la matière ?",
-      "description": "Question à explorer : sens physique de l’information et rapport à la matière. Des pistes reliées au glossaire, sans synthèse de recherche publiée."
+      "description": "Shannon, principe de Landauer vérifié en laboratoire, borne de Bekenstein, « it from bit » : ce qui est établi sur l’information physique, et ce qui reste une hypothèse."
     },
     "9": {
       "slug": "espace-fondamental-emergent",
       "title": "L’espace est-il fondamental ou émergent ?",
-      "description": "Question à explorer : statut de l’espace et lien avec la gravitation quantique. Cette fiche ouvre la recherche ; la synthèse reste à rédiger."
+      "description": "De Leibniz à l’holographie : pourquoi plusieurs approches de la gravitation quantique tiennent l’espace-temps pour émergent, et ce que les tests permettent de dire."
     },
     "10": {
       "slug": "temps-entropie-fleche-du-temps",
@@ -53,22 +53,22 @@
     "11": {
       "slug": "lois-de-la-nature",
       "title": "Pourquoi existe-t-il des lois de la nature ?",
-      "description": "Question à explorer : ce que désigne une loi de la nature et ce qu’elle explique. Une fiche ouverte aux notes et aux liens, sans synthèse publiée."
+      "description": "Pourquoi le monde obéit-il à des lois ? Lectures humienne et nécessitariste, symétries et théorème de Noether, lois émergentes : ce qui est établi et ce qui reste sans réponse."
     },
     "12": {
       "slug": "pourquoi-ces-lois-physiques",
       "title": "Pourquoi ces lois physiques plutôt que d’autres ?",
-      "description": "Question à explorer : formes des lois, alternatives et demande d’explication. Suivez les connexions de l’atlas ; aucune synthèse n’est publiée."
+      "description": "Pourquoi ces lois physiques et pas d’autres ? Unicité, contraintes de cohérence, paysage des cordes et sélection anthropique, universalité : trois réponses, aucune établie."
     },
     "13": {
       "slug": "mathematiques-et-realite",
       "title": "Pourquoi les mathématiques décrivent-elles le réel ?",
-      "description": "Question à explorer : portée des modèles mathématiques et rapport à la réalité. Les dossiers liés ouvrent des pistes ; cette synthèse reste à rédiger."
+      "description": "Efficacité des mathématiques en physique : le constat de Wigner (1960), une précision mesurée à 1 partie sur 10¹², les limites hors de la physique et les explications en débat."
     },
     "14": {
       "slug": "mathematiques-decouvertes-inventees",
       "title": "Les mathématiques sont-elles découvertes ou inventées ?",
-      "description": "Question à explorer : découverte, invention et statut des objets mathématiques. Consultez les pistes liées ; aucune synthèse n’est encore publiée."
+      "description": "Mathématiques découvertes ou inventées ? Platonisme et positions rivales, défis de Benacerraf, indépendance de l’hypothèse du continu, sens du nombre : une question non tranchée."
     },
     "15": {
       "slug": "particules-elementaires-modele-standard",
@@ -78,17 +78,17 @@
     "16": {
       "slug": "quatre-interactions-fondamentales",
       "title": "Pourquoi quatre interactions fondamentales ?",
-      "description": "Question à explorer : gravitation, électromagnétisme et interactions faible et forte. Des laboratoires liés sont accessibles ; synthèse à construire."
+      "description": "Quatre interactions connues, mais pourquoi quatre ? Unification électrofaible, principe de jauge, grande unification non confirmée et recherches d’une cinquième force."
     },
     "17": {
       "slug": "constantes-fondamentales",
       "title": "Pourquoi ces valeurs des constantes fondamentales ?",
-      "description": "Question à explorer : paramètres mesurés, constantes et demande d’explication. Retrouvez les expériences liées ; aucune synthèse n’est publiée."
+      "description": "Pourquoi α ≈ 1/137 ? Constantes dimensionnées et nombres sans dimension, 31 paramètres mesurés, recherches de variation et explications candidates, sans réponse établie."
     },
     "18": {
       "slug": "mecanique-quantique",
       "title": "Pourquoi la mécanique quantique fonctionne-t-elle ainsi ?",
-      "description": "Question à explorer : formalisme quantique, prédictions et interprétations. Des expériences et dossiers liés ouvrent des pistes ; synthèse à rédiger."
+      "description": "Pourquoi ce formalisme quantique ? Théorème de Gleason, reconstructions axiomatiques, borne de Tsirelson et tests des alternatives ; les axiomes restent inexpliqués."
     },
     "19": {
       "slug": "superposition-quantique-mesure",
@@ -98,17 +98,17 @@
     "20": {
       "slug": "determinisme-probabilites",
       "title": "La nature est-elle déterministe ou probabiliste ?",
-      "description": "Question à explorer : distinguer prédiction, hasard et interprétation des lois physiques. Cette fiche relie les dossiers ; la synthèse reste à rédiger."
+      "description": "Déterminisme de Laplace, chaos, dôme de Norton, règle de Born et théorème de Bell : pourquoi la question reste ouverte et dépend de l’interprétation de la mécanique quantique."
     },
     "21": {
       "slug": "gravitation-quantique",
       "title": "Gravitation quantique : comment unifier les théories ?",
-      "description": "Question à explorer : unifier mécanique quantique et relativité générale. Suivez les questions sur l’espace-temps ; aucune synthèse n’est publiée."
+      "description": "Pourquoi relativité générale et mécanique quantique s’accordent mal, ce que les mesures bornent déjà, et où en est en 2026 le test d’intrication par la gravité, non réalisé."
     },
     "22": {
       "slug": "espace-temps-quantifie",
       "title": "L’espace-temps est-il quantifié ?",
-      "description": "Question à explorer : espace-temps, continuité et descriptions quantiques possibles. Une fiche de recherche ouverte, sans synthèse publiée."
+      "description": "Longueur de Planck, sens du mot « quantifié », invariance de Lorentz et sursauts gamma : aucun grain d’espace-temps n’est observé à ce jour, et rien n’est exclu en bloc."
     },
     "23": {
       "slug": "theorie-du-tout",
@@ -118,7 +118,7 @@
     "24": {
       "slug": "commencement-univers",
       "title": "L’Univers a-t-il eu un commencement ?",
-      "description": "Question à explorer : commencement, histoire cosmique et limites des extrapolations. Retrouvez les dossiers sur le Big Bang ; synthèse à construire."
+      "description": "Une phase chaude et dense il y a environ 13,8 milliards d’années est établie ; un commencement absolu ne l’est pas. Théorèmes, modèles cycliques et limites."
     },
     "25": {
       "slug": "univers-primordial-conditions-initiales",
@@ -133,12 +133,12 @@
     "27": {
       "slug": "univers-fini-infini",
       "title": "L’Univers est-il fini ou infini ?",
-      "description": "Question à explorer : Univers observable, étendue totale et géométrie cosmique. Des questions liées pour poursuivre ; aucune synthèse n’est publiée."
+      "description": "L’univers observable est fini ; l’Univers entier, on l’ignore. Courbure mesurée compatible avec zéro, topologie, cercles appariés et limite de l’horizon."
     },
     "28": {
       "slug": "multivers",
       "title": "Existe-t-il d’autres univers ?",
-      "description": "Question à explorer : sens des hypothèses de multivers et possibilités de les tester. Cette fiche accueille des pistes ; la synthèse reste à construire."
+      "description": "Aucun autre univers n’est observé. Quatre sens de « multivers », l’origine de chacun, les tests tentés depuis 2011 et le problème de la mesure."
     },
     "29": {
       "slug": "matiere-noire-energie-noire",
@@ -153,7 +153,7 @@
     "31": {
       "slug": "univers-complexite-vie",
       "title": "Pourquoi l’Univers permet-il complexité et vie ?",
-      "description": "Question à explorer : conditions cosmiques, structures complexes et apparition de la vie. Suivez les dossiers liés ; la synthèse reste à rédiger."
+      "description": "Gravité, étoiles et basse entropie expliquent comment la complexité apparaît ; l’ajustement fin des constantes, ses critiques et quatre lectures restent en débat."
     },
     "32": {
       "slug": "definition-vie",
@@ -183,22 +183,22 @@
     "37": {
       "slug": "conscience-processus-physiques",
       "title": "Pourquoi une expérience subjective accompagne-t-elle le physique ?",
-      "description": "Question à explorer : processus physiques et expérience subjective. Suivez les liens vers conscience et identité ; aucune synthèse n’est publiée."
+      "description": "Le problème difficile de la conscience : arguments de Nagel, Levine et Jackson, réponses physicalistes, dualistes et panpsychistes, test de 2025. Aucune ne s’impose."
     },
     "38": {
       "slug": "moi-identite-personnelle",
       "title": "Le moi et l’identité personnelle : qu’est-ce qui persiste ?",
-      "description": "Question à explorer : identité personnelle, continuité et expérience du moi. Cette fiche accueille vos pistes ; aucune synthèse n’est publiée."
+      "description": "Identité personnelle : critères psychologique et biologique, Locke, Hume, Parfit, cerveaux divisés et illusions corporelles. Plusieurs réponses restent défendables."
     },
     "39": {
       "slug": "conscience-intelligence-artificielle",
       "title": "Une intelligence artificielle peut-elle être consciente ?",
-      "description": "Question à explorer : conscience des machines et portée des performances de l’IA. Distinguer compétence et expérience ; synthèse à construire."
+      "description": "Une IA peut-elle être consciente ? Test de Turing, chambre chinoise, méthode des indicateurs, objections liées au support physique. Aucune méthode validée ne tranche."
     },
     "40": {
       "slug": "libre-arbitre",
       "title": "Avons-nous un libre arbitre ?",
-      "description": "Question à explorer : liberté, choix et déterminisme. Les connexions de l’atlas ouvrent des pistes ; aucune synthèse de ce dossier n’est publiée."
+      "description": "Le libre arbitre existe-t-il ? Trois définitions, l’argument de la conséquence, le compatibilisme et ce que mesurent vraiment les expériences de Libet, avec leurs limites."
     },
     "41": {
       "slug": "limites-connaissance-godel-turing",
@@ -208,7 +208,7 @@
     "42": {
       "slug": "sens-valeur-existence",
       "title": "La vie et l’existence ont-elles un sens objectif ?",
-      "description": "Question à explorer : sens de l’existence, valeur et objectivité. Une fiche pour noter vos arguments et suivre les liens ; synthèse à construire."
+      "description": "La vie a-t-elle un sens objectif ? Sens de la vie et sens dans une vie, loi de Hume, réalisme moral et ses critiques, théories du sens : des positions exposées sans trancher."
     }
   },
   "routes": {

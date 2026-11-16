@@ -42,7 +42,7 @@ test('editorial responses keep uncertainty, cited references and metadata togeth
  assert.equal(Reader.answer({...D.questions[28],researched:false}),'');
  const q={researched:true,answer:{response:'<script>bad</script>',limit:'&',sources:[{label:'<b>',url:'https://example.test/?a=1&b=2'}]}};
  assert.ok(!Reader.answer(q).includes('<script>'));assert.ok(Reader.answer(q).includes('&amp;'));
- assert.equal(M.pageMetadata(D,['question','28']).robots,'noindex,follow');assert.equal(M.pageMetadata(D,['question','29']).robots,'index,follow');
+ const draft={...D,questions:D.questions.map(x=>x.id===28?{...x,researched:false,status:'À explorer'}:x)};assert.equal(M.pageMetadata(draft,['question','28']).robots,'noindex,follow');assert.equal(M.pageMetadata(D,['question','29']).robots,'index,follow');
 });
 test('contextual reading links show editorial reasons, publication states and unique destinations',()=>{
  for(const q of D.questions){
@@ -50,7 +50,8 @@ test('contextual reading links show editorial reasons, publication states and un
   assert.equal(destinations.length,new Set(destinations).size);assert.ok(destinations.length<=4);
   for(const id of destinations){const edge=D.connections.find(e=>(e.from===q.id&&e.to===id)||(e.to===q.id&&e.from===id));assert.ok(edge);assert.ok(html.includes(C.escape(edge.label)));assert.notEqual(id,q.id);}
  }
- const html=Reader.related(D.questions[28],D);assert.ok(html.includes(C.questionPath(25)));assert.ok(html.includes('À EXPLORER'));assert.ok(html.includes('SYNTHÈSE DISPONIBLE'));
+ const html=Reader.related(D.questions[28],D);assert.ok(html.includes(C.questionPath(25)));assert.ok(!html.includes('À EXPLORER'));assert.ok(html.includes('SYNTHÈSE DISPONIBLE'));
+ const mixed={...D,questions:D.questions.map(x=>x.id===21?{...x,researched:false}:x)};assert.ok(Reader.related(mixed.questions[28],mixed).includes('À EXPLORER'));
 });
 test('short uppercase glossary abbreviations do not hijack scientific mixed-case names',()=>{
  const names=[{text:'IA',id:'intelligence-artificielle'},{text:'Énergie noire',id:'energie-noire'},{text:'ARN',id:'arn'}];

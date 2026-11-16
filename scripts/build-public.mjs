@@ -72,7 +72,7 @@ export async function buildPublic(siteURL=process.env.SITE_URL||''){
  const documents=data.questions.map(q=>({path:questionPath(q.id).slice(1),meta:pageMetadata(data,['question',String(q.id)]),body:fullDocument(q,data),researched:q.researched,dossier:q.researched?q.id:null}));
  const views=publicViews(data);
  const publicPages=[['accueil'],['atlas'],['laboratoires'],['parcours'],['glossaire'],['methode'],['sources'],['particules'],['liens'],['apropos'],...data.paths.map(p=>['parcours',p.id]),...data.domains.map(d=>['domaine',d.id])];
- for(const parts of publicPages){const meta=pageMetadata(data,parts);documents.push({path:meta.path.slice(1),meta,body:views.page(parts),researched:true});}
+ for(const parts of publicPages){const meta=pageMetadata(data,parts);documents.push({path:meta.path.slice(1),meta,body:views.page(parts),researched:true,dossier:parts[0]==='sources'?'registre':null});}
  for(const kind of ['confidentialite','mentions-legales'])documents.push({path:kind+'/',meta:pageMetadata(data,[kind]),body:legalPage(kind,data.legal,esc),researched:kind==='confidentialite'||data.legal?.complete});
  for(const doc of documents){
   const target=resolve(out,doc.path,'index.html');await mkdir(dirname(target),{recursive:true});

@@ -50,5 +50,446 @@
         "url": "https://plato.stanford.edu/entries/goedel-incompleteness/"
       }
     ]
+  },
+  "2": {
+    "response": "Personne ne sait démontrer que le néant absolu est possible, ni qu’il est impossible. Le vide des physiciens n’est pas ce néant : c’est un état défini par une théorie, aux effets mesurables.",
+    "limit": "L’argument de la soustraction et ses critiques dépendent de la conception que l’on se fait des mondes possibles. Aucune observation ne peut porter sur l’absence de toute chose.",
+    "description": "Néant absolu, vide physique et monde vide : ce que disent Parménide, l’argument de la soustraction et la logique, et ce qui reste indécidé.",
+    "sources": [
+      {
+        "label": "Sorensen · le néant (encyclopédie de Stanford)",
+        "url": "https://plato.stanford.edu/entries/nothingness/"
+      },
+      {
+        "label": "Parménide · fragments du poème",
+        "url": "https://fr.wikisource.org/wiki/Fragments_%28Parm%C3%A9nide%29"
+      }
+    ]
+  },
+  "3": {
+    "response": "Aucune réponse n’est démontrée. L’argument par la contingence conclut à un être nécessaire, Hume et Kant en contestent les prémisses, et Spinoza soutient que rien n’est contingent.",
+    "limit": "« Chaque chose aurait pu ne pas exister » n’entraîne ni « il aurait pu ne rien y avoir », ni « il existe un être nécessaire ». Savoir ce qui est métaphysiquement possible reste une question ouverte.",
+    "description": "Existence nécessaire ou contingente : Leibniz, Clarke, Hume, Kant et Spinoza lus dans le texte, avec ce que chaque argument suppose.",
+    "sources": [
+      {
+        "label": "Reichenbach · argument cosmologique (encyclopédie de Stanford)",
+        "url": "https://plato.stanford.edu/entries/cosmological-argument/"
+      },
+      {
+        "label": "Hume · Dialogues, partie IX",
+        "url": "https://fr.wikisource.org/wiki/Dialogues_sur_la_religion_naturelle/IX"
+      }
+    ]
+  },
+  "4": {
+    "response": "Nous ne le savons pas. Les réponses proposées invoquent une nécessité, une sélection par une propriété remarquable, l’existence de toutes les possibilités ou un fait brut ; aucune n’est établie ni testée.",
+    "limit": "Un effet de sélection explique au mieux pourquoi nous observons un monde habitable, pas pourquoi il existe. L’inférence vers de nombreux univers est contestée et difficile à tester.",
+    "description": "Pourquoi cette réalité ? Quatre familles de réponses, de Leibniz à Parfit, et la portée exacte des effets de sélection.",
+    "sources": [
+      {
+        "label": "Parfit · Why anything? Why this?",
+        "url": "https://www.lrb.co.uk/the-paper/v20/n02/derek-parfit/why-anything-why-this"
+      },
+      {
+        "label": "Friederich · ajustement fin (encyclopédie de Stanford)",
+        "url": "https://plato.stanford.edu/entries/fine-tuning/"
+      }
+    ]
+  },
+  "5": {
+    "response": "Nous ne le savons pas : le principe de raison suffisante n’est ni démontré ni réfuté. Chercher des explications est une règle de méthode féconde, qui n’établit pas que toute chose en possède une.",
+    "limit": "Selon van Inwagen, un principe sans restriction rendrait tout nécessaire ; ses défenseurs l’affaiblissent ou acceptent cette conséquence. La physique quantique ne tranche pas, car son caractère indéterministe dépend de l’interprétation.",
+    "description": "Raison suffisante ou faits bruts : versions du principe, objection de l’effondrement modal, portée de l’indéterminisme quantique.",
+    "sources": [
+      {
+        "label": "Melamed et Lin · principe de raison suffisante (encyclopédie de Stanford)",
+        "url": "https://plato.stanford.edu/entries/sufficient-reason/"
+      },
+      {
+        "label": "Carroll · pourquoi quelque chose plutôt que rien",
+        "url": "https://arxiv.org/abs/1802.02231"
+      }
+    ]
+  },
+  "6": {
+    "response": "Personne ne sait de quoi la réalité est faite au niveau le plus profond : particules, champs, état quantique, structures et information restent des candidats. Des théorèmes excluent certaines versions de ces candidats, par exemple des particules strictement localisées ou un état quantique purement informationnel sous certaines hypothèses.",
+    "limit": "Tant que deux lectures font les mêmes prédictions, aucune mesure ne les départage. Rien ne garantit non plus que le niveau décrit par nos théories actuelles soit le dernier.",
+    "description": "Particules, champs, fonction d’onde, structures, information : cinq candidats au niveau fondamental, et ce que théorèmes et expériences excluent.",
+    "sources": [
+      {
+        "label": "Pusey, Barrett, Rudolph · réalité de l’état quantique",
+        "url": "https://doi.org/10.1038/nphys2309"
+      },
+      {
+        "label": "Kuhlmann · théorie quantique des champs (SEP)",
+        "url": "https://plato.stanford.edu/entries/quantum-field-theory/"
+      }
+    ]
+  },
+  "7": {
+    "response": "La matière ordinaire n’est pas une substance première : l’essentiel de sa masse vient de la dynamique des quarks et des gluons, et les masses élémentaires d’une interaction avec le champ de Higgs. Des « particules » bien définies peuvent même n’exister que dans un milieu, comme les quasi-particules des solides.",
+    "limit": "On ne sait pas si les champs quantiques du Modèle standard sont eux-mêmes fondamentaux ou émergent d’un niveau plus profond. L’hypothèse de particules élémentaires collectives n’a pas de confirmation expérimentale connue de cette fiche.",
+    "description": "Origine de la masse, quasi-particules, effet Unruh : en quel sens la matière est dérivée, et ce qui reste une hypothèse sur les particules élémentaires.",
+    "sources": [
+      {
+        "label": "Dürr et al. · masse des hadrons sur réseau",
+        "url": "https://doi.org/10.1126/science.1163233"
+      },
+      {
+        "label": "Yang et al. · décomposition de la masse du proton",
+        "url": "https://doi.org/10.1103/PhysRevLett.121.212001"
+      }
+    ]
+  },
+  "8": {
+    "response": "On ne le sait pas. Il est établi que l’information, au sens de Shannon, obéit à des lois physiques : effacer un bit a un coût thermodynamique mesuré, et des arguments théoriques bornent l’information d’une région par l’aire de sa surface.",
+    "limit": "L’idée inverse, selon laquelle la physique dériverait de l’information, reste une hypothèse sans vérification empirique. Dans tous les cas étudiés, une information est portée par un système physique et définie relativement à un contexte.",
+    "description": "Shannon, Landauer, Bekenstein, Wheeler : l’information est physique, c’est établi ; que tout soit information reste une hypothèse non testée.",
+    "sources": [
+      {
+        "label": "Adriaans · information (SEP)",
+        "url": "https://plato.stanford.edu/entries/information/"
+      },
+      {
+        "label": "Maroney · information et entropie thermodynamique (SEP)",
+        "url": "https://plato.stanford.edu/entries/information-entropy/"
+      }
+    ]
+  },
+  "9": {
+    "response": "La question reste ouverte. Plusieurs approches de la gravitation quantique traitent l’espace-temps comme dérivé d’une structure plus profonde, et l’holographie relie précisément géométrie et intrication quantique, mais dans des univers théoriques différents du nôtre.",
+    "limit": "Aucune expérience n’atteint l’échelle où ces idées se départageraient directement. La seule proposition testée à l’échelle des galaxies, la gravité émergente de Verlinde, a donné des résultats partagés en 2017 et 2021.",
+    "description": "Leibniz, relativité générale, holographie, gravité émergente : pourquoi l’espace pourrait être dérivé, et pourquoi rien ne le confirme encore.",
+    "sources": [
+      {
+        "label": "Leibniz et Clarke · correspondance (1715-1716)",
+        "url": "https://fr.wikisource.org/wiki/Recueil_des_lettres_entre_Lebniz_et_Clarke_%28F%C3%A9lix_Alcan%29"
+      },
+      {
+        "label": "Ryu, Takayanagi · entropie d’intrication holographique",
+        "url": "https://doi.org/10.1103/PhysRevLett.96.181602"
+      }
+    ]
+  },
+  "11": {
+    "response": "Personne ne sait pourquoi le monde présente des régularités stables. La physique explique certaines lois par des symétries ou par des lois plus générales, mais elle part de l’existence de régularités.",
+    "limit": "Les philosophes ne s’accordent pas sur ce qu’est une loi : un résumé des faits ou ce qui les impose. Aucune source consultée n’explique pourquoi il y a des symétries ou des régularités.",
+    "description": "Lois de la nature : résumé des faits ou nécessité ? Ce que le théorème de Noether et les lois émergentes expliquent, et ce qui reste ouvert.",
+    "sources": [
+      {
+        "label": "Carroll · lois de la nature (SEP)",
+        "url": "https://plato.stanford.edu/entries/laws-of-nature/"
+      },
+      {
+        "label": "Noether · symétries et conservation",
+        "url": "https://doi.org/10.1080/00411457108231446"
+      }
+    ]
+  },
+  "12": {
+    "response": "On ne sait pas pourquoi les lois sont celles-ci. Trois réponses sont défendues : elles ne pouvaient pas être autres, elles sont sélectionnées parmi beaucoup de possibilités par notre existence, ou bien des lois profondes très différentes donneraient les mêmes lois à notre échelle.",
+    "limit": "L’espoir d’une théorie unique a reculé et les explications par un multivers sont très difficiles à tester. Il reste possible que les lois ultimes n’aient pas d’explication.",
+    "description": "Unicité, sélection anthropique ou universalité : trois réponses à « pourquoi ces lois ? », ce qui les soutient et pourquoi aucune n’est établie.",
+    "sources": [
+      {
+        "label": "Friederich · ajustement fin et multivers (SEP)",
+        "url": "https://plato.stanford.edu/entries/fine-tuning/"
+      },
+      {
+        "label": "Geng et Marshak · anomalies et unicité",
+        "url": "https://doi.org/10.1103/PhysRevD.39.693"
+      }
+    ]
+  },
+  "13": {
+    "response": "Personne n’a d’explication admise par tous. L’efficacité des mathématiques est réelle et mesurable en physique, mais inégale selon les domaines, et les explications proposées (choix des problèmes, outils construits pour le monde, monde lui-même mathématique) restent en concurrence.",
+    "limit": "On ignore si l’efficacité tient à la nature du monde, à notre manière de sélectionner ce que nous étudions, ou aux deux. Les domaines où les mathématiques réussissent moins bien, comme l’économie, limitent la portée du constat.",
+    "description": "Pourquoi les mathématiques décrivent si bien la nature : le constat de Wigner, ses limites et les explications qui restent en débat.",
+    "sources": [
+      {
+        "label": "Wigner · efficacité déraisonnable",
+        "url": "https://doi.org/10.1002/cpa.3160130102"
+      },
+      {
+        "label": "Hamming · quatre explications partielles",
+        "url": "https://doi.org/10.2307/2321982"
+      }
+    ]
+  },
+  "14": {
+    "response": "La question n’est pas tranchée et l’alternative est trop simple. Les concepts et les axiomes sont en partie choisis, mais leurs conséquences s’imposent ensuite à nous ; l’existence d’objets mathématiques indépendants reste disputée entre philosophes.",
+    "limit": "L’indépendance de l’hypothèse du continu montre que certains énoncés échappent aux axiomes usuels, sans qu’on s’accorde sur ce que cela signifie. Les données de psychologie éclairent l’origine de nos concepts, pas le statut de ce qu’ils désignent.",
+    "description": "Découverte ou invention : ce que choisissent les mathématiciens, ce qui s’impose à eux, et pourquoi l’existence des objets mathématiques reste disputée.",
+    "sources": [
+      {
+        "label": "Linnebo · platonisme mathématique (SEP)",
+        "url": "https://plato.stanford.edu/entries/platonism-mathematics/"
+      },
+      {
+        "label": "Koellner · hypothèse du continu (SEP)",
+        "url": "https://plato.stanford.edu/entries/continuum-hypothesis/"
+      }
+    ]
+  },
+  "16": {
+    "response": "Personne ne sait pourquoi il existe quatre interactions : ce nombre décrit l’état des connaissances, pas un résultat déduit d’un principe. L’électromagnétisme et l’interaction faible relèvent déjà d’une seule théorie, et trois interactions sur quatre reposent sur le même principe de jauge.",
+    "limit": "La grande unification reste une conjecture : aucune désintégration du proton n’a été observée. La place de la gravitation et l’existence éventuelle d’une cinquième force restent ouvertes.",
+    "description": "Quatre interactions fondamentales : un décompte historique. Théorie électrofaible établie ; grande unification et cinquième force non confirmées.",
+    "sources": [
+      {
+        "label": "CERN · Modèle standard",
+        "url": "https://home.cern/science/physics/standard-model/"
+      },
+      {
+        "label": "Super-Kamiokande · durée de vie du proton",
+        "url": "https://doi.org/10.1103/PhysRevD.102.112011"
+      }
+    ]
+  },
+  "17": {
+    "response": "On ne le sait pas. Les valeurs de constantes comme la vitesse de la lumière tiennent à la définition des unités ; la question physique porte sur des nombres sans dimension comme α ≈ 1/137, aujourd’hui mesurés et non calculés.",
+    "limit": "Trois familles d’explication restent défendables : une théorie plus profonde, une sélection parmi des valeurs variables, ou un fait brut. Aucune n’est établie, et aucune variation de ces nombres n’a été confirmée.",
+    "description": "Constantes fondamentales : seuls les nombres sans dimension appellent une explication ; ils sont mesurés, pas déduits, et aucune variation n’est établie.",
+    "sources": [
+      {
+        "label": "CODATA 2022 · valeurs recommandées",
+        "url": "https://doi.org/10.1103/RevModPhys.97.025002"
+      },
+      {
+        "label": "Tegmark et al. · 31 paramètres sans dimension",
+        "url": "https://doi.org/10.1103/PhysRevD.73.023505"
+      }
+    ]
+  },
+  "18": {
+    "response": "On sait déduire le formalisme quantique de quelques axiomes, et le théorème de Gleason montre que la règle de Born n’est pas un ajout arbitraire une fois l’espace de Hilbert admis. On ne sait pas expliquer pourquoi la nature obéit à ces axiomes.",
+    "limit": "L’interdiction de signaler plus vite que la lumière autoriserait des corrélations plus fortes que celles de la théorie ; aucun principe admis n’explique la borne quantique. La nécessité des nombres complexes fait encore débat en 2026.",
+    "description": "Mécanique quantique : un formalisme que l’on sait reconstruire à partir d’axiomes et tester contre des alternatives, sans expliquer ces axiomes.",
+    "sources": [
+      {
+        "label": "SEP · logique et probabilités quantiques (Gleason)",
+        "url": "https://plato.stanford.edu/entries/qt-quantlog/"
+      },
+      {
+        "label": "Popescu et Rohrlich · corrélations superquantiques",
+        "url": "https://doi.org/10.1007/BF02058098"
+      }
+    ]
+  },
+  "20": {
+    "response": "On ne le sait pas : la mécanique quantique combine une évolution déterministe et une règle probabiliste, et ses interprétations vont du déterminisme (Bohm, Everett) au hasard fondamental (effondrement spontané). L’expérience certifie seulement que, sans signal plus rapide que la lumière et avec des réglages indépendants, certains résultats sont imprévisibles pour tout observateur.",
+    "limit": "Aucune expérience ne départage aujourd’hui des interprétations aux prédictions identiques, et l’indépendance des réglages ne peut pas être testée de façon absolue. Le chaos et les cas d’indéterminisme newtonien montrent en outre que prévisibilité et déterminisme sont deux questions distinctes.",
+    "description": "Déterministe ou probabiliste ? La mécanique quantique admet les deux lectures ; l’expérience certifie une imprévisibilité sous hypothèses, pas un hasard absolu.",
+    "sources": [
+      {
+        "label": "Hoefer · déterminisme causal (encyclopédie de Stanford)",
+        "url": "https://plato.stanford.edu/entries/determinism-causal/"
+      },
+      {
+        "label": "Bierhorst et al. · hasard certifié par un test de Bell",
+        "url": "https://doi.org/10.1038/s41586-018-0019-0"
+      }
+    ]
+  },
+  "21": {
+    "response": "On ne sait pas encore unifier les deux théories, et aucune mesure ne l’exige pour l’instant : à basse énergie, la gravitation se traite comme une théorie quantique effective. Les observations bornent déjà certains écarts, comme une différence de vitesse entre ondes gravitationnelles et lumière ou une vitesse des photons dépendant de leur énergie.",
+    "limit": "Aucune théorie complète n’a de prédiction confirmée, et le test d’intrication de deux masses par la gravité reste hors de portée en 2026. Le rôle du temps, les singularités et le sort de l’information dans les trous noirs restent ouverts.",
+    "description": "Gravité quantique : une théorie effective fonctionne à basse énergie, aucune théorie complète n’est confirmée, et le test d’intrication reste à réaliser en 2026.",
+    "sources": [
+      {
+        "label": "LIGO, Virgo, Fermi-GBM, INTEGRAL · vitesse des ondes gravitationnelles",
+        "url": "https://doi.org/10.3847/2041-8213/aa920c"
+      },
+      {
+        "label": "Pedalino et al. · interférométrie de nanoparticules (2026)",
+        "url": "https://doi.org/10.1038/s41586-025-09917-9"
+      }
+    ]
+  },
+  "22": {
+    "response": "On ne le sait pas : aucune observation ne montre à ce jour de granularité de l’espace-temps. Les sursauts gamma écartent, à 95 % de confiance, une vitesse de la lumière qui varierait linéairement avec l’énergie à l’échelle de Planck.",
+    "limit": "Ces bornes visent des effets précis et ne testent pas une structure discrète qui respecterait l’invariance de Lorentz. Le statut de la longueur de Planck comme limite physique repose sur un argument, pas sur une mesure.",
+    "description": "Espace-temps quantifié : aucun signe de granularité à ce jour ; les bornes écartent un effet linéaire à l’échelle de Planck, pas toute structure discrète.",
+    "sources": [
+      {
+        "label": "LHAASO · test de l’invariance de Lorentz avec GRB 221009A",
+        "url": "https://doi.org/10.1103/PhysRevLett.133.071501"
+      },
+      {
+        "label": "Snyder · espace-temps discret invariant de Lorentz",
+        "url": "https://doi.org/10.1103/PhysRev.71.38"
+      }
+    ]
+  },
+  "24": {
+    "response": "Les observations établissent une phase chaude et dense il y a environ 13,8 milliards d’années, pas un premier instant. Des théorèmes montrent que la relativité générale ne se prolonge pas indéfiniment vers le passé, sous des hypothèses que la physique quantique peut remettre en cause.",
+    "limit": "Plusieurs modèles sans commencement existent, mais aucun n’est confirmé par l’observation. Un commencement absolu du temps n’est donc ni démontré ni exclu.",
+    "description": "Phase chaude il y a environ 13,8 milliards d’années : établie. Commencement absolu du temps : ni démontré ni exclu, malgré théorèmes et modèles cycliques.",
+    "sources": [
+      {
+        "label": "NASA · histoire cosmique et âge",
+        "url": "https://science.nasa.gov/universe/overview/"
+      },
+      {
+        "label": "Borde, Guth, Vilenkin · incomplétude vers le passé",
+        "url": "https://doi.org/10.1103/PhysRevLett.90.151301"
+      },
+      {
+        "label": "Smeenk et Ellis · philosophie de la cosmologie",
+        "url": "https://plato.stanford.edu/entries/cosmology/"
+      }
+    ]
+  },
+  "27": {
+    "response": "L’univers observable est fini, avec un rayon d’environ 47 milliards d’années-lumière. Pour l’Univers entier, on ne sait pas : la courbure mesurée est compatible avec zéro, mais un espace plat peut être fini ou infini.",
+    "limit": "Les recherches de topologie dans le fond diffus fixent une taille minimale sans exclure un Univers refermé plus grand. Aucune observation ne porte au-delà de l’horizon, si bien que « infini » ne peut pas être établi.",
+    "description": "Univers observable : fini. Univers entier : inconnu. La courbure mesurée est compatible avec zéro, mais plat ne veut pas dire infini.",
+    "sources": [
+      {
+        "label": "NASA · âge et taille de l’Univers",
+        "url": "https://imagine.gsfc.nasa.gov/educators/programs/cosmictimes/educators/guide/age_size.html"
+      },
+      {
+        "label": "Planck 2015 · géométrie et topologie",
+        "url": "https://doi.org/10.1051/0004-6361/201525829"
+      },
+      {
+        "label": "ESA · entretien avec Joseph Silk",
+        "url": "https://www.esa.int/Science_Exploration/Space_Science/Is_the_Universe_finite_or_infinite_An_interview_with_Joseph_Silk"
+      }
+    ]
+  },
+  "28": {
+    "response": "Aucune observation ne confirme l’existence d’un autre univers. Le mot « multivers » recouvre quatre idées distinctes, dont trois découlent de théories physiques : au-delà de l’horizon, bulles de l’inflation éternelle, branches d’Everett.",
+    "limit": "Les tests tentés n’ont rien détecté, et l’argument statistique tiré de la constante cosmologique dépend d’une manière de compter les observateurs qui n’est pas justifiée. La testabilité même de ces idées est débattue.",
+    "description": "Aucun autre univers observé. « Multivers » désigne quatre idées distinctes ; leurs tests n’ont rien détecté et leur testabilité est débattue.",
+    "sources": [
+      {
+        "label": "Tegmark · quatre niveaux de multivers",
+        "url": "https://arxiv.org/abs/astro-ph/0302131"
+      },
+      {
+        "label": "Feeney et al. · collisions de bulles",
+        "url": "https://doi.org/10.1103/PhysRevLett.107.071301"
+      },
+      {
+        "label": "Smeenk et Ellis · philosophie de la cosmologie",
+        "url": "https://plato.stanford.edu/entries/cosmology/"
+      }
+    ]
+  },
+  "31": {
+    "response": "Le « comment » est largement compris : la gravité, les étoiles et un état initial de basse entropie permettent l’apparition de structures complexes. Le « pourquoi ces conditions » reste ouvert, et le constat d’un ajustement fin des constantes est lui-même discuté.",
+    "limit": "Quatre lectures coexistent : rien à expliquer, physique plus profonde, sélection dans un multivers, dessein. Aucune n’est établie, et parler d’improbabilité suppose des probabilités que personne ne sait définir.",
+    "description": "Gravité, étoiles et basse entropie expliquent comment la complexité apparaît. Pourquoi ces conditions : ouvert, et l’ajustement fin est débattu.",
+    "sources": [
+      {
+        "label": "Friederich · ajustement fin (SEP)",
+        "url": "https://plato.stanford.edu/entries/fine-tuning/"
+      },
+      {
+        "label": "Adams · degré d’ajustement fin",
+        "url": "https://doi.org/10.1016/j.physrep.2019.02.001"
+      },
+      {
+        "label": "Oberhummer et al. · production stellaire de carbone",
+        "url": "https://doi.org/10.1126/science.289.5476.88"
+      }
+    ]
+  },
+  "37": {
+    "response": "Personne ne sait pourquoi un traitement physique de l’information s’accompagne d’un vécu. Quatre familles de réponses restent défendues : identité, illusionnisme, dualisme des propriétés et panpsychisme.",
+    "limit": "Les théories scientifiques testent les conditions de l’accès conscient, pas la raison d’être de l’expérience. Le désaccord porte aussi sur ce qui compterait comme une explication.",
+    "description": "Problème difficile de la conscience : arguments classiques, quatre familles de réponses, test de 2025. Aucune réponse ne fait l’unanimité.",
+    "sources": [
+      {
+        "label": "Chalmers · le problème difficile",
+        "url": "https://consc.net/papers/facing.html"
+      },
+      {
+        "label": "COGITATE · test adversarial de 2025",
+        "url": "https://www.nature.com/articles/s41586-025-08888-1"
+      },
+      {
+        "label": "Bourget et Chalmers · enquête PhilPapers 2020",
+        "url": "https://doi.org/10.3998/phimp.2109"
+      }
+    ]
+  },
+  "38": {
+    "response": "Aucun critère de l’identité personnelle n’est admis : continuité psychologique, continuité biologique et absence de critère restent défendues. Le sentiment d’être un soi logé dans un corps, lui, se modifie en laboratoire.",
+    "limit": "Les expériences de pensée (fission, téléportation) reposent sur des intuitions qui divergent. Les données sur le soi vécu ne tranchent pas la question de la persistance.",
+    "description": "Identité personnelle : Locke, Hume, Parfit, animalisme, cerveaux divisés, illusions corporelles. Aucun critère ne fait l’unanimité.",
+    "sources": [
+      {
+        "label": "Olson · Personal Identity (SEP)",
+        "url": "https://plato.stanford.edu/entries/identity-personal/"
+      },
+      {
+        "label": "Locke · Essai, II, XXVII",
+        "url": "https://www.gutenberg.org/files/10615/10615-h/10615-h.htm"
+      },
+      {
+        "label": "Lenggenhager et al. · illusion du corps entier",
+        "url": "https://doi.org/10.1126/science.1143439"
+      }
+    ]
+  },
+  "39": {
+    "response": "On ne sait pas : il n’existe pas de méthode validée pour décider si une machine éprouve quelque chose, et aucun système actuel n’est établi comme conscient. La réponse dépend de la théorie de la conscience retenue.",
+    "limit": "Si la conscience tient au calcul, rien ne l’interdit en principe ; si elle tient au support physique ou au vivant, les ordinateurs actuels en sont exclus ou presque. Réussir un test de Turing ne départage pas ces positions.",
+    "description": "IA et conscience : test de Turing, chambre chinoise, méthode des indicateurs, objections liées au support. La question reste ouverte.",
+    "sources": [
+      {
+        "label": "Butlin et al. · indicateurs de conscience (2023)",
+        "url": "https://arxiv.org/abs/2308.08708"
+      },
+      {
+        "label": "Tononi et Koch · information intégrée et ordinateurs",
+        "url": "https://doi.org/10.1098/rstb.2014.0167"
+      },
+      {
+        "label": "Jones et Bergen · test de Turing (2026)",
+        "url": "https://doi.org/10.1073/pnas.2524472123"
+      }
+    ]
+  },
+  "40": {
+    "response": "Cela dépend de la définition. Les sciences n’ont pas établi que nous soyons privés du pouvoir d’agir selon nos propres raisons ; le pouvoir de faire autrement dans des circonstances strictement identiques est, lui, incompatible avec un monde déterministe.",
+    "limit": "On ignore si le monde est déterministe et ce que signifie exactement l’activité cérébrale qui précède nos gestes. Le désaccord porte aussi sur ce qu’il faut pour être moralement responsable, ce que les faits ne règlent pas seuls.",
+    "description": "Libre arbitre : la réponse dépend de la définition ; les expériences de Libet ne tranchent pas et le débat porte largement sur la responsabilité.",
+    "sources": [
+      {
+        "label": "O’Connor et Franklin · Free Will (SEP)",
+        "url": "https://plato.stanford.edu/entries/freewill/"
+      },
+      {
+        "label": "Libet et al. · potentiel de préparation (1983)",
+        "url": "https://doi.org/10.1093/brain/106.3.623"
+      },
+      {
+        "label": "Schurger et al. · modèle d’accumulateur (2012)",
+        "url": "https://doi.org/10.1073/pnas.1210467109"
+      }
+    ]
+  },
+  "42": {
+    "response": "Aucun résultat scientifique ne permet de répondre, et plusieurs positions philosophiques restent défendues. La question se divise en trois : le sens de l’Univers ou de l’humanité, le sens dans une vie, l’existence de valeurs indépendantes de nos attitudes.",
+    "limit": "L’existence de valeurs objectives est contestée par des arguments sérieux, auxquels les réalistes répondent sans clore le débat. La psychologie mesure le sentiment de sens, pas sa justification.",
+    "description": "Sens et valeur objective : trois questions à distinguer, des positions défendues de part et d’autre, aucun résultat scientifique qui tranche.",
+    "sources": [
+      {
+        "label": "Metz · The Meaning of Life (SEP)",
+        "url": "https://plato.stanford.edu/entries/life-meaning/"
+      },
+      {
+        "label": "Sayre-McCord · Moral Realism (SEP)",
+        "url": "https://plato.stanford.edu/entries/moral-realism/"
+      },
+      {
+        "label": "Hume · Traité, livre III, « est » et « doit »",
+        "url": "https://www.gutenberg.org/files/4705/4705-h/4705-h.htm"
+      }
+    ]
   }
 }

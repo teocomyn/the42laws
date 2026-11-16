@@ -5,7 +5,7 @@
     "prerequisites": "Probabilité, microétat et macroétat.",
     "goal": "Distinguer durée mesurée, flèche thermodynamique et condition initiale.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-10-08",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "Les horloges permettent de comparer des durées.",
@@ -21,7 +21,7 @@
     "prerequisites": "Atomes, charge électrique et interaction.",
     "goal": "Situer leptons, quarks et bosons sans confondre description et ontologie ultime.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-10-08",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "Des mesures contraignent les propriétés des particules.",
@@ -37,7 +37,7 @@
     "prerequisites": "Probabilité et notion d’amplitude ; dossier 15 conseillé.",
     "goal": "Expliquer une interférence et distinguer décohérence et résultat unique.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-10-08",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "Des détections individuelles construisent des distributions.",
@@ -53,7 +53,7 @@
     "prerequisites": "Lois effectives, réduction et domaine de validité ; dossier 15 conseillé.",
     "goal": "Distinguer unification des interactions, calcul prédictif et explication totale.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-10-07",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "Les domaines empiriques des théories ne couvrent pas toutes les échelles.",
@@ -69,7 +69,7 @@
     "prerequisites": "Dossier 10 : entropie ; différence entre trace et reconstruction.",
     "goal": "Relier les traces du passé aux modèles sans prétendre expliquer toutes les conditions initiales.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-10-08",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "Fond diffus et abondances légères contraignent le passé.",
@@ -85,7 +85,7 @@
     "prerequisites": "Dossiers 10 et 25 ; notion de domaine d’une fonction.",
     "goal": "Formuler « avant » en précisant le modèle et le sens de Big Bang.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-10-08",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "Les traces de la phase chaude ne sont pas une image de l’origine absolue.",
@@ -101,7 +101,7 @@
     "prerequisites": "Dossiers 10, 25 et 26 ; facteur d’échelle et extrapolation.",
     "goal": "Comparer les futurs en explicitant les hypothèses sur l’énergie noire.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-10-08",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "L’histoire de l’expansion est contrainte par les observations.",
@@ -117,7 +117,7 @@
     "prerequisites": "Preuve, axiomes, algorithme et distinction entre connaissance et calcul.",
     "goal": "Distinguer limites logiques, calculatoires, physiques et pratiques ; séparer trouver, vérifier et comprendre une preuve.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-10-07",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "Les limites instrumentales sont distinctes des théorèmes formels.",
@@ -133,7 +133,7 @@
     "prerequisites": "Aucun prérequis ; distinguer un constat et une conclusion.",
     "goal": "Distinguer le constat d’existence, une explication causale et une nécessité métaphysique.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-11-16",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "L’expérience fournit un point de départ : quelque chose existe.",
@@ -165,7 +165,7 @@
     "prerequisites": "Différence entre corrélation, explication et témoignage.",
     "goal": "Distinguer expérience subjective, compte rendu et test d’une théorie neuroscientifique.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-11-16",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "Des protocoles relient contenus perceptifs rapportés et activité cérébrale.",
@@ -213,7 +213,7 @@
     "prerequisites": "Dossier 32 conseillé ; distinguer observation, modèle et hypothèse.",
     "goal": "Séparer habitabilité, ingrédient, biosignature et confirmation d’une autre vie.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-12",
+    "revised": "2026-10-08",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "La NASA déclare ne pas avoir trouvé de preuve crédible de vie extraterrestre, consultation du 12 septembre 2026.",
@@ -229,7 +229,7 @@
     "prerequisites": "Gravitation, lumière et expansion ; aucune formule requise.",
     "goal": "Distinguer les indices de matière noire et d’énergie noire, leurs modèles et leur identité encore inconnue.",
     "author": "Synthèse assistée par IA pour The42laws",
-    "revised": "2026-09-30",
+    "revised": "2026-11-16",
     "review": "non effectuée par un relecteur indépendant",
     "claims": {
       "observation": "Mouvements, lentilles gravitationnelles et mesures de distance contraignent les descriptions cosmologiques.",
@@ -237,6 +237,438 @@
       "modele": "ΛCDM associe une matière noire froide et une constante cosmologique.",
       "interpretation": "Une composante inférée par ses effets n’est pas une particule directement identifiée.",
       "conjecture": "Les candidats microscopiques et les modèles dynamiques restent à départager."
+    }
+  },
+  "2": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Dossier 01 ; notions d’objet concret et de monde possible.",
+    "goal": "Distinguer un espace vidé, un vide physique et le néant absolu, et situer les arguments pour et contre la possibilité de ce dernier.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Une force s’exerce entre des surfaces conductrices proches dans le vide ; elle a été mesurée en 1997, en accord avec la théorie à 5 % près.",
+      "resultat": "La logique classique des prédicats est formulée pour les domaines non vides ; c’est une convention expliquée par Quine, pas une preuve d’existence.",
+      "modele": "Le vide d’une théorie quantique des champs est un état de plus basse énergie, non l’absence de toute chose.",
+      "interpretation": "L’argument de la soustraction conclut à la possibilité d’un monde vide ; ses critiques contestent le passage de « chacun peut manquer » à « tout peut manquer ».",
+      "conjecture": "La possibilité métaphysique d’un monde sans aucun objet concret reste indécidée."
+    }
+  },
+  "3": {
+    "level": "Intermédiaire",
+    "minutes": 10,
+    "prerequisites": "Dossiers 01 et 02 ; vocabulaire des mondes possibles.",
+    "goal": "Distinguer trois questions (un être nécessaire, la nécessité qu’il y ait quelque chose, la nécessité de tout) et repérer les prémisses de chaque argument.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Des choses existent ; rien dans l’observation n’indique si elles auraient pu ne pas exister.",
+      "resultat": "En logique modale S5, « possiblement nécessaire » entraîne « nécessaire » ; l’argument modal et son symétrique sont tous deux valides.",
+      "modele": "Le vocabulaire des mondes possibles définit nécessaire, possible et contingent sans dire ce qui est possible.",
+      "interpretation": "Leibniz et Clarke concluent à un être nécessaire ; Hume et Kant contestent qu’une existence puisse être nécessaire ou déduite d’un concept ; Spinoza nie toute contingence.",
+      "conjecture": "Il se peut qu’aucun être ne soit nécessaire et qu’aucun monde possible ne soit vide."
+    }
+  },
+  "4": {
+    "level": "Intermédiaire",
+    "minutes": 10,
+    "prerequisites": "Dossiers 01 et 03 ; notion de monde possible et de probabilité.",
+    "goal": "Distinguer nécessité, sélection, plénitude et fait brut, et séparer ce qu’un effet de sélection explique de ce qu’il suppose.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Nous n’observons qu’un seul Univers ; aucune observation ne porte sur d’autres réalités.",
+      "resultat": "Avec n tirages indépendants de probabilité 1/1000, la probabilité d’au moins un succès vaut 1 − 0,999ⁿ ; celle d’un tirage désigné reste 1/1000.",
+      "modele": "Un effet de sélection explique une observation à condition de supposer un ensemble d’univers aux conditions variées.",
+      "interpretation": "Leibniz invoque le meilleur des mondes, Lewis l’existence de tous les mondes, Parfit des sélecteurs possibles et un fait brut au sommet.",
+      "conjecture": "Hypothèse de l’univers mathématique de Tegmark ; existence d’un principe qui distinguerait notre réalité."
+    }
+  },
+  "5": {
+    "level": "Intermédiaire",
+    "minutes": 10,
+    "prerequisites": "Dossiers 01 et 03 ; différence entre cause et explication.",
+    "goal": "Distinguer la règle de méthode « chercher une explication » de la thèse « tout a une explication », et comprendre l’objection de l’effondrement modal.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "En 2015, une expérience trouve S = 2,42 ± 0,20 là où le réalisme local impose S ≤ 2 (245 essais, p = 0,039).",
+      "resultat": "Si une raison suffisante entraîne ce qu’elle explique, une raison de toutes les vérités contingentes les rendrait nécessaires (argument rapporté de van Inwagen).",
+      "modele": "La mécanique quantique usuelle ne donne que des probabilités pour un événement individuel ; la théorie de Bohm est déterministe et reproduit les mêmes résultats non relativistes.",
+      "interpretation": "Carroll et Parfit tiennent que toute chaîne d’explications finit sur un fait brut ; Pruss et Dasgupta défendent des versions du principe.",
+      "conjecture": "Vérité ou fausseté du principe de raison suffisante dans sa version factuelle."
+    }
+  },
+  "6": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Dossiers 15 et 19 ; distinguer ce qu’une théorie prédit de ce qu’elle affirme exister.",
+    "goal": "Distinguer cinq candidats au niveau fondamental et ce que théorèmes et expériences excluent réellement.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les tests de Bell sans échappatoire majeure excluent de larges classes de théories réalistes locales.",
+      "resultat": "Sous ses hypothèses, le théorème de Pusey, Barrett et Rudolph exclut que l’état quantique soit une simple information sur un état sous-jacent.",
+      "modele": "La théorie quantique des champs prédit des détections localisées sans contenir de particules localisables au sens strict.",
+      "interpretation": "Champs, structures ou information sont des lectures concurrentes du même formalisme.",
+      "conjecture": "L’idée que le monde est une structure mathématique ou de l’information n’a pas de test connu de cette fiche."
+    }
+  },
+  "7": {
+    "level": "Intermédiaire",
+    "minutes": 8,
+    "prerequisites": "Dossier 15 ; équivalence entre masse au repos et énergie.",
+    "goal": "Distinguer origine de la masse, quasi-particules mesurées et hypothèse de particules élémentaires émergentes.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Des porteurs de charge e/3 ont été mesurés en 1997 dans l’effet Hall quantique fractionnaire.",
+      "resultat": "Des calculs sur réseau reproduisent la masse du proton et en attribuent environ 9 % au terme lié aux masses des quarks.",
+      "modele": "Dans le Modèle standard, les particules élémentaires acquièrent leur masse par interaction avec le champ de Higgs.",
+      "interpretation": "L’effet Unruh est lu comme le signe que le nombre de particules dépend de l’observateur.",
+      "conjecture": "Les particules élémentaires pourraient être des excitations collectives d’un milieu sous-jacent ; aucun test ne le confirme."
+    }
+  },
+  "8": {
+    "level": "Intermédiaire",
+    "minutes": 8,
+    "prerequisites": "Notion de bit et d’entropie ; dossiers 10 et 41 conseillés.",
+    "goal": "Distinguer « l’information est physique », qui est un résultat, de « tout est information », qui est une hypothèse.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "La chaleur dissipée lors de l’effacement d’un bit tend vers la borne de Landauer dans les expériences de 2012 et 2014.",
+      "resultat": "La mesure de Shannon quantifie l’information à partir de probabilités, sans tenir compte du sens des messages.",
+      "modele": "Des arguments sur les trous noirs bornent l’information d’une région par l’aire de sa surface.",
+      "interpretation": "« It from bit » lit les grandeurs physiques comme dérivées de réponses par oui ou par non.",
+      "conjecture": "Le principe holographique et la primauté de l’information sur la matière ne sont pas confirmés par l’expérience."
+    }
+  },
+  "9": {
+    "level": "Approfondissement",
+    "minutes": 9,
+    "prerequisites": "Dossiers 08, 10 et 19 ; notion d’intrication et d’entropie d’un trou noir.",
+    "goal": "Distinguer le débat classique sur la nature de l’espace, les résultats holographiques sous hypothèses et les tests datés de la gravité émergente.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les mesures de lentille gravitationnelle de 2017 et 2021 ne confirment ni n’écartent nettement la gravité émergente de Verlinde.",
+      "resultat": "En relativité générale, la métrique n’est que partiellement déterminée par la matière : un espace-temps vide reste une solution.",
+      "modele": "Boucles et ensembles causaux décrivent un espace-temps dont le continu n’est qu’une approximation.",
+      "interpretation": "Leibniz tient l’espace pour un ordre de coexistences ; Clarke pour une réalité distincte des corps.",
+      "conjecture": "La correspondance holographique suggère un espace-temps issu de l’intrication, dans un cadre qui n’est pas celui de notre Univers."
+    }
+  },
+  "11": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Savoir ce qu’est une régularité et une symétrie ; le dossier 01 aide à situer la question.",
+    "goal": "Distinguer une loi qui résume les faits d’une loi qui les gouverne, et voir ce que le théorème de Noether explique ou non.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les lois physiques connues sont conditionnelles : elles relient des états et ne fixent pas les conditions initiales.",
+      "resultat": "Pour une théorie issue d’un principe variationnel, une symétrie continue correspond à une quantité conservée (Noether, 1918).",
+      "modele": "Beaucoup de lois de basse énergie dépendent très peu des détails microscopiques.",
+      "interpretation": "Lecture humienne et lecture nécessitariste des lois restent toutes deux défendues.",
+      "conjecture": "La « loi sans loi » de Wheeler suppose un principe régulateur qui n’est pas formulé."
+    }
+  },
+  "12": {
+    "level": "Approfondissement",
+    "minutes": 10,
+    "prerequisites": "Dossier 11 ; notions de théorie effective, de vide et de constante physique.",
+    "goal": "Distinguer forme des lois, constantes et conditions initiales, et savoir quelle réponse porte sur quoi.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Nous n’observons qu’un seul jeu de lois ; les autres possibilités sont théoriques.",
+      "resultat": "Pour le groupe de jauge du Modèle standard, l’absence d’anomalies fixe les représentations minimales et les charges des quarks et des leptons (résultat conditionnel).",
+      "modele": "La théorie des cordes admettrait un très grand nombre de vides ; à basse énergie, des théories différentes donnent les mêmes lois effectives.",
+      "interpretation": "La sélection anthropique explique une valeur observée sans la déduire ; sa testabilité est contestée.",
+      "conjecture": "Univers mathématique, sélection naturelle cosmologique et critères du marécage ne sont pas établis."
+    }
+  },
+  "13": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Savoir ce qu’est un modèle et un écart relatif ; avoir croisé les nombres complexes (dossier 19).",
+    "goal": "Séparer le fait mesuré de l’efficacité, sa portée limitée et les explications philosophiques qui restent en concurrence.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "La mesure du moment magnétique de l’électron (2023) teste la prédiction du Modèle standard à 1 partie sur 10¹².",
+      "resultat": "La théorie quantique standard et son analogue à nombres réels font des prédictions différentes dans des réseaux à sources indépendantes (2021), différence observée en 2022.",
+      "modele": "La troisième loi de Kepler relie périodes et demi-grands axes de Mars et de la Terre à 0,02 % près ou mieux, selon les données retenues.",
+      "interpretation": "Indispensabilité, nominalisme, structuralisme et univers mathématique lisent différemment la même efficacité.",
+      "conjecture": "L’hypothèse selon laquelle le monde est une structure mathématique n’est pas établie."
+    }
+  },
+  "14": {
+    "level": "Intermédiaire",
+    "minutes": 10,
+    "prerequisites": "Savoir ce qu’est un axiome et un théorème ; le dossier 41 aide pour la notion d’énoncé indépendant.",
+    "goal": "Distinguer le choix des concepts et des axiomes, la contrainte des démonstrations et la question de l’existence d’objets mathématiques.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Des nouveau-nés associent des quantités vues et entendues ; l’échelle linéaire des nombres apparaît avec l’éducation formelle.",
+      "resultat": "Si ZFC est cohérent, il le reste avec l’hypothèse du continu (Gödel, 1938) comme avec sa négation (Cohen, 1963).",
+      "modele": "Sur une sphère, un triangle peut avoir trois angles droits : changer d’axiomes change les théorèmes.",
+      "interpretation": "Platonisme, intuitionnisme, formalisme, fictionnalisme et structuralisme restent tous défendus.",
+      "conjecture": "L’idée d’un multivers d’ensembles, où l’hypothèse du continu est vraie ici et fausse là, est une position débattue."
+    }
+  },
+  "16": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Dossier 15 sur les particules ; notions de boson et d’énergie de masse.",
+    "goal": "Distinguer ce qui est établi (théorie électrofaible, bosons W et Z) de ce qui reste conjectural (grande unification, cinquième force).",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les bosons W et Z ont été observés au CERN en 1983 ; ni désintégration du proton ni cinquième force n’ont été détectées.",
+      "resultat": "Les théories de jauge non abéliennes se comportent presque comme des théories libres à très haute énergie (1973).",
+      "modele": "Trois interactions sur quatre sont décrites par des théories de jauge ; la gravitation reste hors du Modèle standard.",
+      "interpretation": "« Quatre » est un décompte historique qui dépend de la façon de compter.",
+      "conjecture": "La grande unification des trois interactions non gravitationnelles n’est pas confirmée."
+    }
+  },
+  "17": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Notion d’unité de mesure et de rapport ; dossiers 15 et 16 conseillés.",
+    "goal": "Distinguer une constante dont la valeur dépend des unités d’un nombre sans dimension qui appelle une explication physique.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les mesures ne montrent aucune variation établie de α : horloges atomiques, réacteur naturel d’Oklo, spectres de quasars.",
+      "resultat": "Depuis 2019, c, h et e ont des valeurs numériques fixées par définition du Système international.",
+      "modele": "Les modèles standards des particules et de la cosmologie exigent 31 nombres sans dimension mesurés, selon un décompte de 2006.",
+      "interpretation": "Seuls les nombres sans dimension sont fondamentaux selon Duff ; le nombre de constantes dimensionnées fondamentales est débattu.",
+      "conjecture": "Théorie plus profonde, sélection anthropique ou fait brut : aucune de ces explications n’est établie."
+    }
+  },
+  "18": {
+    "level": "Approfondissement",
+    "minutes": 10,
+    "prerequisites": "Dossier 19 (amplitudes, règle de Born, inégalités de Bell) ; aisance avec une moyenne et un cosinus.",
+    "goal": "Distinguer ce qui se déduit d’axiomes (règle de Born, formalisme) de ce qui reste inexpliqué (le choix de ces axiomes, la borne quantique des corrélations).",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Aucune interférence d’ordre supérieur à deux n’a été détectée dans des interféromètres à trois et cinq chemins.",
+      "resultat": "Théorème de Gleason : en dimension supérieure à deux, toute attribution additive de probabilités aux projecteurs suit la règle de Born.",
+      "modele": "Plusieurs jeux d’axiomes (Hardy, Chiribella et al., Masanes et Müller) redonnent le formalisme quantique.",
+      "interpretation": "La théorie apparaît rigide une fois ses principes admis ; cela n’explique pas ces principes.",
+      "conjecture": "Un principe comme la causalité de l’information pourrait isoler les corrélations quantiques ; ce n’est pas acquis."
+    }
+  },
+  "20": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Notions de probabilité ; dossier 19 conseillé pour la règle de Born et les inégalités de Bell.",
+    "goal": "Distinguer imprévisible, indéterministe et hasard certifié sous hypothèses.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Des tests de Bell ont certifié des bits imprévisibles, à condition qu’aucun signal ne dépasse la lumière et que les réglages soient indépendants.",
+      "resultat": "Le théorème de Bell exclut les variables cachées locales ; l’équation du dôme de Norton admet plusieurs solutions pour un même état initial.",
+      "modele": "L’équation de Schrödinger est déterministe ; la règle de Born ne donne que des probabilités.",
+      "interpretation": "Bohm et Everett lisent la théorie de façon déterministe, les modèles d’effondrement spontané de façon stochastique.",
+      "conjecture": "Le superdéterminisme reste une hypothèse dont aucun test n’a été réalisé."
+    }
+  },
+  "21": {
+    "level": "Approfondissement",
+    "minutes": 10,
+    "prerequisites": "Idées générales de relativité et de mécanique quantique ; dossiers 19 et 23 conseillés.",
+    "goal": "Distinguer théorie effective, théorie complète et test expérimental de la nature quantique de la gravité.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Ondes gravitationnelles et lumière ont la même vitesse à environ 10⁻¹⁵ près ; aucune variation de la vitesse des photons avec l’énergie n’est détectée.",
+      "resultat": "La gravité d’Einstein quantifiée de façon perturbative contient des divergences non renormalisables à deux boucles.",
+      "modele": "La relativité générale se traite comme une théorie quantique effective à basse énergie.",
+      "interpretation": "Une intrication créée par la gravité signalerait un médiateur quantique, sous des hypothèses encore discutées en 2026.",
+      "conjecture": "Cordes, boucles, événements discrets ou gravité classique stochastique : aucune voie n’a de prédiction confirmée."
+    }
+  },
+  "22": {
+    "level": "Approfondissement",
+    "minutes": 9,
+    "prerequisites": "Notions de relativité restreinte et de mécanique quantique ; dossier 21 conseillé.",
+    "goal": "Distinguer les sens de « quantifié » et ce que les bornes observationnelles excluent réellement.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les sursauts gamma et l’holomètre du Fermilab ne donnent que des bornes, sans détection de granularité.",
+      "resultat": "Un espace-temps discret peut respecter l’invariance de Lorentz (exemple de Snyder, 1947).",
+      "modele": "La gravité quantique à boucles calcule des spectres discrets d’aire et de volume ; les ensembles causaux postulent des événements discrets.",
+      "interpretation": "Faire de la longueur de Planck une longueur minimale repose sur un argument, pas sur une mesure.",
+      "conjecture": "La nature discrète ou continue de l’espace-temps à l’échelle de Planck reste indéterminée."
+    }
+  },
+  "24": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Dossiers 25 et 26 ; notion de modèle cosmologique et de trajectoire en chute libre.",
+    "goal": "Distinguer le début de la phase chaude, le bord passé d’une théorie et un commencement absolu du temps.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les données soutiennent une phase chaude et dense datée d’environ 13,8 milliards d’années dans le modèle standard.",
+      "resultat": "Sous hypothèses, les théorèmes de singularité et celui de 2003 établissent une incomplétude vers le passé, pas la nature de la frontière.",
+      "modele": "Univers cyclique, cosmologie conforme cyclique et inflation éternelle stationnaire sont des modèles sans commencement, non confirmés.",
+      "interpretation": "Un bord de la relativité générale signale la limite d’une théorie, pas nécessairement celle du temps.",
+      "conjecture": "L’existence d’une phase antérieure à la phase chaude reste une hypothèse sans signature observée."
+    }
+  },
+  "27": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Dossier 25 ; notions de fond diffus cosmologique et de barre d’erreur.",
+    "goal": "Distinguer univers observable et Univers entier, courbure et topologie, absence de signal et preuve d’infinité.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Planck combiné aux oscillations acoustiques de baryons donne ΩK = 0,001 ± 0,002 ; aucune paire de cercles appariés n’a été détectée dans le fond diffus.",
+      "resultat": "Un espace de courbure nulle peut être fini : la courbure locale ne fixe pas la topologie globale.",
+      "modele": "L’espace dodécaédrique de Poincaré (2003) est un modèle d’Univers fini que les mesures ultérieures ne favorisent pas.",
+      "interpretation": "« Fini » est démontrable en principe par une topologie détectée ; « infini » ne l’est pas par l’observation.",
+      "conjecture": "L’Univers entier pourrait être fini mais beaucoup plus grand que la région observable ; rien ne l’établit."
+    }
+  },
+  "28": {
+    "level": "Approfondissement",
+    "minutes": 10,
+    "prerequisites": "Dossiers 19, 25 et 27 ; notions d’inflation, d’horizon et d’interprétation quantique.",
+    "goal": "Distinguer quatre sens de « multivers », dire d’où vient chacun et ce qui pourrait le tester.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "La recherche de collisions de bulles dans sept ans de données WMAP (2011) n’a rien détecté ; aucun autre univers n’est observé.",
+      "resultat": "La part d’énergie du vide mesurée, environ 2,2 fois celle de la matière, tombe dans l’intervalle jugé probable par Martel, Shapiro et Weinberg en 1998.",
+      "modele": "L’inflation éternelle produit dans certains modèles une infinité d’univers-poches inobservables.",
+      "interpretation": "Les branches d’Everett sont une lecture de la mécanique quantique qu’aucune expérience réaliste ne départage aujourd’hui d’autres lectures.",
+      "conjecture": "La variation des constantes d’une bulle à l’autre et le niveau IV de Tegmark sont des hypothèses sans test connu."
+    }
+  },
+  "31": {
+    "level": "Intermédiaire",
+    "minutes": 10,
+    "prerequisites": "Dossiers 10 et 25 ; notions d’entropie, de constante physique et de probabilité.",
+    "goal": "Distinguer les mécanismes connus de la complexité, le constat discuté d’ajustement fin et les lectures qu’on en propose.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Les éléments lourds viennent des étoiles et les structures de l’effondrement gravitationnel d’un gaz presque uniforme.",
+      "resultat": "Un calcul de 2000 trouve qu’hors d’une fenêtre de 0,5 % (interaction forte) et de 4 % (force de Coulomb), la production stellaire de carbone ou d’oxygène chute d’un facteur 30 à 1 000.",
+      "modele": "Les études d’ajustement fin comparent des univers théoriques aux constantes modifiées ; leurs conclusions dépendent des paramètres que l’on fait varier.",
+      "interpretation": "Refus empiriste, physique nouvelle, sélection dans un multivers et dessein sont quatre lectures non départagées par l’observation.",
+      "conjecture": "L’idée que les constantes varient d’une région à l’autre d’un multivers n’est étayée par aucune théorie testée."
+    }
+  },
+  "37": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Avoir lu le dossier 36 : différence entre expérience, fonction et compte rendu.",
+    "goal": "Distinguer expliquer une fonction cérébrale et expliquer pourquoi elle s’accompagne d’un vécu, puis situer les grandes familles de réponses.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "En 2025, un test préenregistré sur 256 participants contredit des thèses centrales de deux théories de la conscience.",
+      "resultat": "Aucun résultat démontré ne ferme la question ; les arguments de Nagel, Levine et Jackson sont philosophiques et contestés.",
+      "modele": "L’espace de travail neuronal global et l’information intégrée décrivent l’accès conscient ou la structure de l’expérience.",
+      "interpretation": "Identité, illusionnisme, dualisme des propriétés et panpsychisme restent défendus ; aucune position n’est majoritaire dans l’enquête de 2020.",
+      "conjecture": "Rien n’établit que le problème soit insoluble, ni qu’il sera dissous par les neurosciences."
+    }
+  },
+  "38": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Distinguer identité numérique (une seule et même chose) et identité qualitative (ressemblance exacte).",
+    "goal": "Séparer la question de la persistance d’une personne dans le temps et celle du sentiment présent d’être un soi incarné.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Des expériences modifient le sentiment de posséder un corps ; une étude de 2017 sur deux patients au cerveau divisé ne trouve pas deux sujets conscients indépendants.",
+      "resultat": "L’identité numérique est transitive, la mémoire directe ne l’est pas : un critère fondé sur le seul souvenir mène à une contradiction.",
+      "modele": "Soi minimal et soi narratif sont des distinctions de travail proposées aux sciences cognitives.",
+      "interpretation": "Continuité psychologique, animalisme et thèse de Parfit sur ce qui importe restent en concurrence.",
+      "conjecture": "Certains cas imaginaires pourraient n’avoir aucune réponse déterminée."
+    }
+  },
+  "39": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Avoir lu les dossiers 36 et 37 : expérience subjective et théories de la conscience.",
+    "goal": "Distinguer performance, comportement d’apparence humaine et expérience subjective, et voir ce que chaque théorie implique pour une machine.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "En 2026, une étude préenregistrée rapporte qu’un modèle de langage doté d’une consigne de personnage est pris pour l’humain dans 73 % des cas à un test de Turing.",
+      "resultat": "Résultat daté : le rapport de 2023 conclut qu’aucun système d’IA d’alors n’est conscient, sans obstacle technique évident à en construire qui satisfassent ses indicateurs.",
+      "modele": "Sous l’hypothèse du fonctionnalisme computationnel, quatorze propriétés indicatrices servent à évaluer une architecture.",
+      "interpretation": "La théorie de l’information intégrée et le naturalisme biologique concluent négativement ou avec forte réserve pour les ordinateurs actuels.",
+      "conjecture": "Des systèmes futurs pourraient satisfaire les indicateurs ; rien n’établit qu’ils seraient alors conscients."
+    }
+  },
+  "40": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Notion de déterminisme (dossier 20) ; aucune connaissance préalable en neurosciences n’est requise.",
+    "goal": "Distinguer trois sens de « libre arbitre » et ce que les expériences de neurosciences établissent ou non.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "En 1983, chez cinq sujets, le potentiel de préparation commence en moyenne environ 350 ms avant l’intention rapportée d’un geste spontané.",
+      "resultat": "Le théorème de Conway et Kochen est conditionnel : il suppose que le choix des expérimentateurs n’est pas fonction de l’information qui leur est accessible.",
+      "modele": "Le modèle d’accumulateur de Schurger, Sitt et Dehaene (2012) attribue la montée du potentiel à des fluctuations spontanées moyennées.",
+      "interpretation": "Compatibilisme, libertarianisme et scepticisme divergent sur ce qu’exige la responsabilité morale.",
+      "conjecture": "Aucune hypothèse propre ; l’exercice du thé et du café sert seulement à séparer les définitions."
+    }
+  },
+  "42": {
+    "level": "Intermédiaire",
+    "minutes": 9,
+    "prerequisites": "Savoir distinguer un énoncé qui décrit d’un énoncé qui évalue ; les dossiers 01 et 40 sont utiles.",
+    "goal": "Distinguer sens de la vie, sens dans une vie et statut objectif, subjectif ou partagé des valeurs.",
+    "author": "Synthèse assistée par IA pour The42laws",
+    "revised": "2026-11-16",
+    "review": "non effectuée par un relecteur indépendant",
+    "claims": {
+      "observation": "Dans les questionnaires de sens, des échantillons variés se situent au-dessus du milieu de l’échelle (Heintzelman et King, 2014) : c’est la mesure d’un sentiment.",
+      "resultat": "Aucun résultat démontré ne tranche ; l’enquête PhilPapers 2020 donne 33,04 % (sens subjectif), 32,06 % (objectif) et 16,12 % (inexistant).",
+      "modele": "Classement des théories du sens dans une vie : surnaturalistes, naturalistes subjectives, naturalistes objectives, hybrides.",
+      "interpretation": "La loi de Hume, l’argument de l’étrangeté et le dilemme darwinien sont des arguments philosophiques discutés, auxquels les réalistes répondent.",
+      "conjecture": "Aucune : la fiche ne retient pas de position."
     }
   }
 }

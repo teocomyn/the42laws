@@ -17,7 +17,7 @@ for(const path of files){const name=relative(out,path);if(/(?:^|\/)(?:\.git|node
  for(const m of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){const value=m[1].replaceAll('&amp;','&');if(!value||/^(https?:|mailto:|data:)/.test(value))continue;const url=new URL(value,base);if(url.origin!=='https://preview.invalid')continue;const file=resolve(out,'.'+decodeURIComponent(url.pathname));try{let target=file;const info=await stat(target);if(info.isDirectory())target=resolve(target,'index.html');await stat(target);links++;if(url.hash&&!url.hash.startsWith('#/')&&extname(target)==='.html'){const dest=await readFile(target,'utf8'),id=decodeURIComponent(url.hash.slice(1));if(!dest.includes(`id="${id}"`))errors.push(`${name}: missing anchor ${value}`);}}catch{errors.push(`${name}: missing file ${value}`);}}
 }
 // Modules : chaque import relatif (îles React et morceaux partagés) doit résoudre vers un fichier publié.
-for(const path of files.filter(p=>extname(p)==='.js'&&!/\/atlas\/(data|dossiers\/\d+)\.js$/.test(p))){
+for(const path of files.filter(p=>extname(p)==='.js'&&!/\/atlas\/(data|dossiers\/(\d+|registre))\.js$/.test(p))){
  const code=await readFile(path,'utf8');
  for(const [,spec] of code.matchAll(/(?:\bfrom|\bimport)\s*\(?\s*["'](\.{1,2}\/[^"']+)["']/g)){try{await stat(resolve(path,'..',spec));}catch{errors.push(`${relative(out,path)}: missing module ${spec}`);}}
 }
@@ -56,6 +56,11 @@ for(const item of expectedPages){
 }
 const manifest=JSON.parse(await readFile(resolve(out,'publication.json'),'utf8'));
 if(manifest.questions!==42)errors.push('Question count must remain 42');
+// Registre des sources : hors de data.js, préchargé par sa page avec la bonne empreinte.
+if('sources' in data)errors.push('Registry must stay out of data.js');
+{const code=await readFile(resolve(out,'atlas/dossiers/registre.js'),'utf8').catch(()=>''),page=await readFile(resolve(out,'sources/index.html'),'utf8').catch(()=>'');
+ if(!code||createHash('sha256').update(code).digest('hex').slice(0,12)!==data.registryVersion)errors.push('Registry: registryVersion differs from content file');
+ if(!page.includes(`src="/atlas/dossiers/registre.js?v=${data.registryVersion}"`))errors.push('Registry: sources page does not preload its content');}
 if(files.filter(p=>/\/dossiers\/[a-z][a-z0-9-]*\/index\.html$/.test(p)).length!==42)errors.push('42 canonical static question pages required');
 if(manifest.baseURL){
  const sitemap=await readFile(resolve(out,'sitemap.xml'),'utf8');

@@ -21,7 +21,7 @@ Servez le site à la racine du domaine ou utilisez le serveur local : les routes
 
 - Accueil avec carte interactive des 42 questions et accès aux expériences.
 - Atlas : recherche insensible aux accents, filtres par domaine et état de recherche.
-- Lecteur : dossiers 1, 10, 15, 19, 23, 25, 26, 30, 32, 36 et 41 en trois vues (essentiel, dossier, sources). Les 31 autres fiches indiquent « À explorer ».
+- Lecteur : les 42 dossiers en trois vues (essentiel, dossier, sources), tous au statut « Synthèse provisoire » depuis le 16 novembre 2026.
 - Six laboratoires dans l’atlas : [Neutrino](neutrino/index.html), [Antimatière](antimatiere/index.html), [Photon & double fente](photon/index.html), [Temps & entropie](temps/index.html), [Navier-Stokes](navier-stokes/index.html) et [Relativité](relativite/index.html).
 - Tableau des particules : 17 entrées, filtres par famille, propriétés et liens vers les expériences.
 - Glossaire : 41 définitions, recherche et consultation au clic dans les dossiers. Carte de 48 liens éditoriaux entre les 42 questions.
@@ -71,7 +71,7 @@ Les sept laboratoires proposent une expérience guidée avec sauvegarde des rép
 
 ## Lots 1 et 2
 
-Les adresses descriptives des 42 dossiers servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les quinze synthèses et leurs sources sont rendues dans le HTML public. Les 27 fiches vides restent consultables avec noindex et sont exclues du sitemap. Les cinq parcours guidés ne contiennent plus de fiche vide.
+Les adresses descriptives des 42 dossiers servent le lecteur et le texte statique à la même adresse. Les anciens liens `#/question/…` sont repris par le routeur ; le carnet reste sur la même origine et conserve sa clé de stockage. Les 42 synthèses et leurs sources sont rendues dans le HTML public et figurent au sitemap ; une fiche qui repasserait à « À explorer » serait servie avec noindex et exclue du sitemap. Les cinq parcours guidés ne contiennent plus de fiche vide.
 
 Le workflow `.github/workflows/quality.yml` construit le site, teste les modèles et la navigation, vérifie les liens locaux et détecte les données générées non synchronisées. Il ne garantit pas la disponibilité future des sources externes ni une validation scientifique indépendante.
 
@@ -94,4 +94,4 @@ Le paquet public sert le contenu de l’accueil, des domaines, des parcours, du 
 
 ## Matière noire et lecture contextualisée — 30 septembre 2026
 
-Le dossier 29 propose une première synthèse sourcée distinguant matière noire, énergie noire, observations et modèles. Les dossiers 10, 29, 33 et 41 partagent des réponses visibles avec réserves et références ; tous les dossiers proposent des lectures reliées par les connexions éditoriales, avec leur état de recherche. Le HTML public conserve ces éléments sans JavaScript. État actuel : 15 synthèses, 27 fiches à explorer, 41 définitions et 45 URL au sitemap.
+Le dossier 29 propose une première synthèse sourcée distinguant matière noire, énergie noire, observations et modèles. Les dossiers 10, 29, 33 et 41 partagent des réponses visibles avec réserves et références ; tous les dossiers proposent des lectures reliées par les connexions éditoriales, avec leur état de recherche. Le HTML public conserve ces éléments sans JavaScript. État au 16 novembre 2026 : 42 synthèses provisoires, aucune fiche vide, 41 définitions et 73 URL au sitemap.
