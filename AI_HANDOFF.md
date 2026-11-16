@@ -24,7 +24,7 @@ Demande de Teo : mettre sur le site les créatives faites sur Figma, à la place
 - Fichiers : atlas/lab-art/<laboratoire>.png, 1600 × 1280 (export à 50 %, recadrage 5:4 autour du sujet, agrandissement ×2 au plus proche voisin), 2 à 5 Ko chacun. Publiés par build-public (dossier ajouté à la liste).
 - Cartes : accueil, /laboratoires/ et cartes « Expériences » des dossiers. Fond papier #f3f2ed, format 5:4 (4:3 sur mobile), numéro et symbole sur une pastille papier. Les six anciens brand-lab-*.svg supprimés ; brand-lab-trou-noir.svg reste l’image fixe sous la scène 3D et le repli sans WebGL. BRANDING.md à jour.
 
-Validation : build, 79 tests, typecheck, build:public et check:public (279 fichiers, 6 330 liens internes) réussis. Vérifié en local à 1 440 px et 375 px : 7 cartes, images chargées, pas de débordement, numéros lisibles même sur les nuages.
+Validation : build, 79 tests, typecheck, build:public et check:public (279 fichiers, 6 330 liens internes) réussis. Vérifié en local à 1 440 px et 375 px : 7 cartes, images chargées, pas de débordement, numéros lisibles même sur les nuages. Poussé sur main en 236daa4 ; GitHub Actions run 43886639387 et Vercel réussis. En production : /laboratoires/ affiche les 7 cartes sur fond papier avec les nouvelles images ; les 7 fichiers atlas/lab-art/*.png répondent en 200.
 
 ### 2026-11-16 — Claude Code : expérience « Qui serait conscient ? » (question 39), branche claude/explorer-39
 
