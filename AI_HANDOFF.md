@@ -24,7 +24,7 @@ Demande de Teo : « pareil pour cette page » (question 39). Le texte collé ét
 - Contenu repris uniquement du dossier 39 et de ses sources (S324, S499, S630-S633, S635-S638). Seule valeur dérivée : 27 % = complément des 73 % dans le test à trois participants (S632). Aucune nouvelle source.
 - Code : content/explorers/39.json ; checkExplorer dans scripts/build-atlas.mjs (champ explorer du fichier de dossier, absent des autres dossiers) ; DossierView.explorer, explorerBoard et explorerTable dans atlas/dossier.js ; clic dans atlas/app.js ; styles .explorer dans atlas/brand.css ; test dédié.
 
-Validation : sync:seo, build, 79 tests, typecheck, build:public et check:public (278 fichiers, 6 330 liens internes) réussis. Vérifié en local à 1 280 px et 375 px : pas de débordement, changement de système, aperçu de source S633, lien carnet qui place le curseur dans la note.
+Validation : sync:seo, build, 79 tests, typecheck, build:public et check:public (278 fichiers, 6 330 liens internes) réussis. Vérifié en local à 1 280 px et 375 px : pas de débordement, changement de système, aperçu de source S633, lien carnet qui place le curseur dans la note. Poussé sur main en 977ff01 ; GitHub Actions run 43884461325 et Vercel réussis. En production : version statique (tableau) servie, module interactif chargé (app.js?v=e2790b015c4c), 4 systèmes, changement de verdicts au clic.
 
 ### 2026-11-16 — Claude Code : lecteur de dossier (les 42 pages), même branche
 
