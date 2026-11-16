@@ -6,7 +6,7 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 
 ## État courant (2026-11-16)
 
-- Les 42 fiches sont au statut « Synthèse provisoire » : bloc 4 (27 fiches) poussé sur main le 2026-11-16, validation de production consignée ci-dessous. 7 laboratoires, 5 parcours, 73 URL attendues au sitemap.
+- Les 42 fiches sont au statut « Synthèse provisoire » : bloc 4 (27 fiches) poussé en 426a6b2 et vérifié en ligne le 2026-11-16. 7 laboratoires, 5 parcours, 73 URL au sitemap.
 - Registre des sources : prochain identifiant libre S663. Réutiliser l’identifiant existant pour une référence identique (S327 = Chou 2010 ; S101 = S349 = Planck 2018 VI, S101 privilégié).
 - Le registre est servi par atlas/dossiers/registre.js (généré, chargé à la demande par la page Sources) ; atlas/data.js n’en contient plus.
 - Aucune relecture scientifique humaine n’a eu lieu sur aucune fiche. C’est la prochaine étape utile, avant toute nouvelle extension.
@@ -28,6 +28,8 @@ Demande de Teo : « remplis les fiches vides et push sur le main ». Base 424faa
 - Tests : 73 réussis ; attentes mises à jour pour 42 synthèses, cas « fiche vide » conservés avec des données modifiées en mémoire (noindex, libellé À EXPLORER, filtre brouillon).
 
 Validation locale : sync:seo, build, 73 tests, typecheck, build:public (73 routes statiques) et check:public (278 fichiers) réussis. Navigateur sur le build public servi localement : fiche 39 en 375 px (réponse, tableaux, 14 sources, aucun débordement), fiche 27 en vue essentiel, page Sources en accès direct (préchargement) et par navigation interne (chargement à la demande), filtre de l’atlas sans option « À explorer », aucune erreur console.
+
+Validation distante : poussé sur main en 426a6b2 ; GitHub Actions run 43860211234 et Vercel réussis. En production : les 42 pages de dossier portent index,follow, leur canonique, le JSON-LD, la lecture statique complète et préchargent un fichier atlas/dossiers/<id>.js dont l’empreinte est celle du build local ; sitemap de 73 URL ; page Sources préchargeant registre.js (cache immutable) avec la section Bloc 4 dans le HTML ; data.js servi en 39 Ko compressés ; anciennes adresses numériques des nouvelles fiches redirigées en 308 vers leur canonique.
 
 ### 2026-10-08 — Claude Code : crédit dans le pied de page
 
