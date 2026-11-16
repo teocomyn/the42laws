@@ -7,13 +7,24 @@ Branche principale : main, déployée automatiquement sur https://the42laws.fr p
 ## État courant (2026-11-16)
 
 - Les 42 fiches sont au statut « Synthèse provisoire » : bloc 4 (27 fiches) poussé en 426a6b2 et vérifié en ligne le 2026-11-16. 7 laboratoires, 5 parcours, 73 URL au sitemap.
-- Registre des sources : prochain identifiant libre S663. Réutiliser l’identifiant existant pour une référence identique (S327 = Chou 2010 ; S101 = S349 = Planck 2018 VI, S101 privilégié).
+- Registre des sources : prochain identifiant libre S672 (S663-S671 : laboratoire Trou noir, 2026-11-16). Réutiliser l’identifiant existant pour une référence identique (S327 = Chou 2010 ; S101 = S349 = Planck 2018 VI, S101 privilégié).
 - Le registre est servi par atlas/dossiers/registre.js (généré, chargé à la demande par la page Sources) ; atlas/data.js n’en contient plus.
 - Aucune relecture scientifique humaine n’a eu lieu sur aucune fiche. C’est la prochaine étape utile, avant toute nouvelle extension.
 - Prochaines actions possibles : relecture humaine par domaine ; ajout des nouvelles fiches aux parcours guidés (content/atlas.json) ; lecture dans un navigateur des pourcentages PhilPapers 2020 cités dans les fiches 37 à 40 et 42 (lus sur des copies Internet Archive, le site refusant la lecture automatisée) et du tableau non lu pour la fiche 14.
 - Ce fichier garde l’historique sous « Travail réalisé ». L’état ci-dessus prime en cas de contradiction.
 
 ## Travail réalisé
+
+### 2026-11-16 — Claude Code : refonte du laboratoire Trou noir, branche claude/trou-noir-v2
+
+Demande de Teo : « améliore l’expérience à 1000 % » de /trou-noir/. Diagnostic : l’image n’apparaissait qu’à 1 250 px (après le guide), l’animation était en pause, la masse se réglait 1 200 px plus bas, un seul nombre calculé, anneaux parasites (moiré) dans le disque.
+
+- Mise en page : l’observatoire suit immédiatement le titre (72 vh) ; le guide s’insère après les échelles grâce à un emplacement #guide-slot (guides.js n’en change rien pour les autres laboratoires) ; animation lancée d’office sauf « réduire les animations ».
+- Image (shaders.ts, aussi utilisée en page d’accueil) : rotation de caméra (azimut) ; facteur g d’une orbite circulaire (Doppler + décalage gravitationnel, simplifié) ; profil de température de disque mince à bord interne sans couple ; couleur de corps noir ; turbulence par bruit fractal au lieu des sinus à haute fréquence ; ciel plus riche pour voir la lentille sans disque ; tone mapping sur la luminance ; budget 1100 × 720. Les trajectoires de lumière n’ont pas changé (équation u″ + u = 3/2 rₛ u²).
+- Interaction : glisser (souris : azimut et inclinaison ; tactile : azimut, le défilement vertical est conservé), flèches et +/− au clavier, bouton « Repères » (bord de l’ombre à b = 3√3/2 rₛ pour la caméra à 18 rₛ, et horizon sans déviation), vue « L’ombre seule ». Le cercle du bord de l’ombre coïncide visuellement avec l’ombre calculée.
+- Physique (model.ts, testée) : rayon, ombre, période à 3 rₛ, densité naïve, marée à l’horizon, température de Hawking, évaporation (puissance de Page 1976), et descente d’une sonde immobile (rapport des horloges, vitesse de libération, marée, poussée, régime d’orbite). Préréglages sourcés : Terre, Soleil, 10 M☉, GW150914, Sgr A* (GRAVITY 2022), M87* (EHT 2019) ; bouton « × 2 » pour le guide.
+- Textes : anatomie en quatre repères (horizon, ombre et sphère des photons avec les mesures EHT, disque et effet Doppler, lentille) ; notes « calculé / illustré / non simulé » avec formules et sources ; liens vers les adresses canoniques des dossiers ; titre et description SEO mis à jour (slug inchangé) ; sources S663-S671 au registre.
+- Tests : 8 nouveaux cas (échelles physiques, descente, repères, formats français) ; attente de résolution du laboratoire mise à jour.
 
 ### 2026-11-16 — Claude Code : bloc 4 (les 27 fiches restantes), branche claude/bloc-4
 

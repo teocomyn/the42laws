@@ -337,8 +337,8 @@
       "description": "Comparez les temps propres d’un trajet idéal à vitesse constante. Une expérience guidée de relativité restreinte, avec hypothèses, calculs et relevés."
     },
     "/trou-noir/": {
-      "title": "Trou noir : visualisation et rayon de Schwarzschild",
-      "description": "Explorez une visualisation illustrative et comparez le rayon de Schwarzschild selon la masse. Guide 10/20 masses solaires, calculs et limites explicites."
+      "title": "Trou noir : simulation, ombre et échelles physiques",
+      "description": "Tournez autour d’un trou noir dont la lumière suit la relativité générale, changez sa masse et approchez de l’horizon : ombre, marées, Hawking. Limites explicites."
     },
     "/notes/navier-stokes-2026/": {
       "title": "Navier–Stokes et l’annonce d’OpenAI : note de recherche datée",

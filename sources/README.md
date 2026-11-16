@@ -132,12 +132,21 @@ Consultation le 2026-09-12. La lecture ciblée et le résumé sont distingués ;
 | S326 | [Feynman, Leighton et Sands — The Special Theory of Relativity](https://www.feynmanlectures.caltech.edu/I_15.html) | Cours des auteurs ; transformation du temps, lecture ciblée | 2026-09-12 |
 | S327 | [Chou, C. W., Hume, D. B., Rosenband, T., Wineland, D. J., « Optical Clocks and Relativity », *Science* 329 (2010), 1630-1633](https://doi.org/10.1126/science.1192720) | Article original ; résumé consulté sur le site du NIST, puis via PubMed le 2026-10-08 | 2026-09-12 |
 
-## Laboratoire Trou noir — 2026-09-12
+## Laboratoire Trou noir — 2026-09-12, refonte du 2026-11-16
 
 | ID | Source | Consultation | Date |
 | --- | --- | --- | --- |
 | S328 | [NASA — Anatomy of a Black Hole](https://science.nasa.gov/universe/black-holes/anatomy/) | Texte : horizon, disque, ombre et lentille gravitationnelle. Le rendu original du site n’est pas une validation de ces phénomènes. | 2026-09-12 |
 | S329 | [NASA / Imagine the Universe — Black Holes](https://imagine.gsfc.nasa.gov/science/objects/black_holes1.html) | Texte : rayon de Schwarzschild et ordre de grandeur d’environ 3 km pour une masse solaire. | 2026-09-12 |
+| S663 | [Event Horizon Telescope Collaboration, « First M87 Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole », *ApJL* 875 (2019), L1, arXiv:1906.11238](https://doi.org/10.3847/2041-8213/ab0ec7) | Résumé, vérifié INSPIRE : anneau de 42 ± 3 µas, asymétrie attribuée au rayonnement relativiste, masse 6,5 ± 0,7 × 10⁹ M☉. Refonte du laboratoire. | 2026-11-16 |
+| S664 | [Event Horizon Telescope Collaboration, « First Sagittarius A* Event Horizon Telescope Results. I », *ApJL* 930 (2022), L12](https://doi.org/10.3847/2041-8213/ac6674) | Résumé, vérifié INSPIRE : anneau de 51,8 ± 2,3 µas, masse d’environ 4 × 10⁶ M☉. | 2026-11-16 |
+| S665 | [GRAVITY Collaboration, « Mass distribution in the Galactic Center based on interferometric astrometry of multiple stellar orbits », *A&A* 657 (2022), L12, arXiv:2112.07478](https://doi.org/10.1051/0004-6361/202142465) | Résumé, vérifié INSPIRE : masse de Sagittarius A*, 4,30 × 10⁶ M☉ à environ 0,25 %. | 2026-11-16 |
+| S666 | [LIGO Scientific et Virgo Collaborations, « Observation of Gravitational Waves from a Binary Black Hole Merger », *Phys. Rev. Lett.* 116 (2016), 061102, arXiv:1602.03837](https://doi.org/10.1103/PhysRevLett.116.061102) | Résumé, vérifié INSPIRE : trou noir final de 62 ± 4 M☉ (intervalle crédible à 90 %). | 2026-11-16 |
+| S667 | [Hawking, S. W., « Black hole explosions? », *Nature* 248 (1974), 30-31](https://doi.org/10.1038/248030a0) | Résumé, vérifié INSPIRE et Crossref : température proportionnelle à la gravité de surface, ordre de grandeur 10⁻⁶ (M☉/M) K. | 2026-11-16 |
+| S668 | [Page, D. N., « Particle emission rates from a black hole: Massless particles from an uncharged, nonrotating hole », *Phys. Rev. D* 13 (1976), 198-206](https://doi.org/10.1103/PhysRevD.13.198) | Résumé, vérifié INSPIRE : puissance totale 2 × 10⁻⁴ ħc⁶G⁻²M⁻² pour M ≫ 10¹⁷ g, base du calcul d’évaporation du laboratoire. | 2026-11-16 |
+| S669 | [Synge, J. L., « The Escape of Photons from Gravitationally Intense Stars », *MNRAS* 131 (1966), 463-466](https://doi.org/10.1093/mnras/131.3.463) | Résumé, vérifié INSPIRE : cône critique d’échappement des photons. | 2026-11-16 |
+| S670 | [Bardeen, J. M., Press, W. H., Teukolsky, S. A., « Rotating Black Holes: Locally Nonrotating Frames, Energy Extraction, and Scalar Synchrotron Radiation », *ApJ* 178 (1972), 347](https://doi.org/10.1086/151796) | Référence bibliographique seulement : formules d’orbites, dont la dernière orbite stable. | 2026-11-16 |
+| S671 | [NASA — fiches Terre, Soleil, Lune et rapports planétaires](https://nssdc.gsfc.nasa.gov/planetary/factsheet/) | Texte : masse de la Terre (5,9722 × 10²⁴ kg), rayons et distances de comparaison du laboratoire. | 2026-11-16 |
 
 ## IA et mathématiques — 2026-09-12
 

@@ -25,7 +25,7 @@ test('unmount before readiness cannot allocate a GPU context or update an unmoun
 });
 
 test('homepage rendering caps the drawing buffer while the laboratory retains its resolution',async()=>{
- for(const [quality,expected] of [['hero',[540,360]],[undefined,[900,600]]]){
+ for(const [quality,expected] of [['hero',[540,360]],[undefined,[1080,720]]]){
   const gl=new Proxy({}, {get:(_,key)=>['VERTEX_SHADER','FRAGMENT_SHADER','ARRAY_BUFFER','STATIC_DRAW','FLOAT','TRIANGLES'].includes(key)?1:()=>true});
   const canvas={width:0,height:0,getContext:()=>gl,getBoundingClientRect:()=>({width:1200,height:800}),addEventListener(){},removeEventListener(){}};
   class Observer{observe(){}disconnect(){}}

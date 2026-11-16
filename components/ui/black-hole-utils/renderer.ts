@@ -4,7 +4,7 @@ export type Renderer = { ready: Promise<void>; setOptions: (options: Partial<Set
 export function createRenderer({canvas,onError,quality}:{canvas:HTMLCanvasElement;onError?:(message:string)=>void;quality?:'hero'}):Renderer {
  let gl: WebGLRenderingContext | null=null, program:WebGLProgram|null=null, buffer:WebGLBuffer|null=null;
  let settings={...defaults}, frame=0, disposed=false, lost=false, visible=true, phase=0, last=0;
- const budget=quality==='hero'?{width:640,height:360,dpr:1,fps:18}:{width:900,height:600,dpr:1.5,fps:24};
+ const budget=quality==='hero'?{width:640,height:360,dpr:1,fps:18}:{width:1100,height:720,dpr:1.5,fps:24};
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const shaders:WebGLShader[]=[];
  const uniforms:Record<string,WebGLUniformLocation|null>={};
@@ -19,7 +19,7 @@ export function createRenderer({canvas,onError,quality}:{canvas:HTMLCanvasElemen
   gl.useProgram(program);buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);
   gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
   const loc=gl.getAttribLocation(program,'position');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
-  for(const key of ['resolution','clock','inclination','zoom','exposure','disk','palette'])uniforms[key]=gl.getUniformLocation(program,key);
+  for(const key of ['resolution','clock','inclination','azimuth','zoom','exposure','disk','palette'])uniforms[key]=gl.getUniformLocation(program,key);
  }
  function draw(){
   if(!gl||!program||disposed||lost)return;
@@ -29,7 +29,7 @@ export function createRenderer({canvas,onError,quality}:{canvas:HTMLCanvasElemen
   if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}
   gl.viewport(0,0,w,h);gl.useProgram(program);
   gl.uniform2f(uniforms.resolution,w,h);gl.uniform1f(uniforms.clock,phase);
-  gl.uniform1f(uniforms.inclination,settings.inclination);gl.uniform1f(uniforms.zoom,settings.zoom);
+  gl.uniform1f(uniforms.inclination,settings.inclination);gl.uniform1f(uniforms.azimuth,settings.azimuth);gl.uniform1f(uniforms.zoom,settings.zoom);
   gl.uniform1f(uniforms.exposure,settings.exposure);gl.uniform1f(uniforms.disk,settings.disk?1:0);gl.uniform1f(uniforms.palette,settings.palette==='ice'?1:0);
   gl.drawArrays(gl.TRIANGLES,0,6);
  }
